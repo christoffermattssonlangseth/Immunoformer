@@ -1,0 +1,42 @@
+# Stage 1 baseline config.
+# Synthetic defaults below RUN AS-IS after `make_synthetic.py`.
+# For real data: point data.h5ad_path at your .h5ad and set the obs.* columns.
+
+obs:
+  animal_id: animal_id        # grouping key — splits are over animals
+  section_id: section_id      # one bag = one section
+  label: timepoint            # ordinal target
+  label_order:                # low -> high; must match values in obs[label]
+    - control
+    - pre_onset
+    - onset
+    - peak
+    - late_1
+    - late_2
+  region: region
+  model: model
+
+data:
+  h5ad_path: data/synthetic.h5ad
+  layer: null                 # set to your raw-counts layer name if X is processed
+  max_cells_per_bag: 2048
+  min_cells_per_bag: 64
+  encoder: pca                # identity | pca | fm (foundation model, later)
+  pca_dim: 64
+  n_hvg: 0                    # 0 = all genes; for the real 5101 panel try ~2000
+  val_fraction: 0.25
+  seed: 0
+
+model:
+  proj_dim: 128
+  attn_dim: 64
+  dropout: 0.1
+
+train:
+  epochs: 40
+  lr: 0.001
+  weight_decay: 0.0001
+  grad_accum: 4
+  device: auto                # auto | cpu | cuda | mps
+  out_dir: runs/baseline
+  log_every: 20
