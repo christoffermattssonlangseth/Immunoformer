@@ -1,0 +1,62 @@
+# RRMAP2 spinal-cord EAE — Stage-1 baseline, target = `stage` (17-level ordinal).
+#
+# Label hierarchy in this .h5ad (verified by inspection, NOT obvious from names):
+#   meta_sample_id (158)  = one contiguous tissue piece -> the BAG/section unit.
+#                           stage/score/condition/region are all constant within it.
+#   sample_name    (67)   = one animal/biological replicate -> the ANIMAL split key.
+#                           constant disease label, spans multiple regions + 1-3 meta pieces.
+#   sample_id      (54)   = physical slide; MULTIPLEXES several animals -> do NOT use.
+#
+# label_order is sorted by median clinical score_sacrifice (the "raw score" axis),
+# so it mixes Chronic + RR models and ties the relapse peaks. Edit freely if you
+# want a biologically-curated order instead.
+
+obs:
+  animal_id: sample_name        # leakage-free split key (67 animals)
+  section_id: meta_sample_id    # one bag = one tissue piece (158 bags)
+  label: stage                  # 17-level ordinal target
+  label_order:                  # low -> high, by median clinical score
+    - CFA
+    - PLP CFA
+    - MOG CFA
+    - NONSYMPTOM
+    - ONSET1
+    - OS1
+    - MONOPHASIC
+    - REMISSION1
+    - MILD30
+    - ONSET2
+    - REMISSION2
+    - MILD16
+    - SEVERE30
+    - SEVERE16
+    - PEAK2
+    - PEAK3
+    - PEAK1
+  region: region                # L/T/C (constant within a bag)
+  model: model                  # CHRONIC | RELAPSE REMITTING
+
+data:
+  h5ad_path: /Volumes/moldiassd/RRMAP2_xenium_adata/kmeans_separated/RRMAP2_xenium_all_samples.cellcharter.companion.ready.with_metadata.rerun.h5ad
+  layer: counts                 # X is already log-normalized; raw counts live here
+  max_cells_per_bag: 2048
+  min_cells_per_bag: 64         # smallest bag is ~2.5k cells, so none are dropped
+  encoder: pca
+  pca_dim: 64
+  n_hvg: 2000                   # full 5101 panel densifies to 28GB; 2000 HVGs fits 48GB RAM
+  val_fraction: 0.25
+  seed: 0
+
+model:
+  proj_dim: 128
+  attn_dim: 64
+  dropout: 0.1
+
+train:
+  epochs: 40
+  lr: 0.001
+  weight_decay: 0.0001
+  grad_accum: 4
+  device: auto                  # auto | cpu | cuda | mps
+  out_dir: runs/rrmap2_stage
+  log_every: 20

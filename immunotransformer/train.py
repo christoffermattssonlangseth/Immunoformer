@@ -66,11 +66,14 @@ def train(cfg: Config):
     adata = ad.read_h5ad(cfg.data.h5ad_path)
 
     if cfg.data.n_hvg and cfg.data.n_hvg < adata.n_vars:
+        import gc
         import scanpy as sc
         tmp = adata.copy()
         sc.pp.normalize_total(tmp, target_sum=1e4); sc.pp.log1p(tmp)
         sc.pp.highly_variable_genes(tmp, n_top_genes=cfg.data.n_hvg)
-        adata = adata[:, tmp.var.highly_variable.values].copy()
+        hvg_mask = tmp.var.highly_variable.values
+        del tmp; gc.collect()  # free the full-panel copy before the dense densify below
+        adata = adata[:, hvg_mask].copy()
         print(f"[hvg] kept {adata.n_vars} genes")
 
     X = normalize_expression(adata, cfg.data.layer)
