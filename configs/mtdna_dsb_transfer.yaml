@@ -1,0 +1,38 @@
+# mtDNA double-strand break (inside-out) model — transfer evaluation config
+#
+# Tests whether a model trained on immune-driven EAE (RRMAP2) generalises to
+# oligodendrocyte-intrinsic pathology. 980k cells, brain.
+#
+# Verified obs layout (inspect_labels.py, 2026-06-12):
+#   - 980,474 cells. sample_id (RB####, 12 values) is BOTH the animal and the
+#     section key — one section per mouse, so animal_id == section_id here.
+#   - `condition` is BINARY: exactly "control" (471,946) vs "mtDSB" (508,528),
+#     constant per mouse (mtDSB == genotype PlptTA:mtPst1). So the transfer rho
+#     reduces to a rank comparison across two groups over just 12 bags — small,
+#     so the bootstrap CI will be wide. To get more bags, subdivide each mouse by
+#     `RBD_compartment_simplified` (12 brain regions) keeping condition as label.
+#   - `genotype` (3) / `age` (21 vs 60) are alternative axes.
+#
+# Interpretation:
+#   High rho  -> immune-driven trajectory also present in inside-out pathology;
+#                check attention to see which cells drive it.
+#   Low rho   -> mechanistically distinct trajectory (supports the inside-out
+#                hypothesis as a separate disease entity). The interesting null.
+
+tag: mtdna_dsb
+h5ad_path: /Volumes/processing2/oligo-mtDSB/data/mtDNA_DSB_5k_clustered_annotation_with_rbd_2_cytetype_brain.h5ad
+
+obs:
+  animal_id: sample_id
+  section_id: sample_id
+  label: condition
+  label_order:        # CONFIRM exact strings with inspect_labels.py
+    - control
+    - mtDSB
+
+data:
+  layer: counts
+  max_cells_per_bag: 2048
+  min_cells_per_bag: 64
+
+source_run_dir: runs/rrmap2_stage

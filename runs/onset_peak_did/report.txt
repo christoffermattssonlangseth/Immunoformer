@@ -1,0 +1,38 @@
+
+=== Onset->Peak transition: RR vs CHRONIC difference-in-differences ===
+groups: {'chr_onset': 5, 'chr_peak': 6, 'rr_onset': 2, 'rr_peak': 4}
+
+DiD = (RR_peak - RR_onset) - (chr_peak - chr_onset).  Interaction cancels the constant strain/batch offset.
+
+THE TRAP (for contrast): a single matched PEAK1 RR-vs-chronic contrast calls 35 genes different (q<0.05) — that is strain/batch.
+The phase-anchored DiD calls 0 genes different (q<0.05) [exploratory: RR onset n=2].
+
+-- onset->peak rises MORE IN RR than chronic (top |DiD|) --
+   gene               DiD    rr_d   chr_d        q
+   Hal             +1.070  +1.075  +0.004     0.16
+   Pmp22           +0.726  -0.314  -1.040     0.87
+   H2-K1           +0.661  +1.969  +1.308     0.88
+   Ogn             +0.630  -0.107  -0.737     0.82
+   H2-Ab1          +0.555  +1.749  +1.194     0.88
+   Chil3           +0.555  +1.957  +1.401     0.94
+   B2m             +0.533  +1.603  +1.070     0.88
+   Plac8           +0.527  +0.634  +0.106     0.91
+   Cd74            +0.497  +1.875  +1.378     0.89
+   Tap1            +0.489  +1.228  +0.738     0.88
+   Irgm2           +0.470  +1.089  +0.619     0.88
+   H2-Aa           +0.462  +1.821  +1.359     0.89
+
+-- onset->peak rises MORE IN CHRONIC than RR --
+   gene               DiD    rr_d   chr_d        q
+   Xist            -0.786  -0.309  +0.477     0.93
+   Gpnmb           -0.760  +1.782  +2.542     0.88
+   Plin4           -0.419  -0.326  +0.093     0.94
+   Rangap1         -0.409  -0.515  -0.105     0.88
+   Sez6l2          -0.401  -0.883  -0.482     0.88
+   Sfrp4           -0.395  -0.468  -0.073     0.88
+   Hoxb8           -0.391  -0.733  -0.342     0.88
+   Fcrls           -0.373  -0.371  +0.002     0.88
+   Hsph1           -0.368  -0.706  -0.338     0.88
+   Tubb3           -0.363  -0.348  +0.016     0.88
+   Dnm1            -0.358  -0.802  -0.444     0.88
+   Pdk4            -0.357  -0.361  -0.004     0.82

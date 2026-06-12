@@ -10,7 +10,9 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import pickle
 
+import anndata as ad
 import numpy as np
 import torch
 from scipy.stats import spearmanr
@@ -55,26 +57,83 @@ def evaluate(model, loader, device, num_classes):
     return {"mae": mae, "acc": acc, "spearman": rho, "n": len(preds)}, attn_dump
 
 
-def train(cfg: Config):
-    import anndata as ad
+def _select_hvg(adata: ad.AnnData, cfg: Config) -> np.ndarray:
+    """Return a boolean HVG mask computed on a random subsample of cells.
 
+    The old code did `adata.copy()` (duplicating the full panel *and* the counts
+    layer) before HVG selection — the ~2x RAM spike that tipped the 1.38M-cell
+    RRMAP2 run over 48 GB and segfaulted. Here we slice a counts-only subsample
+    into a tiny scratch AnnData instead, so we never hold two full-panel copies.
+    For dispersion-based HVG selection on a dataset this size, 50k cells is
+    statistically equivalent to using all of them.
+    """
+    import gc
+    import scanpy as sc
+
+    n_sample = min(cfg.data.hvg_subsample, adata.n_obs)
+    rng = np.random.default_rng(cfg.data.seed + 99)  # distinct from the split RNG
+    sample_idx = rng.choice(adata.n_obs, n_sample, replace=False)
+
+    counts = adata.layers[cfg.data.layer] if cfg.data.layer else adata.X
+    scratch = ad.AnnData(X=counts[sample_idx].copy())  # sparse slice, cheap
+    sc.pp.normalize_total(scratch, target_sum=1e4)
+    sc.pp.log1p(scratch)
+    sc.pp.highly_variable_genes(scratch, n_top_genes=cfg.data.n_hvg)
+    hvg_mask = scratch.var.highly_variable.values.copy()
+
+    del scratch, counts
+    gc.collect()
+    print(f"[hvg] {hvg_mask.sum()} genes selected "
+          f"(computed on {n_sample:,} / {adata.n_obs:,} cells)")
+    return hvg_mask
+
+
+def _save_run_artifacts(
+    out_dir: str, enc, gene_names: np.ndarray, cfg: Config, val_animals
+) -> None:
+    """Persist the encoder, HVG gene panel, and a manifest so evaluate.py can
+    apply identical preprocessing to a transfer dataset without re-fitting."""
+    with open(os.path.join(out_dir, "encoder.pkl"), "wb") as fh:
+        pickle.dump(enc, fh, protocol=pickle.HIGHEST_PROTOCOL)
+    np.save(os.path.join(out_dir, "hvg_genes.npy"), gene_names)
+
+    manifest = {
+        "label_order": cfg.obs.label_order,
+        "encoder": cfg.data.encoder,
+        "n_hvg": cfg.data.n_hvg,
+        "pca_dim": cfg.data.pca_dim,
+        "obs_animal_id": cfg.obs.animal_id,
+        "obs_section_id": cfg.obs.section_id,
+        "obs_label": cfg.obs.label,
+        "data_layer": cfg.data.layer,
+        # Held-out val animals, so a within-domain re-eval scores only these
+        # bags instead of the whole source set (which includes training bags).
+        "val_animals": sorted(str(a) for a in val_animals),
+        # Model architecture, so the evaluator reconstructs the exact net rather
+        # than assuming ModelConfig defaults.
+        "model": {
+            "proj_dim": cfg.model.proj_dim,
+            "attn_dim": cfg.model.attn_dim,
+            "dropout": cfg.model.dropout,
+        },
+    }
+    with open(os.path.join(out_dir, "run_manifest.json"), "w") as fh:
+        json.dump(manifest, fh, indent=2)
+    print(f"[artifacts] encoder, HVG genes, manifest -> {out_dir}/")
+
+
+def train(cfg: Config):
     device = resolve_device(cfg.train.device)
     os.makedirs(cfg.train.out_dir, exist_ok=True)
     torch.manual_seed(cfg.data.seed)
 
     print(f"[load] {cfg.data.h5ad_path}")
     adata = ad.read_h5ad(cfg.data.h5ad_path)
+    print(f"       {adata.n_obs:,} cells x {adata.n_vars:,} genes")
 
     if cfg.data.n_hvg and cfg.data.n_hvg < adata.n_vars:
-        import gc
-        import scanpy as sc
-        tmp = adata.copy()
-        sc.pp.normalize_total(tmp, target_sum=1e4); sc.pp.log1p(tmp)
-        sc.pp.highly_variable_genes(tmp, n_top_genes=cfg.data.n_hvg)
-        hvg_mask = tmp.var.highly_variable.values
-        del tmp; gc.collect()  # free the full-panel copy before the dense densify below
-        adata = adata[:, hvg_mask].copy()
-        print(f"[hvg] kept {adata.n_vars} genes")
+        hvg_mask = _select_hvg(adata, cfg)
+        adata = adata[:, hvg_mask]  # view — no second full-panel copy
 
     X = normalize_expression(adata, cfg.data.layer)
     bags = build_bags(adata, cfg)
@@ -85,6 +144,9 @@ def train(cfg: Config):
 
     enc, X_enc = fit_encoder_on_train(X, train_bags, cfg)
     print(f"[encoder] {cfg.data.encoder} -> dim {enc.out_dim}")
+
+    gene_names = np.array(adata.var_names, dtype=str)
+    _save_run_artifacts(cfg.train.out_dir, enc, gene_names, cfg, val_animals)
 
     train_ds = BagDataset(train_bags, X_enc, cfg, train=True)
     val_ds = BagDataset(val_bags, X_enc, cfg, train=False)

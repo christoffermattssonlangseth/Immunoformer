@@ -1,0 +1,86 @@
+
+=== WITHIN-RR relapse biology (n=33 RR animals, animal-level) ===
+Descriptive only; stage is de-confounded from slide within RR (each stage on 9-12 slides).
+
+-- Relapse-cycle trajectory (29 animals) — top gene trends (Spearman vs cycle rank) --
+   genes at BH-q<0.05: 138
+   INCREASING along cycle:
+     C6               rho=+0.864  q=8.33e-06
+     Cd109            rho=+0.828  q=7.6e-05
+     Fcrls            rho=+0.805  q=0.000237
+     Igf1             rho=+0.799  q=0.00025
+     Crygs            rho=+0.796  q=0.00025
+     Cd151            rho=+0.783  q=0.000439
+     Greb1            rho=+0.762  q=0.000839
+     Igkc             rho=+0.760  q=0.000839
+     Cemip            rho=+0.760  q=0.000839
+     Elmo3            rho=+0.759  q=0.000839
+   DECREASING along cycle:
+     Msmo1            rho=-0.762  q=0.000839
+     Idi1             rho=-0.732  q=0.00217
+     Ldlr             rho=-0.710  q=0.0037
+     Hmgcr            rho=-0.678  q=0.00813
+     Hsd17b7          rho=-0.665  q=0.0117
+     Cct8             rho=-0.660  q=0.0121
+     Atg3             rho=-0.658  q=0.0125
+     Lss              rho=-0.642  q=0.0158
+     Htr7             rho=-0.639  q=0.0166
+     Gpsm2            rho=-0.623  q=0.0231
+
+   cluster (leiden_1) composition trends along cycle (top |rho|):
+     cluster 9      rho=+0.871  q=2.1e-08
+     cluster 3      rho=+0.729  q=9.1e-05
+     cluster 0      rho=+0.608  q=0.0039
+     cluster 23     rho=-0.568  q=0.0081
+     cluster 12     rho=-0.421  q=0.114
+     cluster 17     rho=-0.407  q=0.115
+
+-- Severity-adjusted trajectory (partial Spearman | score_sacrifice, n=29) --
+   cycle vs severity rho = +0.537 (collinearity: how much the cycle axis IS severity)
+   genes q<0.05: raw 138 -> partial 79 (42 survive adjustment)
+   cycle-SPECIFIC increasing (beyond severity):
+     Fcrls            partial_rho=+0.836  q=0.000161
+     Igf1             partial_rho=+0.823  q=0.000194
+     C6               partial_rho=+0.806  q=0.000383
+     Crygs            partial_rho=+0.800  q=0.000388
+     Cemip            partial_rho=+0.797  q=0.000388
+     Greb1            partial_rho=+0.749  q=0.00303
+     Cd109            partial_rho=+0.747  q=0.00303
+     Col13a1          partial_rho=+0.745  q=0.00303
+   cycle-SPECIFIC decreasing (beyond severity):
+     Cd47             partial_rho=-0.751  q=0.00303
+     Msmo1            partial_rho=-0.652  q=0.0226
+     Ldlr             partial_rho=-0.649  q=0.0228
+     Idi1             partial_rho=-0.624  q=0.0334
+     Htr7             partial_rho=-0.624  q=0.0334
+     Prph             partial_rho=-0.602  q=0.0464
+     Ifnlr1           partial_rho=-0.602  q=0.0464
+     Atg3             partial_rho=-0.600  q=0.0477
+   cholesterol-biosynthesis genes (raw -> severity-adjusted):
+     Hmgcr      raw rho=-0.678 (q=0.0081)  ->  partial rho=-0.524 (q=0.11)
+     Msmo1      raw rho=-0.762 (q=0.00084)  ->  partial rho=-0.652 (q=0.023)
+     Idi1       raw rho=-0.732 (q=0.0022)  ->  partial rho=-0.624 (q=0.033)
+     Ldlr       raw rho=-0.710 (q=0.0037)  ->  partial rho=-0.649 (q=0.023)
+     Lss        raw rho=-0.642 (q=0.016)  ->  partial rho=-0.515 (q=0.12)
+     Hsd17b7    raw rho=-0.665 (q=0.012)  ->  partial rho=-0.570 (q=0.068)
+
+-- Monophasic (4) vs relapsed (15) — EXPLORATORY (run-date imbalance) --
+   genes at BH-q<0.05: 0
+   up in RELAPSED:
+     Gpnmb            dmedian=+0.889  q=0.607
+     Plin4            dmedian=+0.723  q=0.579
+     Sgk1             dmedian=+0.711  q=0.579
+     Timp1            dmedian=+0.488  q=0.819
+     Abca1            dmedian=+0.487  q=0.594
+     Chil1            dmedian=+0.455  q=0.725
+     Cd68             dmedian=+0.445  q=0.662
+     Arg1             dmedian=+0.405  q=0.696
+   up in MONOPHASIC:
+     Nr1d1            dmedian=-0.434  q=0.579
+     Msmo1            dmedian=-0.297  q=0.594
+     Sox8             dmedian=-0.290  q=0.579
+     Mog              dmedian=-0.286  q=0.594
+     Kif5a            dmedian=-0.281  q=0.579
+     Col6a2           dmedian=-0.278  q=0.641
+     Nefh             dmedian=-0.274  q=0.677
+     Dbp              dmedian=-0.259  q=0.594

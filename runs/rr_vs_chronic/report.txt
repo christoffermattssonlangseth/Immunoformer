@@ -1,0 +1,24 @@
+
+=== RR vs CHRONIC — bag-level MIL, animal-grouped 5-fold CV ===
+
+bags=158  overall AUC=0.998  acc=0.987
+region-only baseline AUC=0.649  (lift = +0.349)
+
+AUC by spinal region (lumbar L = de-confounded; balanced models):
+  region      AUC  chronic   RR
+  C         1.000        3   32
+  L         0.996       34   33
+  T         1.000       23   33
+
+Attention enrichment by 'leiden_1' (mean attention fraction per bag; + = more attended in RR):
+  cluster     RR_attn chr_attn    diff  RR_comp chr_comp
+  8             0.018    0.277  -0.259    0.044    0.067
+  20            0.028    0.124  -0.097    0.010    0.012
+  12            0.003    0.073  -0.069    0.036    0.049
+  10            0.006    0.061  -0.055    0.042    0.057
+  9             0.024    0.063  -0.039    0.054    0.052
+  13            0.052    0.006  +0.046    0.039    0.023
+  0             0.222    0.172  +0.050    0.076    0.076
+  21            0.098    0.005  +0.093    0.017    0.004
+  7             0.193    0.015  +0.178    0.059    0.060
+  3             0.201    0.018  +0.183    0.071    0.048

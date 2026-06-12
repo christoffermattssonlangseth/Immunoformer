@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Heavy / regenerable run artifacts — keep code, configs, docs, HTML reports,
+# figures and small result summaries (report.txt/results.json) in git; not these.
+*.pt
+*.pkl
+*.npz
+runs_*.log

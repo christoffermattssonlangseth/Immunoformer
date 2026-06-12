@@ -1,0 +1,42 @@
+
+=== RR vs CHRONIC differential dynamics (interaction score:model, n=67 = 33 RR / 34 chronic) ===
+Interaction = gene changes with severity DIFFERENTLY between courses (de-confounds constant strain/batch offset).
+
+genes with significant score:model interaction (BH-q<0.05): 27
+(model MAIN effect q<0.05: 2363 — strain/batch baseline, NOT interpreted)
+
+-- Rises with severity MORE STEEPLY IN RR (RR_slope > chronic_slope) --
+   gene            effect        q  chr_slope  rr_slope
+   Hal             +0.438  4.2e-09     +0.001    +0.439
+   Ackr1           +0.243     0.15     -0.100    +0.143
+   Chil3           +0.225     0.53     +0.420    +0.645
+   Sgk1            +0.205     0.42     +0.057    +0.263
+   Plin4           +0.196      0.5     -0.018    +0.178
+   Msmo1           +0.187     0.21     -0.394    -0.207
+   Ccn1            +0.185    0.093     +0.021    +0.205
+   Arg1            +0.177     0.81     +0.634    +0.811
+   Ptgs2           +0.161      0.3     -0.088    +0.073
+   Mt1             +0.158     0.21     -0.038    +0.120
+   Podxl           +0.143     0.12     -0.173    -0.030
+   Chil1           +0.140     0.62     +0.394    +0.534
+
+-- Rises with severity MORE STEEPLY IN CHRONIC --
+   gene            effect        q  chr_slope  rr_slope
+   Cd74            -0.338     0.29     +0.880    +0.542
+   Gpnmb           -0.323     0.49     +1.019    +0.696
+   Xist            -0.317     0.52     +0.163    -0.154
+   Cst7            -0.306     0.21     +0.658    +0.352
+   H2-Aa           -0.289      0.3     +0.803    +0.515
+   H2-Eb1          -0.281     0.27     +0.736    +0.456
+   C3              -0.258     0.25     +0.605    +0.347
+   H2-Ab1          -0.253     0.41     +0.757    +0.505
+   C4b             -0.247     0.11     +0.428    +0.182
+   Cx3cr1          -0.231      0.1     +0.345    +0.114
+   Lag3            -0.231      0.2     +0.363    +0.132
+   Ccl5            -0.229     0.44     +0.625    +0.396
+
+-- cluster (leiden_1) composition: differential severity dynamics --
+   cluster 0     effect=-0.0184 q=0.045 (chr slope +0.0309 / RR slope +0.0125)
+   cluster 20    effect=-0.0041 q=0.0019 (chr slope +0.0048 / RR slope +0.0007)
+   cluster 19    effect=+0.0031 q=0.045 (chr slope -0.0070 / RR slope -0.0039)
+   cluster 15    effect=+0.0047 q=0.045 (chr slope +0.0001 / RR slope +0.0048)

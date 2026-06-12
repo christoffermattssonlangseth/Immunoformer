@@ -1,0 +1,33 @@
+{
+  "label_order": [
+    "CFA",
+    "PLP CFA",
+    "MOG CFA",
+    "NONSYMPTOM",
+    "ONSET1",
+    "OS1",
+    "MONOPHASIC",
+    "REMISSION1",
+    "MILD30",
+    "ONSET2",
+    "REMISSION2",
+    "MILD16",
+    "SEVERE30",
+    "SEVERE16",
+    "PEAK2",
+    "PEAK3",
+    "PEAK1"
+  ],
+  "encoder": "pca",
+  "n_hvg": 2000,
+  "pca_dim": 64,
+  "obs_animal_id": "sample_name",
+  "obs_section_id": "meta_sample_id",
+  "obs_label": "stage",
+  "data_layer": "counts",
+  "model": {
+    "proj_dim": 128,
+    "attn_dim": 64,
+    "dropout": 0.1
+  }
+}

@@ -3,6 +3,30 @@
 Picking this up this evening. Goal: get the Stage-1 attention-MIL + CORAL baseline
 running on the **RRMAP2 spinal-cord EAE** dataset, target = `stage`.
 
+## Update (2026-06-12) — integrated the Codon transfer work
+
+Merged the `immunoformer-work` improvements on branch `integrate-codon-transfer`:
+
+- **HVG memory fix applied** — this is next-step #2 below. `train.py` now computes
+  HVGs on a 50k-cell counts-only subsample (`_select_hvg`) instead of
+  `adata.copy()`, and HVG-subsets via a view (no second full-panel copy). New
+  `data.hvg_subsample` config field (default 50_000). **Not yet re-run on the full
+  1.38M-cell RRMAP2 object** — still needs the `PYTHONFAULTHANDLER` confirmation run
+  in "Quick resume command" to verify the segfault is actually gone.
+- **Transfer pipeline added** — `train.py` now serialises `encoder.pkl`,
+  `hvg_genes.npy`, `run_manifest.json` (incl. model arch). New modules
+  `evaluate.py` (apply a frozen model to a new dataset, gene-panel aligned,
+  label-rank remapped) and `stats.py` (bag-level bootstrap CI / permutation /
+  Fisher z). New scripts `inspect_labels.py`, `transfer_experiment.py`.
+- **Configs** — kept the verified `rrmap2_stage.yaml` (only added `hvg_subsample`).
+  Added `transfer_experiment.yaml` + per-dataset transfer templates, populated
+  with the verified obs keys below (optic nerve animal=`animal`; mtDNA-DSB
+  key=`sample_id`, binary `condition`). Their `label_order` strings still need
+  confirming via `inspect_labels.py`.
+- Fixed a bug in the imported `evaluate.py` (it indexed the section id as a
+  batched list; `collate_single` returns a bare string). Smoke-tested the full
+  train→transfer→stats loop on `data/synthetic.h5ad`.
+
 ## Where we are
 
 - Inspected all three real `.h5ad` files and figured out their `obs` layout.
@@ -60,41 +84,36 @@ set `data.layer: counts`.
   `del tmp; gc.collect()` *before* the dense densify, to avoid holding the full-panel
   copy in memory. (This was necessary but did NOT fully fix the segfault.)
 
-## The blocker: segfault (exit code 139)
+## The blocker: segfault (exit code 139) — RESOLVED 2026-06-12
 
-Machine has **48 GB RAM**. Full panel densifies to 28 GB; `n_hvg: 2000` → 11 GB
-dense (that's why the config uses 2000 HVGs).
+**Root cause was NOT memory — it was an OpenMP runtime conflict.** With
+`PYTHONFAULTHANDLER=1` the crash prints right after `[load]`, *before* the HVG
+step runs, with `OMP: Info #276` on the preceding line. The base conda env ships
+four OpenMP runtimes in `miniconda3/lib` — `libgomp`, Intel `libiomp5`, LLVM
+`libomp`, plus bundled copies inside `torch` and `sklearn`. When numba (scanpy),
+sklearn (PCA), and torch initialise their thread pools in one process the
+duplicate runtimes collide and hard-segfault. The earlier memory hypothesis was
+a red herring; on a machine with ~19 GB free it crashed at the 13 GB load.
 
-What we ruled out by running each step standalone (`/tmp/diag.py`, `/tmp/diag2.py` —
-both ran with `PYTHONPATH=.`):
-- read_h5ad, HVG select, build_bags (→ **119 train / 39 val bags**), the 11 GB
-  densify, and PCA fit/transform **all succeed in isolation**.
-- The model forward/backward runs fine on **both CPU and MPS** (5 steps each).
+**Fix:** tolerate the duplicate runtime *and* pin threads, set before numpy/torch
+load. Baked into `immunotransformer/__init__.py` (runs on package import, so it
+works no matter how you launch — no env vars to remember):
+`KMP_DUPLICATE_LIB_OK=TRUE`, `OMP_NUM_THREADS=1`, `MKL_NUM_THREADS=1`,
+`OPENBLAS_NUM_THREADS=1`, `NUMBA_NUM_THREADS=1` (all `setdefault`, so an explicit
+env var still wins). Note: `KMP_DUPLICATE_LIB_OK` alone is NOT enough — verified
+it still crashes without the thread pins.
 
-So individually everything works, but the end-to-end `train.py` run segfaults right
-after `[load]` / during the HVG step. The diagnostic survived because it does
-`del tmp; gc.collect()` — we added the same to train.py but it STILL crashes,
-which suggests the peak is still too high (read 13 GB + `tmp` copy 13 GB ≈ 26 GB
-during HVG, before any densify) and is tipping over under whatever else is resident.
+**Verified:** full RRMAP2 run completes end-to-end (40 epochs, ~1 min wall —
+training is fast because the model is a light MIL head on PCA features; the ~40 s
+is the one-time load + HVG + PCA). Best @epoch 33: **MAE 3.41, Spearman ρ 0.753**
+on 17 held-out val bags. Artifacts in `runs/rrmap2_stage/`.
 
-### Next things to try (in order)
-1. **Confirm cause with a traceback.** Relaunch with the fault handler on:
-   `PYTHONFAULTHANDLER=1 python -u -m immunotransformer.train --config configs/rrmap2_stage.yaml`
-   and check whether the C-level traceback points at memory vs a native lib (HDF5/
-   sklearn/OMP). Was about to run `memory_pressure` / `vm_stat` and check for leftover
-   python processes when we stopped — do that first (a prior segfaulted run may have
-   left memory resident).
-2. **Cut peak memory in the HVG step.** Don't `adata.copy()` the whole object (it
-   copies the `counts` layer too). Instead compute HVG on a counts-only view, or read
-   the file with `backed='r'` and only pull the genes we keep. Target: never hold two
-   full-panel copies at once.
-3. **Try `encoder: identity` + smaller `n_hvg` (e.g. 1000)** as a cheaper smoke test
-   to confirm the training loop end-to-end, then scale back up.
-4. Consider forcing `train.device: cpu` to rule out MPS (model test passed on MPS,
-   but worth isolating).
-5. If memory stays tight, subsample cells up front or process the densify/PCA in
-   chunks (IncrementalPCA), or skip the full-matrix densify in
-   `data.normalize_expression` (keep it sparse and let PCA consume sparse input).
+Cleaner permanent option (not required): rebuild the env with a single OpenMP
+runtime (`conda install nomkl` / drop `intel-openmp`) so the duplicate never
+loads — then the thread pins could be relaxed for speed.
+
+The HVG memory fix from the Codon integration is still a good idea on its own
+(lower peak RSS on the full panel) but was never what caused the segfault.
 
 ## Useful scratch files (in /tmp, may be cleared on reboot)
 - `/tmp/inspect_h5ad.py` — generic obs/var/X inspector (`python /tmp/inspect_h5ad.py <path>`).
