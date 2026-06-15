@@ -1,0 +1,54 @@
+
+=== THREE MYELOID STATES: recruitment -> activation -> resolution ===
+(RRMAP2 RR cohort, cross-sectional / severity-confounded — ordering INFERRED)
+
+-- 1. MARKER IDENTITY (count-weighted cluster mean expression) --
+  gene            c18_antigen_IFN   c5_acute_glycolytic    c3_repair_resident          c0_microglia         c20_microglia
+  Ccr2                      1.539                 1.020                 0.781                 0.253                 0.451
+  Plac8                     2.417                 2.025                 1.396                 0.438                 0.778
+  Ciita                     2.836                 1.405                 1.519                 0.958                 0.836
+  Cd74                      6.522                 5.575                 5.725                 5.527                 5.010
+  H2-Ab1                    5.468                 4.341                 4.434                 3.975                 3.413
+  Cxcl10                    1.253                 1.688                 0.864                 0.860                 0.577
+  Gbp2                      2.260                 2.611                 1.827                 1.646                 1.146
+  Arg1                      1.751                 4.550                 1.925                 0.493                 0.335
+  Acod1                     1.506                 3.015                 1.175                 1.146                 0.428
+  Hal                       1.363                 2.861                 1.612                 1.101                 0.223
+  Chil3                     1.386                 3.797                 1.834                 0.428                 0.533
+  Mrc1                      1.326                 0.848                 1.629                 0.218                 0.206
+  Igf1                      0.990                 0.925                 2.198                 1.608                 0.269
+  Timp1                     1.706                 2.223                 1.970                 1.223                 0.375
+  C6                        0.217                 0.057                 1.260                 0.038                 0.012
+  P2ry12                    1.015                 0.785                 0.859                 2.906                 2.875
+  Tmem119                   0.824                 0.595                 0.914                 2.753                 2.414
+
+-- 2. CYCLE DYNAMICS: c5<->c3 swing within myeloid compartment --
+  c5_acute_glycolytic    peak=0.376  rem=0.090  peak-rem=+0.286  MWU p=0.00921
+  c3_repair_resident     peak=0.435  rem=0.703  peak-rem=-0.267  MWU p=0.0135
+  c18_antigen_IFN        peak=0.189  rem=0.207  peak-rem=-0.019  MWU p=0.593
+  (% of all cells)
+  c5_acute_glycolytic    peak=0.1033  rem=0.0157
+  c3_repair_resident     peak=0.0834  rem=0.0714
+  c18_antigen_IFN        peak=0.0411  rem=0.0222
+
+-- 2b. STATE LOADING on oscillator (amplitude) vs ratchet (floor_drift) --
+  state                   amplitude  floor_drift  frac_acute
+  c5_acute_glycolytic         0.592       -0.312        0.97
+  c3_repair_resident          0.162       -0.081        0.33
+  c18_antigen_IFN             0.416       -0.399        0.80
+  c0_microglia                0.272       -0.207        0.43
+  c20_microglia              -0.059       -0.082        0.07
+
+-- 3. RADIAL POSITION (570 lesions; signed dist µm, neg=core) --
+  state                   n_cells  mean_sd  median frac_core frac_margin
+  c18_antigen_IFN           14249    -11.2   -22.7      0.75        0.09
+  c5_acute_glycolytic       20616    -25.4   -36.5      0.85        0.04
+  c3_repair_resident        43005    -21.9   -21.6      0.88        0.07
+  c13_T_NK                  22781    -17.2   -24.0      0.82        0.08
+  c9_astro                  23952     20.2     6.5      0.47        0.18
+  pairwise animal-level contrasts (mean diff µm; + = first more peripheral):
+    c18_antigen_IFN_minus_c5_acute_glycolytic        +12.6  Wilcoxon p=8.326023817062378e-07  (n=30)
+    c18_antigen_IFN_minus_c3_repair_resident         +11.5  Wilcoxon p=2.348795533180237e-06  (n=30)
+    c5_acute_glycolytic_minus_c3_repair_resident      -1.0  Wilcoxon p=0.9192965272814035  (n=30)
+    c13_T_NK_minus_c5_acute_glycolytic                +5.3  Wilcoxon p=0.0012321043759584427  (n=30)
+    c9_astro_minus_c5_acute_glycolytic               +43.8  Wilcoxon p=1.862645149230957e-09  (n=30)

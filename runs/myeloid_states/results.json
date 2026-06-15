@@ -1,0 +1,216 @@
+{
+  "n_lesions": 570,
+  "cycle_swing_c5_c3_c18": {
+    "c5_acute_glycolytic": {
+      "peak_mean_of_myel": 0.3760445661051471,
+      "rem_mean_of_myel": 0.09000435556715501,
+      "peak_minus_rem": 0.28604021053799206,
+      "mwu_p": 0.00920502620895087,
+      "peak_mean_of_all": 0.1032731243822865,
+      "rem_mean_of_all": 0.01573771353287963
+    },
+    "c3_repair_resident": {
+      "peak_mean_of_myel": 0.43509503143706857,
+      "rem_mean_of_myel": 0.7025276712744161,
+      "peak_minus_rem": -0.2674326398373475,
+      "mwu_p": 0.013481568265476605,
+      "peak_mean_of_all": 0.08342234161763482,
+      "rem_mean_of_all": 0.07136101903199396
+    },
+    "c18_antigen_IFN": {
+      "peak_mean_of_myel": 0.18886040245778443,
+      "rem_mean_of_myel": 0.2074679731584289,
+      "peak_minus_rem": -0.018607570700644477,
+      "mwu_p": 0.5931862546017165,
+      "peak_mean_of_all": 0.04106986924705006,
+      "rem_mean_of_all": 0.022220242507445098
+    }
+  },
+  "axis_loadings": {
+    "c5_acute_glycolytic": {
+      "n_top_genes_in_osc": 30,
+      "mean_amplitude": 0.591699830357386,
+      "mean_floor_drift": -0.3124633749695108,
+      "frac_acute_oscillating": 0.9666666666666667,
+      "top_markers": [
+        "Arg1",
+        "Chil3",
+        "Gpnmb",
+        "Fn1",
+        "Fcgr2b",
+        "Ctss",
+        "Cd300lf",
+        "Acod1",
+        "F13a1",
+        "Hal",
+        "Thbs1",
+        "Cd68"
+      ]
+    },
+    "c3_repair_resident": {
+      "n_top_genes_in_osc": 30,
+      "mean_amplitude": 0.16152572830095918,
+      "mean_floor_drift": -0.08103684655909406,
+      "frac_acute_oscillating": 0.3333333333333333,
+      "top_markers": [
+        "Igf2",
+        "Col1a2",
+        "Gpnmb",
+        "Serping1",
+        "Cd74",
+        "Lum",
+        "H2-Aa",
+        "H2-Ab1",
+        "Col1a1",
+        "H2-Eb1",
+        "Fbln1",
+        "Vtn"
+      ]
+    },
+    "c18_antigen_IFN": {
+      "n_top_genes_in_osc": 30,
+      "mean_amplitude": 0.41602547189379435,
+      "mean_floor_drift": -0.3989157201155106,
+      "frac_acute_oscillating": 0.8,
+      "top_markers": [
+        "H2-Ab1",
+        "H2-Aa",
+        "H2-Eb1",
+        "Cd74",
+        "Ciita",
+        "Itgae",
+        "Cybb",
+        "Il10ra",
+        "Ccl17",
+        "Cxcl16",
+        "Fcgr2b",
+        "Jaml"
+      ]
+    },
+    "c0_microglia": {
+      "n_top_genes_in_osc": 30,
+      "mean_amplitude": 0.2720977436506287,
+      "mean_floor_drift": -0.2068029166803685,
+      "frac_acute_oscillating": 0.43333333333333335,
+      "top_markers": [
+        "Hexb",
+        "Ctss",
+        "Cx3cr1",
+        "Trem2",
+        "Csf1r",
+        "Cst7",
+        "Tmem119",
+        "Cd68",
+        "Selplg",
+        "Grn",
+        "P2ry12",
+        "C3ar1"
+      ]
+    },
+    "c20_microglia": {
+      "n_top_genes_in_osc": 30,
+      "mean_amplitude": -0.05857564650333379,
+      "mean_floor_drift": -0.08182902016947251,
+      "frac_acute_oscillating": 0.06666666666666667,
+      "top_markers": [
+        "Nefm",
+        "Hexb",
+        "Nefh",
+        "Cx3cr1",
+        "P2ry12",
+        "Csf1r",
+        "Snap25",
+        "Ctss",
+        "Tmem119",
+        "Siglech",
+        "Nefl",
+        "Sncb"
+      ]
+    }
+  },
+  "radial_per_state": {
+    "c18_antigen_IFN": {
+      "n_cells": 14249,
+      "mean_sd": -11.198067613599244,
+      "median_sd": -22.723862069263035,
+      "frac_core": 0.7548599901747491,
+      "frac_margin": 0.09467331040774792,
+      "q25": -46.340220671651295,
+      "q75": -0.6339291012828905
+    },
+    "c5_acute_glycolytic": {
+      "n_cells": 20616,
+      "mean_sd": -25.433683842647163,
+      "median_sd": -36.51613401748961,
+      "frac_core": 0.8542394256887854,
+      "frac_margin": 0.044480015521924716,
+      "q25": -58.43173311630672,
+      "q75": -14.61232313697337
+    },
+    "c3_repair_resident": {
+      "n_cells": 43005,
+      "mean_sd": -21.919396266614044,
+      "median_sd": -21.64074223121618,
+      "frac_core": 0.8827810719683757,
+      "frac_margin": 0.06699221020811534,
+      "q25": -43.86964762534607,
+      "q75": -7.120401319700425
+    },
+    "c13_T_NK": {
+      "n_cells": 22781,
+      "mean_sd": -17.23063205356004,
+      "median_sd": -23.989702806146298,
+      "frac_core": 0.8169527237610289,
+      "frac_margin": 0.0769061937579562,
+      "q25": -47.34210591812826,
+      "q75": -5.9154841839799985
+    },
+    "c9_astro": {
+      "n_cells": 23952,
+      "mean_sd": 20.181699721402033,
+      "median_sd": 6.472318081049785,
+      "frac_core": 0.4677271209084836,
+      "frac_margin": 0.17844021376085503,
+      "q25": -33.17263256478061,
+      "q75": 70.5783442447906
+    }
+  },
+  "radial_contrasts": {
+    "c18_antigen_IFN_minus_c5_acute_glycolytic": {
+      "n_animals": 30,
+      "mean_diff_um": 12.569820894211107,
+      "wilcoxon_p": 8.326023817062378e-07
+    },
+    "c18_antigen_IFN_minus_c3_repair_resident": {
+      "n_animals": 30,
+      "mean_diff_um": 11.535792787879716,
+      "wilcoxon_p": 2.348795533180237e-06
+    },
+    "c5_acute_glycolytic_minus_c3_repair_resident": {
+      "n_animals": 30,
+      "mean_diff_um": -1.0340281063313888,
+      "wilcoxon_p": 0.9192965272814035
+    },
+    "c13_T_NK_minus_c5_acute_glycolytic": {
+      "n_animals": 30,
+      "mean_diff_um": 5.299938549425372,
+      "wilcoxon_p": 0.0012321043759584427
+    },
+    "c9_astro_minus_c5_acute_glycolytic": {
+      "n_animals": 30,
+      "mean_diff_um": 43.849430869313046,
+      "wilcoxon_p": 1.862645149230957e-09
+    }
+  },
+  "n_animals_by_stage": {
+    "PLP CFA": 3,
+    "ONSET1": 2,
+    "ONSET2": 2,
+    "PEAK1": 4,
+    "REMISSION1": 5,
+    "PEAK2": 4,
+    "REMISSION2": 4,
+    "PEAK3": 5,
+    "MONOPHASIC": 4
+  }
+}
