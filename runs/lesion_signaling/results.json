@@ -1,0 +1,209 @@
+{
+  "n_cells_rr": 894116,
+  "n_cells_ligrec_subsample": 150001,
+  "n_perms": 1000,
+  "lr_pairs_tested": [
+    "Ccl2-Ccr2",
+    "Ccl5-Ccr5",
+    "Cxcl10-Cxcr3",
+    "Cxcl9-Cxcr3",
+    "Cxcl13-Cxcr5",
+    "Cxcl12-Cxcr4",
+    "C3-C3ar1",
+    "C3-C5ar1",
+    "Cd80-Ctla4",
+    "Cd86-Ctla4",
+    "Cd80-Cd28",
+    "Cd86-Cd28",
+    "Tnf-Tnfrsf1a",
+    "Tnf-Tnfrsf1b",
+    "Csf1-Csf1r",
+    "Il34-Csf1r",
+    "Cxcl16-Cxcr6",
+    "Ccl19-Ccr7",
+    "Ccl21a-Ccr7",
+    "Igf1-Igf1r"
+  ],
+  "lr_pairs_dropped_absent": [
+    "Trem2-Tyrobp"
+  ],
+  "radial_model_adjacency_z": {
+    "astro-rim(9) ~ myeloid-core(5)": -28.007050314923056,
+    "astro-rim(9) ~ myeloid-repair(3)": 19.505514424310647,
+    "astro(8) ~ myeloid-core(5)": -125.39775861493801,
+    "T/NK(13) ~ myeloid-APC/IFN(18)": 101.8594982721079,
+    "T/NK(13) ~ myeloid-acute(5)": 121.99445501663911,
+    "T/NK(13) ~ myeloid-repair(3)": 146.32883171634924,
+    "B/plasma(21) self-clustering": 567.1381520047439,
+    "B/plasma(21) ~ T/NK(13)": 125.03290882733982,
+    "B/plasma(21) ~ myeloid-APC/IFN(18)": 29.704173801943938,
+    "myeloid-acute(5) ~ myeloid-repair(3)": 35.93699547640061,
+    "myeloid-acute(5) ~ myeloid-APC(18)": 84.1334497703866,
+    "microglia(0) ~ myeloid-acute(5)": -14.59147634041957,
+    "astro-rim(9) ~ T/NK(13)": 0.20522005306567231
+  },
+  "n_significant_lesion_lr": 771,
+  "n_wired_axes": 345,
+  "top_wired_axes": [
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "astro-reactive(9)",
+      "receiver_label": "microglia(0)",
+      "pval": 0.0,
+      "adjacency_z": 106.94865981412268
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "astro-reactive(9)",
+      "receiver_label": "myeloid-repair(3)",
+      "pval": 0.0,
+      "adjacency_z": 19.505514424310647
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C5AR1",
+      "sender_label": "astro-reactive(9)",
+      "receiver_label": "myeloid-repair(3)",
+      "pval": 0.0,
+      "adjacency_z": 19.505514424310647
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C5AR1",
+      "sender_label": "astro-reactive(9)",
+      "receiver_label": "microglia(0)",
+      "pval": 0.0,
+      "adjacency_z": 106.94865981412268
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "myeloid-repair(3)",
+      "receiver_label": "myeloid-acute(5)",
+      "pval": 0.0,
+      "adjacency_z": 34.894219792491604
+    },
+    {
+      "ligand": "CSF1",
+      "receptor": "CSF1R",
+      "sender_label": "astro-reactive(9)",
+      "receiver_label": "microglia(0)",
+      "pval": 0.0,
+      "adjacency_z": 106.94865981412268
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "myeloid-repair(3)",
+      "receiver_label": "myeloid-APC/IFN(18)",
+      "pval": 0.0,
+      "adjacency_z": 68.0581862890796
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "T/NK(13)",
+      "receiver_label": "myeloid-acute(5)",
+      "pval": 0.0,
+      "adjacency_z": 121.99445501663911
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "myeloid-acute(5)",
+      "receiver_label": "myeloid-repair(3)",
+      "pval": 0.0,
+      "adjacency_z": 35.93699547640061
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C5AR1",
+      "sender_label": "myeloid-repair(3)",
+      "receiver_label": "myeloid-acute(5)",
+      "pval": 0.0,
+      "adjacency_z": 34.894219792491604
+    },
+    {
+      "ligand": "CSF1",
+      "receptor": "CSF1R",
+      "sender_label": "myeloid-APC/IFN(18)",
+      "receiver_label": "microglia(0)",
+      "pval": 0.0,
+      "adjacency_z": 16.265818126476052
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "myeloid-repair(3)",
+      "receiver_label": "T/NK(13)",
+      "pval": 0.0,
+      "adjacency_z": 143.6507799393147
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "myeloid-repair(3)",
+      "receiver_label": "B/plasma(21)",
+      "pval": 0.0,
+      "adjacency_z": 99.57401999755947
+    },
+    {
+      "ligand": "CSF1",
+      "receptor": "CSF1R",
+      "sender_label": "astro(8)",
+      "receiver_label": "microglia(20)",
+      "pval": 0.0,
+      "adjacency_z": 71.05560735753237
+    },
+    {
+      "ligand": "IL34",
+      "receptor": "CSF1R",
+      "sender_label": "astro-reactive(9)",
+      "receiver_label": "microglia(0)",
+      "pval": 0.0,
+      "adjacency_z": 106.94865981412268
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "B/plasma(21)",
+      "receiver_label": "myeloid-repair(3)",
+      "pval": 0.0,
+      "adjacency_z": 94.47806935402645
+    },
+    {
+      "ligand": "IL34",
+      "receptor": "CSF1R",
+      "sender_label": "myeloid-APC/IFN(18)",
+      "receiver_label": "microglia(0)",
+      "pval": 0.0,
+      "adjacency_z": 16.265818126476052
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C5AR1",
+      "sender_label": "myeloid-repair(3)",
+      "receiver_label": "myeloid-APC/IFN(18)",
+      "pval": 0.0,
+      "adjacency_z": 68.0581862890796
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "myeloid-APC/IFN(18)",
+      "receiver_label": "myeloid-acute(5)",
+      "pval": 0.0,
+      "adjacency_z": 85.67661247640072
+    },
+    {
+      "ligand": "C3",
+      "receptor": "C3AR1",
+      "sender_label": "myeloid-acute(5)",
+      "receiver_label": "myeloid-APC/IFN(18)",
+      "pval": 0.0,
+      "adjacency_z": 84.1334497703866
+    }
+  ]
+}
