@@ -1,0 +1,497 @@
+{
+  "params": {
+    "infl_set": [
+      "5",
+      "3",
+      "18",
+      "13",
+      "21"
+    ],
+    "min_lesion_cells": 20,
+    "n_sections": 98,
+    "n_animals": 33,
+    "n_lesions": 888
+  },
+  "by_phase": [
+    {
+      "phase": "OTHER",
+      "lesion_count": 4.212,
+      "lesion_burden": 0.043,
+      "mean_lesion_size": 70.672,
+      "max_lesion_size": 215.857,
+      "largest_lesion_frac": 0.498,
+      "gini_lesion_size": 0.321,
+      "fragmentation": 7.113,
+      "infl_frac": 0.086
+    },
+    {
+      "phase": "PEAK",
+      "lesion_count": 14.128,
+      "lesion_burden": 0.203,
+      "mean_lesion_size": 188.898,
+      "max_lesion_size": 815.923,
+      "largest_lesion_frac": 0.313,
+      "gini_lesion_size": 0.496,
+      "fragmentation": 4.975,
+      "infl_frac": 0.303
+    },
+    {
+      "phase": "REM",
+      "lesion_count": 7.615,
+      "lesion_burden": 0.067,
+      "mean_lesion_size": 71.666,
+      "max_lesion_size": 245.48,
+      "largest_lesion_frac": 0.41,
+      "gini_lesion_size": 0.279,
+      "fragmentation": 5.587,
+      "infl_frac": 0.149
+    }
+  ],
+  "by_region": [
+    {
+      "region": "C",
+      "lesion_count": 10.094,
+      "lesion_burden": 0.088,
+      "mean_lesion_size": 100.327,
+      "max_lesion_size": 374.63,
+      "largest_lesion_frac": 0.319,
+      "gini_lesion_size": 0.378,
+      "fragmentation": 6.556,
+      "infl_frac": 0.15
+    },
+    {
+      "region": "L",
+      "lesion_count": 9.212,
+      "lesion_burden": 0.126,
+      "mean_lesion_size": 143.341,
+      "max_lesion_size": 559.833,
+      "largest_lesion_frac": 0.38,
+      "gini_lesion_size": 0.398,
+      "fragmentation": 5.584,
+      "infl_frac": 0.21
+    },
+    {
+      "region": "T",
+      "lesion_count": 7.909,
+      "lesion_burden": 0.124,
+      "mean_lesion_size": 129.775,
+      "max_lesion_size": 556.464,
+      "largest_lesion_frac": 0.461,
+      "gini_lesion_size": 0.39,
+      "fragmentation": 4.948,
+      "infl_frac": 0.206
+    }
+  ],
+  "raw_severity_corr": {
+    "lesion_count": {
+      "spearman_rho": 0.735,
+      "p": 0.0
+    },
+    "lesion_burden": {
+      "spearman_rho": 0.693,
+      "p": 0.0
+    },
+    "mean_lesion_size": {
+      "spearman_rho": 0.429,
+      "p": 0.0181
+    },
+    "max_lesion_size": {
+      "spearman_rho": 0.474,
+      "p": 0.0081
+    },
+    "largest_lesion_frac": {
+      "spearman_rho": -0.409,
+      "p": 0.0249
+    },
+    "gini_lesion_size": {
+      "spearman_rho": 0.5,
+      "p": 0.0049
+    },
+    "fragmentation": {
+      "spearman_rho": -0.497,
+      "p": 0.0053
+    },
+    "infl_frac": {
+      "spearman_rho": 0.816,
+      "p": 0.0
+    }
+  },
+  "beyond_severity_peak_vs_rem": [
+    {
+      "feature": "lesion_count",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -1.238,
+      "perm_p": 0.5427,
+      "q": 0.9639
+    },
+    {
+      "feature": "lesion_count",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -0.5124,
+      "perm_p": 0.7747,
+      "q": 0.9639
+    },
+    {
+      "feature": "lesion_burden",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 0.0003,
+      "perm_p": 0.9956,
+      "q": 0.9956
+    },
+    {
+      "feature": "lesion_burden",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 0.024,
+      "perm_p": 0.2548,
+      "q": 0.9343
+    },
+    {
+      "feature": "mean_lesion_size",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -4.0318,
+      "perm_p": 0.9391,
+      "q": 0.9846
+    },
+    {
+      "feature": "mean_lesion_size",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 8.8023,
+      "perm_p": 0.8325,
+      "q": 0.9639
+    },
+    {
+      "feature": "max_lesion_size",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -53.8259,
+      "perm_p": 0.8115,
+      "q": 0.9639
+    },
+    {
+      "feature": "max_lesion_size",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 10.7585,
+      "perm_p": 0.9398,
+      "q": 0.9846
+    },
+    {
+      "feature": "largest_lesion_frac",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 0.0146,
+      "perm_p": 0.7984,
+      "q": 0.9639
+    },
+    {
+      "feature": "largest_lesion_frac",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 0.0128,
+      "perm_p": 0.8083,
+      "q": 0.9639
+    },
+    {
+      "feature": "gini_lesion_size",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 0.0334,
+      "perm_p": 0.5881,
+      "q": 0.9639
+    },
+    {
+      "feature": "gini_lesion_size",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 0.0507,
+      "perm_p": 0.1198,
+      "q": 0.8785
+    },
+    {
+      "feature": "fragmentation",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 0.924,
+      "perm_p": 0.1812,
+      "q": 0.9343
+    },
+    {
+      "feature": "fragmentation",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 0.7756,
+      "perm_p": 0.2328,
+      "q": 0.9343
+    },
+    {
+      "feature": "mean_density",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -0.0036,
+      "perm_p": 0.0477,
+      "q": 0.5247
+    },
+    {
+      "feature": "mean_density",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -0.0038,
+      "perm_p": 0.0193,
+      "q": 0.4246
+    },
+    {
+      "feature": "mean_compactness",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -0.0178,
+      "perm_p": 0.4775,
+      "q": 0.9639
+    },
+    {
+      "feature": "mean_compactness",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -0.0154,
+      "perm_p": 0.5401,
+      "q": 0.9639
+    },
+    {
+      "feature": "mean_lympho_frac",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -0.0071,
+      "perm_p": 0.8278,
+      "q": 0.9639
+    },
+    {
+      "feature": "mean_lympho_frac",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": -0.0106,
+      "perm_p": 0.7418,
+      "q": 0.9639
+    },
+    {
+      "feature": "mean_nn_dist",
+      "resid_on": "severity",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 24.3289,
+      "perm_p": 0.7603,
+      "q": 0.9639
+    },
+    {
+      "feature": "mean_nn_dist",
+      "resid_on": "severity+burden",
+      "n_peak": 13,
+      "n_rem": 9,
+      "peak_minus_rem": 20.7885,
+      "perm_p": 0.7946,
+      "q": 0.9639
+    }
+  ],
+  "beyond_severity_region_trend": [
+    {
+      "feature": "lesion_count",
+      "resid_on": "severity",
+      "n_animals": 33,
+      "mean_slope_LtoC": 0.5909,
+      "perm_p": 0.3863,
+      "q": 0.8449
+    },
+    {
+      "feature": "lesion_count",
+      "resid_on": "severity+burden",
+      "n_animals": 33,
+      "mean_slope_LtoC": 1.2228,
+      "perm_p": 0.0557,
+      "q": 0.4085
+    },
+    {
+      "feature": "lesion_burden",
+      "resid_on": "severity",
+      "n_animals": 33,
+      "mean_slope_LtoC": -0.0103,
+      "perm_p": 0.4455,
+      "q": 0.8449
+    },
+    {
+      "feature": "lesion_burden",
+      "resid_on": "severity+burden",
+      "n_animals": 33,
+      "mean_slope_LtoC": 0.0103,
+      "perm_p": 0.0081,
+      "q": 0.1782
+    },
+    {
+      "feature": "mean_lesion_size",
+      "resid_on": "severity",
+      "n_animals": 29,
+      "mean_slope_LtoC": -13.2291,
+      "perm_p": 0.5824,
+      "q": 0.8449
+    },
+    {
+      "feature": "mean_lesion_size",
+      "resid_on": "severity+burden",
+      "n_animals": 29,
+      "mean_slope_LtoC": 12.7721,
+      "perm_p": 0.362,
+      "q": 0.8449
+    },
+    {
+      "feature": "max_lesion_size",
+      "resid_on": "severity",
+      "n_animals": 29,
+      "mean_slope_LtoC": -39.2759,
+      "perm_p": 0.7297,
+      "q": 0.8449
+    },
+    {
+      "feature": "max_lesion_size",
+      "resid_on": "severity+burden",
+      "n_animals": 29,
+      "mean_slope_LtoC": 91.5692,
+      "perm_p": 0.1027,
+      "q": 0.5648
+    },
+    {
+      "feature": "largest_lesion_frac",
+      "resid_on": "severity",
+      "n_animals": 29,
+      "mean_slope_LtoC": -0.0,
+      "perm_p": 0.9983,
+      "q": 0.9983
+    },
+    {
+      "feature": "largest_lesion_frac",
+      "resid_on": "severity+burden",
+      "n_animals": 29,
+      "mean_slope_LtoC": -0.0036,
+      "perm_p": 0.9208,
+      "q": 0.9759
+    },
+    {
+      "feature": "gini_lesion_size",
+      "resid_on": "severity",
+      "n_animals": 29,
+      "mean_slope_LtoC": -0.0115,
+      "perm_p": 0.641,
+      "q": 0.8449
+    },
+    {
+      "feature": "gini_lesion_size",
+      "resid_on": "severity+burden",
+      "n_animals": 29,
+      "mean_slope_LtoC": 0.0236,
+      "perm_p": 0.1491,
+      "q": 0.656
+    },
+    {
+      "feature": "fragmentation",
+      "resid_on": "severity",
+      "n_animals": 29,
+      "mean_slope_LtoC": 0.2755,
+      "perm_p": 0.4953,
+      "q": 0.8449
+    },
+    {
+      "feature": "fragmentation",
+      "resid_on": "severity+burden",
+      "n_animals": 29,
+      "mean_slope_LtoC": -0.0253,
+      "perm_p": 0.9315,
+      "q": 0.9759
+    },
+    {
+      "feature": "mean_density",
+      "resid_on": "severity",
+      "n_animals": 29,
+      "mean_slope_LtoC": -0.0002,
+      "perm_p": 0.6699,
+      "q": 0.8449
+    },
+    {
+      "feature": "mean_density",
+      "resid_on": "severity+burden",
+      "n_animals": 29,
+      "mean_slope_LtoC": -0.0006,
+      "perm_p": 0.0266,
+      "q": 0.2926
+    },
+    {
+      "feature": "mean_compactness",
+      "resid_on": "severity",
+      "n_animals": 29,
+      "mean_slope_LtoC": 0.0048,
+      "perm_p": 0.7228,
+      "q": 0.8449
+    },
+    {
+      "feature": "mean_compactness",
+      "resid_on": "severity+burden",
+      "n_animals": 29,
+      "mean_slope_LtoC": 0.0097,
+      "perm_p": 0.3657,
+      "q": 0.8449
+    },
+    {
+      "feature": "mean_lympho_frac",
+      "resid_on": "severity",
+      "n_animals": 29,
+      "mean_slope_LtoC": 0.018,
+      "perm_p": 0.3624,
+      "q": 0.8449
+    },
+    {
+      "feature": "mean_lympho_frac",
+      "resid_on": "severity+burden",
+      "n_animals": 29,
+      "mean_slope_LtoC": 0.011,
+      "perm_p": 0.5814,
+      "q": 0.8449
+    },
+    {
+      "feature": "mean_nn_dist",
+      "resid_on": "severity",
+      "n_animals": 27,
+      "mean_slope_LtoC": -25.9951,
+      "perm_p": 0.5682,
+      "q": 0.8449
+    },
+    {
+      "feature": "mean_nn_dist",
+      "resid_on": "severity+burden",
+      "n_animals": 27,
+      "mean_slope_LtoC": -35.8483,
+      "perm_p": 0.4244,
+      "q": 0.8449
+    }
+  ]
+}

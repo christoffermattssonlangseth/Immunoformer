@@ -1,0 +1,335 @@
+{
+  "n_by_stage": {
+    "PLP CFA": 3,
+    "ONSET1": 2,
+    "ONSET2": 2,
+    "PEAK1": 4,
+    "REMISSION1": 5,
+    "PEAK2": 4,
+    "REMISSION2": 4,
+    "PEAK3": 5
+  },
+  "n_peak_animals": 13,
+  "n_remission_animals": 9,
+  "note": "Peaks are also high-severity (score~2.5) vs remissions (~0.8); raw amplitude tracks acute severity. floor_drift (REM2-REM1) is the severity-independent accumulation signature.",
+  "top_acute_oscillating": [
+    {
+      "gene": "Arg1",
+      "amplitude": 1.4505015049751293,
+      "floor_drift": -0.7176823335811052,
+      "peak_drift": -1.3284215875366414,
+      "amp_q": 0.08793366864575906
+    },
+    {
+      "gene": "Chil1",
+      "amplitude": 1.062808752336025,
+      "floor_drift": -0.6017259906922627,
+      "peak_drift": -0.6395101477884402,
+      "amp_q": 0.05819357855504391
+    },
+    {
+      "gene": "Chil3",
+      "amplitude": 1.007346222589404,
+      "floor_drift": -0.4470861417702509,
+      "peak_drift": -1.0426772190611846,
+      "amp_q": 0.05819357855504391
+    },
+    {
+      "gene": "Timp1",
+      "amplitude": 0.9823781721620124,
+      "floor_drift": -0.42165055163307374,
+      "peak_drift": -0.3240276715349413,
+      "amp_q": 0.05819357855504391
+    },
+    {
+      "gene": "Acod1",
+      "amplitude": 0.8260642237098015,
+      "floor_drift": -0.4684373461472945,
+      "peak_drift": -0.8515585960907548,
+      "amp_q": 0.07507406645343609
+    },
+    {
+      "gene": "Gbp2",
+      "amplitude": 0.7381916932343118,
+      "floor_drift": -0.4566298424960603,
+      "peak_drift": -0.9320876626227217,
+      "amp_q": 0.06326729099455225
+    },
+    {
+      "gene": "Fcgr2b",
+      "amplitude": 0.7272911614160675,
+      "floor_drift": -0.30189074481571954,
+      "peak_drift": -0.31045681898127375,
+      "amp_q": 0.05819357855504391
+    },
+    {
+      "gene": "Ccl2",
+      "amplitude": 0.7256292413633357,
+      "floor_drift": -0.15303896365890352,
+      "peak_drift": -0.608117748781811,
+      "amp_q": 0.07051960052064482
+    },
+    {
+      "gene": "Serpina3n",
+      "amplitude": 0.7076009432482357,
+      "floor_drift": -0.3531066988659135,
+      "peak_drift": -0.10824301079357879,
+      "amp_q": 0.05819357855504391
+    },
+    {
+      "gene": "Cxcl10",
+      "amplitude": 0.6875971271652708,
+      "floor_drift": -0.320560827721506,
+      "peak_drift": -0.9450371323135732,
+      "amp_q": 0.07507406645343609
+    },
+    {
+      "gene": "Irgm1",
+      "amplitude": 0.6875592050275006,
+      "floor_drift": -0.5372616162892068,
+      "peak_drift": -1.0466788591108531,
+      "amp_q": 0.06326729099455225
+    },
+    {
+      "gene": "Hal",
+      "amplitude": 0.6821061671017618,
+      "floor_drift": -0.20687622460334998,
+      "peak_drift": -0.13302662050538583,
+      "amp_q": 0.05819357855504391
+    }
+  ],
+  "top_ratchet_cumulative": [
+    {
+      "gene": "Igf2",
+      "amplitude": -0.5296505347086189,
+      "floor_drift": 0.6541058916720726,
+      "peak_drift": 1.0716531731665249,
+      "mono_rho": 0.4694391527004496
+    },
+    {
+      "gene": "Ptgds",
+      "amplitude": -0.28375945991224594,
+      "floor_drift": 0.6460925157255959,
+      "peak_drift": 0.38277514332268936,
+      "mono_rho": -0.11934893712723295
+    },
+    {
+      "gene": "Fmod",
+      "amplitude": -0.4646398086606469,
+      "floor_drift": 0.5911004890414835,
+      "peak_drift": 0.7147652248861629,
+      "mono_rho": 0.39385149251986873
+    },
+    {
+      "gene": "Plin4",
+      "amplitude": -0.018034404707497842,
+      "floor_drift": 0.5863891940471964,
+      "peak_drift": 0.27813652446222425,
+      "mono_rho": 0.34859835385912624
+    },
+    {
+      "gene": "Pmp22",
+      "amplitude": -0.41581890602982874,
+      "floor_drift": 0.4301264932784601,
+      "peak_drift": 0.14629440847217356,
+      "mono_rho": -0.1290460382688206
+    },
+    {
+      "gene": "Vtn",
+      "amplitude": -0.3985552121600666,
+      "floor_drift": 0.4047831935040427,
+      "peak_drift": 0.6087737996884579,
+      "mono_rho": 0.3162746833871673
+    },
+    {
+      "gene": "Cemip",
+      "amplitude": -0.10896535866823598,
+      "floor_drift": 0.38949071988329753,
+      "peak_drift": 0.3249351625046467,
+      "mono_rho": 0.6695972660075797
+    },
+    {
+      "gene": "Crabp2",
+      "amplitude": -0.10335513963512366,
+      "floor_drift": 0.37875519375282884,
+      "peak_drift": -0.04701541309518764,
+      "mono_rho": 0.03530739390013975
+    },
+    {
+      "gene": "Tgfbr3",
+      "amplitude": -0.20017668264559152,
+      "floor_drift": 0.3729222495396549,
+      "peak_drift": 0.16159850625164385,
+      "mono_rho": 0.09050627732148499
+    },
+    {
+      "gene": "Fcrls",
+      "amplitude": -0.016926469145064793,
+      "floor_drift": 0.370654131333639,
+      "peak_drift": 0.7706687595614548,
+      "mono_rho": 0.7643304848523209
+    },
+    {
+      "gene": "Zic2",
+      "amplitude": -0.18853591019214044,
+      "floor_drift": 0.3523424642467471,
+      "peak_drift": 0.24680846850090232,
+      "mono_rho": 0.2846969437722536
+    },
+    {
+      "gene": "Slc47a1",
+      "amplitude": -0.15419769725522403,
+      "floor_drift": 0.349830413471923,
+      "peak_drift": 0.03008010288864066,
+      "mono_rho": -0.06539327180096305
+    }
+  ],
+  "gene_profiles": {
+    "Hal": {
+      "per_stage": {
+        "PLP CFA": 0.06857888813787894,
+        "ONSET1": 0.24934969950438363,
+        "ONSET2": 0.26668427288271634,
+        "PEAK1": 1.324182055339071,
+        "REMISSION1": 0.6125159424828707,
+        "PEAK2": 1.0955742939529287,
+        "REMISSION2": 0.4056397178795207,
+        "PEAK3": 1.1911554348336852
+      },
+      "amplitude": 0.6821061671017618,
+      "floor_drift": -0.20687622460334998,
+      "peak_drift": -0.13302662050538583,
+      "mono_rho": 0.5164327966942976,
+      "amp_q": 0.05819357855504391,
+      "class": "acute_oscillating"
+    },
+    "Cd68": {
+      "per_stage": {
+        "PLP CFA": 0.5987072716042564,
+        "ONSET1": 0.7955708427258805,
+        "ONSET2": 1.0141200858857435,
+        "PEAK1": 2.4117965413235316,
+        "REMISSION1": 2.037235635268852,
+        "PEAK2": 2.181461129016135,
+        "REMISSION2": 2.05843293166179,
+        "PEAK3": 2.711089198325561
+      },
+      "amplitude": 0.40938001126487045,
+      "floor_drift": 0.021197296392938103,
+      "peak_drift": 0.29929265700202956,
+      "mono_rho": 0.6427437551539524,
+      "amp_q": 0.08120979929419823,
+      "class": "acute_oscillating"
+    },
+    "Fcrls": {
+      "per_stage": {
+        "PLP CFA": 0.3265333068819703,
+        "ONSET1": 0.5572370329301382,
+        "ONSET2": 0.550669322473449,
+        "PEAK1": 0.18599573708596595,
+        "REMISSION1": 0.5236881004762656,
+        "PEAK2": 0.8005382447464165,
+        "REMISSION2": 0.8943422318099046,
+        "PEAK3": 0.9566644966474207
+      },
+      "amplitude": -0.016926469145064793,
+      "floor_drift": 0.370654131333639,
+      "peak_drift": 0.7706687595614548,
+      "mono_rho": 0.7643304848523209,
+      "amp_q": 1.0,
+      "class": "ratchet_cumulative"
+    },
+    "Gpnmb": {
+      "per_stage": {
+        "PLP CFA": 0.16806293886176812,
+        "ONSET1": 0.1166862875195852,
+        "ONSET2": 0.31108011951801456,
+        "PEAK1": 1.8988808882941686,
+        "REMISSION1": 1.9667992793069895,
+        "PEAK2": 2.7066298015993198,
+        "REMISSION2": 2.1748056727705216,
+        "PEAK3": 3.2050993807639294
+      },
+      "amplitude": 0.5905641780471886,
+      "floor_drift": 0.2080063934635321,
+      "peak_drift": 1.3062184924697609,
+      "mono_rho": 0.785962479706632,
+      "amp_q": 0.1838913455557795,
+      "class": "acute+ratchet"
+    }
+  },
+  "hal_cooscillators": [
+    {
+      "gene": "Iqgap2",
+      "profile_corr_with_Hal": 0.9880749196367131,
+      "amplitude": 0.11153879267745281,
+      "floor_drift": -0.05574252815213601
+    },
+    {
+      "gene": "Lamp2",
+      "profile_corr_with_Hal": 0.9873594047614889,
+      "amplitude": 0.19415292643532833,
+      "floor_drift": -0.12233321918072648
+    },
+    {
+      "gene": "Il7r",
+      "profile_corr_with_Hal": 0.9856410378386969,
+      "amplitude": 0.4339885926016702,
+      "floor_drift": -0.23725172460890487
+    },
+    {
+      "gene": "Lasp1",
+      "profile_corr_with_Hal": 0.982975843133158,
+      "amplitude": 0.16402460179594214,
+      "floor_drift": -0.05550343386819323
+    },
+    {
+      "gene": "Kcnn4",
+      "profile_corr_with_Hal": 0.9828563077198796,
+      "amplitude": 0.24136168824702953,
+      "floor_drift": -0.16760307853486633
+    },
+    {
+      "gene": "Tjp3",
+      "profile_corr_with_Hal": 0.9817748249563308,
+      "amplitude": 0.05586581166274453,
+      "floor_drift": -0.04421095737816469
+    },
+    {
+      "gene": "Itgb1",
+      "profile_corr_with_Hal": 0.9817609384204674,
+      "amplitude": 0.21642724548531778,
+      "floor_drift": -0.05843914969420805
+    },
+    {
+      "gene": "Tnfsf11",
+      "profile_corr_with_Hal": 0.9817055656763221,
+      "amplitude": 0.06852856809831366,
+      "floor_drift": -0.020199077519077693
+    },
+    {
+      "gene": "Acp5",
+      "profile_corr_with_Hal": 0.9814774912379609,
+      "amplitude": 0.4896743107014393,
+      "floor_drift": -0.3278200469581503
+    },
+    {
+      "gene": "Klrb1c",
+      "profile_corr_with_Hal": 0.9812744247208522,
+      "amplitude": 0.010224946674521,
+      "floor_drift": -0.006856918987661633
+    },
+    {
+      "gene": "Rnh1",
+      "profile_corr_with_Hal": 0.9803866032817091,
+      "amplitude": 0.36402587473223114,
+      "floor_drift": -0.06590714843986545
+    },
+    {
+      "gene": "Piezo1",
+      "profile_corr_with_Hal": 0.9800032918524567,
+      "amplitude": 0.10491184680623672,
+      "floor_drift": -0.0033272752116553783
+    }
+  ]
+}

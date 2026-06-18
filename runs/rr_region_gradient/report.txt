@@ -1,0 +1,45 @@
+
+=== RRMAP2 region gradient L->T->C (within-animal, n=33 animals span >=2 regions) ===
+Within-animal centering removes severity/batch/strain. 772 genes at BH-q<0.05.
+
+-- UP along L->T->C (higher cervical) --
+   Aldh1a2        slope=+0.193  q=0.0001
+   Igfbp3         slope=+0.181  q=0.0095
+   Igf2           slope=+0.177  q=0.098
+   Ptgds          slope=+0.164  q=0.026
+   Plin4          slope=+0.150  q=0.0002
+   Hoxb8          slope=+0.139  q=0.0019
+   Galnt15        slope=+0.139  q=0
+   Hoxb5          slope=+0.108  q=0.0001
+   Hoxa5          slope=+0.108  q=0
+   Sez6l2         slope=+0.107  q=0.0069
+   Car2           slope=+0.104  q=0.028
+   Klk6           slope=+0.100  q=0.0023
+-- DOWN along L->T->C (higher lumbar) --
+   Hoxa9          slope=-0.375  q=0
+   Hoxb9          slope=-0.345  q=0
+   Hoxa10         slope=-0.317  q=0
+   Hoxc6          slope=-0.306  q=0
+   Hoxd9          slope=-0.264  q=0
+   Hoxc8          slope=-0.247  q=0
+   Pmp22          slope=-0.245  q=0.0014
+   Thbs1          slope=-0.244  q=0.0021
+   Col6a2         slope=-0.226  q=0.0003
+   Hoxc10         slope=-0.226  q=0
+   Col1a1         slope=-0.215  q=0.0001
+   Mfap5          slope=-0.198  q=0
+
+-- CROSS-AXIS: does space recapitulate time? --
+   Spearman(region_slope, cycle_rho) all genes = -0.590
+   among 1206 movers = -0.570
+   (positive => same programs rise on BOTH the spatial and temporal axes)
+
+-- Cell-type fractions expanding L->T->C (top) --
+   cluster 6    frac_slope=+0.0083  q=0.0016
+   cluster 2    frac_slope=+0.0071  q=0.026
+   cluster 4    frac_slope=+0.0066  q=0.013
+   cluster 12   frac_slope=+0.0066  q=0.0005
+   cluster 1    frac_slope=+0.0063  q=0.035
+   cluster 8    frac_slope=+0.0053  q=0.035
+
+-- Hal along region --  L=+0.70  T=+0.78  C=+0.52

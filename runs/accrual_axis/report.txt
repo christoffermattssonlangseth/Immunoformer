@@ -1,0 +1,13 @@
+
+=== Same score, different state — the accrual axis ===
+group        n   score   acute_z   cumulative_z   Hal   Gpnmb
+  chr PEAK1  6   2.96   +1.18      -0.70        0.03  2.85
+  RR PEAK1   4   2.75   +1.68      -0.97        1.32  1.9
+  RR PEAK2   4   2.44   +0.60      +0.01        1.1   2.71
+  RR PEAK3   5   2.65   +0.72      +0.13        1.19  3.21
+
+-- WITHIN-RR (strain-clean) PEAK1 vs PEAK3 — near-identical score (2.75 vs 2.65) --
+   ACUTE program:      +1.68 -> +0.72  (p=0.19)  ~FLAT (resets)
+   CUMULATIVE program: -0.97 -> +0.13  (p=0.016)  RISES (accrual)
+   ratchet genes PEAK1->2->3: Gpnmb [1.9, 2.71, 3.21]; Plin4 [1.63, 2.07, 1.91]; Fcrls [0.19, 0.8, 0.96]; Igf2 [1.66, 2.57, 2.73]; Fmod [0.47, 1.06, 1.19]; Pmp22 [1.67, 1.79, 1.82]; Ptgds [3.34, 3.82, 3.72]
+   acute genes   PEAK1->2->3: Hal [1.32, 1.1, 1.19]; Arg1 [2.98, 1.61, 1.65]; Chil3 [2.42, 1.02, 1.38]

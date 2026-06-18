@@ -1,0 +1,616 @@
+{
+  "n_animals": 33,
+  "n_cell_types": 10,
+  "cell_type_clocks": [
+    {
+      "compartment": "astrocyte",
+      "kind": "cell_type",
+      "median_cells": 2637.0,
+      "min_cells": 2010.0,
+      "spearman": 0.886,
+      "r2_loao": 0.805
+    },
+    {
+      "compartment": "oligo/myelin",
+      "kind": "cell_type",
+      "median_cells": 5575.0,
+      "min_cells": 4512.0,
+      "spearman": 0.871,
+      "r2_loao": 0.772
+    },
+    {
+      "compartment": "infl-myeloid",
+      "kind": "cell_type",
+      "median_cells": 3324.0,
+      "min_cells": 137.0,
+      "spearman": 0.847,
+      "r2_loao": 0.726
+    },
+    {
+      "compartment": "microglia",
+      "kind": "cell_type",
+      "median_cells": 2691.0,
+      "min_cells": 484.0,
+      "spearman": 0.844,
+      "r2_loao": 0.741
+    },
+    {
+      "compartment": "OPC",
+      "kind": "cell_type",
+      "median_cells": 1856.0,
+      "min_cells": 1103.0,
+      "spearman": 0.84,
+      "r2_loao": 0.686
+    },
+    {
+      "compartment": "vascular/endo",
+      "kind": "cell_type",
+      "median_cells": 3983.0,
+      "min_cells": 2655.0,
+      "spearman": 0.819,
+      "r2_loao": 0.67
+    },
+    {
+      "compartment": "T/NK",
+      "kind": "cell_type",
+      "median_cells": 948.0,
+      "min_cells": 9.0,
+      "spearman": 0.749,
+      "r2_loao": 0.615
+    },
+    {
+      "compartment": "neuron",
+      "kind": "cell_type",
+      "median_cells": 4141.0,
+      "min_cells": 2486.0,
+      "spearman": 0.717,
+      "r2_loao": 0.55
+    },
+    {
+      "compartment": "ependymal",
+      "kind": "cell_type",
+      "median_cells": 171.0,
+      "min_cells": 111.0,
+      "spearman": 0.699,
+      "r2_loao": 0.519
+    },
+    {
+      "compartment": "Bcell/plasma",
+      "kind": "cell_type",
+      "median_cells": 333.0,
+      "min_cells": 3.0,
+      "spearman": 0.69,
+      "r2_loao": 0.491
+    }
+  ],
+  "composition_clock": {
+    "spearman": 0.518,
+    "r2_loao": 0.255
+  },
+  "spatial_niche_clocks": [
+    {
+      "compartment": "niche3 (vascular/endo)",
+      "kind": "spatial_niche",
+      "median_cells": 1551.0,
+      "min_cells": 467.0,
+      "spearman": 0.841,
+      "r2_loao": 0.72
+    },
+    {
+      "compartment": "niche5 (oligo/myelin)",
+      "kind": "spatial_niche",
+      "median_cells": 4259.0,
+      "min_cells": 152.0,
+      "spearman": 0.836,
+      "r2_loao": 0.786
+    },
+    {
+      "compartment": "niche6 (vascular/endo)",
+      "kind": "spatial_niche",
+      "median_cells": 2382.0,
+      "min_cells": 257.0,
+      "spearman": 0.798,
+      "r2_loao": 0.625
+    },
+    {
+      "compartment": "niche7 (OPC)",
+      "kind": "spatial_niche",
+      "median_cells": 852.0,
+      "min_cells": 93.0,
+      "spearman": 0.748,
+      "r2_loao": 0.581
+    },
+    {
+      "compartment": "niche1 (oligo/myelin)",
+      "kind": "spatial_niche",
+      "median_cells": 1946.0,
+      "min_cells": 6.0,
+      "spearman": 0.731,
+      "r2_loao": 0.592
+    },
+    {
+      "compartment": "niche2 (neuron)",
+      "kind": "spatial_niche",
+      "median_cells": 2990.0,
+      "min_cells": 287.0,
+      "spearman": 0.726,
+      "r2_loao": 0.477
+    },
+    {
+      "compartment": "niche8 (neuron)",
+      "kind": "spatial_niche",
+      "median_cells": 4902.0,
+      "min_cells": 0.0,
+      "spearman": 0.654,
+      "r2_loao": -0.743
+    }
+  ],
+  "perm_nulls": {
+    "best_cell_type": {
+      "compartment": "astrocyte",
+      "spearman": 0.886,
+      "perm_p": 0.0196
+    },
+    "composition": {
+      "spearman": 0.518,
+      "perm_p": 0.0392
+    },
+    "best_niche": {
+      "compartment": "niche3 (vascular/endo)",
+      "spearman": 0.841,
+      "perm_p": 0.0196
+    }
+  },
+  "whole_tissue_reference": {
+    "clock_B_spearman": 0.799,
+    "fully_controlled": 0.864
+  },
+  "module_compartment_attribution": {
+    "neuro\u2193": {
+      "Mog": {
+        "Bcell/plasma": -0.85,
+        "OPC": 0.15,
+        "T/NK": -0.33,
+        "astrocyte": 0.04,
+        "ependymal": -0.81,
+        "infl-myeloid": -0.52,
+        "microglia": 0.25,
+        "neuron": -0.34,
+        "oligo/myelin": 2.8,
+        "vascular/endo": -0.39
+      },
+      "Mal": {
+        "Bcell/plasma": -0.99,
+        "OPC": 1.15,
+        "T/NK": -0.43,
+        "astrocyte": -0.23,
+        "ependymal": -1.03,
+        "infl-myeloid": -0.55,
+        "microglia": 0.03,
+        "neuron": -0.61,
+        "oligo/myelin": 2.38,
+        "vascular/endo": 0.26
+      },
+      "Uchl1": {
+        "Bcell/plasma": -1.45,
+        "OPC": -0.06,
+        "T/NK": -0.85,
+        "astrocyte": 0.29,
+        "ependymal": 0.65,
+        "infl-myeloid": -1.07,
+        "microglia": -0.11,
+        "neuron": 2.19,
+        "oligo/myelin": 0.76,
+        "vascular/endo": -0.37
+      },
+      "Gad1": {
+        "Bcell/plasma": -0.92,
+        "OPC": -0.1,
+        "T/NK": -0.82,
+        "astrocyte": 0.05,
+        "ependymal": 0.88,
+        "infl-myeloid": -0.89,
+        "microglia": -0.31,
+        "neuron": 2.58,
+        "oligo/myelin": -0.16,
+        "vascular/endo": -0.31
+      },
+      "Slc17a6": {
+        "Bcell/plasma": -0.78,
+        "OPC": -0.2,
+        "T/NK": -0.59,
+        "astrocyte": 0.12,
+        "ependymal": -0.42,
+        "infl-myeloid": -0.73,
+        "microglia": -0.11,
+        "neuron": 2.87,
+        "oligo/myelin": 0.0,
+        "vascular/endo": -0.16
+      },
+      "Nptx2": {
+        "Bcell/plasma": -0.55,
+        "OPC": 0.52,
+        "T/NK": -0.58,
+        "astrocyte": -0.35,
+        "ependymal": -0.11,
+        "infl-myeloid": -0.55,
+        "microglia": -0.42,
+        "neuron": 2.85,
+        "oligo/myelin": -0.35,
+        "vascular/endo": -0.46
+      }
+    },
+    "innate/IFN\u2193": {
+      "Ccr2": {
+        "Bcell/plasma": 0.81,
+        "OPC": -0.61,
+        "T/NK": 1.94,
+        "astrocyte": -0.78,
+        "ependymal": -0.86,
+        "infl-myeloid": 1.57,
+        "microglia": -0.24,
+        "neuron": -0.85,
+        "oligo/myelin": -0.76,
+        "vascular/endo": -0.23
+      },
+      "Tmem173": {
+        "Bcell/plasma": 0.7,
+        "OPC": -0.01,
+        "T/NK": 1.01,
+        "astrocyte": -0.79,
+        "ependymal": -1.31,
+        "infl-myeloid": 0.8,
+        "microglia": 1.73,
+        "neuron": -1.38,
+        "oligo/myelin": -0.79,
+        "vascular/endo": 0.05
+      },
+      "Ifit3": {
+        "Bcell/plasma": -1.1,
+        "OPC": 2.13,
+        "T/NK": -0.04,
+        "astrocyte": 0.31,
+        "ependymal": -0.9,
+        "infl-myeloid": -0.04,
+        "microglia": 0.4,
+        "neuron": -1.67,
+        "oligo/myelin": 0.48,
+        "vascular/endo": 0.44
+      },
+      "Tmem119": {
+        "Bcell/plasma": -0.36,
+        "OPC": -0.37,
+        "T/NK": -0.09,
+        "astrocyte": -0.51,
+        "ependymal": -0.61,
+        "infl-myeloid": 0.14,
+        "microglia": 2.9,
+        "neuron": -0.69,
+        "oligo/myelin": -0.43,
+        "vascular/endo": 0.03
+      },
+      "Siglech": {
+        "Bcell/plasma": 2.02,
+        "OPC": -0.58,
+        "T/NK": -0.34,
+        "astrocyte": -0.58,
+        "ependymal": -0.56,
+        "infl-myeloid": -0.22,
+        "microglia": 1.95,
+        "neuron": -0.66,
+        "oligo/myelin": -0.53,
+        "vascular/endo": -0.51
+      },
+      "Irf5": {
+        "Bcell/plasma": 1.2,
+        "OPC": -0.71,
+        "T/NK": 0.55,
+        "astrocyte": -0.83,
+        "ependymal": -1.02,
+        "infl-myeloid": 1.37,
+        "microglia": 1.55,
+        "neuron": -1.04,
+        "oligo/myelin": -0.78,
+        "vascular/endo": -0.29
+      }
+    },
+    "ECM/scar": {
+      "Col4a2": {
+        "Bcell/plasma": 0.47,
+        "OPC": 0.76,
+        "T/NK": 0.57,
+        "astrocyte": -1.02,
+        "ependymal": -0.27,
+        "infl-myeloid": 0.96,
+        "microglia": -1.25,
+        "neuron": -0.6,
+        "oligo/myelin": -1.37,
+        "vascular/endo": 1.75
+      },
+      "Col4a1": {
+        "Bcell/plasma": 0.36,
+        "OPC": 0.88,
+        "T/NK": 0.58,
+        "astrocyte": -0.94,
+        "ependymal": 0.11,
+        "infl-myeloid": 0.99,
+        "microglia": -1.14,
+        "neuron": -1.11,
+        "oligo/myelin": -1.33,
+        "vascular/endo": 1.61
+      },
+      "Thbs2": {
+        "Bcell/plasma": 0.26,
+        "OPC": 0.48,
+        "T/NK": 0.2,
+        "astrocyte": 1.9,
+        "ependymal": -0.77,
+        "infl-myeloid": 0.7,
+        "microglia": -0.77,
+        "neuron": -1.89,
+        "oligo/myelin": -0.67,
+        "vascular/endo": 0.56
+      },
+      "Serpine2": {
+        "Bcell/plasma": -0.98,
+        "OPC": 1.02,
+        "T/NK": -0.77,
+        "astrocyte": 1.7,
+        "ependymal": 1.33,
+        "infl-myeloid": -0.45,
+        "microglia": -0.09,
+        "neuron": -1.0,
+        "oligo/myelin": -1.18,
+        "vascular/endo": 0.42
+      },
+      "Ptx3": {
+        "Bcell/plasma": -0.59,
+        "OPC": -0.4,
+        "T/NK": 0.01,
+        "astrocyte": 2.82,
+        "ependymal": 0.39,
+        "infl-myeloid": 0.07,
+        "microglia": -0.43,
+        "neuron": -0.73,
+        "oligo/myelin": -0.41,
+        "vascular/endo": -0.72
+      },
+      "Fbln2": {
+        "Bcell/plasma": 0.05,
+        "OPC": 1.7,
+        "T/NK": 0.38,
+        "astrocyte": -0.16,
+        "ependymal": -1.27,
+        "infl-myeloid": 1.39,
+        "microglia": -0.97,
+        "neuron": -1.16,
+        "oligo/myelin": -0.74,
+        "vascular/endo": 0.77
+      },
+      "Eln": {
+        "Bcell/plasma": 1.07,
+        "OPC": -0.3,
+        "T/NK": 0.72,
+        "astrocyte": -0.31,
+        "ependymal": -1.0,
+        "infl-myeloid": 0.87,
+        "microglia": -1.04,
+        "neuron": -0.84,
+        "oligo/myelin": -1.05,
+        "vascular/endo": 1.87
+      }
+    },
+    "lymphoid": {
+      "Cxcl13": {
+        "Bcell/plasma": 2.36,
+        "OPC": -0.66,
+        "T/NK": 0.92,
+        "astrocyte": -0.74,
+        "ependymal": -0.77,
+        "infl-myeloid": 0.79,
+        "microglia": -0.27,
+        "neuron": -0.81,
+        "oligo/myelin": -0.79,
+        "vascular/endo": -0.04
+      },
+      "Cxcl12": {
+        "Bcell/plasma": 0.7,
+        "OPC": -0.49,
+        "T/NK": 0.4,
+        "astrocyte": 0.68,
+        "ependymal": -1.01,
+        "infl-myeloid": 0.91,
+        "microglia": -0.77,
+        "neuron": -1.29,
+        "oligo/myelin": -1.0,
+        "vascular/endo": 1.88
+      },
+      "Tcf7": {
+        "Bcell/plasma": 1.05,
+        "OPC": -0.38,
+        "T/NK": 2.42,
+        "astrocyte": -0.63,
+        "ependymal": -0.75,
+        "infl-myeloid": -0.0,
+        "microglia": -0.71,
+        "neuron": -0.77,
+        "oligo/myelin": -0.74,
+        "vascular/endo": 0.52
+      },
+      "Mzb1": {
+        "Bcell/plasma": 2.96,
+        "OPC": -0.43,
+        "T/NK": -0.07,
+        "astrocyte": -0.47,
+        "ependymal": -0.14,
+        "infl-myeloid": -0.11,
+        "microglia": -0.49,
+        "neuron": -0.5,
+        "oligo/myelin": -0.45,
+        "vascular/endo": -0.3
+      },
+      "Jchain": {
+        "Bcell/plasma": 2.75,
+        "OPC": -0.48,
+        "T/NK": 0.41,
+        "astrocyte": -0.56,
+        "ependymal": -0.64,
+        "infl-myeloid": 0.41,
+        "microglia": -0.57,
+        "neuron": -0.65,
+        "oligo/myelin": -0.64,
+        "vascular/endo": -0.03
+      }
+    },
+    "lipid": {
+      "Lpl": {
+        "Bcell/plasma": -0.1,
+        "OPC": -0.11,
+        "T/NK": 0.44,
+        "astrocyte": -0.09,
+        "ependymal": -1.19,
+        "infl-myeloid": 1.42,
+        "microglia": 1.98,
+        "neuron": -1.25,
+        "oligo/myelin": -0.92,
+        "vascular/endo": -0.18
+      },
+      "Pltp": {
+        "Bcell/plasma": 0.52,
+        "OPC": -0.79,
+        "T/NK": 0.16,
+        "astrocyte": -0.18,
+        "ependymal": 1.74,
+        "infl-myeloid": 0.48,
+        "microglia": -0.66,
+        "neuron": -1.41,
+        "oligo/myelin": -1.23,
+        "vascular/endo": 1.35
+      },
+      "Abca8a": {
+        "Bcell/plasma": -0.63,
+        "OPC": 2.08,
+        "T/NK": -0.52,
+        "astrocyte": -0.73,
+        "ependymal": -0.95,
+        "infl-myeloid": 0.34,
+        "microglia": -0.84,
+        "neuron": -0.66,
+        "oligo/myelin": 1.44,
+        "vascular/endo": 0.48
+      },
+      "Hmgcr": {
+        "Bcell/plasma": -0.57,
+        "OPC": 2.27,
+        "T/NK": -0.34,
+        "astrocyte": 0.92,
+        "ependymal": -0.44,
+        "infl-myeloid": -0.87,
+        "microglia": -0.98,
+        "neuron": 0.66,
+        "oligo/myelin": 0.38,
+        "vascular/endo": -1.03
+      },
+      "Idi1": {
+        "Bcell/plasma": -0.7,
+        "OPC": 1.89,
+        "T/NK": -0.64,
+        "astrocyte": 0.66,
+        "ependymal": -1.01,
+        "infl-myeloid": -0.93,
+        "microglia": -0.47,
+        "neuron": 0.02,
+        "oligo/myelin": 1.66,
+        "vascular/endo": -0.48
+      },
+      "Msmo1": {
+        "Bcell/plasma": -1.05,
+        "OPC": 1.4,
+        "T/NK": -0.96,
+        "astrocyte": 1.7,
+        "ependymal": -0.46,
+        "infl-myeloid": -0.73,
+        "microglia": -0.37,
+        "neuron": -0.11,
+        "oligo/myelin": 1.31,
+        "vascular/endo": -0.72
+      }
+    },
+    "circ/repair": {
+      "Nr1d1": {
+        "Bcell/plasma": -1.14,
+        "OPC": 0.4,
+        "T/NK": -0.42,
+        "astrocyte": 1.9,
+        "ependymal": 0.82,
+        "infl-myeloid": -0.38,
+        "microglia": -1.19,
+        "neuron": -0.02,
+        "oligo/myelin": -1.12,
+        "vascular/endo": 1.13
+      },
+      "Dbp": {
+        "Bcell/plasma": -0.86,
+        "OPC": -0.05,
+        "T/NK": -0.75,
+        "astrocyte": 1.5,
+        "ependymal": 1.72,
+        "infl-myeloid": -0.62,
+        "microglia": -1.12,
+        "neuron": -0.14,
+        "oligo/myelin": -0.79,
+        "vascular/endo": 1.1
+      },
+      "Bhlhe40": {
+        "Bcell/plasma": -0.67,
+        "OPC": -0.69,
+        "T/NK": 1.08,
+        "astrocyte": 1.61,
+        "ependymal": 0.48,
+        "infl-myeloid": 0.99,
+        "microglia": -0.91,
+        "neuron": -0.41,
+        "oligo/myelin": -1.74,
+        "vascular/endo": 0.26
+      },
+      "Igf1": {
+        "Bcell/plasma": 1.29,
+        "OPC": -0.51,
+        "T/NK": 0.99,
+        "astrocyte": -0.94,
+        "ependymal": -1.3,
+        "infl-myeloid": 1.32,
+        "microglia": 0.47,
+        "neuron": -0.93,
+        "oligo/myelin": -1.09,
+        "vascular/endo": 0.71
+      },
+      "Il33": {
+        "Bcell/plasma": -0.81,
+        "OPC": 0.11,
+        "T/NK": -0.54,
+        "astrocyte": 0.66,
+        "ependymal": -1.04,
+        "infl-myeloid": -0.42,
+        "microglia": -0.2,
+        "neuron": -0.46,
+        "oligo/myelin": 2.67,
+        "vascular/endo": 0.01
+      },
+      "S1pr3": {
+        "Bcell/plasma": -0.52,
+        "OPC": 1.29,
+        "T/NK": -0.13,
+        "astrocyte": 1.38,
+        "ependymal": 1.48,
+        "infl-myeloid": -0.1,
+        "microglia": -0.77,
+        "neuron": -1.39,
+        "oligo/myelin": -1.2,
+        "vascular/endo": -0.05
+      }
+    }
+  },
+  "interpretation": "Per-compartment LOAO clock B Spearman localizes the duration signal. Compartments with high Spearman carry duration-beyond-severity in their transcriptome; the composition clock tests whether shifting cell-type proportions alone suffices.",
+  "caveats": "Animal-level pseudobulk per compartment; n=33. Sparse compartments noisy (B/plasma, T/NK low in some animals). Niches labeled by nearest cell-type profile, not annotated. Per-compartment clocks share the leaned settings; only winners have a permutation null."
+}

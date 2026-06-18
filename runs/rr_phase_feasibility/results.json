@@ -1,0 +1,56 @@
+{
+  "n_animals": 33,
+  "test_A": {
+    "name": "TEST A: phase-beyond-severity (peak vs remission)",
+    "n_pos": 13,
+    "n_neg": 9,
+    "pos": [
+      "PEAK1",
+      "PEAK2",
+      "PEAK3"
+    ],
+    "neg": [
+      "REMISSION1",
+      "REMISSION2"
+    ],
+    "severity_only_auc": 1.0,
+    "residualized_molecular_auc": 0.513,
+    "perm_p": 0.3183,
+    "n_pcs": 8
+  },
+  "test_B": {
+    "name": "TEST B: direction at matched severity (onset vs remission)",
+    "n_pos": 4,
+    "n_neg": 9,
+    "pos": [
+      "ONSET1",
+      "ONSET2"
+    ],
+    "neg": [
+      "REMISSION1",
+      "REMISSION2"
+    ],
+    "severity_only_auc": 0.0,
+    "residualized_molecular_auc": 1.0,
+    "perm_p": 0.004,
+    "n_pcs": 8
+  },
+  "onset_vs_rem_raw_molecular_auc": 1.0,
+  "decomposition_illustration": {
+    "n_oscillator_genes": 12,
+    "n_ratchet_genes": 12,
+    "oscillator_peak_minus_rem": 1.135,
+    "oscillator_rem2_minus_rem1": -0.545,
+    "ratchet_peak_minus_rem": -0.716,
+    "ratchet_rem2_minus_rem1": 1.45
+  },
+  "hal_residual": {
+    "resid_Hal_peak_minus_rem": -0.089,
+    "resid_Hal_onset_minus_rem": -0.159
+  },
+  "gate": {
+    "test_A_passes": false,
+    "test_B_suggestive": true,
+    "verdict": "STOP \u2014 no phase signal beyond severity; the cycle is severity"
+  }
+}

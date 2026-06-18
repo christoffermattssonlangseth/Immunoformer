@@ -1,0 +1,53 @@
+# Master config for scripts/transfer_experiment.py
+#
+#   python scripts/transfer_experiment.py --config configs/transfer_experiment.yaml
+#
+# Trains on RRMAP2 (configs/rrmap2_stage.yaml) and evaluates the frozen model on
+# RRMAP2 held-out val + two cross-etiology targets.
+#
+# The obs keys below are the VERIFIED mappings from HANDOFF.md / docs/dataset-
+# hierarchy.md. The `label_order` lists still need confirming against the exact
+# strings in each obs column — run `scripts/inspect_labels.py` first.
+
+source:
+  # The RRMAP2 .h5ad used for the within-domain val evaluation. Must match the
+  # h5ad_path inside train_config so the val split is identical.
+  h5ad_path: /Volumes/moldiassd/RRMAP2_xenium_adata/kmeans_separated/RRMAP2_xenium_all_samples.cellcharter.companion.ready.with_metadata.rerun.h5ad
+  train_config: configs/rrmap2_stage.yaml
+  run_dir: runs/transfer_experiment
+
+targets:
+  # Optic nerve EAE — same immune etiology, different anatomy. Bag = polygon
+  # (karospace_polygon_labels, 30); animal (6: CM1/2/3/4/7/9) is the split key
+  # and is NOT label-constant, so it can't be the bag key. timepoint (Onset <
+  # Peak) is the ordinal axis; condition is the 4-level alternative. (Verified
+  # 2026-06-12 via inspect_labels.py.)
+  - tag: optic_nerve
+    h5ad_path: /Volumes/moldiassd/optic_nerve_merged.scanpy.companion.ready_with_polygons.h5ad
+    obs_animal_id: animal
+    obs_section_id: karospace_polygon_labels
+    obs_label: timepoint
+    label_order:
+      - Onset
+      - Peak
+    layer: counts
+
+  # mtDNA-DSB — inside-out / non-immune etiology. sample_id (RB####) is both the
+  # animal and the section (one section per animal). `condition` is BINARY.
+  - tag: mtdna_dsb
+    h5ad_path: /Volumes/processing2/oligo-mtDSB/data/mtDNA_DSB_5k_clustered_annotation_with_rbd_2_cytetype_brain.h5ad
+    obs_animal_id: sample_id
+    obs_section_id: sample_id
+    obs_label: condition
+    label_order:        # CONFIRM exact strings with inspect_labels.py
+      - control
+      - mtDSB
+    layer: counts
+
+eval:
+  max_cells_per_bag: 2048
+  n_boot: 2000
+  n_perm: 5000
+  cell_type_col: null    # set to e.g. "cell_class" for attention-vs-celltype figures
+  device: auto
+  seed: 42

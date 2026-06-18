@@ -37,6 +37,8 @@ class DataConfig:
     encoder: str = "pca"               # "identity" | "pca" | "fm" (frozen foundation model)
     pca_dim: int = 64
     n_hvg: int = 0                     # 0 = use all genes; else select N highly-variable genes
+    hvg_subsample: int = 50_000        # cells sampled to compute HVG stats; avoids the ~2x
+                                       # full-panel RAM spike from copying the whole object
     val_fraction: float = 0.25         # fraction of *animals* held out
     seed: int = 0
 

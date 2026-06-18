@@ -1,0 +1,25 @@
+
+=== Phase 0 feasibility gate (n=33 RR animals, LOAO CV) ===
+Features = severity-residualized, label-blind PCs. Permutation nulls (B=2000).
+
+-- TEST A: phase-beyond-severity (peak vs remission) --
+   peak(n=13) vs remission(n=9)
+   severity-only AUC = 1.0  (trivially high: peaks are severe)
+   severity-RESIDUALIZED molecular AUC = 0.513  (perm p=0.3183)
+   => no phase beyond severity
+
+-- TEST B: direction at matched severity (onset vs remission) --
+   onset(n=4, ascending) vs remission(n=9, descending), matched severity
+   severity-only AUC = 0.0  (low: groups overlap in score)
+   residualized molecular AUC = 1.0  (perm p=0.004)
+   raw (non-resid) molecular AUC = 1.0
+   *** n=4 onset — POC-grade, NOT a significance claim ***
+
+-- Decomposition double-dissociation (ILLUSTRATION; gene lists from same data) --
+   oscillator program (12 genes): peak-rem=+1.14 (phase, expect BIG), REM2-REM1=-0.55 (accrual, expect ~0)
+   ratchet program (12 genes): peak-rem=-0.72 (phase, expect ~0), REM2-REM1=+1.45 (accrual, expect >0)
+
+-- Hal (severity-residualized) --
+   resid peak-rem = -0.09   resid onset-rem = -0.16
+
+=== GATE: STOP — no phase signal beyond severity; the cycle is severity ===

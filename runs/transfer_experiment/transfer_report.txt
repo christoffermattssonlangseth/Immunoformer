@@ -1,0 +1,13 @@
+
+=== Transfer benchmark: Spearman rho (bootstrapped 95% CI) ===
+
+Dataset                    Bags    rho             95% CI    p(perm)     MAE
+---------------------------------------------------------------------------
+rrmap2_val                  158 +0.853   [+0.795, +0.893]     0.0000   2.873
+optic_nerve                  30 -0.021   [-0.389, +0.344]     0.5614   6.133
+mtdna_dsb                    12 +0.224   [-0.450, +0.792]     0.2622   4.000
+
+--- Pairwise Fisher z-tests ---
+  rrmap2_val vs optic_nerve: z=+6.174  p=0.0000  **
+  rrmap2_val vs mtdna_dsb: z=+3.031  p=0.0024  **
+  optic_nerve vs mtdna_dsb: z=-0.645  p=0.5187  ns

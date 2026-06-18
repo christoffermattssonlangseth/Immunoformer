@@ -1,0 +1,94 @@
+{
+  "cluster_col": "CellCharter_10",
+  "n_niches": 10,
+  "n_tested": 9,
+  "bonferroni_alpha": 0.0056,
+  "min_cells": 50,
+  "per_niche": [
+    {
+      "niche": "2",
+      "n_peak": 13,
+      "n_rem": 9,
+      "auc": 0.239,
+      "perm_p": null,
+      "n_pcs": 6
+    },
+    {
+      "niche": "3",
+      "n_peak": 13,
+      "n_rem": 9,
+      "auc": 0.171,
+      "perm_p": null,
+      "n_pcs": 6
+    },
+    {
+      "niche": "6",
+      "n_peak": 13,
+      "n_rem": 9,
+      "auc": 0.205,
+      "perm_p": null,
+      "n_pcs": 6
+    },
+    {
+      "niche": "1",
+      "n_peak": 13,
+      "n_rem": 9,
+      "auc": 0.128,
+      "perm_p": null,
+      "n_pcs": 6
+    },
+    {
+      "niche": "9",
+      "n_peak": 11,
+      "n_rem": 6,
+      "auc": 0.0,
+      "perm_p": null,
+      "n_pcs": 6
+    },
+    {
+      "niche": "8",
+      "n_peak": 10,
+      "n_rem": 9,
+      "auc": 0.178,
+      "perm_p": null,
+      "n_pcs": 6
+    },
+    {
+      "niche": "7",
+      "n_peak": 13,
+      "n_rem": 9,
+      "auc": 0.179,
+      "perm_p": null,
+      "n_pcs": 6
+    },
+    {
+      "niche": "0",
+      "n_peak": 12,
+      "n_rem": 3,
+      "auc": null,
+      "perm_p": null,
+      "skipped": "too few animals w/ cells"
+    },
+    {
+      "niche": "5",
+      "n_peak": 13,
+      "n_rem": 9,
+      "auc": 0.222,
+      "perm_p": null,
+      "n_pcs": 6
+    },
+    {
+      "niche": "4",
+      "n_peak": 9,
+      "n_rem": 9,
+      "auc": 0.148,
+      "perm_p": null,
+      "n_pcs": 6
+    }
+  ],
+  "composition_test": {
+    "residualized_auc": 0.026,
+    "perm_p": 0.9855
+  },
+  "hits": []
+}

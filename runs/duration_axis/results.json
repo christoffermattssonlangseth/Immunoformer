@@ -1,0 +1,255 @@
+{
+  "RR": {
+    "n_animals": 33,
+    "day_range": [
+      11.0,
+      49.0
+    ],
+    "day_vs_score_collinearity_rho": 0.139,
+    "acute_program_partial_rho": -0.586,
+    "acute_program_p": 0.0004,
+    "cumulative_program_partial_rho": 0.695,
+    "cumulative_program_p": 0.0,
+    "n_genes_q05": 844,
+    "top_duration_genes": [
+      {
+        "gene": "Slc16a2",
+        "partial_rho": 0.823,
+        "q": 0.0
+      },
+      {
+        "gene": "Fmod",
+        "partial_rho": 0.8153,
+        "q": 0.0
+      },
+      {
+        "gene": "Musk",
+        "partial_rho": 0.8083,
+        "q": 0.0
+      },
+      {
+        "gene": "Mrgprf",
+        "partial_rho": 0.79,
+        "q": 0.0001
+      },
+      {
+        "gene": "Pltp",
+        "partial_rho": 0.785,
+        "q": 0.0001
+      },
+      {
+        "gene": "Vtn",
+        "partial_rho": 0.7831,
+        "q": 0.0001
+      },
+      {
+        "gene": "Enpp1",
+        "partial_rho": 0.7807,
+        "q": 0.0001
+      },
+      {
+        "gene": "Wnt6",
+        "partial_rho": 0.7801,
+        "q": 0.0001
+      },
+      {
+        "gene": "Dbp",
+        "partial_rho": 0.7731,
+        "q": 0.0001
+      },
+      {
+        "gene": "Hadh",
+        "partial_rho": 0.7685,
+        "q": 0.0001
+      },
+      {
+        "gene": "Aldh2",
+        "partial_rho": 0.7534,
+        "q": 0.0002
+      },
+      {
+        "gene": "Ngfr",
+        "partial_rho": 0.7521,
+        "q": 0.0002
+      },
+      {
+        "gene": "Fzd8",
+        "partial_rho": 0.7519,
+        "q": 0.0002
+      },
+      {
+        "gene": "Col13a1",
+        "partial_rho": 0.7512,
+        "q": 0.0002
+      },
+      {
+        "gene": "Prelp",
+        "partial_rho": 0.7422,
+        "q": 0.0003
+      },
+      {
+        "gene": "Bmp6",
+        "partial_rho": 0.7389,
+        "q": 0.0003
+      },
+      {
+        "gene": "Lamb2",
+        "partial_rho": 0.7384,
+        "q": 0.0003
+      },
+      {
+        "gene": "Bfsp1",
+        "partial_rho": 0.738,
+        "q": 0.0003
+      },
+      {
+        "gene": "Ppl",
+        "partial_rho": 0.7377,
+        "q": 0.0003
+      },
+      {
+        "gene": "Mc5r",
+        "partial_rho": 0.7361,
+        "q": 0.0003
+      }
+    ],
+    "named_program_partial_rho": {
+      "Gpnmb": 0.548,
+      "Plin4": -0.11,
+      "Fcrls": 0.653,
+      "Igf2": 0.727,
+      "Fmod": 0.815,
+      "Pmp22": 0.446,
+      "Ptgds": 0.504,
+      "Hal": -0.052,
+      "Arg1": -0.578
+    }
+  },
+  "CHRONIC": {
+    "n_animals": 34,
+    "day_range": [
+      8.0,
+      50.0
+    ],
+    "day_vs_score_collinearity_rho": 0.583,
+    "acute_program_partial_rho": -0.291,
+    "acute_program_p": 0.1006,
+    "cumulative_program_partial_rho": 0.716,
+    "cumulative_program_p": 0.0,
+    "n_genes_q05": 644,
+    "top_duration_genes": [
+      {
+        "gene": "Plau",
+        "partial_rho": 0.847,
+        "q": 0.0
+      },
+      {
+        "gene": "Abhd4",
+        "partial_rho": 0.8328,
+        "q": 0.0
+      },
+      {
+        "gene": "Cd109",
+        "partial_rho": 0.8306,
+        "q": 0.0
+      },
+      {
+        "gene": "Snai2",
+        "partial_rho": 0.8077,
+        "q": 0.0
+      },
+      {
+        "gene": "Ddit3",
+        "partial_rho": 0.8059,
+        "q": 0.0
+      },
+      {
+        "gene": "Prelp",
+        "partial_rho": 0.8029,
+        "q": 0.0
+      },
+      {
+        "gene": "Ctnnb1",
+        "partial_rho": 0.8023,
+        "q": 0.0
+      },
+      {
+        "gene": "Sox9",
+        "partial_rho": 0.7947,
+        "q": 0.0
+      },
+      {
+        "gene": "Eya4",
+        "partial_rho": 0.7905,
+        "q": 0.0
+      },
+      {
+        "gene": "Ppl",
+        "partial_rho": 0.788,
+        "q": 0.0
+      },
+      {
+        "gene": "Wnt5a",
+        "partial_rho": 0.7844,
+        "q": 0.0
+      },
+      {
+        "gene": "Pkd2",
+        "partial_rho": 0.7807,
+        "q": 0.0
+      },
+      {
+        "gene": "Kcnj2",
+        "partial_rho": 0.7776,
+        "q": 0.0
+      },
+      {
+        "gene": "Dbp",
+        "partial_rho": 0.7736,
+        "q": 0.0
+      },
+      {
+        "gene": "Scnn1a",
+        "partial_rho": 0.7698,
+        "q": 0.0
+      },
+      {
+        "gene": "Itpkb",
+        "partial_rho": 0.7687,
+        "q": 0.0
+      },
+      {
+        "gene": "L3hypdh",
+        "partial_rho": 0.7667,
+        "q": 0.0001
+      },
+      {
+        "gene": "Igf2",
+        "partial_rho": 0.7654,
+        "q": 0.0001
+      },
+      {
+        "gene": "Lratd2",
+        "partial_rho": 0.7647,
+        "q": 0.0001
+      },
+      {
+        "gene": "Musk",
+        "partial_rho": 0.7626,
+        "q": 0.0001
+      }
+    ],
+    "named_program_partial_rho": {
+      "Gpnmb": 0.643,
+      "Plin4": -0.266,
+      "Fcrls": 0.594,
+      "Igf2": 0.765,
+      "Fmod": 0.712,
+      "Pmp22": 0.145,
+      "Ptgds": 0.483,
+      "Hal": -0.343,
+      "Arg1": -0.34
+    }
+  },
+  "caveats": "Within RR is strain-clean (SJL/PLP). day_of_sacrifice and score are decoupled by the relapse cycle (peaks recur at later days), enabling the partial. CHRONIC is confounded: day_of_sacrifice aliases run_date (day16 batch vs day30 batch), so the chronic duration effect cannot be separated from batch. Small n; animal-level."
+}

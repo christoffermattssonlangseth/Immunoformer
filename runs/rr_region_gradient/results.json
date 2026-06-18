@@ -1,0 +1,269 @@
+{
+  "n_animals": 33,
+  "n_span_ge2": 33,
+  "n_genes_q05_region": 772,
+  "region_up_LtoC": [
+    {
+      "gene": "Aldh1a2",
+      "region_slope": 0.1927,
+      "q": 0.0001
+    },
+    {
+      "gene": "Igfbp3",
+      "region_slope": 0.1813,
+      "q": 0.0095
+    },
+    {
+      "gene": "Igf2",
+      "region_slope": 0.1767,
+      "q": 0.0979
+    },
+    {
+      "gene": "Ptgds",
+      "region_slope": 0.1637,
+      "q": 0.0259
+    },
+    {
+      "gene": "Plin4",
+      "region_slope": 0.1497,
+      "q": 0.0002
+    },
+    {
+      "gene": "Hoxb8",
+      "region_slope": 0.1387,
+      "q": 0.0019
+    },
+    {
+      "gene": "Galnt15",
+      "region_slope": 0.1387,
+      "q": 0.0
+    },
+    {
+      "gene": "Hoxb5",
+      "region_slope": 0.1083,
+      "q": 0.0001
+    },
+    {
+      "gene": "Hoxa5",
+      "region_slope": 0.1076,
+      "q": 0.0
+    },
+    {
+      "gene": "Sez6l2",
+      "region_slope": 0.1068,
+      "q": 0.0069
+    },
+    {
+      "gene": "Car2",
+      "region_slope": 0.1036,
+      "q": 0.0283
+    },
+    {
+      "gene": "Klk6",
+      "region_slope": 0.0997,
+      "q": 0.0023
+    },
+    {
+      "gene": "Sst",
+      "region_slope": 0.0982,
+      "q": 0.0794
+    },
+    {
+      "gene": "Sncb",
+      "region_slope": 0.0945,
+      "q": 0.039
+    },
+    {
+      "gene": "Hsph1",
+      "region_slope": 0.0937,
+      "q": 0.0007
+    },
+    {
+      "gene": "Edil3",
+      "region_slope": 0.0936,
+      "q": 0.0174
+    },
+    {
+      "gene": "Snap25",
+      "region_slope": 0.0933,
+      "q": 0.0296
+    },
+    {
+      "gene": "Gjb6",
+      "region_slope": 0.0925,
+      "q": 0.0357
+    },
+    {
+      "gene": "Glra1",
+      "region_slope": 0.0923,
+      "q": 0.0179
+    },
+    {
+      "gene": "Cd163",
+      "region_slope": 0.0896,
+      "q": 0.0
+    }
+  ],
+  "region_down_LtoC": [
+    {
+      "gene": "Hoxa9",
+      "region_slope": -0.3752,
+      "q": 0.0
+    },
+    {
+      "gene": "Hoxb9",
+      "region_slope": -0.3454,
+      "q": 0.0
+    },
+    {
+      "gene": "Hoxa10",
+      "region_slope": -0.3168,
+      "q": 0.0
+    },
+    {
+      "gene": "Hoxc6",
+      "region_slope": -0.3064,
+      "q": 0.0
+    },
+    {
+      "gene": "Hoxd9",
+      "region_slope": -0.2644,
+      "q": 0.0
+    },
+    {
+      "gene": "Hoxc8",
+      "region_slope": -0.2474,
+      "q": 0.0
+    },
+    {
+      "gene": "Pmp22",
+      "region_slope": -0.2446,
+      "q": 0.0014
+    },
+    {
+      "gene": "Thbs1",
+      "region_slope": -0.2438,
+      "q": 0.0021
+    },
+    {
+      "gene": "Col6a2",
+      "region_slope": -0.2261,
+      "q": 0.0003
+    },
+    {
+      "gene": "Hoxc10",
+      "region_slope": -0.226,
+      "q": 0.0
+    },
+    {
+      "gene": "Col1a1",
+      "region_slope": -0.2152,
+      "q": 0.0001
+    },
+    {
+      "gene": "Mfap5",
+      "region_slope": -0.1977,
+      "q": 0.0
+    },
+    {
+      "gene": "Col1a2",
+      "region_slope": -0.1851,
+      "q": 0.001
+    },
+    {
+      "gene": "Sfrp4",
+      "region_slope": -0.1617,
+      "q": 0.0041
+    },
+    {
+      "gene": "Igkc",
+      "region_slope": -0.1566,
+      "q": 0.0432
+    },
+    {
+      "gene": "Lgals1",
+      "region_slope": -0.1444,
+      "q": 0.0236
+    },
+    {
+      "gene": "Col4a1",
+      "region_slope": -0.1398,
+      "q": 0.0261
+    },
+    {
+      "gene": "H19",
+      "region_slope": -0.1391,
+      "q": 0.004
+    },
+    {
+      "gene": "Thbs2",
+      "region_slope": -0.1388,
+      "q": 0.0
+    },
+    {
+      "gene": "Col6a3",
+      "region_slope": -0.1378,
+      "q": 0.0
+    }
+  ],
+  "cross_axis": {
+    "spearman_all_genes": -0.59,
+    "spearman_movers": -0.57,
+    "n_movers": 1206
+  },
+  "composition_expand_LtoC": [
+    {
+      "cluster": "6",
+      "frac_slope_LtoC": 0.0083,
+      "p": 0.0002,
+      "q": 0.0016
+    },
+    {
+      "cluster": "2",
+      "frac_slope_LtoC": 0.0071,
+      "p": 0.0052,
+      "q": 0.0261
+    },
+    {
+      "cluster": "4",
+      "frac_slope_LtoC": 0.0066,
+      "p": 0.002,
+      "q": 0.0125
+    },
+    {
+      "cluster": "12",
+      "frac_slope_LtoC": 0.0066,
+      "p": 0.0,
+      "q": 0.0005
+    },
+    {
+      "cluster": "1",
+      "frac_slope_LtoC": 0.0063,
+      "p": 0.0104,
+      "q": 0.0348
+    },
+    {
+      "cluster": "8",
+      "frac_slope_LtoC": 0.0053,
+      "p": 0.0111,
+      "q": 0.0348
+    },
+    {
+      "cluster": "17",
+      "frac_slope_LtoC": 0.0044,
+      "p": 0.0763,
+      "q": 0.1192
+    },
+    {
+      "cluster": "10",
+      "frac_slope_LtoC": 0.0036,
+      "p": 0.0162,
+      "q": 0.0368
+    }
+  ],
+  "hal_region_profile": {
+    "L": 0.705,
+    "T": 0.782,
+    "C": 0.519
+  }
+}

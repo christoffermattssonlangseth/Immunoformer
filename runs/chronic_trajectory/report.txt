@@ -1,0 +1,107 @@
+
+=== WITHIN-CHRONIC disease trajectory (n=34 chronic animals, animal-level) ===
+B6/MOG strain. Descriptive; stage spread over 9 slides, both run_dates carry severity.
+RR-vs-chronic level comparison is DEAD (100% strain+slide confounded) — stay within chronic.
+Stages (n animals): CFA=2  MILD16=3  MILD30=5  MOG CFA=3  NONSYMPTOM=5  OS1=5  PEAK1=6  SEVERE16=3  SEVERE30=2
+run_dates (animals): {np.str_('20250110'): 18, np.str_('20260506'): 16}
+
+-- 2. Severity trajectory (Spearman vs score_sacrifice, n=34) --
+   genes at BH-q<0.05: 3587
+   INCREASING with severity:
+     Csf1r            rho=+0.962  q=4.82e-16
+     Ctss             rho=+0.960  q=4.82e-16
+     C3ar1            rho=+0.960  q=4.82e-16
+     Plcb2            rho=+0.959  q=4.82e-16
+     Dock8            rho=+0.959  q=4.82e-16
+     Bmf              rho=+0.956  q=1.13e-15
+     Twf2             rho=+0.955  q=1.38e-15
+     H2-D1            rho=+0.953  q=1.87e-15
+     Inpp5d           rho=+0.952  q=2.44e-15
+     Sh3bp2           rho=+0.951  q=2.79e-15
+     Plgrkt           rho=+0.951  q=2.79e-15
+     Cd37             rho=+0.950  q=3.15e-15
+   DECREASING with severity:
+     Mapk10           rho=-0.955  q=1.27e-15
+     Plaat1           rho=-0.953  q=2.19e-15
+     Slc8a3           rho=-0.948  q=4.52e-15
+     Acvr1c           rho=-0.945  q=7.82e-15
+     Spock3           rho=-0.942  q=1.39e-14
+     Sh3gl2           rho=-0.941  q=1.6e-14
+     Nrip3            rho=-0.941  q=1.72e-14
+     Zfyve9           rho=-0.940  q=1.78e-14
+     Amd1             rho=-0.940  q=2.07e-14
+     Snx27            rho=-0.939  q=2.24e-14
+     Prkaca           rho=-0.939  q=2.24e-14
+     Efna3            rho=-0.939  q=2.29e-14
+   program-level mean rho (key disease axes):
+     inflammation_complement  mean_rho=+0.807  (n=8 genes)
+     MHC_antigen              mean_rho=+0.893  (n=8 genes)
+     DAM_myeloid              mean_rho=+0.663  (n=12 genes)
+     cholesterol_myelin       mean_rho=-0.798  (n=10 genes)
+
+-- 2b. Robustness across the two chronic batches --
+   score vs run_date rho = +0.266 (low = severity not aliased to batch)
+   genes q<0.05: raw 3587 -> run_date-partial 3703 (3443 survive)
+   independent per-batch severity slopes (20250110 vs 20260506): Spearman=+0.916 (p=0), 88% same sign over 5101 genes
+
+-- 3. NOVEL: day16 vs day30 at MATCHED severity (POC, small n) --
+   CAVEAT: day suffix is confounded with run_date here — read as exploratory.
+   MILD16_vs_MILD30: n=3 (score~1.3333333333333333) vs n=5 (score~1.0)
+     genes q<0.05: 0
+     UP in day16 (earlier / more active):
+       Sfrp4          d16-d30=+0.793  q=0.125
+       Meg3           d16-d30=+0.535  q=0.125
+       Slc47a1        d16-d30=+0.468  q=0.305
+       Igha           d16-d30=+0.461  q=0.125
+       Hoxb8          d16-d30=+0.399  q=0.125
+       Lag3           d16-d30=+0.388  q=0.125
+     UP in day30 (later / chronic accrual):
+       Gpnmb          d16-d30=-1.267  q=0.125
+       Atp6v0d2       d16-d30=-0.772  q=0.125
+       Cd68           d16-d30=-0.626  q=0.125
+       Gmfb           d16-d30=-0.576  q=0.125
+       Nefl           d16-d30=-0.574  q=0.125
+       Ywhaz          d16-d30=-0.521  q=0.125
+     program mean (day16 - day30): inflammation=+0.05  MHC=+0.05  DAM=-0.26  cholesterol=+0.06
+   SEVERE16_vs_SEVERE30: n=3 (score~2.5) vs n=2 (score~2.375)
+     genes q<0.05: 0
+     UP in day16 (earlier / more active):
+       Plin4          d16-d30=+0.532  q=0.537
+       Nefm           d16-d30=+0.523  q=0.537
+       Ccl5           d16-d30=+0.507  q=0.537
+       Nefh           d16-d30=+0.482  q=0.537
+       H2-D1          d16-d30=+0.382  q=0.537
+       Nefl           d16-d30=+0.356  q=0.537
+     UP in day30 (later / chronic accrual):
+       Fmod           d16-d30=-0.579  q=0.537
+       Crabp2         d16-d30=-0.528  q=0.537
+       Thbs1          d16-d30=-0.526  q=0.537
+       Igf1           d16-d30=-0.478  q=0.537
+       Aldh1a2        d16-d30=-0.474  q=0.537
+       Wnt6           d16-d30=-0.473  q=0.537
+     program mean (day16 - day30): inflammation=+0.09  MHC=+0.24  DAM=-0.06  cholesterol=+0.07
+
+-- 4. CONSERVATION: chronic severity trajectory vs RR relapse cycle --
+   Spearman(chronic severity rho, RR cycle mono_rho) = +0.783 (p=0, 5101 genes)
+   Spearman(chronic severity rho, RR peak-rem amplitude) = +0.791 (p=0)
+   -> positive = the disease program is CONSERVED across model/strain (slope correlation cancels strain offset).
+   top conserved-UP in both: C6, Htr2b, Rnase4, Gpnmb, C4b, Abca1, Stab1, Tent5c, Nagk, Hpse, Spsb2, Cd300a
+   top conserved-DOWN in both: Msmo1, Idi1, Acss2, Hmgcr, Adamts3, Wrap53, Cacng2, Hsd17b7, Mal, Nphs1, Lss, Camk4
+
+-- 5. Cell-type composition along chronic severity (leiden_1) --
+     cluster 14   [neuron        ] rho=-0.933  q=2.35e-14
+     cluster 8    [astrocyte     ] rho=-0.928  q=3.2e-14
+     cluster 10   [vascular/endo ] rho=-0.927  q=3.2e-14
+     cluster 17   [oligo/myelin  ] rho=-0.920  q=7.16e-14
+     cluster 12   [oligo/myelin  ] rho=-0.920  q=7.16e-14
+     cluster 19   [vascular/endo ] rho=-0.895  q=4.15e-12
+     cluster 20   [microglia     ] rho=+0.888  q=9.06e-12
+     cluster 13   [T/NK          ] rho=+0.882  q=1.8e-11
+     cluster 3    [infl-myeloid  ] rho=+0.878  q=2.41e-11
+     cluster 21   [Bcell/plasma  ] rho=+0.872  q=4.91e-11
+
+-- HONEST CAVEATS --
+   * Cross-sectional: 1 stage/animal, terminal. Trajectory reconstructed across mice.
+   * Small per-stage n (2-6). Animal-level stats; individual stage means noisy.
+   * day16/day30 contrasts confounded with run_date in this cohort (see note).
+   * Chronic is L/T regions only (~no cervical), so no region-spared axis here.

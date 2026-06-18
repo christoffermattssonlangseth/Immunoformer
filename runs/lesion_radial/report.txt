@@ -1,0 +1,19 @@
+
+=== Lesion core-rim radial profiling (570 lesions, 30 animals) ===
+Radial program scores (z) by signed distance-to-edge (neg=core, 0=edge, pos=parenchyma):
+  bin(µm):    -60    -30    -15     -5      5     15     30     55     90    135
+  myeloid_core         0.33   0.21   0.15   0.07  -0.06  -0.16  -0.16  -0.15  -0.13  -0.11
+  lymphoid             0.20   0.24   0.28   0.26   0.11  -0.08  -0.08  -0.07  -0.04  -0.03
+  complement           0.28   0.34   0.37   0.43   0.20   0.11   0.10   0.07   0.06   0.03
+  astrocyte            0.13   0.00  -0.10  -0.15  -0.03   0.23   0.28   0.29   0.26   0.21
+  myelin_parenchyma   -0.30  -0.37  -0.43  -0.45  -0.24   0.03   0.09   0.10   0.09   0.06
+  --------------------------------------------------
+  %inflammatory   0.50   0.49   0.49   0.46   0.29   0.04   0.06   0.09   0.12   0.14
+  %astrocyte      0.07   0.06   0.05   0.05   0.06   0.11   0.11   0.10   0.10   0.10
+
+-- BEYOND-SEVERITY test (residualized on score + lesion size) --
+  myeloid_core_rim     peak-rem p=0.876  region p=0.413
+  astro_rim_core       peak-rem p=0.357  region p=0.643
+  complement_rim_core  peak-rem p=0.255  region p=0.903
+
+=== VERDICT: NULL — radial organization is also explained by severity ===

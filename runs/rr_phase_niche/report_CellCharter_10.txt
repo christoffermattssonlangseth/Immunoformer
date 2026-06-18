@@ -1,0 +1,22 @@
+
+=== Niche-resolved TEST A — CellCharter_10 (peak vs remission, severity-residualized) ===
+10 niches, 9 testable (>= 50 cells & >= 4/class).
+Bonferroni alpha = 0.0056. Perm null (B=2000) run only for AUC >= 0.62.
+
+  niche            n_pk/n_rem   AUC     perm_p
+  2               13/9       0.239     -  
+  5               13/9       0.222     -  
+  6               13/9       0.205     -  
+  7               13/9       0.179     -  
+  8               10/9       0.178     -  
+  3               13/9       0.171     -  
+  4                9/9       0.148     -  
+  1               13/9       0.128     -  
+  9               11/6       0.000     -  
+
+  skipped (1): 0
+
+-- Composition test (niche fractions, severity-residualized) --
+   AUC = 0.026  perm_p = 0.9855
+
+=== NICHE GATE: NULL — no niche carries phase beyond severity. Bulk null confirmed at single-cell resolution. ===

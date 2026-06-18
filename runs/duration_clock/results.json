@@ -1,0 +1,139 @@
+{
+  "n_animals": 33,
+  "day_range": [
+    11.0,
+    49.0
+  ],
+  "clock_A_raw": {
+    "spearman": 0.725,
+    "r2_loao": 0.559
+  },
+  "clock_B_severity_orthogonalized": {
+    "spearman": 0.799,
+    "r2_loao": 0.672,
+    "perm_p": 0.0196,
+    "perm_rho_mean": -0.066,
+    "n_clock_genes": 135,
+    "alpha": 0.08051
+  },
+  "severity_only_baseline_spearman": -0.52,
+  "cross_target_predict_score_spearman": 0.842,
+  "batch_leakage_day": {
+    "run_date": {
+      "n_levels": 2,
+      "kruskal_p_day": 0.1379
+    },
+    "sample_id": {
+      "n_levels": 18,
+      "kruskal_p_day": 0.7168
+    },
+    "region": {
+      "n_levels": 3,
+      "kruskal_p_day": 0.2145
+    }
+  },
+  "top_clock_genes": [
+    {
+      "gene": "Col4a2",
+      "coef": -1.7816
+    },
+    {
+      "gene": "Nr1d1",
+      "coef": 1.3828
+    },
+    {
+      "gene": "H19",
+      "coef": -1.3484
+    },
+    {
+      "gene": "Thbs2",
+      "coef": 1.2126
+    },
+    {
+      "gene": "Dbp",
+      "coef": 1.0308
+    },
+    {
+      "gene": "Serpine2",
+      "coef": 0.8782
+    },
+    {
+      "gene": "Bhlhe40",
+      "coef": 0.7935
+    },
+    {
+      "gene": "Cxcl13",
+      "coef": 0.662
+    },
+    {
+      "gene": "Srebf1",
+      "coef": 0.6512
+    },
+    {
+      "gene": "Col4a1",
+      "coef": -0.6234
+    },
+    {
+      "gene": "Mzb1",
+      "coef": -0.5908
+    },
+    {
+      "gene": "Eln",
+      "coef": -0.5299
+    },
+    {
+      "gene": "Jchain",
+      "coef": -0.5295
+    },
+    {
+      "gene": "Slc47a1",
+      "coef": 0.5233
+    },
+    {
+      "gene": "Hsd17b7",
+      "coef": -0.512
+    },
+    {
+      "gene": "Xist",
+      "coef": 0.5001
+    },
+    {
+      "gene": "Lpl",
+      "coef": 0.4932
+    },
+    {
+      "gene": "Tcf7",
+      "coef": 0.4879
+    },
+    {
+      "gene": "Igfbp3",
+      "coef": -0.4799
+    },
+    {
+      "gene": "Mog",
+      "coef": -0.4605
+    },
+    {
+      "gene": "Tmem173",
+      "coef": -0.4514
+    },
+    {
+      "gene": "Hmgcr",
+      "coef": -0.4478
+    },
+    {
+      "gene": "Ccr2",
+      "coef": -0.4368
+    },
+    {
+      "gene": "Igfbp2",
+      "coef": 0.4235
+    },
+    {
+      "gene": "Atf5",
+      "coef": 0.4207
+    }
+  ],
+  "interpretation": "clock_B is the de-confounded result (duration beyond severity). Compare to severity_only_baseline (day from score alone) and cross_target (can clock features read severity?). Low batch_leakage kruskal_p would flag day~batch confounding within RR.",
+  "caveats": "RR only, strain-clean. n is small (~33 animals); LOAO + permutation null guard against overfit. Pseudobulk (animal-level); spatial Tier-2 MIL is a separate build. CHRONIC excluded (day aliases run_date)."
+}

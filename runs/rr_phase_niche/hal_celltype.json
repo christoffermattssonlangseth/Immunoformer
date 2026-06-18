@@ -1,0 +1,113 @@
+{
+  "hal_high_cluster": "5",
+  "hal_top": 2.337,
+  "hal_median": 0.218,
+  "fold_vs_median": 10.7,
+  "per_cluster_hal": {
+    "5": 2.337,
+    "3": 1.416,
+    "18": 1.117,
+    "0": 0.89,
+    "13": 0.798,
+    "22": 0.776,
+    "15": 0.673,
+    "7": 0.656,
+    "21": 0.594,
+    "11": 0.29,
+    "9": 0.273,
+    "16": 0.243,
+    "20": 0.218,
+    "1": 0.213,
+    "19": 0.154,
+    "23": 0.102,
+    "17": 0.078,
+    "10": 0.065,
+    "2": 0.057,
+    "6": 0.042,
+    "12": 0.041,
+    "4": 0.04,
+    "14": 0.037,
+    "24": 0.031,
+    "8": 0.021
+  },
+  "markers_top_vs_other": [
+    {
+      "gene": "Arg1",
+      "lineage": "myeloid/mac",
+      "top": 3.18,
+      "other_mean": 0.54
+    },
+    {
+      "gene": "Chil3",
+      "lineage": "myeloid/mac",
+      "top": 3.0,
+      "other_mean": 0.52
+    },
+    {
+      "gene": "Cd14",
+      "lineage": "myeloid/mac",
+      "top": 2.89,
+      "other_mean": 1.27
+    },
+    {
+      "gene": "Fn1",
+      "lineage": "myeloid/mac",
+      "top": 3.99,
+      "other_mean": 1.61
+    },
+    {
+      "gene": "Ccr2",
+      "lineage": "myeloid/mac",
+      "top": 1.28,
+      "other_mean": 0.32
+    },
+    {
+      "gene": "Plac8",
+      "lineage": "myeloid/mac",
+      "top": 1.81,
+      "other_mean": 0.68
+    },
+    {
+      "gene": "Cd74",
+      "lineage": "antigen-pres",
+      "top": 5.24,
+      "other_mean": 3.51
+    },
+    {
+      "gene": "H2-Aa",
+      "lineage": "antigen-pres",
+      "top": 3.8,
+      "other_mean": 2.04
+    },
+    {
+      "gene": "Gpnmb",
+      "lineage": "DAM/foamy",
+      "top": 3.77,
+      "other_mean": 0.9
+    },
+    {
+      "gene": "Cx3cr1",
+      "lineage": "microglia",
+      "top": 1.62,
+      "other_mean": 1.25
+    },
+    {
+      "gene": "P2ry12",
+      "lineage": "microglia",
+      "top": 0.74,
+      "other_mean": 0.95
+    },
+    {
+      "gene": "Tmem119",
+      "lineage": "microglia",
+      "top": 0.49,
+      "other_mean": 0.68
+    },
+    {
+      "gene": "Fcrls",
+      "lineage": "microglia",
+      "top": 0.57,
+      "other_mean": 0.46
+    }
+  ]
+}

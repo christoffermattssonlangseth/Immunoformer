@@ -1,0 +1,128 @@
+{
+  "groups": [
+    {
+      "group": "chr PEAK1",
+      "model": "CHRONIC",
+      "stage": "PEAK1",
+      "n": 6,
+      "mean_score": 2.96,
+      "acute_program_z": 1.179,
+      "cumulative_program_z": -0.702,
+      "gene_Hal": 0.03,
+      "gene_Arg1": 3.25,
+      "gene_Gpnmb": 2.85,
+      "gene_Plin4": 1.53,
+      "gene_Fcrls": 0.9
+    },
+    {
+      "group": "RR PEAK1",
+      "model": "RR",
+      "stage": "PEAK1",
+      "n": 4,
+      "mean_score": 2.75,
+      "acute_program_z": 1.682,
+      "cumulative_program_z": -0.969,
+      "gene_Hal": 1.32,
+      "gene_Arg1": 2.98,
+      "gene_Gpnmb": 1.9,
+      "gene_Plin4": 1.63,
+      "gene_Fcrls": 0.19
+    },
+    {
+      "group": "RR PEAK2",
+      "model": "RR",
+      "stage": "PEAK2",
+      "n": 4,
+      "mean_score": 2.44,
+      "acute_program_z": 0.604,
+      "cumulative_program_z": 0.009,
+      "gene_Hal": 1.1,
+      "gene_Arg1": 1.61,
+      "gene_Gpnmb": 2.71,
+      "gene_Plin4": 2.07,
+      "gene_Fcrls": 0.8
+    },
+    {
+      "group": "RR PEAK3",
+      "model": "RR",
+      "stage": "PEAK3",
+      "n": 5,
+      "mean_score": 2.65,
+      "acute_program_z": 0.72,
+      "cumulative_program_z": 0.129,
+      "gene_Hal": 1.19,
+      "gene_Arg1": 1.65,
+      "gene_Gpnmb": 3.21,
+      "gene_Plin4": 1.91,
+      "gene_Fcrls": 0.96
+    }
+  ],
+  "within_rr_peak1_vs_peak3": {
+    "score_PEAK1": 2.75,
+    "score_PEAK3": 2.65,
+    "acute_PEAK1": 1.682,
+    "acute_PEAK3": 0.72,
+    "acute_p": 0.19,
+    "cumulative_PEAK1": -0.969,
+    "cumulative_PEAK3": 0.129,
+    "cumulative_p": 0.016,
+    "n_PEAK1": 4,
+    "n_PEAK3": 5,
+    "note": "strain-CLEAN (same SJL/PLP strain); small n (4 vs 5) -> descriptive"
+  },
+  "rr_ratchet_genes_PEAK1_2_3": {
+    "Gpnmb": [
+      1.9,
+      2.71,
+      3.21
+    ],
+    "Plin4": [
+      1.63,
+      2.07,
+      1.91
+    ],
+    "Fcrls": [
+      0.19,
+      0.8,
+      0.96
+    ],
+    "Igf2": [
+      1.66,
+      2.57,
+      2.73
+    ],
+    "Fmod": [
+      0.47,
+      1.06,
+      1.19
+    ],
+    "Pmp22": [
+      1.67,
+      1.79,
+      1.82
+    ],
+    "Ptgds": [
+      3.34,
+      3.82,
+      3.72
+    ]
+  },
+  "rr_acute_genes_PEAK1_2_3": {
+    "Hal": [
+      1.32,
+      1.1,
+      1.19
+    ],
+    "Arg1": [
+      2.98,
+      1.61,
+      1.65
+    ],
+    "Chil3": [
+      2.42,
+      1.02,
+      1.38
+    ]
+  },
+  "caveats": "Within-RR (PEAK1 vs PEAK3) is strain-matched and clean. CHRONIC PEAK1 is strain/antigen-confounded (SJL/PLP vs B6/MOG) so its absolute offset mixes history AND strain. All groups small n (4-6); descriptive."
+}

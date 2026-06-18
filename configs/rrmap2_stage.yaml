@@ -44,6 +44,8 @@ data:
   encoder: pca
   pca_dim: 64
   n_hvg: 2000                   # full 5101 panel densifies to 28GB; 2000 HVGs fits 48GB RAM
+  hvg_subsample: 50000          # compute HVG stats on a 50k-cell subsample, not a full
+                                # adata.copy() — avoids the ~13GB spike behind the segfault
   val_fraction: 0.25
   seed: 0
 

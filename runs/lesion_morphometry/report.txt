@@ -1,0 +1,81 @@
+
+=== RRMAP2 LESION-FIELD MORPHOMETRY (beyond-severity test) ===
+888 lesions, 98 sections, 33 animals (infl set leiden_1=['5', '3', '18', '13', '21'], min 20 cells)
+
+-- Animal-level descriptives BY PHASE --
+       lesion_count  lesion_burden  mean_lesion_size  max_lesion_size  largest_lesion_frac  gini_lesion_size  fragmentation  infl_frac
+phase                                                                                                                                 
+OTHER         4.212          0.043            70.672          215.857                0.498             0.321          7.113      0.086
+PEAK         14.128          0.203           188.898          815.923                0.313             0.496          4.975      0.303
+REM           7.615          0.067            71.666          245.480                0.410             0.279          5.587      0.149
+
+-- Animal-level descriptives BY REGION (L->T->C) --
+        lesion_count  lesion_burden  mean_lesion_size  max_lesion_size  largest_lesion_frac  gini_lesion_size  fragmentation  infl_frac
+region                                                                                                                                 
+C             10.094          0.088           100.327          374.630                0.319             0.378          6.556      0.150
+L              9.212          0.126           143.341          559.833                0.380             0.398          5.584      0.210
+T              7.909          0.124           129.775          556.464                0.461             0.390          4.948      0.206
+
+-- RAW severity correlation (animal level, Spearman) --
+   lesion_count           rho=+0.735  p=0
+   lesion_burden          rho=+0.693  p=0
+   mean_lesion_size       rho=+0.429  p=0.0181
+   max_lesion_size        rho=+0.474  p=0.0081
+   largest_lesion_frac    rho=-0.409  p=0.0249
+   gini_lesion_size       rho=+0.500  p=0.0049
+   fragmentation          rho=-0.497  p=0.0053
+   infl_frac              rho=+0.816  p=0
+
+-- BEYOND-SEVERITY: peak vs remission (residual, animal-level, perm) --
+   feature                resid_on          p_minus_r   perm_p   q
+   mean_density           severity+burden    -0.004   0.019   0.425
+   mean_density           severity           -0.004   0.048   0.525
+   gini_lesion_size       severity+burden    +0.051   0.120   0.878
+   fragmentation          severity           +0.924   0.181   0.934
+   fragmentation          severity+burden    +0.776   0.233   0.934
+   lesion_burden          severity+burden    +0.024   0.255   0.934
+   mean_compactness       severity           -0.018   0.477   0.964
+   mean_compactness       severity+burden    -0.015   0.540   0.964
+   lesion_count           severity           -1.238   0.543   0.964
+   gini_lesion_size       severity           +0.033   0.588   0.964
+   mean_lympho_frac       severity+burden    -0.011   0.742   0.964
+   mean_nn_dist           severity          +24.329   0.760   0.964
+   lesion_count           severity+burden    -0.512   0.775   0.964
+   mean_nn_dist           severity+burden   +20.788   0.795   0.964
+   largest_lesion_frac    severity           +0.015   0.798   0.964
+   largest_lesion_frac    severity+burden    +0.013   0.808   0.964
+   max_lesion_size        severity          -53.826   0.811   0.964
+   mean_lympho_frac       severity           -0.007   0.828   0.964
+   mean_lesion_size       severity+burden    +8.802   0.833   0.964
+   mean_lesion_size       severity           -4.032   0.939   0.985
+   max_lesion_size        severity+burden   +10.758   0.940   0.985
+   lesion_burden          severity           +0.000   0.996   0.996
+
+-- BEYOND-SEVERITY: region L->T->C trend (residual, animal slopes, perm) --
+   feature                resid_on          slope_LtoC  perm_p   q
+   lesion_burden          severity+burden   +0.0103   0.008   0.178
+   mean_density           severity+burden   -0.0006   0.027   0.293
+   lesion_count           severity+burden   +1.2228   0.056   0.408
+   max_lesion_size        severity+burden  +91.5692   0.103   0.565
+   gini_lesion_size       severity+burden   +0.0236   0.149   0.656
+   mean_lesion_size       severity+burden  +12.7721   0.362   0.845
+   mean_lympho_frac       severity          +0.0180   0.362   0.845
+   mean_compactness       severity+burden   +0.0097   0.366   0.845
+   lesion_count           severity          +0.5909   0.386   0.845
+   mean_nn_dist           severity+burden  -35.8483   0.424   0.845
+   lesion_burden          severity          -0.0103   0.446   0.845
+   fragmentation          severity          +0.2755   0.495   0.845
+   mean_nn_dist           severity         -25.9951   0.568   0.845
+   mean_lympho_frac       severity+burden   +0.0110   0.581   0.845
+   mean_lesion_size       severity         -13.2291   0.582   0.845
+   gini_lesion_size       severity          -0.0115   0.641   0.845
+   mean_density           severity          -0.0002   0.670   0.845
+   mean_compactness       severity          +0.0048   0.723   0.845
+   max_lesion_size        severity         -39.2759   0.730   0.845
+   largest_lesion_frac    severity+burden   -0.0036   0.921   0.976
+   fragmentation          severity+burden   -0.0253   0.931   0.976
+   largest_lesion_frac    severity          -0.0000   0.998   0.998
+
+-- VERDICT --
+   peak-vs-rem residual tests surviving q<0.05: 0
+   region-trend residual tests surviving q<0.05: 0

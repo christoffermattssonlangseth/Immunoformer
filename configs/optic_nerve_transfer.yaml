@@ -1,0 +1,36 @@
+# Optic nerve EAE — transfer evaluation config
+#
+# Used by evaluate.py (TransferEvaluator.evaluate) to run a model trained on
+# RRMAP2 against the optic nerve dataset. 288k cells, 6 animals (CM1-CM9) — best
+# used as a held-out generalisation test, not a training set.
+#
+# Verified obs layout (inspect_labels.py, 2026-06-12):
+#   - 288,023 cells. The experimental unit is the POLYGON
+#     (`karospace_polygon_labels`, 30 of them, e.g. "1_CM1_Mild_Onset"); each
+#     polygon encodes a constant animal + condition + timepoint, ranging
+#     2.2k-28k cells. So bag = karospace_polygon_labels.
+#   - `animal` (6: CM1/CM2/CM3/CM4/CM7/CM9) is the leakage-free split key — and
+#     it is NOT constant in condition/timepoint (CM1 spans Mild/Severe/Control,
+#     CM4 spans Onset+Peak), so it must NOT be used as the bag key.
+#   - Label options: `timepoint` (Onset < Peak, used here — clean 2-level
+#     ordinal) or `condition` (Control/Sham/Mild/Severe — richer 4-level
+#     severity; pick an order, e.g. Control < Sham < Mild < Severe).
+
+tag: optic_nerve
+h5ad_path: /Volumes/moldiassd/optic_nerve_merged.scanpy.companion.ready_with_polygons.h5ad
+
+obs:
+  animal_id: animal
+  section_id: karospace_polygon_labels
+  label: timepoint
+  label_order:
+    - Onset
+    - Peak
+
+data:
+  layer: counts
+  max_cells_per_bag: 2048
+  min_cells_per_bag: 32    # smaller sections — lower threshold than RRMAP2
+
+# Source run to load (must contain best.pt, encoder.pkl, hvg_genes.npy, run_manifest.json)
+source_run_dir: runs/rrmap2_stage
