@@ -1,0 +1,16 @@
+
+=== DURATION CLOCK — molecular clock of accumulated EAE damage (RR) ===
+n=33 animals, day 11-49 post-induction
+
+  Clock A (raw, day~genes)            : Spearman=+0.725  R2(LOAO)=+0.559
+  Clock B (severity-orthogonalized)   : Spearman=+0.799  R2(LOAO)=+0.672  perm p=0.0196  (135 clock genes)
+  -- controls --
+  severity-only baseline (day~score)  : Spearman=-0.520
+  cross-target (clock feats -> score) : Spearman=+0.842
+  batch leakage (day ~ batch within RR):
+     run_date: 2 levels, Kruskal p(day)=0.1379
+     sample_id: 18 levels, Kruskal p(day)=0.7168
+     region: 3 levels, Kruskal p(day)=0.2145
+
+  top clock genes (severity-orthogonalized coefs):
+    Col4a2(-1.78), Nr1d1(+1.38), H19(-1.35), Thbs2(+1.21), Dbp(+1.03), Serpine2(+0.88), Bhlhe40(+0.79), Cxcl13(+0.66), Srebf1(+0.65), Col4a1(-0.62), Mzb1(-0.59), Eln(-0.53), Jchain(-0.53), Slc47a1(+0.52), Hsd17b7(-0.51)

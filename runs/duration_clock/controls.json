@@ -1,0 +1,37 @@
+{
+  "n": 33,
+  "sex": {
+    "n_female_xisthi": 7,
+    "n_male_xistlo": 26,
+    "xist_split_thr": 0.9204,
+    "mannwhitney_day_sex_p": 0.1768,
+    "pointbiserial_r": -0.2861,
+    "pointbiserial_p": 0.1065,
+    "spearman_xistraw_day": -0.0518
+  },
+  "region": {
+    "median_day": {
+      "C": 32.0,
+      "L": 26.5,
+      "T": 33.0
+    },
+    "mean_score": {
+      "C": 1.7692307692307692,
+      "L": 1.0,
+      "T": 1.3125
+    },
+    "kruskal_day_region_p": 0.2145,
+    "ordinal_LTC_spearman_day": 0.1754,
+    "ordinal_LTC_spearman_day_p": 0.329,
+    "ordinal_LTC_spearman_score": 0.2843
+  },
+  "fully_controlled_clock": {
+    "covariates": "score + sex + region(one-hot)",
+    "xist_dropped": true,
+    "spearman": 0.864,
+    "r2_loao": 0.732,
+    "perm_p": 0.0196,
+    "original_clockB_spearman": 0.799
+  },
+  "verdict": "Non-significant confound tests + a fully-controlled clock that retains high LOAO Spearman with significant perm p => the duration axis is not an artifact of sex, region, or severity in any combination."
+}

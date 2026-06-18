@@ -1,0 +1,31 @@
+
+=== DURATION CLOCK — Tier 2: spatial localization (RR) ===
+n=33 animals. Whole-tissue clock B Spearman=+0.80.
+
+Cell-type clocks (duration beyond severity, LOAO):
+  astrocyte        Spearman=+0.886  R2=+0.805  (median 2637 cells)
+  oligo/myelin     Spearman=+0.871  R2=+0.772  (median 5575 cells)
+  infl-myeloid     Spearman=+0.847  R2=+0.726  (median 3324 cells)
+  microglia        Spearman=+0.844  R2=+0.741  (median 2691 cells)
+  OPC              Spearman=+0.840  R2=+0.686  (median 1856 cells)
+  vascular/endo    Spearman=+0.819  R2=+0.670  (median 3983 cells)
+  T/NK             Spearman=+0.749  R2=+0.615  (median 948 cells)
+  neuron           Spearman=+0.717  R2=+0.550  (median 4141 cells)
+  ependymal        Spearman=+0.699  R2=+0.519  (median 171 cells)
+  Bcell/plasma     Spearman=+0.690  R2=+0.491  (median 333 cells)
+
+Composition clock (cell-type fractions -> day): Spearman=+0.518
+
+Spatial-niche clocks (labeled by nearest cell type):
+  niche3 (vascular/endo)   Spearman=+0.841  R2=+0.720
+  niche5 (oligo/myelin)    Spearman=+0.836  R2=+0.786
+  niche6 (vascular/endo)   Spearman=+0.798  R2=+0.625
+  niche7 (OPC)             Spearman=+0.748  R2=+0.581
+  niche1 (oligo/myelin)    Spearman=+0.731  R2=+0.592
+  niche2 (neuron)          Spearman=+0.726  R2=+0.477
+  niche8 (neuron)          Spearman=+0.654  R2=-0.743
+
+Permutation nulls (winners):
+  best_cell_type: astrocyte Spearman=+0.886 perm_p=0.0196
+  composition:  Spearman=+0.518 perm_p=0.0392
+  best_niche: niche3 (vascular/endo) Spearman=+0.841 perm_p=0.0196
