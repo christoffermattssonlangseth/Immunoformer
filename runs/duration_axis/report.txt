@@ -1,0 +1,16 @@
+
+=== DURATION axis: accrual vs actual day_of_sacrifice (partial | severity) ===
+
+-- RR (n=33, days 11-49, day~score collinearity rho=+0.14) --
+   CUMULATIVE program vs day | severity: partial rho=+0.695 (p=0.0)
+   ACUTE program      vs day | severity: partial rho=-0.586 (p=0.0004)
+   genes with q<0.05 (duration, severity-adjusted): 844
+   top duration genes: Slc16a2(+0.82), Fmod(+0.82), Musk(+0.81), Mrgprf(+0.79), Pltp(+0.79), Vtn(+0.78), Enpp1(+0.78), Wnt6(+0.78), Dbp(+0.77), Hadh(+0.77)
+   named: Gpnmb=+0.55, Plin4=-0.11, Fcrls=+0.65, Igf2=+0.73, Fmod=+0.81, Pmp22=+0.45, Ptgds=+0.50, Hal=-0.05, Arg1=-0.58
+
+-- CHRONIC (n=34, days 8-50, day~score collinearity rho=+0.58) --
+   CUMULATIVE program vs day | severity: partial rho=+0.716 (p=0.0)
+   ACUTE program      vs day | severity: partial rho=-0.291 (p=0.1006)
+   genes with q<0.05 (duration, severity-adjusted): 644
+   top duration genes: Plau(+0.85), Abhd4(+0.83), Cd109(+0.83), Snai2(+0.81), Ddit3(+0.81), Prelp(+0.80), Ctnnb1(+0.80), Sox9(+0.79), Eya4(+0.79), Ppl(+0.79)
+   named: Gpnmb=+0.64, Plin4=-0.27, Fcrls=+0.59, Igf2=+0.77, Fmod=+0.71, Pmp22=+0.14, Ptgds=+0.48, Hal=-0.34, Arg1=-0.34

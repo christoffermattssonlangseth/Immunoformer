@@ -1,0 +1,36 @@
+
+=== Niche-resolved TEST A — leiden_1 (peak vs remission, severity-residualized) ===
+25 niches, 25 testable (>= 50 cells & >= 4/class).
+Bonferroni alpha = 0.0020. Perm null (B=2000) run only for AUC >= 0.62.
+
+  niche            n_pk/n_rem   AUC     perm_p
+  22              13/8       0.385     -  
+  8               13/9       0.291     -  
+  7               13/9       0.239     -  
+  21              13/9       0.239     -  
+  10              13/9       0.231     -  
+  12              13/9       0.231     -  
+  19              13/9       0.222     -  
+  17              13/9       0.222     -  
+  14              13/9       0.205     -  
+  6               13/9       0.205     -  
+  9               13/9       0.205     -  
+  11              13/9       0.205     -  
+  15              13/9       0.205     -  
+  4               13/9       0.197     -  
+  2               13/9       0.188     -  
+  23              13/9       0.188     -  
+  1               13/9       0.179     -  
+  24              13/9       0.179     -  
+  13              13/9       0.162     -  
+  3               13/9       0.145     -  
+  0               13/9       0.145     -  
+  16              13/9       0.145     -  
+  20              13/9       0.137     -  
+  18              13/9       0.128     -  
+  5               13/7       0.121     -  
+
+-- Composition test (niche fractions, severity-residualized) --
+   AUC = 0.017  perm_p = 0.9985
+
+=== NICHE GATE: NULL — no niche carries phase beyond severity. Bulk null confirmed at single-cell resolution. ===

@@ -152,6 +152,14 @@ def build_or_load_cells():
     Gi = sp.csr_matrix(Gi)
     Gi.data[:] = 1.0
     Gi = Gi.maximum(Gi.T)                    # symmetrize
+    # RESTRICT to within-section: the global precomputed graph has 14.6% CROSS-section
+    # edges (sections share one coordinate frame; median 7.9um links between overlaid
+    # sections). Drop any edge joining two different meta_sample_id sections, else
+    # lesions merge across sections. (The earlier "0 cross edges" claim was wrong.)
+    infl_sec_local = sc[infl_idx]
+    Gc = Gi.tocoo()
+    keep = infl_sec_local[Gc.row] == infl_sec_local[Gc.col]
+    Gi = sp.csr_matrix((Gc.data[keep], (Gc.row[keep], Gc.col[keep])), shape=Gi.shape)
 
     os.makedirs(OUT_DIR, exist_ok=True)
     np.savez(

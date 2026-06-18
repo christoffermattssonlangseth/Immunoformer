@@ -1,5 +1,14 @@
 # `Hal` (histidine ammonia-lyase) — a recurrent, metabolically-coherent hit in RRMAP2
 
+> **Update (2026-06-15):** a deep-research stress-test partially corrects this
+> doc — see [`hal-histidine-deep-research.md`](hal-histidine-deep-research.md).
+> Headline: the `Hal` finding is novel, but the *histidine-depletion bridge to
+> systemic MS histidine↓* is weak (wrong cell type, histamine fork dominates,
+> carnosine sink moves opposite, UCA failed its EAE test). Two claims below were
+> refuted in verification (the MDPI/CSF paper does **not** pin histidine↓ to a
+> fork; HAL kinetics are unresolved). Reframe toward "`Hal` = reproducible
+> myeloid/neutrophil signature of the relapse cycle".
+
 ## Why it matters
 
 `Hal` is the single most robust disease-associated gene across **every** RRMAP2

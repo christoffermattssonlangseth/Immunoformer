@@ -1,0 +1,71 @@
+
+=== RR relapse-cycle OSCILLATION vs RATCHET (n=33 RR animals) ===
+Stages (n): PLP CFA=3  ONSET1=2  ONSET2=2  PEAK1=4  REMISSION1=5  PEAK2=4  REMISSION2=4  PEAK3=5
+Peak animals=13  Remission animals=9
+
+CAVEAT: peaks are high-severity (score~2.5) vs remissions (~0.8), so raw
+amplitude (peak-remission) largely tracks ACUTE severity. The severity-
+independent accumulation signal is floor_drift = REM2 - REM1 (does the gene
+stay elevated once the animal has clinically recovered?).
+
+-- Hal: temporal profile (log CP10k per stage) [class=acute_oscillating] --
+   CFA=+0.07  ONSET1=+0.25  ONSET2=+0.27  PEAK1=+1.32  REM1=+0.61  PEAK2=+1.10  REM2=+0.41  PEAK3=+1.19
+   amplitude(peak-rem)=+0.682 (q=0.058)  floor_drift(REM2-REM1)=-0.207  peak_drift(PK3-PK1)=-0.133  mono_rho=+0.516
+   => RESETS each cycle -> acute/reversible relapse marker
+
+-- Cd68: temporal profile (log CP10k per stage) [class=acute_oscillating] --
+   CFA=+0.60  ONSET1=+0.80  ONSET2=+1.01  PEAK1=+2.41  REM1=+2.04  PEAK2=+2.18  REM2=+2.06  PEAK3=+2.71
+   amplitude(peak-rem)=+0.409 (q=0.081)  floor_drift(REM2-REM1)=+0.021  peak_drift(PK3-PK1)=+0.299  mono_rho=+0.643
+   => RESETS each cycle -> acute/reversible relapse marker
+
+-- Fcrls: temporal profile (log CP10k per stage) [class=ratchet_cumulative] --
+   CFA=+0.33  ONSET1=+0.56  ONSET2=+0.55  PEAK1=+0.19  REM1=+0.52  PEAK2=+0.80  REM2=+0.89  PEAK3=+0.96
+   amplitude(peak-rem)=-0.017 (q=1)  floor_drift(REM2-REM1)=+0.371  peak_drift(PK3-PK1)=+0.771  mono_rho=+0.764
+   => floor rises -> cumulative/ratchet
+
+-- Gpnmb: temporal profile (log CP10k per stage) [class=acute+ratchet] --
+   CFA=+0.17  ONSET1=+0.12  ONSET2=+0.31  PEAK1=+1.90  REM1=+1.97  PEAK2=+2.71  REM2=+2.17  PEAK3=+3.21
+   amplitude(peak-rem)=+0.591 (q=0.18)  floor_drift(REM2-REM1)=+0.208  peak_drift(PK3-PK1)=+1.306  mono_rho=+0.786
+   => floor rises -> cumulative/ratchet
+
+-- Top ACUTE OSCILLATING genes (big peak>remission, floor resets) --
+     Arg1           amp=+1.451  floor_drift=-0.718  peak_drift=-1.328  q=0.088
+     Chil1          amp=+1.063  floor_drift=-0.602  peak_drift=-0.640  q=0.058
+     Chil3          amp=+1.007  floor_drift=-0.447  peak_drift=-1.043  q=0.058
+     Timp1          amp=+0.982  floor_drift=-0.422  peak_drift=-0.324  q=0.058
+     Acod1          amp=+0.826  floor_drift=-0.468  peak_drift=-0.852  q=0.075
+     Gbp2           amp=+0.738  floor_drift=-0.457  peak_drift=-0.932  q=0.063
+     Fcgr2b         amp=+0.727  floor_drift=-0.302  peak_drift=-0.310  q=0.058
+     Ccl2           amp=+0.726  floor_drift=-0.153  peak_drift=-0.608  q=0.071
+     Serpina3n      amp=+0.708  floor_drift=-0.353  peak_drift=-0.108  q=0.058
+     Cxcl10         amp=+0.688  floor_drift=-0.321  peak_drift=-0.945  q=0.075
+     Irgm1          amp=+0.688  floor_drift=-0.537  peak_drift=-1.047  q=0.063
+     Hal            amp=+0.682  floor_drift=-0.207  peak_drift=-0.133  q=0.058
+
+-- Top RATCHET / CUMULATIVE genes (remission floor RISES across cycles) --
+     Igf2           floor_drift=+0.654  amp=-0.530  mono_rho=+0.469
+     Ptgds          floor_drift=+0.646  amp=-0.284  mono_rho=-0.119
+     Fmod           floor_drift=+0.591  amp=-0.465  mono_rho=+0.394
+     Plin4          floor_drift=+0.586  amp=-0.018  mono_rho=+0.349
+     Pmp22          floor_drift=+0.430  amp=-0.416  mono_rho=-0.129
+     Vtn            floor_drift=+0.405  amp=-0.399  mono_rho=+0.316
+     Cemip          floor_drift=+0.389  amp=-0.109  mono_rho=+0.670
+     Crabp2         floor_drift=+0.379  amp=-0.103  mono_rho=+0.035
+     Tgfbr3         floor_drift=+0.373  amp=-0.200  mono_rho=+0.091
+     Fcrls          floor_drift=+0.371  amp=-0.017  mono_rho=+0.764
+     Zic2           floor_drift=+0.352  amp=-0.189  mono_rho=+0.285
+     Slc47a1        floor_drift=+0.350  amp=-0.154  mono_rho=-0.065
+
+-- Hal CO-OSCILLATORS (genes whose stage profile tracks Hal's) --
+     Iqgap2         profile_corr=+0.988  amp=+0.112  floor_drift=-0.056
+     Lamp2          profile_corr=+0.987  amp=+0.194  floor_drift=-0.122
+     Il7r           profile_corr=+0.986  amp=+0.434  floor_drift=-0.237
+     Lasp1          profile_corr=+0.983  amp=+0.164  floor_drift=-0.056
+     Kcnn4          profile_corr=+0.983  amp=+0.241  floor_drift=-0.168
+     Tjp3           profile_corr=+0.982  amp=+0.056  floor_drift=-0.044
+     Itgb1          profile_corr=+0.982  amp=+0.216  floor_drift=-0.058
+     Tnfsf11        profile_corr=+0.982  amp=+0.069  floor_drift=-0.020
+     Acp5           profile_corr=+0.981  amp=+0.490  floor_drift=-0.328
+     Klrb1c         profile_corr=+0.981  amp=+0.010  floor_drift=-0.007
+     Rnh1           profile_corr=+0.980  amp=+0.364  floor_drift=-0.066
+     Piezo1         profile_corr=+0.980  amp=+0.105  floor_drift=-0.003
