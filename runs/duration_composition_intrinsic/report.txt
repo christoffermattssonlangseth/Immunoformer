@@ -1,0 +1,35 @@
+
+=== Compositional vs cell-intrinsic accrual (n=33, 10 cell types) ===
+Accrual genes (full set, r_day>=0.30): 1260  |  classified (r_day>=0.40): 825
+median shares -> intrinsic +0.90  compositional +0.11  interaction -0.01
+driver: intrinsic=806  compositional=2  mixed=17
+
+-- Cell-type fraction trend with duration (severity removed) --
+   astrocyte        r=+0.45  expands
+   vascular/endo    r=+0.38  expands
+   microglia        r=+0.27  expands
+   ependymal        r=+0.22  expands
+   neuron           r=+0.17  expands
+   OPC              r=+0.16  expands
+   Bcell/plasma     r=-0.04  shrinks
+   oligo/myelin     r=-0.14  shrinks
+   infl-myeloid     r=-0.35  shrinks
+   T/NK             r=-0.42  shrinks
+
+-- Top COMPOSITIONAL accrual genes (cell-number-driven) --
+   Zic3           comp_share=+0.64  intr_share=+0.38  r_day=+0.43
+   Abcc6          comp_share=+0.62  intr_share=+0.43  r_day=+0.52
+
+-- Top INTRINSIC accrual genes (per-cell upregulation) --
+   Mrc1           intr_share=+2.03  comp_share=-0.74  r_day=+0.51
+   Tslp           intr_share=+1.79  comp_share=-0.30  r_day=+0.42
+   Rag1           intr_share=+1.70  comp_share=-0.33  r_day=+0.46
+   Ctsk           intr_share=+1.58  comp_share=-0.59  r_day=+0.40
+   Maf            intr_share=+1.43  comp_share=-0.23  r_day=+0.43
+   Cited4         intr_share=+1.43  comp_share=-0.18  r_day=+0.46
+   Atp6v0d2       intr_share=+1.41  comp_share=-0.31  r_day=+0.41
+   Col14a1        intr_share=+1.40  comp_share=-0.23  r_day=+0.41
+   Rbl2           intr_share=+1.37  comp_share=-0.25  r_day=+0.43
+   Rnf130         intr_share=+1.34  comp_share=-0.12  r_day=+0.43
+   Smarce1        intr_share=+1.29  comp_share=-0.05  r_day=+0.40
+   Snx30          intr_share=+1.29  comp_share=-0.14  r_day=+0.47

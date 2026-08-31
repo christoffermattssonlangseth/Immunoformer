@@ -1,0 +1,47 @@
+
+=== Gene-level two-clock decomposition on day-of-sacrifice (n=33) ===
+day 11-49 dpi  corr(day,score)=+0.17
+accrual↑=1076  accrual↓=786  severity/oscillating=2115  (day q<0.05: 909)
+clock agreement: Spearman(day-partial, clock coef)=+0.60  sign-agree=0.81  over 135 clock genes
+
+-- Top ACCRUE with day (severity removed) --
+   Fmod           r_day|score=+0.84  r_score|day=-0.71  q=9.9e-06  [clock]
+   Slc16a2        r_day|score=+0.83  r_score|day=-0.37  q=1.1e-05
+   Vtn            r_day|score=+0.81  r_score|day=-0.76  q=3e-05
+   Nkd2           r_day|score=+0.80  r_score|day=-0.80  q=3e-05
+   Musk           r_day|score=+0.80  r_score|day=-0.67  q=3e-05
+   Pltp           r_day|score=+0.80  r_score|day=-0.65  q=3.7e-05  [clock]
+   Dbp            r_day|score=+0.80  r_score|day=-0.88  q=4e-05  [clock]
+   Mrgprf         r_day|score=+0.79  r_score|day=-0.50  q=4.7e-05
+   Enpp1          r_day|score=+0.79  r_score|day=-0.42  q=4.7e-05
+   Mc5r           r_day|score=+0.79  r_score|day=-0.46  q=4.7e-05  [clock]
+   Igf2           r_day|score=+0.78  r_score|day=-0.58  q=5.5e-05
+   Itih5          r_day|score=+0.78  r_score|day=-0.54  q=5.7e-05
+
+-- Top DECLINE with day (severity removed) --
+   Stat2          r_day|score=-0.79  r_score|day=+0.77  q=4.7e-05
+   Ifi209         r_day|score=-0.78  r_score|day=+0.81  q=5.5e-05
+   Usp18          r_day|score=-0.77  r_score|day=+0.58  q=5.7e-05
+   Plac8          r_day|score=-0.77  r_score|day=+0.80  q=5.7e-05
+   Irgm1          r_day|score=-0.77  r_score|day=+0.82  q=5.7e-05
+   Ifnlr1         r_day|score=-0.77  r_score|day=+0.82  q=6e-05
+   Oasl2          r_day|score=-0.77  r_score|day=+0.76  q=6.5e-05
+   Isg15          r_day|score=-0.77  r_score|day=+0.68  q=6.7e-05
+   Ifi44          r_day|score=-0.76  r_score|day=+0.58  q=7.7e-05
+   Gbp7           r_day|score=-0.75  r_score|day=+0.79  q=0.00012
+   Sell           r_day|score=-0.75  r_score|day=+0.80  q=0.00014  [clock]
+   Mctp2          r_day|score=-0.75  r_score|day=+0.75  q=0.00014
+
+-- Top SEVERITY / OSCILLATING (tracks score, flat on day) --
+   Esrrg          r_score|day=-0.89  r_day|score=+0.06  q=1.8e-08
+   Coprs          r_score|day=-0.88  r_day|score=+0.27  q=1.8e-08
+   Zswim5         r_score|day=-0.88  r_day|score=+0.21  q=1.8e-08
+   Sh3gl3         r_score|day=-0.88  r_day|score=+0.19  q=1.8e-08
+   Mapk8ip1       r_score|day=-0.87  r_day|score=+0.09  q=1.8e-08
+   Ern1           r_score|day=+0.87  r_day|score=-0.30  q=2e-08
+   Cdh10          r_score|day=-0.87  r_day|score=+0.28  q=2.5e-08
+   Sptb           r_score|day=-0.87  r_day|score=+0.19  q=3e-08
+   Map2           r_score|day=-0.86  r_day|score=+0.12  q=3.3e-08
+   Efna3          r_score|day=-0.86  r_day|score=+0.15  q=3.3e-08
+   Snap91         r_score|day=-0.86  r_day|score=+0.08  q=3.3e-08
+   Sh3gl2         r_score|day=-0.86  r_day|score=+0.19  q=3.3e-08

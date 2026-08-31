@@ -1,0 +1,219 @@
+{
+  "n_animals": 33,
+  "n_cell_types": 10,
+  "cell_types": [
+    "Bcell/plasma",
+    "OPC",
+    "T/NK",
+    "astrocyte",
+    "ependymal",
+    "infl-myeloid",
+    "microglia",
+    "neuron",
+    "oligo/myelin",
+    "vascular/endo"
+  ],
+  "n_accrual_genes_full": 1260,
+  "n_accrual_genes_classified": 825,
+  "median_intrinsic_share": 0.9021195089763205,
+  "median_compositional_share": 0.10732469946578181,
+  "median_interaction_share": -0.01308032890791595,
+  "driver_counts": {
+    "compositional": 2,
+    "intrinsic": 806,
+    "mixed": 17
+  },
+  "cell_type_fraction_day_trend": {
+    "Bcell/plasma": -0.039151628052918476,
+    "OPC": 0.16182069469762847,
+    "T/NK": -0.41534725426873736,
+    "astrocyte": 0.4513629951011903,
+    "ependymal": 0.22227438806684843,
+    "infl-myeloid": -0.34692609363194643,
+    "microglia": 0.26760040850602274,
+    "neuron": 0.1652328684053471,
+    "oligo/myelin": -0.14021435507865196,
+    "vascular/endo": 0.3834198696991891
+  },
+  "expanding_with_duration": [
+    [
+      "astrocyte",
+      0.4513629951011903
+    ],
+    [
+      "vascular/endo",
+      0.3834198696991891
+    ],
+    [
+      "microglia",
+      0.26760040850602274
+    ],
+    [
+      "ependymal",
+      0.22227438806684843
+    ],
+    [
+      "neuron",
+      0.1652328684053471
+    ],
+    [
+      "OPC",
+      0.16182069469762847
+    ]
+  ],
+  "shrinking_with_duration": [
+    [
+      "T/NK",
+      -0.41534725426873736
+    ],
+    [
+      "infl-myeloid",
+      -0.34692609363194643
+    ],
+    [
+      "oligo/myelin",
+      -0.14021435507865196
+    ],
+    [
+      "Bcell/plasma",
+      -0.039151628052918476
+    ]
+  ],
+  "top_compositional_accrual": [
+    {
+      "gene": "Zic3",
+      "comp_share": 0.6403726795588602,
+      "intr_share": 0.3798784274110544,
+      "r_day_total": 0.4281526024637759
+    },
+    {
+      "gene": "Abcc6",
+      "comp_share": 0.6221775022960201,
+      "intr_share": 0.4291440877344152,
+      "r_day_total": 0.5159105259070793
+    }
+  ],
+  "top_intrinsic_accrual": [
+    {
+      "gene": "Mrc1",
+      "intr_share": 2.0268279450110542,
+      "comp_share": -0.7399527324699076,
+      "r_day_total": 0.5138993593590825
+    },
+    {
+      "gene": "Tslp",
+      "intr_share": 1.7949845712142045,
+      "comp_share": -0.3031364826226564,
+      "r_day_total": 0.41746267238427265
+    },
+    {
+      "gene": "Rag1",
+      "intr_share": 1.6996868089774848,
+      "comp_share": -0.32771896165854725,
+      "r_day_total": 0.4647504473985947
+    },
+    {
+      "gene": "Ctsk",
+      "intr_share": 1.578398135486837,
+      "comp_share": -0.5889341536327743,
+      "r_day_total": 0.4021576592573984
+    },
+    {
+      "gene": "Maf",
+      "intr_share": 1.434194642885633,
+      "comp_share": -0.2313634881836256,
+      "r_day_total": 0.43409178891684724
+    },
+    {
+      "gene": "Cited4",
+      "intr_share": 1.4304783628844788,
+      "comp_share": -0.1780063002953812,
+      "r_day_total": 0.4619910094051164
+    },
+    {
+      "gene": "Atp6v0d2",
+      "intr_share": 1.4113993737341257,
+      "comp_share": -0.31337545622620017,
+      "r_day_total": 0.4088099811083064
+    },
+    {
+      "gene": "Col14a1",
+      "intr_share": 1.4027183611608776,
+      "comp_share": -0.23351017152841028,
+      "r_day_total": 0.40514489817897953
+    },
+    {
+      "gene": "Rbl2",
+      "intr_share": 1.371998034936706,
+      "comp_share": -0.24733641946995463,
+      "r_day_total": 0.4321297724277133
+    },
+    {
+      "gene": "Rnf130",
+      "intr_share": 1.339096118851453,
+      "comp_share": -0.11657470224941896,
+      "r_day_total": 0.42869727831708343
+    },
+    {
+      "gene": "Smarce1",
+      "intr_share": 1.2923735808732821,
+      "comp_share": -0.04691813865672083,
+      "r_day_total": 0.4033515170807361
+    },
+    {
+      "gene": "Snx30",
+      "intr_share": 1.287303748645569,
+      "comp_share": -0.13571449285527248,
+      "r_day_total": 0.4652228600866473
+    },
+    {
+      "gene": "Tfeb",
+      "intr_share": 1.2743462616679526,
+      "comp_share": -0.17470307879631813,
+      "r_day_total": 0.41651128706041624
+    },
+    {
+      "gene": "Ms4a7",
+      "intr_share": 1.2712465572193412,
+      "comp_share": -0.25049258328249613,
+      "r_day_total": 0.4099830241795794
+    },
+    {
+      "gene": "Moxd1",
+      "intr_share": 1.2634590545504376,
+      "comp_share": -0.45755482913885637,
+      "r_day_total": 0.4901356830244571
+    },
+    {
+      "gene": "Col1a1",
+      "intr_share": 1.261614106952917,
+      "comp_share": -0.36804780618682637,
+      "r_day_total": 0.41577739444632533
+    },
+    {
+      "gene": "Nid1",
+      "intr_share": 1.256678436836334,
+      "comp_share": -0.34140020862347054,
+      "r_day_total": 0.5055131996949276
+    },
+    {
+      "gene": "Mst1",
+      "intr_share": 1.2477918135437822,
+      "comp_share": -0.21253330836031017,
+      "r_day_total": 0.4257173471745224
+    },
+    {
+      "gene": "Tbx18",
+      "intr_share": 1.2413499996214332,
+      "comp_share": -0.19888298316455758,
+      "r_day_total": 0.5864982216915771
+    },
+    {
+      "gene": "Twist1",
+      "intr_share": 1.230852550710239,
+      "comp_share": -0.19772030098697424,
+      "r_day_total": 0.4145832715928115
+    }
+  ],
+  "note": "Shares are fractions of the severity-removed day covariance Cov(pb,day|score) = Cov_comp + Cov_intr + Cov_inter, computed only over genes that actually accrue (positive day trend). Cell types are 25 leiden clusters collapsed to labelled lineages."
+}

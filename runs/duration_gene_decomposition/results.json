@@ -1,0 +1,553 @@
+{
+  "n_animals": 33,
+  "day_range": [
+    11.0,
+    49.0
+  ],
+  "corr_day_score": 0.1745080513568193,
+  "thresholds": {
+    "accrual_partial_r": 0.3,
+    "severity_partial_r": 0.3
+  },
+  "n_accrual_up": 1076,
+  "n_accrual_down": 786,
+  "n_severity_oscillating": 2115,
+  "n_day_sig_q05": 909,
+  "clock_agreement": {
+    "spearman_day_partial_vs_clock_coef": 0.599931713979124,
+    "sign_agreement_frac": 0.8148148148148148,
+    "n_clock_genes_overlap": 135
+  },
+  "note": "r_day_given_score is the severity-orthogonalized accrual axis (the gene-level duration clock); r_score_given_day is the time-orthogonalized severity axis (oscillation). day vs score are near-orthogonal across animals, so a gene can load on one, the other, or both.",
+  "top_accrual_up": [
+    {
+      "gene": "Fmod",
+      "r_day_given_score": 0.8394015994616015,
+      "r_score_given_day": -0.7106619302132982,
+      "q_day": 9.867047873592391e-06,
+      "in_clock": true
+    },
+    {
+      "gene": "Slc16a2",
+      "r_day_given_score": 0.8298458863374725,
+      "r_score_given_day": -0.36909978960262363,
+      "q_day": 1.0972290103454762e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Vtn",
+      "r_day_given_score": 0.8051907381662491,
+      "r_score_given_day": -0.7645115549815228,
+      "q_day": 2.9841166211643456e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Nkd2",
+      "r_day_given_score": 0.804346387602992,
+      "r_score_given_day": -0.8025606480932461,
+      "q_day": 2.9841166211643456e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Musk",
+      "r_day_given_score": 0.8042858127228352,
+      "r_score_given_day": -0.6674801823100672,
+      "q_day": 2.9841166211643456e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Pltp",
+      "r_day_given_score": 0.7984117621367466,
+      "r_score_given_day": -0.6481403237565178,
+      "q_day": 3.71476169265297e-05,
+      "in_clock": true
+    },
+    {
+      "gene": "Dbp",
+      "r_day_given_score": 0.7951460868100013,
+      "r_score_given_day": -0.8837553400861805,
+      "q_day": 3.957748050450143e-05,
+      "in_clock": true
+    },
+    {
+      "gene": "Mrgprf",
+      "r_day_given_score": 0.7887925055301467,
+      "r_score_given_day": -0.5025171715589605,
+      "q_day": 4.67334462411102e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Enpp1",
+      "r_day_given_score": 0.7864618039452179,
+      "r_score_given_day": -0.4240999207290848,
+      "q_day": 4.67334462411102e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Mc5r",
+      "r_day_given_score": 0.7855361319893659,
+      "r_score_given_day": -0.4594584213107136,
+      "q_day": 4.67334462411102e-05,
+      "in_clock": true
+    },
+    {
+      "gene": "Igf2",
+      "r_day_given_score": 0.7803301971154327,
+      "r_score_given_day": -0.5798452370390971,
+      "q_day": 5.456530253335972e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Itih5",
+      "r_day_given_score": 0.7775428138193277,
+      "r_score_given_day": -0.5434109101901661,
+      "q_day": 5.729285946552441e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Hadh",
+      "r_day_given_score": 0.7743628580335465,
+      "r_score_given_day": -0.6448301918433069,
+      "q_day": 5.729285946552441e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Wnt6",
+      "r_day_given_score": 0.7739358202990849,
+      "r_score_given_day": -0.6168393914404363,
+      "q_day": 5.729285946552441e-05,
+      "in_clock": true
+    },
+    {
+      "gene": "Aox3",
+      "r_day_given_score": 0.7731197091650718,
+      "r_score_given_day": -0.36751909899156626,
+      "q_day": 5.729285946552441e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Prelp",
+      "r_day_given_score": 0.7663105709514587,
+      "r_score_given_day": -0.567035351177194,
+      "q_day": 6.749917933891157e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Fzd8",
+      "r_day_given_score": 0.7624676577397068,
+      "r_score_given_day": -0.6716214954771542,
+      "q_day": 7.737024312045398e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Bmp6",
+      "r_day_given_score": 0.7538269365196841,
+      "r_score_given_day": -0.6510960059874102,
+      "q_day": 0.0001179592157375798,
+      "in_clock": false
+    },
+    {
+      "gene": "Col13a1",
+      "r_day_given_score": 0.7503049230343902,
+      "r_score_given_day": 0.16855000058543235,
+      "q_day": 0.00012978108727414796,
+      "in_clock": false
+    },
+    {
+      "gene": "Drc7",
+      "r_day_given_score": 0.7502920048486909,
+      "r_score_given_day": -0.7462603909873903,
+      "q_day": 0.00012978108727414796,
+      "in_clock": false
+    },
+    {
+      "gene": "Sh3rf2",
+      "r_day_given_score": 0.7481858281900946,
+      "r_score_given_day": -0.4704231716451345,
+      "q_day": 0.00013835318006261336,
+      "in_clock": false
+    },
+    {
+      "gene": "Bfsp1",
+      "r_day_given_score": 0.746099077789195,
+      "r_score_given_day": -0.6070116859365997,
+      "q_day": 0.00013973964853421927,
+      "in_clock": false
+    },
+    {
+      "gene": "Idh2",
+      "r_day_given_score": 0.7459456086571613,
+      "r_score_given_day": -0.32290234581165916,
+      "q_day": 0.00013973964853421927,
+      "in_clock": true
+    },
+    {
+      "gene": "Lama3",
+      "r_day_given_score": 0.7417535215054109,
+      "r_score_given_day": -0.06964679276399553,
+      "q_day": 0.0001635955487059619,
+      "in_clock": false
+    },
+    {
+      "gene": "Tgfb2",
+      "r_day_given_score": 0.7399993637095245,
+      "r_score_given_day": -0.6407654994671984,
+      "q_day": 0.00016965307917834153,
+      "in_clock": false
+    }
+  ],
+  "top_accrual_down": [
+    {
+      "gene": "Stat2",
+      "r_day_given_score": -0.7873394724617641,
+      "r_score_given_day": 0.7727976395253725,
+      "q_day": 4.67334462411102e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Ifi209",
+      "r_day_given_score": -0.7807600402141264,
+      "r_score_given_day": 0.8130762368801566,
+      "q_day": 5.456530253335972e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Usp18",
+      "r_day_given_score": -0.7735821104390096,
+      "r_score_given_day": 0.5803097782281863,
+      "q_day": 5.729285946552441e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Plac8",
+      "r_day_given_score": -0.7735498553894772,
+      "r_score_given_day": 0.8015190910973815,
+      "q_day": 5.729285946552441e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Irgm1",
+      "r_day_given_score": -0.7723092603283823,
+      "r_score_given_day": 0.8200663282224484,
+      "q_day": 5.729285946552441e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Ifnlr1",
+      "r_day_given_score": -0.7707805915368556,
+      "r_score_given_day": 0.8217094090720435,
+      "q_day": 5.965655674935007e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Oasl2",
+      "r_day_given_score": -0.7685509988288897,
+      "r_score_given_day": 0.7577528005736001,
+      "q_day": 6.47803349309127e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Isg15",
+      "r_day_given_score": -0.7669800725859847,
+      "r_score_given_day": 0.6845507902572275,
+      "q_day": 6.749917933891157e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Ifi44",
+      "r_day_given_score": -0.7632252788073501,
+      "r_score_given_day": 0.5781958881136242,
+      "q_day": 7.71270147647196e-05,
+      "in_clock": false
+    },
+    {
+      "gene": "Gbp7",
+      "r_day_given_score": -0.7533911056009304,
+      "r_score_given_day": 0.7896825668359655,
+      "q_day": 0.0001179592157375798,
+      "in_clock": false
+    },
+    {
+      "gene": "Sell",
+      "r_day_given_score": -0.747839827580269,
+      "r_score_given_day": 0.7959166990855219,
+      "q_day": 0.00013835318006261336,
+      "in_clock": true
+    },
+    {
+      "gene": "Mctp2",
+      "r_day_given_score": -0.745920249676858,
+      "r_score_given_day": 0.7481350189876174,
+      "q_day": 0.00013973964853421927,
+      "in_clock": false
+    },
+    {
+      "gene": "Ffar2",
+      "r_day_given_score": -0.7434963789460686,
+      "r_score_given_day": 0.8154215943492755,
+      "q_day": 0.00015387103863553323,
+      "in_clock": false
+    },
+    {
+      "gene": "Gbp3",
+      "r_day_given_score": -0.7390814379389397,
+      "r_score_given_day": 0.7786617122909559,
+      "q_day": 0.00017313190870096027,
+      "in_clock": false
+    },
+    {
+      "gene": "Fpr2",
+      "r_day_given_score": -0.7364868817888407,
+      "r_score_given_day": 0.7869976256271669,
+      "q_day": 0.00017637322050349826,
+      "in_clock": false
+    },
+    {
+      "gene": "Dhx58",
+      "r_day_given_score": -0.7349935972534519,
+      "r_score_given_day": 0.797897953034496,
+      "q_day": 0.00018440815854412317,
+      "in_clock": false
+    },
+    {
+      "gene": "Igtp",
+      "r_day_given_score": -0.7249999393023724,
+      "r_score_given_day": 0.7853647129860871,
+      "q_day": 0.0002638596882704131,
+      "in_clock": false
+    },
+    {
+      "gene": "Samhd1",
+      "r_day_given_score": -0.7236324558326906,
+      "r_score_given_day": 0.8282487654256043,
+      "q_day": 0.00026600775534940327,
+      "in_clock": false
+    },
+    {
+      "gene": "Rmdn3",
+      "r_day_given_score": -0.721872992300308,
+      "r_score_given_day": 0.015627650247259345,
+      "q_day": 0.00028359761632718104,
+      "in_clock": false
+    },
+    {
+      "gene": "Psmb9",
+      "r_day_given_score": -0.7198365670062039,
+      "r_score_given_day": 0.8106495876371654,
+      "q_day": 0.00030086659930368204,
+      "in_clock": false
+    },
+    {
+      "gene": "Zbp1",
+      "r_day_given_score": -0.7170835041554454,
+      "r_score_given_day": 0.7956437050657729,
+      "q_day": 0.00032991527647102133,
+      "in_clock": false
+    },
+    {
+      "gene": "Gbp2b",
+      "r_day_given_score": -0.7163122361686076,
+      "r_score_given_day": 0.7857972062693355,
+      "q_day": 0.00033608503709417405,
+      "in_clock": false
+    },
+    {
+      "gene": "Mmp25",
+      "r_day_given_score": -0.7154957002278632,
+      "r_score_given_day": 0.7499390222819137,
+      "q_day": 0.0003404073782984555,
+      "in_clock": false
+    },
+    {
+      "gene": "Trim21",
+      "r_day_given_score": -0.7123200568426175,
+      "r_score_given_day": 0.7877733011103458,
+      "q_day": 0.0003662126686566659,
+      "in_clock": false
+    },
+    {
+      "gene": "Tap1",
+      "r_day_given_score": -0.707882267629484,
+      "r_score_given_day": 0.8302036044508498,
+      "q_day": 0.00042052097243361916,
+      "in_clock": true
+    }
+  ],
+  "top_severity_oscillating": [
+    {
+      "gene": "Esrrg",
+      "r_score_given_day": -0.8868073841285572,
+      "r_day_given_score": 0.060708016576909746,
+      "q_score": 1.7563388887121595e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Coprs",
+      "r_score_given_day": -0.8804948865740366,
+      "r_day_given_score": 0.26927795831023854,
+      "q_score": 1.7563388887121595e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Zswim5",
+      "r_score_given_day": -0.877149238059683,
+      "r_day_given_score": 0.2056330358148567,
+      "q_score": 1.7563388887121595e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Sh3gl3",
+      "r_score_given_day": -0.8765745280281125,
+      "r_day_given_score": 0.19016731760844366,
+      "q_score": 1.7563388887121595e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Mapk8ip1",
+      "r_score_given_day": -0.8743900683066503,
+      "r_day_given_score": 0.08974645484600233,
+      "q_score": 1.7563388887121595e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Ern1",
+      "r_score_given_day": 0.8703916107210387,
+      "r_day_given_score": -0.29807356295531384,
+      "q_score": 2.0498837275937048e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Cdh10",
+      "r_score_given_day": -0.8674125651328088,
+      "r_day_given_score": 0.2752805143036698,
+      "q_score": 2.5182881688114465e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Sptb",
+      "r_score_given_day": -0.8651699665243685,
+      "r_day_given_score": 0.18701790426395484,
+      "q_score": 2.9582814071740003e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Map2",
+      "r_score_given_day": -0.8621240769608965,
+      "r_day_given_score": 0.12316232067323007,
+      "q_score": 3.261698143133259e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Efna3",
+      "r_score_given_day": -0.860841971345154,
+      "r_day_given_score": 0.14709522479836612,
+      "q_score": 3.261698143133259e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Snap91",
+      "r_score_given_day": -0.8607978227334593,
+      "r_day_given_score": 0.08251279912749644,
+      "q_score": 3.261698143133259e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Sh3gl2",
+      "r_score_given_day": -0.8604399317848324,
+      "r_day_given_score": 0.19016951439450341,
+      "q_score": 3.261698143133259e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Arrb2",
+      "r_score_given_day": 0.8603664044480482,
+      "r_day_given_score": -0.20234884740434625,
+      "q_score": 3.261698143133259e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Kif1b",
+      "r_score_given_day": -0.8583312899160109,
+      "r_day_given_score": 0.2629833620237989,
+      "q_score": 3.81746784353948e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Myo1d",
+      "r_score_given_day": -0.8565900698148128,
+      "r_day_given_score": 0.15343292693409818,
+      "q_score": 4.1849089215558356e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Vdac1",
+      "r_score_given_day": -0.8555838479426727,
+      "r_day_given_score": 0.15837641397385527,
+      "q_score": 4.407440941180768e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Dpysl5",
+      "r_score_given_day": -0.8548909212648633,
+      "r_day_given_score": 0.2763512091462229,
+      "q_score": 4.468911583096216e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Lingo1",
+      "r_score_given_day": -0.854579227360852,
+      "r_day_given_score": 0.26698004168495065,
+      "q_score": 4.468911583096216e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Gucy1a1",
+      "r_score_given_day": -0.8544706356484484,
+      "r_day_given_score": 0.29777173194460654,
+      "q_score": 4.468911583096216e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Epb41l1",
+      "r_score_given_day": -0.852741476056052,
+      "r_day_given_score": 0.038853184275442224,
+      "q_score": 4.6462202237826954e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Kcnh2",
+      "r_score_given_day": -0.8523821848280533,
+      "r_day_given_score": -0.00249018057936717,
+      "q_score": 4.6462202237826954e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Dpf3",
+      "r_score_given_day": -0.8519761489017887,
+      "r_day_given_score": 0.2521098832743837,
+      "q_score": 4.666534707713344e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Cdh7",
+      "r_score_given_day": -0.8507030483610483,
+      "r_day_given_score": -0.06252472304969328,
+      "q_score": 4.731193748300496e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Arhgef28",
+      "r_score_given_day": -0.8506417090980432,
+      "r_day_given_score": 0.15366635103368453,
+      "q_score": 4.731193748300496e-08,
+      "in_clock": false
+    },
+    {
+      "gene": "Nsmf",
+      "r_score_given_day": -0.8503954621717441,
+      "r_day_given_score": 0.14454607323650132,
+      "q_score": 4.731193748300496e-08,
+      "in_clock": false
+    }
+  ]
+}
