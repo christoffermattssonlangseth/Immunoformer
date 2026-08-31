@@ -1,0 +1,270 @@
+{
+  "design": "REM1 (~day22) splits into MONOPHASIC (~day33, no relapse) and PEAK2 (~day32, relapse). MONO and PEAK2 are time-matched (day MW p=0.16) but differ in severity (p=0.028). Cross-sectional: different animals, population trajectories.",
+  "timing": {
+    "REM1": {
+      "n": 5,
+      "day_mean": 22.0,
+      "score_mean": 0.7
+    },
+    "MONO": {
+      "n": 4,
+      "day_mean": 32.75,
+      "score_mean": 0.625
+    },
+    "PEAK2": {
+      "n": 4,
+      "day_mean": 31.75,
+      "score_mean": 2.4375
+    },
+    "MONO_vs_PEAK2_day_MW_p": 0.1605806049379932,
+    "MONO_vs_PEAK2_score_MW_p": 0.02842953599879653
+  },
+  "n_relapse_specific": 53,
+  "n_monophasic_specific": 7,
+  "n_shared_up": 1,
+  "module_trajectories": {
+    "neuro/myelin": {
+      "REM1": -0.07237247033953248,
+      "MONO": 0.3291140522411945,
+      "PEAK2": -0.3023931488175136,
+      "n_genes": 11
+    },
+    "innate/IFN": {
+      "REM1": 0.07817146291954656,
+      "MONO": -0.37075227748600104,
+      "PEAK2": 0.2771029249033072,
+      "n_genes": 15
+    },
+    "acute-oscillator": {
+      "REM1": -0.2068065504018315,
+      "MONO": -0.5325618553208699,
+      "PEAK2": 0.41894718348639876,
+      "n_genes": 8
+    },
+    "ECM/scar": {
+      "REM1": -0.1400010286692117,
+      "MONO": -0.00917379937091909,
+      "PEAK2": 0.3967715426087137,
+      "n_genes": 9
+    },
+    "lymphoid": {
+      "REM1": 0.29812849477339054,
+      "MONO": 0.08432585299317641,
+      "PEAK2": 0.35569080758868377,
+      "n_genes": 6
+    },
+    "lipid-scavenge": {
+      "REM1": -0.031621754822991364,
+      "MONO": -0.004631729702195892,
+      "PEAK2": -0.11332808785845608,
+      "n_genes": 13
+    },
+    "circ/repair": {
+      "REM1": -0.12188737713803725,
+      "MONO": 0.3161408186250304,
+      "PEAK2": 0.0974184679837908,
+      "n_genes": 11
+    },
+    "GC/stress": {
+      "REM1": 0.2965942953493511,
+      "MONO": -0.5635515591953006,
+      "PEAK2": 0.004504320796197142,
+      "n_genes": 8
+    }
+  },
+  "axis_alignment": {
+    "divergence_vs_oscillation_amp": 0.8522738364832989,
+    "divergence_vs_severity_axis": 0.8429609967751429,
+    "divergence_vs_duration_axis": -0.5569894399643222
+  },
+  "top_relapse_specific": [
+    {
+      "gene": "Gpnmb",
+      "d_REM1_to_PEAK2": 0.74,
+      "d_REM1_to_MONO": -0.17,
+      "rr_osc_amp": 0.591
+    },
+    {
+      "gene": "Chil1",
+      "d_REM1_to_PEAK2": 0.712,
+      "d_REM1_to_MONO": -0.251,
+      "rr_osc_amp": 1.063
+    },
+    {
+      "gene": "Arg1",
+      "d_REM1_to_PEAK2": 0.693,
+      "d_REM1_to_MONO": -0.585,
+      "rr_osc_amp": 1.451
+    },
+    {
+      "gene": "Timp1",
+      "d_REM1_to_PEAK2": 0.683,
+      "d_REM1_to_MONO": -0.087,
+      "rr_osc_amp": 0.982
+    },
+    {
+      "gene": "Serpina3n",
+      "d_REM1_to_PEAK2": 0.528,
+      "d_REM1_to_MONO": -0.05,
+      "rr_osc_amp": 0.708
+    },
+    {
+      "gene": "Abca1",
+      "d_REM1_to_PEAK2": 0.513,
+      "d_REM1_to_MONO": -0.196,
+      "rr_osc_amp": 0.321
+    },
+    {
+      "gene": "Tagln",
+      "d_REM1_to_PEAK2": 0.501,
+      "d_REM1_to_MONO": 0.056,
+      "rr_osc_amp": 0.443
+    },
+    {
+      "gene": "Hal",
+      "d_REM1_to_PEAK2": 0.483,
+      "d_REM1_to_MONO": -0.156,
+      "rr_osc_amp": 0.682
+    },
+    {
+      "gene": "Plin4",
+      "d_REM1_to_PEAK2": 0.437,
+      "d_REM1_to_MONO": -0.131,
+      "rr_osc_amp": -0.018
+    },
+    {
+      "gene": "Klk8",
+      "d_REM1_to_PEAK2": 0.422,
+      "d_REM1_to_MONO": -0.034,
+      "rr_osc_amp": 0.481
+    },
+    {
+      "gene": "Socs3",
+      "d_REM1_to_PEAK2": 0.416,
+      "d_REM1_to_MONO": -0.055,
+      "rr_osc_amp": 0.615
+    },
+    {
+      "gene": "F13a1",
+      "d_REM1_to_PEAK2": 0.407,
+      "d_REM1_to_MONO": -0.176,
+      "rr_osc_amp": 0.62
+    },
+    {
+      "gene": "Itgb2",
+      "d_REM1_to_PEAK2": 0.392,
+      "d_REM1_to_MONO": -0.326,
+      "rr_osc_amp": 0.617
+    },
+    {
+      "gene": "Grn",
+      "d_REM1_to_PEAK2": 0.376,
+      "d_REM1_to_MONO": -0.288,
+      "rr_osc_amp": 0.582
+    },
+    {
+      "gene": "Msn",
+      "d_REM1_to_PEAK2": 0.373,
+      "d_REM1_to_MONO": -0.059,
+      "rr_osc_amp": 0.511
+    },
+    {
+      "gene": "Cxcr2",
+      "d_REM1_to_PEAK2": 0.372,
+      "d_REM1_to_MONO": -0.106,
+      "rr_osc_amp": 0.437
+    },
+    {
+      "gene": "Cd14",
+      "d_REM1_to_PEAK2": 0.365,
+      "d_REM1_to_MONO": -0.046,
+      "rr_osc_amp": 0.521
+    },
+    {
+      "gene": "Col4a1",
+      "d_REM1_to_PEAK2": 0.355,
+      "d_REM1_to_MONO": -0.088,
+      "rr_osc_amp": 0.368
+    },
+    {
+      "gene": "Fcgr2b",
+      "d_REM1_to_PEAK2": 0.348,
+      "d_REM1_to_MONO": -0.281,
+      "rr_osc_amp": 0.727
+    },
+    {
+      "gene": "Il4ra",
+      "d_REM1_to_PEAK2": 0.347,
+      "d_REM1_to_MONO": -0.134,
+      "rr_osc_amp": 0.441
+    },
+    {
+      "gene": "Tnc",
+      "d_REM1_to_PEAK2": 0.342,
+      "d_REM1_to_MONO": -0.057,
+      "rr_osc_amp": 0.333
+    },
+    {
+      "gene": "Itgam",
+      "d_REM1_to_PEAK2": 0.34,
+      "d_REM1_to_MONO": -0.213,
+      "rr_osc_amp": 0.527
+    },
+    {
+      "gene": "Mafb",
+      "d_REM1_to_PEAK2": 0.336,
+      "d_REM1_to_MONO": -0.21,
+      "rr_osc_amp": 0.371
+    },
+    {
+      "gene": "Cd300lf",
+      "d_REM1_to_PEAK2": 0.332,
+      "d_REM1_to_MONO": -0.28,
+      "rr_osc_amp": 0.668
+    },
+    {
+      "gene": "Mxd1",
+      "d_REM1_to_PEAK2": 0.332,
+      "d_REM1_to_MONO": -0.047,
+      "rr_osc_amp": 0.32
+    }
+  ],
+  "top_monophasic_specific": [
+    {
+      "gene": "Igf2",
+      "d_REM1_to_MONO": 0.408,
+      "d_REM1_to_PEAK2": -0.021
+    },
+    {
+      "gene": "Nr1d1",
+      "d_REM1_to_MONO": 0.384,
+      "d_REM1_to_PEAK2": -0.289
+    },
+    {
+      "gene": "Fmod",
+      "d_REM1_to_MONO": 0.328,
+      "d_REM1_to_PEAK2": -0.07
+    },
+    {
+      "gene": "Agt",
+      "d_REM1_to_MONO": 0.297,
+      "d_REM1_to_PEAK2": 0.043
+    },
+    {
+      "gene": "Vtn",
+      "d_REM1_to_MONO": 0.276,
+      "d_REM1_to_PEAK2": -0.16
+    },
+    {
+      "gene": "Ntsr2",
+      "d_REM1_to_MONO": 0.27,
+      "d_REM1_to_PEAK2": -0.12
+    },
+    {
+      "gene": "Slc47a1",
+      "d_REM1_to_MONO": 0.268,
+      "d_REM1_to_PEAK2": 0.006
+    }
+  ],
+  "note": "EXPLORATORY n=4/4/5; effect sizes not significance. The relapse endpoint (PEAK2) is severe by construction, so relapse_specific genes are expected to overlap the acute severity/oscillation program \u2014 that is the point, not a bug."
+}

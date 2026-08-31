@@ -8,6 +8,7 @@ __pycache__/
 *.pkl
 *.npz
 runs_*.log
+_run.log
 
 # lesion_signaling heavy subset cache (9GB)
 runs/lesion_signaling/rr_subset.h5ad
