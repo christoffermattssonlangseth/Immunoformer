@@ -1,0 +1,17 @@
+
+=== CHRONIC duration clock + RR↔chronic relating (n=34) ===
+day 8-50 dpi  corr(day,score)=+0.32  batch day~run_date Kruskal p=0.5680835175693824
+Clock A raw            : Spearman=+0.861
+Clock B (sev-orth)     : Spearman=+0.856  R2=+0.862  perm p=0.0196  (128 genes)
+severity-only baseline : Spearman=+0.521
+cross-target           : Spearman=+0.903
+
+-- CROSS-MODEL --
+RR duration axis  vs  chronic duration axis : Spearman=+0.653 (p=0.0e+00, 5101 genes, sign-agree 72%)
+RR severity-oscillation vs chronic duration : Spearman=-0.171 (contrast)
+RR clock coef vs chronic day-partial        : Spearman=+0.579 (135 clock genes, sign-agree 79%)
+
+conserved ACCRUE in both (n=685): Slc16a2, Hadh, Mrgprf, Prelp, Igf2, Fzd8, Musk, Wnt6, Idh2, Aox3, Ppl, Myo10, Vtn, Id4, Wnt5a
+conserved DECLINE in both (n=408): Ldlr, Nde1, Hmgcr, Idi1, Htr7, Adar, Msmo1, Mmp9, Ackr1, Lss, Hsd17b7, Lsr, Rmdn3, Sema4a, H2afx
+chronic-specific accrue: Ccl3, Havcr2, Slamf9, Rorc, Afp, Naip5, C3, Lmo4, Cd48, Ager
+RR-specific accrue: Eva1a, Wfdc18, Ak4, Pcdh20, Atg13, Ago1, Foxb1, Vangl1, Sox1, Cfap52
