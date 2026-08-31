@@ -1,0 +1,43 @@
+
+=== Why relapse or not — REM1-anchored, within SJL/PLP (EXPLORATORY) ===
+REM1 (~day22) splits into MONOPHASIC (~day33, no relapse) and PEAK2 (~day32, relapse). MONO and PEAK2 are time-matched (day MW p=0.16) but differ in severity (p=0.028). Cross-sectional: different animals, population trajectories.
+  REM1: n=5 day~22 score~0.70  MONO: n=4 day~33 score~0.62  PEAK2: n=4 day~32 score~2.44
+  trajectory genes: relapse-specific=53  monophasic-specific=7  shared-up=1
+
+relapse-specific direction (divergence = PEAK2-MONO) alignment:
+   vs oscillation amplitude : +0.85
+   vs severity axis         : +0.84
+   vs duration axis         : -0.56
+
+-- module trajectories (z): REM1 -> MONO / PEAK2 --
+   neuro/myelin       REM1=-0.07  MONO=+0.33  PEAK2=-0.30
+   innate/IFN         REM1=+0.08  MONO=-0.37  PEAK2=+0.28
+   acute-oscillator   REM1=-0.21  MONO=-0.53  PEAK2=+0.42
+   ECM/scar           REM1=-0.14  MONO=-0.01  PEAK2=+0.40
+   lymphoid           REM1=+0.30  MONO=+0.08  PEAK2=+0.36
+   lipid-scavenge     REM1=-0.03  MONO=-0.00  PEAK2=-0.11
+   circ/repair        REM1=-0.12  MONO=+0.32  PEAK2=+0.10
+   GC/stress          REM1=+0.30  MONO=-0.56  PEAK2=+0.00
+
+-- RELAPSE-specific (rise REM1->PEAK2, not REM1->MONO) --
+   Gpnmb          d->PEAK2=+0.74  d->MONO=-0.17
+   Chil1          d->PEAK2=+0.71  d->MONO=-0.25
+   Arg1           d->PEAK2=+0.69  d->MONO=-0.58
+   Timp1          d->PEAK2=+0.68  d->MONO=-0.09
+   Serpina3n      d->PEAK2=+0.53  d->MONO=-0.05
+   Abca1          d->PEAK2=+0.51  d->MONO=-0.20
+   Tagln          d->PEAK2=+0.50  d->MONO=+0.06
+   Hal            d->PEAK2=+0.48  d->MONO=-0.16
+   Plin4          d->PEAK2=+0.44  d->MONO=-0.13
+   Klk8           d->PEAK2=+0.42  d->MONO=-0.03
+   Socs3          d->PEAK2=+0.42  d->MONO=-0.06
+   F13a1          d->PEAK2=+0.41  d->MONO=-0.18
+
+-- MONOPHASIC-specific (rise REM1->MONO, not REM1->PEAK2) --
+   Igf2           d->MONO=+0.41  d->PEAK2=-0.02
+   Nr1d1          d->MONO=+0.38  d->PEAK2=-0.29
+   Fmod           d->MONO=+0.33  d->PEAK2=-0.07
+   Agt            d->MONO=+0.30  d->PEAK2=+0.04
+   Vtn            d->MONO=+0.28  d->PEAK2=-0.16
+   Ntsr2          d->MONO=+0.27  d->PEAK2=-0.12
+   Slc47a1        d->MONO=+0.27  d->PEAK2=+0.01
