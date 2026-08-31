@@ -1,8 +1,10 @@
 # RRMAP2 Duration Clock — a validated molecular clock of accumulated EAE damage
 
-*Analysis date: 2026-06-17 · Cohort: RRMAP2 Xenium, relapsing–remitting (RR) arm ·
-Scripts: `scripts/duration_clock.py`, `scripts/duration_clock_sexcheck.py` ·
-Outputs: `runs/duration_clock/`*
+*Analysis date: 2026-06-17 (cross-model + chronic added 2026-06-18) · Cohort: RRMAP2 Xenium,
+relapsing–remitting (RR) arm; chronic arm for cross-model replication ·
+Scripts: `scripts/duration_clock.py`, `duration_clock_controls.py`,
+`duration_gene_decomposition.py`, `duration_clock_chronic.py` ·
+Outputs: `runs/duration_clock/`, `runs/duration_clock_chronic/`*
 
 ## The question
 
@@ -32,8 +34,11 @@ Neural-ODE) do not apply — we regress onto a de-confounded temporal *label* in
 - **Strain-clean:** all SJL/PLP (no strain confound within RR).
 - **Features:** animal-level pseudobulk of the 5,101-gene Xenium panel
   (`runs/rr_within_relapse/pseudobulk.npz`).
-- **CHRONIC arm excluded:** there `day_of_sacrifice` aliases `run_date` (batch), so it is
-  confounded; only RR is used.
+- **Headline clock = RR only;** the CHRONIC arm (34 animals, B6/MOG) is analysed separately
+  for cross-model replication (see *Cross-model replication* below). The chronic
+  `day_of_sacrifice` was once thought to alias `run_date`, but with corrected metadata it is
+  continuous (8–50 dpi) and **clean of batch** (Kruskal day~run_date p ≈ 0.57) — the
+  apparent alias was an artifact of the coarse day16/day30 stage grouping.
 
 ## Method
 
@@ -211,13 +216,95 @@ mechanistically legible (z-scored expression per gene across cell types): lympho
 neuronal (`Uchl1`, `Gad1`, `Slc17a6`) in **neurons**. (Figures:
 `runs/duration_clock_spatial/figures/`.)
 
+## Cross-model replication — the chronic arm (B6/MOG)
+
+The chronic arm was originally set aside because its day axis looked batch-confounded. With
+the corrected metadata (`FINAL_…_META_RRMap2.Main.filled.stage_fixed.csv`) that is no longer
+true: chronic has a **continuous `day_of_sacrifice` (8–50 dpi)** that is clean of `run_date`
+(Kruskal p ≈ 0.57; day~batch ρ ≈ 0.10 — both batches span the full day range) and decoupled
+from severity (r = 0.32). The earlier "alias" was an artifact of the coarse day16/day30
+*stage* grouping, not the underlying day. So we can run the **identical** clock there
+(`scripts/duration_clock_chronic.py`).
+
+| Metric | RR (SJL/PLP) | Chronic (B6/MOG) |
+|---|---|---|
+| **Clock B (severity-orthogonalized)** | **+0.799** | **+0.856** |
+| R²(LOAO) | +0.672 | +0.862 |
+| Permutation p | 0.0196 | 0.0196 |
+| Clock genes | 135 | 128 |
+| Severity-only baseline (day~score) | **−0.52** | **+0.52** |
+
+The clock is **not RR-specific**: rebuilt identically on chronic it reaches +0.856
+(perm p = 0.020). And the two duration axes **agree** — correlating the per-gene
+day|severity partial correlation (the gene-level accrual axis,
+`scripts/duration_gene_decomposition.py`) between models gives **Spearman +0.65** (5,101
+genes, 72 % sign-agreement), *across both strain and model*. The agreement is **specific to
+the duration axis**: the RR severity-**oscillation** axis (peak−remission amplitude) does
+**not** transfer to chronic duration (Spearman −0.17).
+
+- **Conserved accrual** (685 genes rise with duration in both): scar/ECM and Wnt
+  (`Igf2`, `Vtn`, `Wnt5a`, `Wnt6`, `Id4`, `Prelp`).
+- **Conserved decline** (408 genes): the cholesterol-synthesis program (`Hmgcr`, `Idi1`,
+  `Msmo1`, `Lss`, `Hsd17b7`, `Ldlr`) — the same module the RR clock loses.
+- **Model-specific accrual:** chronic-only (B6/MOG) is more complement/inflammatory
+  (`C3`, `Havcr2`, `Ccl3`, `Cd48`); RR-only (SJL/PLP) includes `Sox1`, `Foxb1`.
+
+**One revealing difference.** In chronic, predicting day from *severity alone* is **positive**
+(+0.52) — the disease is monotonically progressive, so later really is sicker. In RR the same
+baseline is **negative** (−0.52) because each relapse resets acute severity. Same accruing
+program underneath; opposite severity–time coupling on top — which *is* the distinction
+between a relapsing and a progressive course. (Cross-model figure + tables:
+`runs/duration_clock_chronic/`.)
+
+### What this does — and does not — say about disease course
+
+The conserved duration program is sometimes over-read as "there are no relapsing-specific
+markers." That does not follow:
+
+- **Conserved *duration* ≠ no course-specific markers.** Conservation is on the *accrual*
+  axis (what builds up with elapsed time). A course-defining contrast would live on a
+  *different* axis (RR vs chronic), which the duration analysis never measures.
+- **Course is set by the experimental model, not discovered as a marker.** RR = SJL + PLP₁₃₉₋₁₅₁
+  (relapsing by design); chronic = C57BL/6 + MOG₃₅₋₅₅ (progressive by design). In this dataset
+  **model is perfectly confounded with strain** (every RR animal is SJL, every chronic is B6),
+  so any RR-vs-chronic differential gene is strain, antigen, *or* course — unresolvable. This
+  is exactly why only within-model *slopes* are compared (which cancel the strain offset), and
+  why a direct level comparison is abandoned.
+- **What *is* relapsing-specific and visible is a dynamic, not a static marker:** the
+  oscillate-and-reset behaviour — severity decoupled from time (the −0.52 vs +0.52 baseline
+  flip) and the acute-oscillation axis (`Arg1`, `Chil3`, IFN program) that spikes at each
+  attack and does not transfer to chronic duration.
+- **The identifiable version of "why relapse vs not"** is *within* the SJL/PLP cohort, using
+  the experimental design (`scripts/monophasic_vs_relapsing.py`). **REMISSION1** (~day 22)
+  branches into **MONOPHASIC** (~day 33, did not relapse) and **PEAK2** (~day 32, relapsed):
+  monophasic animals are sampled at the same timepoint a relapser hits its second attack
+  (day MW p=0.16) but stay low-severity (score 0.62 vs 2.44), confirming the non-relapsing
+  phenotype. So the time-matched contrast is **MONO vs PEAK2**, and the relapse decision is the
+  divergence of the two trajectories from the shared REM1 origin. *Cross-sectional (different
+  animals — we cannot label a REM1 animal's future), n=5/4/4, exploratory; effect sizes only.*
+  The **relapse** path (REM1→PEAK2) re-ignites the acute program — acute-oscillator module
+  z −0.21→+0.42 (`Gpnmb`, `Chil1`, `Arg1`, `Timp1`, `Hal`, `Socs3`), with innate/IFN and
+  ECM/scar — and **loses neuron/myelin again** (−0.07→−0.30). The **monophasic** path
+  (REM1→MONO) does the opposite: the acute oscillator stays off, **neuron/myelin recovers**
+  (→+0.33), the glucocorticoid/stress tone resolves (+0.30→−0.56), and the quiet
+  duration/repair accrual continues — the monophasic-specific genes are the conserved accrual
+  set `Igf2`, `Fmod`, `Vtn` plus circadian `Nr1d1`. The relapse-specific direction (PEAK2−MONO)
+  aligns with the acute **severity/oscillation** axis (Spearman +0.85 vs oscillation amplitude,
+  +0.84 vs the score-axis) and runs *opposite* the duration axis (−0.56). **Honest reading:**
+  PEAK2 is a severity peak by construction, so "relapse-specific = acute severity program" is
+  partly expected; the informative half is the monophasic trajectory (myelin recovery + stress
+  resolution + quiet accrual), and the design is terminal/cross-sectional so this is a
+  population trajectory, not proof that anything *at* REM1 decides the outcome.
+
 ## Caveats
 
-- **n = 33, animal-level pseudobulk.** LOAO + permutation null guard against over-fit, but
-  the cohort is small and spatial information is collapsed.
-- **RR only.** CHRONIC is excluded (day aliases batch there); the clock is not yet shown to
-  transfer across arms.
-- **Sex cohort is imbalanced** (7 vs 26) even though sex is orthogonal to day; a balanced
+- **Small cohorts, animal-level pseudobulk** (RR n = 33, chronic n = 34). LOAO + permutation
+  null guard against over-fit, but the cohorts are small and spatial information is collapsed.
+- **Cross-model is a slope comparison.** The RR↔chronic level offset is not identifiable
+  (strain + slide confounded); only within-model per-gene day-trends are compared. Chronic day
+  is clean of batch, but the chronic cohort still spans two run_dates, controlled only by both
+  carrying the full day range.
+- **Sex cohort is imbalanced** (7 vs 26 in RR) even though sex is orthogonal to day; a balanced
   replication would be cleaner.
 
 ## Outputs
@@ -285,7 +372,8 @@ Tier 2 (localization) is done — see above. The remaining follow-ups:
    number per animal. Rebuild the clock over the radial lesion zones (core → margin → rim →
    parenchyma, from `scripts/lesion_radial.py`) to ask whether duration concentrates in the
    scar core.
-2. **Chronic-arm validation.** Repeat with matched-batch sampling to break the day~run_date
-   confound that currently forces RR-only.
+2. ~~**Chronic-arm validation.**~~ **Done** — the clock replicates in the chronic arm
+   (+0.856) and the duration axis is conserved RR↔chronic at ρ +0.65 (*Cross-model
+   replication* above).
 3. **Publication-grade null.** Re-run the headline clock with N_PERM ≈ 1000 (overnight) for a
    tighter permutation p than the current floor of 0.0196.
