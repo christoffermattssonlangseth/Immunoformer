@@ -14,3 +14,4 @@ _run.log
 runs/lesion_signaling/rr_subset.h5ad
 
 .aider*
+.DS_Store
