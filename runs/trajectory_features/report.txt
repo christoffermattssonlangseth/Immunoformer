@@ -1,0 +1,149 @@
+TRAJECTORY FEATURES — per-animal course features from the daily score/weight sheets
+========================================================================================
+
+1. JOIN (sheet -> atlas on sample_name)
+  atlas animals 67, sheet animals 68
+  joined 67/67 atlas animals (62 direct + 5 aliased C_M30_i -> C_L_i)
+  alias verified by section ID: 5/5
+  sheet-only (not in atlas): ['C_CFA_5']
+  atlas-only (no curve): none
+  sheet vs atlas day/score mismatches: [['RR_MP_3', False, True]]
+  sacrifice-day score missing in sheet, atlas score_sacrifice used as last point: 9 animals ['C_M16_1', 'C_M16_2', 'C_M16_3', 'C_OS1_2', 'C_S16_1', 'C_S16_2', 'C_S16_3', 'C_S30_1', 'C_S30_2']
+
+4. SECTION DISAGREEMENT (curves are animal-level; a section that differs is wrong)
+  C_M16_2 section C2_G3_Mid_1 (region T (T)): differs from the animal's other sections on 9 days ['d11', 'd13', 'd14', 'd15', 'd16', 'd19', 'd21', 'd22', 'd25'], max |diff| 0.75, sum |diff| 3.75
+    Animal ID on that row 1058085 vs animal's 1058093; sheet sacrifice day/score '27 (28)' / '1.25 (1.5)'
+    its curve is IDENTICAL to C_M16_1 (Animal ID 1058085) on all 27 co-recorded days
+  Xist sex check, all sections: F sections [0.1433733535377083, 0.5246431254695717] frac Xist+, M sections [0.0, 0.0186008896077638]
+  SEX MISMATCH: section C2_G3_Mid_1 labelled C_M16_2 (F) has 0.0060 Xist+ cells -> M
+  STATUS: RESOLVED for the trajectory table. Section C2_G3_Mid_1 is tissue from a
+  MALE animal carrying C_M16_1's Animal ID and C_M16_1's exact score curve; C_M16_2 is
+  female. Its sheet curve is correct for the tissue; its sample_name label (C_M16_2) is
+  wrong in BOTH the sheet and the atlas. C_M16_2's curve here uses its two
+  agreeing sections (Animal ID 1058093); C_M16_1 is unchanged. NOT fixed in the atlas:
+  any animal-level pseudobulk built so far pools one male C_M16_1 section into
+  C_M16_2 (and C_M16_2 is the only animal with two sections from one region).
+
+2. FEATURES  ->  animal_trajectory.csv
+  67 animals; onset = first >= 0.5 run lasting >= 2 days
+  EAE animals never reaching onset: [['C_NS_1', 'NONSYMPTOM'], ['C_NS_2', 'NONSYMPTOM'], ['C_NS_3', 'NONSYMPTOM'], ['C_NS_4', 'NONSYMPTOM'], ['C_NS_5', 'NONSYMPTOM'], ['C_OS1_5', 'OS1'], ['RR_OS1_1', 'ONSET1'], ['RR_OS1_2', 'ONSET1']]
+    of which symptomatic but below the 0.5 threshold (sacrificed at first sign, score 0.25 -> disease_duration NaN): [['C_OS1_5', 'OS1', 0.25], ['RR_OS1_1', 'ONSET1', 0.25], ['RR_OS1_2', 'ONSET1', 0.25]]
+  onset_day range per cohort: {'CHRONIC': {'min': 6.0, 'max': 20.0, 'std': 2.535908129157224}, 'RELAPSE REMITTING': {'min': 11.0, 'max': 15.0, 'std': 1.0357370915204898}}
+  STAGE vs CURVE CONTRADICTION (stage implies a prior attack, curve is 0 until the
+  last 3 days): [['RR_OS2_1', 'ONSET2', 13.0, 13.0], ['RR_OS2_2', 'ONSET2', 13.0, 13.0]]
+    -> these 'second onset' animals show only a FIRST attack in the daily sheet;
+       either the stage label or the curve is wrong. Unresolved.
+  onset censored at sacrifice (single supra-threshold day = sacrifice day): [['C_OS1_1', 'OS1'], ['C_OS1_3', 'OS1'], ['RR_OS2_1', 'ONSET2'], ['RR_OS2_2', 'ONSET2']]
+  slope_at_sacrifice classes (EAE): {'CHRONIC': {'': 1, 'ascending': 13, 'descending': 10, 'plateau': 5}, 'RELAPSE REMITTING': {'': 0, 'ascending': 17, 'descending': 13, 'plateau': 0}}
+
+  per-cohort medians (EAE animals):
+  model                   CHRONIC  RELAPSE REMITTING
+  onset_day                 12.00              13.00
+  disease_duration          15.00              19.00
+  peak_score                 2.50               2.75
+  peak_day                  16.00              16.00
+  cumulative_score          10.00              22.00
+  cumulative_since_onset    24.00              22.00
+  n_relapses_r1              0.00               0.00
+  n_relapses_strict          0.00               1.00
+  days_since_last_peak       6.00               2.00
+  slope_at_sacrifice         0.00               0.00
+  max_weight_loss            0.93               0.82
+  score_coverage             1.00               1.00
+  score_sacrifice            1.00               1.12
+  day_of_sacrifice          18.00              31.50
+
+3. RELAPSE COUNT — TWO RULES, NO DEFINITION CHOSEN
+  The work order says the first-pass rule is 'already noted in docs/'; it is not —
+  no doc defines it. Both rules are implemented as specified in WORKORDER.md:
+    r1     : drop >= 1 from a peak, then rise >= 1 from the trough
+    strict : drop >= 0.5 then rise >= 0.5, each sustained >= 2 consecutive days
+  Expected count from stage label (RR): ONSET1/PEAK1/REM1/MONO=0; ONSET2/PEAK2/PEAK2_MILD/REM2/REM2_LONG=1; PEAK3=2. Chronic expected 0.
+  n_relapses_r1: agrees with stage label in 27/30 RR animals
+    PEAK3 animals: [['RR_P3_1', 2], ['RR_P3_2', 2], ['RR_P3_3', 1], ['RR_P3_4', 2], ['RR_P3_5', 2]]
+    RR disagreements: [['RR_OS2_1', 'ONSET2', 0], ['RR_OS2_2', 'ONSET2', 0], ['RR_P3_3', 'PEAK3', 1]]
+    chronic animals with >= 1 relapse: [['C_L_1', 'MILD30', 1], ['C_L_3', 'MILD30', 2], ['C_L_4', 'MILD30', 1]]
+  n_relapses_strict: agrees with stage label in 22/30 RR animals
+    PEAK3 animals: [['RR_P3_1', 2], ['RR_P3_2', 2], ['RR_P3_3', 1], ['RR_P3_4', 2], ['RR_P3_5', 2]]
+    RR disagreements: [['RR_MP_1', 'MONOPHASIC', 1], ['RR_MP_2', 'MONOPHASIC', 1], ['RR_MP_3', 'MONOPHASIC', 1], ['RR_MP_4', 'MONOPHASIC', 1], ['RR_OS2_1', 'ONSET2', 0], ['RR_OS2_2', 'ONSET2', 0], ['RR_P3_3', 'PEAK3', 1], ['RR_R2LONG_1', 'REMISSION2_LONG', 2]]
+    chronic animals with >= 1 relapse: [['C_L_1', 'MILD30', 1], ['C_L_2', 'MILD30', 2], ['C_L_3', 'MILD30', 2], ['C_L_4', 'MILD30', 1]]
+  r1 misses RR_P3_3's third attack: it rises 1.5 -> 2.75 at d37 straight off a
+  plateau with no remission before it, so no drop is seen under either rule.
+  MONOPHASIC animals: strict counts a late low-grade rise (trough ~0.25 -> 0.75-1.0)
+  as a relapse in all 4; r1 does not. That is the main disagreement between rules.
+  r1 vs strict agree on 61/67 animals; disagree on: [['C_L_2', 'MILD30', 0, 2], ['RR_MP_1', 'MONOPHASIC', 0, 1], ['RR_MP_2', 'MONOPHASIC', 0, 1], ['RR_MP_3', 'MONOPHASIC', 0, 1], ['RR_MP_4', 'MONOPHASIC', 0, 1], ['RR_R2LONG_1', 'REMISSION2_LONG', 1, 2]]
+  -> A relapse definition must be agreed with the person who scored the animals
+     before n_relapses is used as a target or covariate.
+
+5. HOW MUCH IS NEW INFORMATION (EAE animals, per cohort)
+  R2 = variance explained by score_sacrifice alone (and + day_of_sacrifice);
+  1-R2 = what the trajectory feature adds beyond terminal state.
+  feature                  cohort               n  R2|score  R2|score+day rho(score)
+  onset_day                CHRONIC             23      0.06          0.37      -0.39
+  disease_duration         CHRONIC             23      0.03          0.97      -0.07
+  peak_score               CHRONIC             29      0.75          0.96       0.85
+  peak_day                 CHRONIC             29      0.22          0.78       0.53
+  cumulative_score         CHRONIC             29      0.13          0.78       0.58
+  cumulative_since_onset   CHRONIC             23      0.01          0.75       0.15
+  n_relapses_r1            CHRONIC             29      0.01          0.33      -0.08
+  n_relapses_strict        CHRONIC             29      0.02          0.45      -0.10
+  days_since_last_peak     CHRONIC             23      0.01          0.52      -0.18
+  slope_at_sacrifice       CHRONIC             28      0.25          0.61       0.32
+  max_weight_loss          CHRONIC             29      0.72          0.73      -0.85
+  score_coverage           CHRONIC             29      0.00          0.00      -0.23
+  onset_day                RELAPSE REMITTING   28      0.06          0.06      -0.26
+  disease_duration         RELAPSE REMITTING   28      0.02          0.99       0.14
+  peak_score               RELAPSE REMITTING   30      0.36          0.62       0.75
+  peak_day                 RELAPSE REMITTING   30      0.09          0.12       0.20
+  cumulative_score         RELAPSE REMITTING   30      0.12          0.91       0.40
+  cumulative_since_onset   RELAPSE REMITTING   28      0.07          0.90       0.25
+  n_relapses_r1            RELAPSE REMITTING   30      0.27          0.82       0.53
+  n_relapses_strict        RELAPSE REMITTING   30      0.09          0.88       0.29
+  days_since_last_peak     RELAPSE REMITTING   28      0.32          0.41      -0.61
+  slope_at_sacrifice       RELAPSE REMITTING   30      0.40          0.45       0.52
+  max_weight_loss          RELAPSE REMITTING   30      0.25          0.42      -0.41
+
+  Spearman rho, CHRONIC (EAE): features vs terminal scalars
+                          score_sacrifice  day_of_sacrifice
+  onset_day                         -0.39              0.53
+  disease_duration                  -0.07              0.94
+  peak_score                         0.85              0.71
+  peak_day                           0.53              0.96
+  cumulative_score                   0.58              0.93
+  cumulative_since_onset             0.15              0.86
+  n_relapses_r1                     -0.08              0.48
+  n_relapses_strict                 -0.10              0.56
+  days_since_last_peak              -0.18              0.76
+  slope_at_sacrifice                 0.32             -0.49
+  max_weight_loss                   -0.85             -0.55
+  score_coverage                    -0.23             -0.26
+
+  Spearman rho, RELAPSE REMITTING (EAE): features vs terminal scalars
+                          score_sacrifice  day_of_sacrifice
+  onset_day                         -0.26             -0.02
+  disease_duration                   0.14              0.98
+  peak_score                         0.75              0.60
+  peak_day                           0.20              0.38
+  cumulative_score                   0.40              0.93
+  cumulative_since_onset             0.25              0.93
+  n_relapses_r1                      0.53              0.80
+  n_relapses_strict                  0.29              0.92
+  days_since_last_peak              -0.61              0.27
+  slope_at_sacrifice                 0.52             -0.10
+  max_weight_loss                   -0.41             -0.43
+  score_coverage                      NaN               NaN
+
+HEADLINE — cumulative_score beyond score_sacrifice:
+  CHRONIC: score_sacrifice explains 13% of cumulative_score variance, leaving 87% unexplained (22% after also adding day_of_sacrifice).
+  RELAPSE REMITTING: score_sacrifice explains 12% of cumulative_score variance, leaving 88% unexplained (9% after also adding day_of_sacrifice).
+  CAVEAT FOR TASKS 4 AND 6: most of that unexplained variance is day_of_sacrifice.
+  cumulative_score is close to a restatement of time-since-induction (score + day
+  explain 91% RR, 78% chronic). Likewise disease_duration: score + day explain 99% RR / 97% chronic,
+  because onset latency varies little relative to the sacrifice-day spread
+  (see onset_day range above). The trajectory reframing removes terminal severity,
+  but a model that already predicts day_of_sacrifice will largely predict these
+  targets too. Genuinely new information beyond (score, day) is mainly in
+  onset_day, days_since_last_peak, slope_at_sacrifice, peak_day (RR) and
+  max_weight_loss (RR) — the shape-of-course features, not the accumulation ones.
+
+figures/: score_curves_by_stage.png, feature_correlations.png

@@ -1,0 +1,794 @@
+{
+  "join": {
+    "n_atlas": 67,
+    "n_sheet": 68,
+    "direct": 62,
+    "aliased": 5,
+    "joined": 67,
+    "sheet_only": [
+      "C_CFA_5"
+    ],
+    "atlas_only": [],
+    "alias_check": [
+      {
+        "sheet": "C_M30_1",
+        "atlas": "C_L_1",
+        "sheet_sections": [
+          "G4_L1_0",
+          "G6_L1_2"
+        ],
+        "atlas_sections": [
+          "G4_L1_0",
+          "G6_L1_2"
+        ],
+        "verified": true
+      },
+      {
+        "sheet": "C_M30_2",
+        "atlas": "C_L_2",
+        "sheet_sections": [
+          "G4_L2_0",
+          "G6_L1_1"
+        ],
+        "atlas_sections": [
+          "G4_L2_0",
+          "G6_L1_1"
+        ],
+        "verified": true
+      },
+      {
+        "sheet": "C_M30_3",
+        "atlas": "C_L_3",
+        "sheet_sections": [
+          "G4_L3_0",
+          "G6_L1_0"
+        ],
+        "atlas_sections": [
+          "G4_L3_0",
+          "G6_L1_0"
+        ],
+        "verified": true
+      },
+      {
+        "sheet": "C_M30_4",
+        "atlas": "C_L_4",
+        "sheet_sections": [
+          "G4_L1_2",
+          "G6_L3_2"
+        ],
+        "atlas_sections": [
+          "G4_L1_2",
+          "G6_L3_2"
+        ],
+        "verified": true
+      },
+      {
+        "sheet": "C_M30_5",
+        "atlas": "C_L_5",
+        "sheet_sections": [
+          "G4_L2_1",
+          "G6_L2_1"
+        ],
+        "atlas_sections": [
+          "G4_L2_1",
+          "G6_L2_1"
+        ],
+        "verified": true
+      }
+    ]
+  },
+  "section_disagreements": [
+    {
+      "sample_name": "C_M16_2",
+      "section": "C2_G3_Mid_1",
+      "region": "T (T)",
+      "animal_id": 1058085,
+      "modal_animal_id": 1058093,
+      "n_days_differ": 9,
+      "days_differ": [
+        "d11",
+        "d13",
+        "d14",
+        "d15",
+        "d16",
+        "d19",
+        "d21",
+        "d22",
+        "d25"
+      ],
+      "max_abs_diff": 0.75,
+      "sum_abs_diff": 3.75,
+      "sheet_day_of_sacrifice": "27 (28)",
+      "sheet_score_sacrifice": "1.25 (1.5)"
+    }
+  ],
+  "identical_curve_owner": {
+    "C2_G3_Mid_1": [
+      [
+        "C_M16_1",
+        1058085,
+        27
+      ]
+    ]
+  },
+  "sex_mismatch_sections": [
+    {
+      "meta_sample_id": "C2_G3_Mid_1",
+      "n_cells": 6218,
+      "frac_xist_pos": 0.005950466387906,
+      "sex_from_xist": "M",
+      "sample_name": "C_M16_2",
+      "sex_meta": "F"
+    }
+  ],
+  "sex_check_range": {
+    "F": [
+      0.1433733535377083,
+      0.5246431254695717
+    ],
+    "M": [
+      0.0,
+      0.0186008896077638
+    ]
+  },
+  "sheet_vs_atlas_mismatch": [
+    [
+      "RR_MP_3",
+      false,
+      true
+    ]
+  ],
+  "n_sacrifice_point_imputed": 9,
+  "imputed_animals": [
+    "C_M16_1",
+    "C_M16_2",
+    "C_M16_3",
+    "C_OS1_2",
+    "C_S16_1",
+    "C_S16_2",
+    "C_S16_3",
+    "C_S30_1",
+    "C_S30_2"
+  ],
+  "onset_censored": [
+    [
+      "C_OS1_1",
+      "OS1"
+    ],
+    [
+      "C_OS1_3",
+      "OS1"
+    ],
+    [
+      "RR_OS2_1",
+      "ONSET2"
+    ],
+    [
+      "RR_OS2_2",
+      "ONSET2"
+    ]
+  ],
+  "never_symptomatic_eae": [
+    [
+      "C_NS_1",
+      "NONSYMPTOM"
+    ],
+    [
+      "C_NS_2",
+      "NONSYMPTOM"
+    ],
+    [
+      "C_NS_3",
+      "NONSYMPTOM"
+    ],
+    [
+      "C_NS_4",
+      "NONSYMPTOM"
+    ],
+    [
+      "C_NS_5",
+      "NONSYMPTOM"
+    ],
+    [
+      "C_OS1_5",
+      "OS1"
+    ],
+    [
+      "RR_OS1_1",
+      "ONSET1"
+    ],
+    [
+      "RR_OS1_2",
+      "ONSET1"
+    ]
+  ],
+  "below_onset_threshold": [
+    [
+      "C_OS1_5",
+      "OS1",
+      0.25
+    ],
+    [
+      "RR_OS1_1",
+      "ONSET1",
+      0.25
+    ],
+    [
+      "RR_OS1_2",
+      "ONSET1",
+      0.25
+    ]
+  ],
+  "stage_curve_contradiction": [
+    [
+      "RR_OS2_1",
+      "ONSET2",
+      13.0,
+      13.0
+    ],
+    [
+      "RR_OS2_2",
+      "ONSET2",
+      13.0,
+      13.0
+    ]
+  ],
+  "onset_range": {
+    "CHRONIC": {
+      "min": 6.0,
+      "max": 20.0,
+      "std": 2.535908129157224
+    },
+    "RELAPSE REMITTING": {
+      "min": 11.0,
+      "max": 15.0,
+      "std": 1.0357370915204898
+    }
+  },
+  "slope_class_counts": {
+    "CHRONIC": {
+      "": 1,
+      "ascending": 13,
+      "descending": 10,
+      "plateau": 5
+    },
+    "RELAPSE REMITTING": {
+      "": 0,
+      "ascending": 17,
+      "descending": 13,
+      "plateau": 0
+    }
+  },
+  "relapse": {
+    "n_relapses_r1": {
+      "rr_agree_with_stage": 27,
+      "rr_n": 30,
+      "rr_disagree": [
+        [
+          "RR_OS2_1",
+          "ONSET2",
+          0
+        ],
+        [
+          "RR_OS2_2",
+          "ONSET2",
+          0
+        ],
+        [
+          "RR_P3_3",
+          "PEAK3",
+          1
+        ]
+      ],
+      "peak3": [
+        [
+          "RR_P3_1",
+          2
+        ],
+        [
+          "RR_P3_2",
+          2
+        ],
+        [
+          "RR_P3_3",
+          1
+        ],
+        [
+          "RR_P3_4",
+          2
+        ],
+        [
+          "RR_P3_5",
+          2
+        ]
+      ],
+      "chronic_nonzero": [
+        [
+          "C_L_1",
+          "MILD30",
+          1
+        ],
+        [
+          "C_L_3",
+          "MILD30",
+          2
+        ],
+        [
+          "C_L_4",
+          "MILD30",
+          1
+        ]
+      ],
+      "crosstab": {
+        "CFA": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        },
+        "MILD16": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "MILD30": {
+          "0": 2,
+          "1": 2,
+          "2": 1
+        },
+        "MOG CFA": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "MONOPHASIC": {
+          "0": 4,
+          "1": 0,
+          "2": 0
+        },
+        "NONSYMPTOM": {
+          "0": 5,
+          "1": 0,
+          "2": 0
+        },
+        "ONSET1": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        },
+        "ONSET2": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        },
+        "OS1": {
+          "0": 5,
+          "1": 0,
+          "2": 0
+        },
+        "PEAK1": {
+          "0": 10,
+          "1": 0,
+          "2": 0
+        },
+        "PEAK2": {
+          "0": 0,
+          "1": 2,
+          "2": 0
+        },
+        "PEAK2_MILD": {
+          "0": 0,
+          "1": 2,
+          "2": 0
+        },
+        "PEAK3": {
+          "0": 0,
+          "1": 1,
+          "2": 4
+        },
+        "PLP CFA": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "REMISSION1": {
+          "0": 5,
+          "1": 0,
+          "2": 0
+        },
+        "REMISSION2": {
+          "0": 0,
+          "1": 3,
+          "2": 0
+        },
+        "REMISSION2_LONG": {
+          "0": 0,
+          "1": 1,
+          "2": 0
+        },
+        "SEVERE16": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "SEVERE30": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        }
+      }
+    },
+    "n_relapses_strict": {
+      "rr_agree_with_stage": 22,
+      "rr_n": 30,
+      "rr_disagree": [
+        [
+          "RR_MP_1",
+          "MONOPHASIC",
+          1
+        ],
+        [
+          "RR_MP_2",
+          "MONOPHASIC",
+          1
+        ],
+        [
+          "RR_MP_3",
+          "MONOPHASIC",
+          1
+        ],
+        [
+          "RR_MP_4",
+          "MONOPHASIC",
+          1
+        ],
+        [
+          "RR_OS2_1",
+          "ONSET2",
+          0
+        ],
+        [
+          "RR_OS2_2",
+          "ONSET2",
+          0
+        ],
+        [
+          "RR_P3_3",
+          "PEAK3",
+          1
+        ],
+        [
+          "RR_R2LONG_1",
+          "REMISSION2_LONG",
+          2
+        ]
+      ],
+      "peak3": [
+        [
+          "RR_P3_1",
+          2
+        ],
+        [
+          "RR_P3_2",
+          2
+        ],
+        [
+          "RR_P3_3",
+          1
+        ],
+        [
+          "RR_P3_4",
+          2
+        ],
+        [
+          "RR_P3_5",
+          2
+        ]
+      ],
+      "chronic_nonzero": [
+        [
+          "C_L_1",
+          "MILD30",
+          1
+        ],
+        [
+          "C_L_2",
+          "MILD30",
+          2
+        ],
+        [
+          "C_L_3",
+          "MILD30",
+          2
+        ],
+        [
+          "C_L_4",
+          "MILD30",
+          1
+        ]
+      ],
+      "crosstab": {
+        "CFA": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        },
+        "MILD16": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "MILD30": {
+          "0": 1,
+          "1": 2,
+          "2": 2
+        },
+        "MOG CFA": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "MONOPHASIC": {
+          "0": 0,
+          "1": 4,
+          "2": 0
+        },
+        "NONSYMPTOM": {
+          "0": 5,
+          "1": 0,
+          "2": 0
+        },
+        "ONSET1": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        },
+        "ONSET2": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        },
+        "OS1": {
+          "0": 5,
+          "1": 0,
+          "2": 0
+        },
+        "PEAK1": {
+          "0": 10,
+          "1": 0,
+          "2": 0
+        },
+        "PEAK2": {
+          "0": 0,
+          "1": 2,
+          "2": 0
+        },
+        "PEAK2_MILD": {
+          "0": 0,
+          "1": 2,
+          "2": 0
+        },
+        "PEAK3": {
+          "0": 0,
+          "1": 1,
+          "2": 4
+        },
+        "PLP CFA": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "REMISSION1": {
+          "0": 5,
+          "1": 0,
+          "2": 0
+        },
+        "REMISSION2": {
+          "0": 0,
+          "1": 3,
+          "2": 0
+        },
+        "REMISSION2_LONG": {
+          "0": 0,
+          "1": 0,
+          "2": 1
+        },
+        "SEVERE16": {
+          "0": 3,
+          "1": 0,
+          "2": 0
+        },
+        "SEVERE30": {
+          "0": 2,
+          "1": 0,
+          "2": 0
+        }
+      }
+    }
+  },
+  "relapse_rule_agreement": [
+    61,
+    67
+  ],
+  "relapse_rule_disagree": [
+    [
+      "C_L_2",
+      "MILD30",
+      0,
+      2
+    ],
+    [
+      "RR_MP_1",
+      "MONOPHASIC",
+      0,
+      1
+    ],
+    [
+      "RR_MP_2",
+      "MONOPHASIC",
+      0,
+      1
+    ],
+    [
+      "RR_MP_3",
+      "MONOPHASIC",
+      0,
+      1
+    ],
+    [
+      "RR_MP_4",
+      "MONOPHASIC",
+      0,
+      1
+    ],
+    [
+      "RR_R2LONG_1",
+      "REMISSION2_LONG",
+      1,
+      2
+    ]
+  ],
+  "unexplained_by_score_sacrifice": {
+    "CHRONIC": {
+      "onset_day": {
+        "n": 23,
+        "r2_score": 0.05606721954789062,
+        "r2_score_day": 0.3687341666186855,
+        "rho_score": -0.3857917250495535
+      },
+      "disease_duration": {
+        "n": 23,
+        "r2_score": 0.0348232066126245,
+        "r2_score_day": 0.9704236159963313,
+        "rho_score": -0.0737057472510165
+      },
+      "peak_score": {
+        "n": 29,
+        "r2_score": 0.745773495183047,
+        "r2_score_day": 0.9605437285771923,
+        "rho_score": 0.849794182204049
+      },
+      "peak_day": {
+        "n": 29,
+        "r2_score": 0.2226369551727866,
+        "r2_score_day": 0.7775490893230922,
+        "rho_score": 0.5320734977281613
+      },
+      "cumulative_score": {
+        "n": 29,
+        "r2_score": 0.1295331081695702,
+        "r2_score_day": 0.7794858549176666,
+        "rho_score": 0.575043637811059
+      },
+      "cumulative_since_onset": {
+        "n": 23,
+        "r2_score": 0.008406123510712127,
+        "r2_score_day": 0.7516633759586262,
+        "rho_score": 0.14954027428557276
+      },
+      "n_relapses_r1": {
+        "n": 29,
+        "r2_score": 0.014703630896609088,
+        "r2_score_day": 0.3308927826824999,
+        "rho_score": -0.08191355065526812
+      },
+      "n_relapses_strict": {
+        "n": 29,
+        "r2_score": 0.020579294424191485,
+        "r2_score_day": 0.453739020502239,
+        "rho_score": -0.09632128179561397
+      },
+      "days_since_last_peak": {
+        "n": 23,
+        "r2_score": 0.005891613540822349,
+        "r2_score_day": 0.5156982524457441,
+        "rho_score": -0.18465909008571266
+      },
+      "slope_at_sacrifice": {
+        "n": 28,
+        "r2_score": 0.2529849259230137,
+        "r2_score_day": 0.6141662578125056,
+        "rho_score": 0.31563742589432225
+      },
+      "max_weight_loss": {
+        "n": 29,
+        "r2_score": 0.7167628068143423,
+        "r2_score_day": 0.7322055378324781,
+        "rho_score": -0.8494024912479845
+      },
+      "score_coverage": {
+        "n": 29,
+        "r2_score": 0.0007214690171467586,
+        "r2_score_day": 0.0013240289282604456,
+        "rho_score": -0.23433945157407826
+      }
+    },
+    "RELAPSE REMITTING": {
+      "onset_day": {
+        "n": 28,
+        "r2_score": 0.05856092777702515,
+        "r2_score_day": 0.05932711566838078,
+        "rho_score": -0.2602746910515776
+      },
+      "disease_duration": {
+        "n": 28,
+        "r2_score": 0.017796233636803604,
+        "r2_score_day": 0.9933273940646636,
+        "rho_score": 0.14483432516995937
+      },
+      "peak_score": {
+        "n": 30,
+        "r2_score": 0.3592675414805988,
+        "r2_score_day": 0.6212874465037352,
+        "rho_score": 0.7472653144505408
+      },
+      "peak_day": {
+        "n": 30,
+        "r2_score": 0.09119861124216688,
+        "r2_score_day": 0.12268285446698335,
+        "rho_score": 0.20287683845768525
+      },
+      "cumulative_score": {
+        "n": 30,
+        "r2_score": 0.12280342460103622,
+        "r2_score_day": 0.9073628176076006,
+        "rho_score": 0.3958416863575147
+      },
+      "cumulative_since_onset": {
+        "n": 28,
+        "r2_score": 0.07047388457951098,
+        "r2_score_day": 0.9025052655254665,
+        "rho_score": 0.2533193691020523
+      },
+      "n_relapses_r1": {
+        "n": 30,
+        "r2_score": 0.26882596369532874,
+        "r2_score_day": 0.8159767099368297,
+        "rho_score": 0.5324721599955664
+      },
+      "n_relapses_strict": {
+        "n": 30,
+        "r2_score": 0.08984274059030595,
+        "r2_score_day": 0.8766703461145734,
+        "rho_score": 0.28831755504777173
+      },
+      "days_since_last_peak": {
+        "n": 28,
+        "r2_score": 0.32452927115182684,
+        "r2_score_day": 0.4059757603733558,
+        "rho_score": -0.6127157210778655
+      },
+      "slope_at_sacrifice": {
+        "n": 30,
+        "r2_score": 0.3956156385514181,
+        "r2_score_day": 0.452041315068203,
+        "rho_score": 0.5230263134591356
+      },
+      "max_weight_loss": {
+        "n": 30,
+        "r2_score": 0.24625927692248772,
+        "r2_score_day": 0.42113246522269765,
+        "rho_score": -0.4058322288479452
+      }
+    }
+  }
+}
