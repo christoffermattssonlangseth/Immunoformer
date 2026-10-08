@@ -1,5 +1,7 @@
 # Dataset hierarchy — real Xenium `.h5ad` files
 
+> **2026-09-30:** superseded by the per-dataset inspection docs [`rrmap2-data-structure.md`](rrmap2-data-structure.md), [`optic-nerve-data-structure.md`](optic-nerve-data-structure.md), [`mtdna-dsb-data-structure.md`](mtdna-dsb-data-structure.md). Known corrections: RRMAP2 now has 19 stages and `sample_id` is a Xenium capture region (54) rather than a physical slide (9); the optic-nerve `animal` column is a slide-group id, not a mouse.
+
 > The `obs` grouping keys that map each real dataset onto the Stage-1 pipeline
 > (bag = section, split = animal). These were reverse-engineered by inspection on
 > 2026-06-11 — several are **non-obvious and easy to get wrong**, so they live here.

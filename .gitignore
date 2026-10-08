@@ -12,3 +12,5 @@ _run.log
 
 # lesion_signaling heavy subset cache (9GB)
 runs/lesion_signaling/rr_subset.h5ad
+
+.aider*
