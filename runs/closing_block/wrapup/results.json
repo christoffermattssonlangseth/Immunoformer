@@ -1,0 +1,336 @@
+{
+  "1": {
+    "RR/Endothelial": {
+      "n_expressed": 2020,
+      "Col4a1": {
+        "rho_sev": 0.466740616602923,
+        "rho_day_given_sev": -0.6208108832480322,
+        "rho_day_raw": -0.47908651242220474,
+        "tolerance": 0.1,
+        "set_size": 265,
+        "rank_adjusted": {
+          "percentile": 96.60377358490567,
+          "empirical_p": 0.033962264150943396
+        },
+        "rank_raw": {
+          "percentile": 95.47169811320755,
+          "empirical_p": 0.045283018867924525
+        },
+        "whole_set_raw_percentile": 92.82178217821783,
+        "whole_set_adjusted_percentile": 95.54455445544554
+      },
+      "Col4a2": {
+        "rho_sev": 0.4937907387314581,
+        "rho_day_given_sev": -0.6771046550565093,
+        "rho_day_raw": -0.5147113249909552,
+        "tolerance": 0.1,
+        "set_size": 285,
+        "rank_adjusted": {
+          "percentile": 97.89473684210527,
+          "empirical_p": 0.021052631578947368
+        },
+        "rank_raw": {
+          "percentile": 97.19298245614036,
+          "empirical_p": 0.028070175438596492
+        },
+        "whole_set_raw_percentile": 95.49504950495049,
+        "whole_set_adjusted_percentile": 97.77227722772277
+      }
+    },
+    "RR/VSMC": {
+      "n_expressed": 1990,
+      "Col4a1": {
+        "rho_sev": 0.4642204188890843,
+        "rho_day_given_sev": -0.49611245949157784,
+        "rho_day_raw": -0.37086774216618934,
+        "tolerance": 0.1,
+        "set_size": 217,
+        "rank_adjusted": {
+          "percentile": 88.0184331797235,
+          "empirical_p": 0.11981566820276497
+        },
+        "rank_raw": {
+          "percentile": 86.63594470046083,
+          "empirical_p": 0.1336405529953917
+        },
+        "whole_set_raw_percentile": 88.79396984924624,
+        "whole_set_adjusted_percentile": 93.86934673366835
+      },
+      "Col4a2": {
+        "rho_sev": 0.4971510023499097,
+        "rho_day_given_sev": -0.4923852910700456,
+        "rho_day_raw": -0.3542316268628578,
+        "tolerance": 0.1,
+        "set_size": 196,
+        "rank_adjusted": {
+          "percentile": 84.18367346938776,
+          "empirical_p": 0.15816326530612246
+        },
+        "rank_raw": {
+          "percentile": 83.16326530612244,
+          "empirical_p": 0.1683673469387755
+        },
+        "whole_set_raw_percentile": 86.78391959798995,
+        "whole_set_adjusted_percentile": 93.6180904522613
+      }
+    },
+    "chronic/Endothelial": {
+      "n_expressed": 2020,
+      "Col4a1": {
+        "rho_sev": 0.43492408978763125,
+        "rho_day_given_sev": -0.7479180870995537,
+        "rho_day_raw": -0.29339777572243697,
+        "tolerance": 0.1,
+        "set_size": 202,
+        "rank_adjusted": {
+          "percentile": 99.00990099009901,
+          "empirical_p": 0.009900990099009901
+        },
+        "rank_raw": {
+          "percentile": 65.84158415841584,
+          "empirical_p": 0.3415841584158416
+        },
+        "whole_set_raw_percentile": 55.4950495049505,
+        "whole_set_adjusted_percentile": 99.00990099009901
+      },
+      "Col4a2": {
+        "rho_sev": 0.4484522970852801,
+        "rho_day_given_sev": -0.7335495431915484,
+        "rho_day_raw": -0.27102906801722765,
+        "tolerance": 0.1,
+        "set_size": 206,
+        "rank_adjusted": {
+          "percentile": 98.05825242718447,
+          "empirical_p": 0.019417475728155338
+        },
+        "rank_raw": {
+          "percentile": 63.10679611650486,
+          "empirical_p": 0.36893203883495146
+        },
+        "whole_set_raw_percentile": 52.07920792079208,
+        "whole_set_adjusted_percentile": 98.8118811881188
+      }
+    },
+    "chronic/VSMC": {
+      "n_expressed": 1990,
+      "Col4a1": {
+        "rho_sev": 0.6241634953191104,
+        "rho_day_given_sev": -0.46256046480189916,
+        "rho_day_raw": 0.07047675030408408,
+        "tolerance": 0.15,
+        "set_size": 110,
+        "rank_adjusted": {
+          "percentile": 92.72727272727272,
+          "empirical_p": 0.07272727272727272
+        },
+        "rank_raw": {
+          "percentile": 6.363636363636363,
+          "empirical_p": 0.9363636363636364
+        },
+        "whole_set_raw_percentile": 18.743718592964825,
+        "whole_set_adjusted_percentile": 91.356783919598
+      },
+      "Col4a2": {
+        "rho_sev": 0.4663344101798734,
+        "rho_day_given_sev": -0.3887456914334422,
+        "rho_day_raw": -0.007354095683904425,
+        "tolerance": 0.1,
+        "set_size": 119,
+        "rank_adjusted": {
+          "percentile": 83.19327731092437,
+          "empirical_p": 0.16806722689075632
+        },
+        "rank_raw": {
+          "percentile": 1.680672268907563,
+          "empirical_p": 0.9831932773109243
+        },
+        "whole_set_raw_percentile": 2.3618090452261304,
+        "whole_set_adjusted_percentile": 85.02512562814071
+      }
+    }
+  },
+  "2": {
+    "RR": {
+      "three_type_clock": {
+        "rho": 0.6482194428538748,
+        "ci": [
+          0.36337313602864013,
+          0.8377177631548263
+        ],
+        "n": 33,
+        "zero_feature_folds": 0
+      },
+      "seventeen_type_clock": {
+        "rho": 0.4703227476780886,
+        "ci": [
+          0.14164073342671651,
+          0.7164450624751938
+        ],
+        "n": 33,
+        "zero_feature_folds": 0
+      },
+      "three_vs_seventeen": {
+        "comparison": "3-type vs 17-type composition clock",
+        "A": "3-type",
+        "B": "17-type",
+        "n": 33,
+        "rho_A": 0.6482194428538748,
+        "rho_B": 0.4703227476780886,
+        "diff_mean": 0.17743645716900255,
+        "diff_ci": [
+          -0.010119986057924926,
+          0.4004493307841457
+        ],
+        "frac_diff_le_0": 0.033,
+        "median_abs_err_A": 5.877489939123761,
+        "median_abs_err_B": 6.347268724498802,
+        "wilcoxon_p": 0.04634791240096092,
+        "ci_excludes_zero": false
+      },
+      "proportions": {
+        "Fibroblast": {
+          "rho_day_raw": 0.5852887838535739,
+          "ci_raw": [
+            0.265560671710942,
+            0.7987258063931696
+          ],
+          "rho_day_given_sev": 0.5813985955052966,
+          "ci_given_sev": [
+            0.2684151204418121,
+            0.8024980845086679
+          ],
+          "median": 0.10929401877013588
+        },
+        "Endothelial": {
+          "rho_day_raw": -0.07293004082470603,
+          "ci_raw": [
+            -0.3935065659602386,
+            0.28044100758174306
+          ],
+          "rho_day_given_sev": 0.013774790809989581,
+          "ci_given_sev": [
+            -0.33946901054281114,
+            0.3530857852993038
+          ],
+          "median": 0.0789293256177495
+        },
+        "Astrocyte": {
+          "rho_day_raw": 0.1018331906446356,
+          "ci_raw": [
+            -0.2543354009888131,
+            0.45885235631913507
+          ],
+          "rho_day_given_sev": 0.29123262770759056,
+          "ci_given_sev": [
+            -0.08806558208144256,
+            0.6190007476975092
+          ],
+          "median": 0.10226619466884512
+        }
+      },
+      "endo_proportion_vs_col4": {
+        "rho_raw": -0.49298128342245995,
+        "ci_raw": [
+          -0.7590817694369973,
+          -0.14310106774048928
+        ],
+        "rho_given_day_and_sev": -0.351268998999727,
+        "ci_given_day_and_sev": [
+          -0.660936897919992,
+          -0.03693395179990677
+        ]
+      }
+    },
+    "chronic": {
+      "three_type_clock": {
+        "rho": 0.7992364118537588,
+        "ci": [
+          0.6522480305064384,
+          0.8778465512293975
+        ],
+        "n": 34,
+        "zero_feature_folds": 0
+      },
+      "seventeen_type_clock": {
+        "rho": 0.6609512078100829,
+        "ci": [
+          0.40228425305504845,
+          0.8290293422363201
+        ],
+        "n": 34,
+        "zero_feature_folds": 0
+      },
+      "three_vs_seventeen": {
+        "comparison": "3-type vs 17-type composition clock",
+        "A": "3-type",
+        "B": "17-type",
+        "n": 34,
+        "rho_A": 0.7992364118537588,
+        "rho_B": 0.6609512078100829,
+        "diff_mean": 0.13518702718468473,
+        "diff_ci": [
+          -0.023340565502576786,
+          0.32825086485350263
+        ],
+        "frac_diff_le_0": 0.049,
+        "median_abs_err_A": 5.347031686145499,
+        "median_abs_err_B": 6.66649953082641,
+        "wilcoxon_p": 0.001570128952153027,
+        "ci_excludes_zero": false
+      },
+      "proportions": {
+        "Fibroblast": {
+          "rho_day_raw": 0.7226931112703578,
+          "ci_raw": [
+            0.5184212639998017,
+            0.8429457706862463
+          ],
+          "rho_day_given_sev": 0.6136630831000438,
+          "ci_given_sev": [
+            0.37635877227700215,
+            0.7566687243141541
+          ],
+          "median": 0.08541314035989078
+        },
+        "Endothelial": {
+          "rho_day_raw": -0.5763772492260093,
+          "ci_raw": [
+            -0.7751745940065785,
+            -0.2657613329680996
+          ],
+          "rho_day_given_sev": -0.17861374629407795,
+          "ci_given_sev": [
+            -0.4778142317988516,
+            0.15149235903682165
+          ],
+          "median": 0.08745977552399464
+        },
+        "Astrocyte": {
+          "rho_day_raw": -0.4274568116269447,
+          "ci_raw": [
+            -0.6574409215916217,
+            -0.0957514761930518
+          ],
+          "rho_day_given_sev": 0.08443408745995622,
+          "ci_given_sev": [
+            -0.24118883416352713,
+            0.4356800573000714
+          ],
+          "median": 0.12061753229848374
+        }
+      },
+      "endo_proportion_vs_col4": {
+        "rho_raw": -0.3494270435446906,
+        "ci_raw": [
+          -0.6324338751593853,
+          0.023922740019789966
+        ],
+        "rho_given_day_and_sev": -0.0726827723490952,
+        "ci_given_day_and_sev": [
+          -0.469039579044354,
+          0.3283849907403899
+        ]
+      }
+    }
+  }
+}
