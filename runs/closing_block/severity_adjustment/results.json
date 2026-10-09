@@ -1,0 +1,580 @@
+{
+  "RR": {
+    "n": 33,
+    "1_unadjusted": {
+      "Col4a1": {
+        "rho_day": -0.47908651242220474,
+        "ci_day": [
+          -0.7064307497753636,
+          -0.17400029190959312
+        ],
+        "rho_severity": 0.466740616602923,
+        "ci_severity": [
+          0.08621589004590251,
+          0.7417073437484754
+        ]
+      },
+      "Col4a2": {
+        "rho_day": -0.5147113249909552,
+        "ci_day": [
+          -0.7371787952699591,
+          -0.21550101826606957
+        ],
+        "rho_severity": 0.4937907387314581,
+        "ci_severity": [
+          0.11937200797111322,
+          0.7496076366586396
+        ]
+      },
+      "Col4a1+Col4a2 mean": {
+        "rho_day": -0.4928659210572875,
+        "ci_day": [
+          -0.719783871858011,
+          -0.18799547820706447
+        ],
+        "rho_severity": 0.5038715295868129,
+        "ci_severity": [
+          0.14368584077188956,
+          0.7561090883042387
+        ]
+      }
+    },
+    "1_day_vs_severity": {
+      "rho": 0.13853691699657547,
+      "ci": [
+        -0.2261073618961216,
+        0.47054142079269534
+      ]
+    },
+    "2_tertiles": {
+      "bands": [
+        {
+          "band": "tertile 1 (lowest)",
+          "n": 14,
+          "rho": -0.6679631558726492,
+          "ci": [
+            -0.8936631758613289,
+            -0.2113799248121064
+          ],
+          "informative": true
+        },
+        {
+          "band": "tertile 2",
+          "n": 10,
+          "rho": -0.8536744066467458,
+          "ci": [
+            -0.9748393177002369,
+            -0.4590835719239665
+          ],
+          "informative": true
+        },
+        {
+          "band": "tertile 3 (highest)",
+          "n": 9,
+          "rho": -0.5857791861290061,
+          "ci": [
+            -0.9867543820659304,
+            0.16244330801596696
+          ],
+          "informative": true
+        }
+      ],
+      "combined_rho": -0.7201655781564268,
+      "combined_ci": [
+        -0.9177332172274733,
+        -0.4566658602809972
+      ],
+      "score_ranges": [
+        [
+          0.0,
+          0.75
+        ],
+        [
+          1.0,
+          2.25
+        ],
+        [
+          2.5,
+          3.25
+        ]
+      ]
+    },
+    "2_fixed_bands": {
+      "bands": [
+        {
+          "band": "score < 1",
+          "n": 14,
+          "rho": -0.6679631558726492,
+          "ci": [
+            -0.8936631758613289,
+            -0.2113799248121064
+          ],
+          "informative": true
+        },
+        {
+          "band": "1 <= score < 2",
+          "n": 7,
+          "rho": -0.9549937104572925,
+          "ci": [
+            -1.0,
+            -0.6916189900468547
+          ],
+          "informative": false
+        },
+        {
+          "band": "score >= 2",
+          "n": 12,
+          "rho": -0.5448230383545614,
+          "ci": [
+            -0.9272492989949669,
+            0.12864181438998917
+          ],
+          "informative": true
+        }
+      ],
+      "combined_rho": -0.722712418216081,
+      "combined_ci": [
+        -0.9202098436206153,
+        -0.4652033497466972
+      ]
+    },
+    "2_matched_pairs": {
+      "tolerance": 0.25,
+      "n_pairs": 111,
+      "n_animals_in_pairs": 32,
+      "ties": 0,
+      "frac_longer_duration_lower": 0.7837837837837838,
+      "sign_test_p": 1.4180922486418413e-09,
+      "animal_bootstrap_ci_frac": [
+        0.6190208667736757,
+        0.9174406183234888
+      ],
+      "note": "pairs share animals; the sign test treats them as independent and is optimistic"
+    },
+    "3_severity_correlations": {
+      "score_sacrifice": {
+        "score_sacrifice": 1.0,
+        "cumulative_score": 0.547,
+        "peak_score": 0.812,
+        "disease_duration": 0.145,
+        "day_of_sacrifice": 0.139
+      },
+      "cumulative_score": {
+        "score_sacrifice": 0.547,
+        "cumulative_score": 1.0,
+        "peak_score": 0.775,
+        "disease_duration": 0.944,
+        "day_of_sacrifice": 0.729
+      },
+      "peak_score": {
+        "score_sacrifice": 0.812,
+        "cumulative_score": 0.775,
+        "peak_score": 1.0,
+        "disease_duration": 0.578,
+        "day_of_sacrifice": 0.446
+      },
+      "disease_duration": {
+        "score_sacrifice": 0.145,
+        "cumulative_score": 0.944,
+        "peak_score": 0.578,
+        "disease_duration": 1.0,
+        "day_of_sacrifice": 0.983
+      },
+      "day_of_sacrifice": {
+        "score_sacrifice": 0.139,
+        "cumulative_score": 0.729,
+        "peak_score": 0.446,
+        "disease_duration": 0.983,
+        "day_of_sacrifice": 1.0
+      }
+    },
+    "3_n_nonmissing": {
+      "score_sacrifice": 33,
+      "cumulative_score": 33,
+      "peak_score": 33,
+      "disease_duration": 28,
+      "day_of_sacrifice": 33
+    },
+    "3_col4_adjusted_by_each": {
+      "terminal score": {
+        "n": 33,
+        "rho_day_given": -0.6577486805241198,
+        "ci": [
+          -0.8050116758714765,
+          -0.3846478805678038
+        ]
+      },
+      "cumulative score": {
+        "n": 33,
+        "rho_day_given": -0.552931420672932,
+        "ci": [
+          -0.7500355018836434,
+          -0.1579332450297633
+        ]
+      },
+      "peak score": {
+        "n": 33,
+        "rho_day_given": -0.6140183413154332,
+        "ci": [
+          -0.7751650270290951,
+          -0.34285457167558775
+        ]
+      },
+      "days since onset": {
+        "n": 28,
+        "rho_day_given": -0.1334275999671574,
+        "ci": [
+          -0.5214649098462967,
+          0.36401092386187867
+        ]
+      }
+    },
+    "4_clock": {
+      "none": {
+        "rho": 0.7975252851475917,
+        "ci": [
+          0.5884596823253474,
+          0.9018006453308484
+        ],
+        "zero_feature_folds": 0,
+        "n": 33,
+        "n_nonzero_genes": 84
+      },
+      "terminal": {
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "zero_feature_folds": 0,
+        "n": 33,
+        "n_nonzero_genes": 99
+      },
+      "cumulative": {
+        "rho": 0.7822453245305614,
+        "ci": [
+          0.5561635764755487,
+          0.8987394148269454
+        ],
+        "zero_feature_folds": 0,
+        "n": 33,
+        "n_nonzero_genes": 95
+      },
+      "none_vs_terminal": {
+        "rho_A": 0.7975252851475917,
+        "rho_B": 0.8284568840188158,
+        "diff_mean": -0.031633594842825616,
+        "diff_ci": [
+          -0.1219101406315541,
+          0.05542078364156356
+        ],
+        "frac_diff_le_0": 0.782
+      },
+      "cumulative_vs_terminal": {
+        "rho_A": 0.7822453245305614,
+        "rho_B": 0.8284568840188158,
+        "diff_mean": -0.04607533171001482,
+        "diff_ci": [
+          -0.2819075653897519,
+          0.17711646407081208
+        ],
+        "frac_diff_le_0": 0.6615
+      }
+    },
+    "4_gene_overlap": {
+      "none&terminal": 57,
+      "none&cumulative": 20,
+      "terminal&cumulative": 16,
+      "all_three": 12
+    }
+  },
+  "chronic": {
+    "n": 34,
+    "1_unadjusted": {
+      "Col4a1": {
+        "rho_day": -0.29339777572243697,
+        "ci_day": [
+          -0.6037713808776413,
+          0.05228525716546389
+        ],
+        "rho_severity": 0.43492408978763125,
+        "ci_severity": [
+          0.1051754283089887,
+          0.6822040438147846
+        ]
+      },
+      "Col4a2": {
+        "rho_day": -0.27102906801722765,
+        "ci_day": [
+          -0.5992736334372831,
+          0.09194580997381983
+        ],
+        "rho_severity": 0.4484522970852801,
+        "ci_severity": [
+          0.12653815050782177,
+          0.685197599499722
+        ]
+      },
+      "Col4a1+Col4a2 mean": {
+        "rho_day": -0.27562537781966795,
+        "ci_day": [
+          -0.5968610156070555,
+          0.09188631366314876
+        ],
+        "rho_severity": 0.4495407735345162,
+        "ci_severity": [
+          0.12804360894884792,
+          0.6878681994026946
+        ]
+      }
+    },
+    "1_day_vs_severity": {
+      "rho": 0.5832414025035114,
+      "ci": [
+        0.26024196842798736,
+        0.7870541223611492
+      ]
+    },
+    "2_tertiles": {
+      "bands": [
+        {
+          "band": "tertile 1 (lowest)",
+          "n": 15,
+          "rho": 0.2486991301892215,
+          "ci": [
+            -0.2796948070971945,
+            0.7859770099953401
+          ],
+          "informative": true
+        },
+        {
+          "band": "tertile 2",
+          "n": 8,
+          "rho": -0.5663061639364588,
+          "ci": [
+            -0.9607689228305227,
+            0.30864197530864196
+          ],
+          "informative": true
+        },
+        {
+          "band": "tertile 3 (highest)",
+          "n": 11,
+          "rho": -0.9082951062292475,
+          "ci": [
+            -0.9899510050251257,
+            -0.6088740540238105
+          ],
+          "informative": true
+        }
+      ],
+      "combined_rho": -0.4559161867270583,
+      "combined_ci": [
+        -0.7562560922725273,
+        0.04848910139372237
+      ],
+      "score_ranges": [
+        [
+          0.0,
+          0.5
+        ],
+        [
+          1.0,
+          1.5
+        ],
+        [
+          2.25,
+          3.25
+        ]
+      ]
+    },
+    "2_fixed_bands": {
+      "bands": [
+        {
+          "band": "score < 1",
+          "n": 15,
+          "rho": 0.2486991301892215,
+          "ci": [
+            -0.2796948070971945,
+            0.7859770099953401
+          ],
+          "informative": true
+        },
+        {
+          "band": "1 <= score < 2",
+          "n": 8,
+          "rho": -0.5663061639364588,
+          "ci": [
+            -0.9607689228305227,
+            0.30864197530864196
+          ],
+          "informative": true
+        },
+        {
+          "band": "score >= 2",
+          "n": 11,
+          "rho": -0.9082951062292475,
+          "ci": [
+            -0.9899510050251257,
+            -0.6088740540238105
+          ],
+          "informative": true
+        }
+      ],
+      "combined_rho": -0.4559161867270583,
+      "combined_ci": [
+        -0.7562560922725273,
+        0.04848910139372237
+      ]
+    },
+    "2_matched_pairs": {
+      "tolerance": 0.25,
+      "n_pairs": 92,
+      "n_animals_in_pairs": 34,
+      "ties": 0,
+      "frac_longer_duration_lower": 0.6304347826086957,
+      "sign_test_p": 0.01602027478889998,
+      "animal_bootstrap_ci_frac": [
+        0.41301150895140665,
+        0.8552631578947368
+      ],
+      "note": "pairs share animals; the sign test treats them as independent and is optimistic"
+    },
+    "3_severity_correlations": {
+      "score_sacrifice": {
+        "score_sacrifice": 1.0,
+        "cumulative_score": 0.732,
+        "peak_score": 0.906,
+        "disease_duration": -0.074,
+        "day_of_sacrifice": 0.583
+      },
+      "cumulative_score": {
+        "score_sacrifice": 0.732,
+        "cumulative_score": 1.0,
+        "peak_score": 0.905,
+        "disease_duration": 0.908,
+        "day_of_sacrifice": 0.896
+      },
+      "peak_score": {
+        "score_sacrifice": 0.906,
+        "cumulative_score": 0.905,
+        "peak_score": 1.0,
+        "disease_duration": 0.417,
+        "day_of_sacrifice": 0.743
+      },
+      "disease_duration": {
+        "score_sacrifice": -0.074,
+        "cumulative_score": 0.908,
+        "peak_score": 0.417,
+        "disease_duration": 1.0,
+        "day_of_sacrifice": 0.942
+      },
+      "day_of_sacrifice": {
+        "score_sacrifice": 0.583,
+        "cumulative_score": 0.896,
+        "peak_score": 0.743,
+        "disease_duration": 0.942,
+        "day_of_sacrifice": 1.0
+      }
+    },
+    "3_n_nonmissing": {
+      "score_sacrifice": 34,
+      "cumulative_score": 34,
+      "peak_score": 34,
+      "disease_duration": 23,
+      "day_of_sacrifice": 34
+    },
+    "3_col4_adjusted_by_each": {
+      "terminal score": {
+        "n": 34,
+        "rho_day_given": -0.7412081841786705,
+        "ci": [
+          -0.8508480414579839,
+          -0.5457055843980686
+        ]
+      },
+      "cumulative score": {
+        "n": 34,
+        "rho_day_given": -0.4472656698149311,
+        "ci": [
+          -0.6307086245748803,
+          -0.19534977172694853
+        ]
+      },
+      "peak score": {
+        "n": 34,
+        "rho_day_given": -0.6616115323859018,
+        "ci": [
+          -0.797790839485823,
+          -0.46462685903814593
+        ]
+      },
+      "days since onset": {
+        "n": 23,
+        "rho_day_given": -0.3000228928169557,
+        "ci": [
+          -0.607980685409531,
+          0.1495565891598276
+        ]
+      }
+    },
+    "4_clock": {
+      "none": {
+        "rho": 0.8605824053435658,
+        "ci": [
+          0.6881113704130823,
+          0.9321249636610166
+        ],
+        "zero_feature_folds": 0,
+        "n": 34,
+        "n_nonzero_genes": 117
+      },
+      "terminal": {
+        "rho": 0.8523759088672199,
+        "ci": [
+          0.6524555886143726,
+          0.9449382644276139
+        ],
+        "zero_feature_folds": 0,
+        "n": 34,
+        "n_nonzero_genes": 129
+      },
+      "cumulative": {
+        "rho": 0.6415134042715812,
+        "ci": [
+          0.3864864048326463,
+          0.8229708743844255
+        ],
+        "zero_feature_folds": 0,
+        "n": 34,
+        "n_nonzero_genes": 108
+      },
+      "none_vs_terminal": {
+        "rho_A": 0.8605824053435658,
+        "rho_B": 0.8523759088672199,
+        "diff_mean": 0.007361523874592056,
+        "diff_ci": [
+          -0.09521233955979815,
+          0.1286309855916614
+        ],
+        "frac_diff_le_0": 0.468
+      },
+      "cumulative_vs_terminal": {
+        "rho_A": 0.6415134042715812,
+        "rho_B": 0.8523759088672199,
+        "diff_mean": -0.21162122264490965,
+        "diff_ci": [
+          -0.4086988709681123,
+          -0.029528443280021275
+        ],
+        "frac_diff_le_0": 0.9885
+      }
+    },
+    "4_gene_overlap": {
+      "none&terminal": 72,
+      "none&cumulative": 71,
+      "terminal&cumulative": 59,
+      "all_three": 48
+    }
+  }
+}

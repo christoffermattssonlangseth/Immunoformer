@@ -28,7 +28,9 @@ independently of severity?
 **Verdict.** Partly.
 - **Within endothelial cells:** Col4a1/2 fall with duration at matched severity in both
   cohorts, and rank in the top 2–5% of all expressed genes for that association (top 1% in
-  chronic, which was not used to pick the genes).
+  chronic, which was not used to pick the genes). But the chronic result depends on the
+  severity adjustment and does not survive without it; see the follow-up section at the end.
+  Treat it as RR-only.
 - **But the severity association is not weaker:** Col4a1/2 *rise* with current severity about
   as strongly.
 - **In chronic,** the duration association appears only after severity is removed (raw ρ ≈ −0.28).
@@ -180,3 +182,113 @@ there.
 - **Task A, severity-positive / duration-negative pattern:** either reading (vascular response
   to acute inflammation that recedes with duration, or a duration-linked decline) fits; this
   analysis cannot separate them.
+
+---
+
+## Task A follow-up — is the duration signal created by the severity adjustment?
+
+`analysis/severity_adjustment.py`, `severity_adjustment/results.json`. Endothelial Col4a1,
+Col4a2 and their mean. Coefficient-selected genes (see A4 for the rank null).
+
+### 1. Unadjusted block
+
+| | RR (n = 33) | chronic (n = 34) |
+|---|---|---|
+| day vs severity | +0.14 [−0.23, +0.47] | +0.58 [+0.26, +0.79] |
+| Col4a1 vs day | −0.48 [−0.71, −0.17] | −0.29 [−0.60, +0.05] |
+| Col4a2 vs day | −0.51 [−0.74, −0.22] | −0.27 [−0.60, +0.09] |
+| mean vs day | −0.49 [−0.72, −0.19] | −0.28 [−0.60, +0.09] |
+| mean vs severity | +0.50 [+0.14, +0.76] | +0.45 [+0.13, +0.69] |
+
+### 2. Stratified, no regression (Col4a1+Col4a2 mean vs day within severity bands)
+
+| scheme | band (score range) | RR n | RR ρ | chronic n | chronic ρ |
+|---|---|---|---|---|---|
+| tertiles | lowest (RR 0–0.75; chr 0–0.5) | 14 | −0.67 [−0.89, −0.21] | 15 | +0.25 [−0.28, +0.79] |
+| tertiles | middle (RR 1–2.25; chr 1–1.5) | 10 | −0.85 [−0.97, −0.46] | 8 | −0.57 [−0.96, +0.31] |
+| tertiles | highest (RR 2.5–3.25; chr 2.25–3.25) | 9 | −0.59 [−0.99, +0.16] | 11 | −0.91 [−0.99, −0.61] |
+| tertiles | **combined** | 33 | **−0.72 [−0.92, −0.46]** | 34 | −0.46 [−0.76, +0.05] |
+| fixed | score < 1 | 14 | −0.67 [−0.89, −0.21] | 15 | +0.25 [−0.28, +0.79] |
+| fixed | 1 ≤ score < 2 | 7 (too small) | −0.95 [−1.00, −0.69] | 8 | −0.57 [−0.96, +0.31] |
+| fixed | score ≥ 2 | 12 | −0.54 [−0.93, +0.13] | 11 | −0.91 [−0.99, −0.61] |
+| fixed | **combined** | 33 | **−0.72 [−0.92, −0.47]** | 34 | −0.46 [−0.76, +0.05] |
+
+- **Band sizes:** 7–15 animals per band. Single-band CIs are wide, so only the combined
+  estimates are informative.
+- **Chronic lowest band:** mostly non-symptomatic and onset animals, so "low severity" there
+  is partly "pre-disease".
+
+**Severity-matched pairs** (|Δscore| ≤ 0.25). The fraction where the longer-duration animal
+has lower Col4:
+- **RR:** 0.78 of 111 pairs (32 animals); sign test p = 1×10⁻⁹; animal-bootstrap CI 0.62–0.92.
+- **chronic:** 0.63 of 92 pairs (34 animals); sign test p = 0.016; animal-bootstrap CI
+  0.41–0.86.
+
+Pairs share animals, so the sign tests are optimistic; the animal-bootstrap CI is the honest
+interval.
+
+### 3. Which "severity"?
+
+ρ with `day_of_sacrifice`: terminal score RR +0.14 / chronic +0.58; cumulative +0.73 / +0.90;
+peak +0.45 / +0.74; days since onset +0.98 / +0.94 (n = 28 / 23). Terminal vs cumulative
++0.55 / +0.73; terminal vs peak +0.81 / +0.91. Full matrix in `results.json`.
+
+Col4 mean vs day, adjusted for each in turn:
+
+| adjustment | RR | chronic |
+|---|---|---|
+| terminal score | −0.66 [−0.81, −0.38] | −0.74 [−0.85, −0.55] |
+| cumulative score | −0.55 [−0.75, −0.16] | −0.45 [−0.63, −0.20] |
+| peak score | −0.61 [−0.78, −0.34] | −0.66 [−0.80, −0.46] |
+| days since onset | −0.13 [−0.52, +0.36] (n 28) | −0.30 [−0.61, +0.15] (n 23) |
+
+The result is stable across the three severity measures. It disappears only when "days since
+onset" is the covariate. That variable is a duration measure (ρ 0.94–0.98 with day), not a
+severity measure, so that adjustment removes the quantity being tested.
+
+### 4. Project-wide: how much does the clock depend on the adjustment?
+
+| clock adjustment | RR ρ (zero-feature folds) | chronic ρ |
+|---|---|---|
+| none | 0.80 [0.59, 0.90] (0/33) | 0.86 [0.69, 0.93] (0/34) |
+| terminal score (current) | 0.83 [0.62, 0.93] (0/33) | 0.85 [0.65, 0.94] (0/34) |
+| cumulative score | 0.78 [0.56, 0.90] (0/33) | **0.64 [0.39, 0.82]** (0/34) |
+| none − terminal, paired | −0.03 [−0.12, +0.06] | +0.01 [−0.10, +0.13] |
+| cumulative − terminal, paired | −0.05 [−0.28, +0.18] | **−0.21 [−0.41, −0.03]** |
+
+Each ρ is computed against its own target. Selected-gene overlap (full-data fits):
+
+| | none & terminal | none & cumulative | terminal & cumulative | all three |
+|---|---|---|---|---|
+| RR (84 / 99 / 95 genes) | 57 | 20 | 16 | 12 |
+| chronic (117 / 129 / 108 genes) | 72 | 71 | 59 | 48 |
+
+**Reading.**
+- **RR:** the clock's accuracy does not depend on the adjustment choice, but its gene list
+  does (12 genes shared by all three versions).
+- **Chronic:** adjusting for cumulative severity lowers accuracy significantly. Cumulative score
+  is itself almost a duration measure in chronic (ρ 0.90 with day).
+
+### 5. Pre-specification for IHC
+
+`IHC_prespecification.md`, committed in `dac8bbf` before any staining.
+
+### Does the duration signal survive without regression adjustment?
+
+**In RR, yes.**
+- **Without adjustment:** endothelial collagen IV falls with day (ρ −0.49 [−0.72, −0.19]).
+- **Within every severity tertile:** it falls (combined −0.72 [−0.92, −0.46]).
+- **Severity-matched pairs:** the longer-duration animal has lower collagen IV in 78% (CI
+  62–92%).
+- **Why adjustment isn't driving it:** severity and duration are nearly independent in RR, so
+  adjustment cannot be creating the signal.
+
+**In chronic, no.**
+- **Without adjustment:** the association is not distinguishable from zero (−0.28 [−0.60,
+  +0.09]).
+- **Stratified:** the combined estimate includes zero (−0.46 [−0.76, +0.05]); only the
+  highest-severity band shows a clear decline, and the lowest band points the other way.
+- **Severity-matched pairs:** not different from chance (63%, CI 41–86%).
+- **Why:** in chronic, severity rises with duration (ρ 0.58), so the adjusted result there
+  depends on conditioning on a variable downstream of duration. It should not be reported as
+  an independent replication.
