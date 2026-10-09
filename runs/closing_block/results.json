@@ -1,0 +1,2385 @@
+{
+  "coefficient_selected": {
+    "A_Col4a1_Col4a2": true,
+    "A5_genes_in_clock_lists": [
+      "Col4a1",
+      "Col4a2"
+    ],
+    "B": false,
+    "C": false
+  },
+  "A": {
+    "RR/Endothelial": {
+      "cells_per_animal": {
+        "median": 2028.0,
+        "min": 1522,
+        "max": 3181
+      },
+      "animals_below_50": {},
+      "excl_lt50": {
+        "n": 33,
+        "A2_A3": {
+          "Col4a1": {
+            "n": 33,
+            "rho_day_raw": -0.47908651242220474,
+            "ci_day_raw": [
+              -0.7064307497753636,
+              -0.17400029190959312
+            ],
+            "rho_day_given_severity": -0.6208108832480322,
+            "ci_day_given_severity": [
+              -0.7815715350708086,
+              -0.3338465028888369
+            ],
+            "rho_severity_raw": 0.466740616602923,
+            "ci_severity_raw": [
+              0.08621589004590251,
+              0.7417073437484754
+            ],
+            "rho_severity_given_day": 0.6132630512660019,
+            "ci_severity_given_day": [
+              0.2952148758097825,
+              0.8072161809668688
+            ]
+          },
+          "Col4a2": {
+            "n": 33,
+            "rho_day_raw": -0.5147113249909552,
+            "ci_day_raw": [
+              -0.7371787952699591,
+              -0.21550101826606957
+            ],
+            "rho_day_given_severity": -0.6771046550565093,
+            "ci_day_given_severity": [
+              -0.825702229952645,
+              -0.41125799418866194
+            ],
+            "rho_severity_raw": 0.4937907387314581,
+            "ci_severity_raw": [
+              0.11937200797111322,
+              0.7496076366586396
+            ],
+            "rho_severity_given_day": 0.6655279391645004,
+            "ci_severity_given_day": [
+              0.3630243277069162,
+              0.8308024655645136
+            ]
+          },
+          "Col4a1+Col4a2 mean": {
+            "n": 33,
+            "rho_day_raw": -0.4928659210572875,
+            "ci_day_raw": [
+              -0.719783871858011,
+              -0.18799547820706447
+            ],
+            "rho_day_given_severity": -0.6577486805241198,
+            "ci_day_given_severity": [
+              -0.8050116758714765,
+              -0.3846478805678038
+            ],
+            "rho_severity_raw": 0.5038715295868129,
+            "ci_severity_raw": [
+              0.14368584077188956,
+              0.7561090883042387
+            ],
+            "rho_severity_given_day": 0.6639684821003679,
+            "ci_severity_given_day": [
+              0.37476848587641504,
+              0.8339291058484867
+            ]
+          }
+        },
+        "A6": {
+          "n_cells": {
+            "rho_day": 0.31339752566377127,
+            "ci": [
+              -0.03520099782609914,
+              0.5885895272700389
+            ]
+          },
+          "median_total_counts": {
+            "rho_day": -0.017393755778559606,
+            "ci": [
+              -0.3516622163522251,
+              0.32705911608491645
+            ]
+          },
+          "median_genes": {
+            "rho_day": -0.001008670903672301,
+            "ci": [
+              -0.3371530914074322,
+              0.33612050510193203
+            ]
+          }
+        },
+        "A6_any_technical_trend": false
+      },
+      "A4": {
+        "n_genes_expressed_gt10pct": 2020,
+        "statistic": "|rho(gene, day | severity)| across all expressed genes; raw reported too",
+        "Col4a1": {
+          "rho_partial": -0.6208108832480322,
+          "percentile_abs_partial": 95.54455445544554,
+          "empirical_p_partial": 0.04455445544554455,
+          "rho_raw": -0.47908651242220474,
+          "percentile_abs_raw": 92.82178217821783,
+          "empirical_p_raw": 0.07178217821782178
+        },
+        "Col4a2": {
+          "rho_partial": -0.6771046550565093,
+          "percentile_abs_partial": 97.77227722772277,
+          "empirical_p_partial": 0.022277227722772276,
+          "rho_raw": -0.5147113249909552,
+          "percentile_abs_raw": 95.49504950495049,
+          "empirical_p_raw": 0.04504950495049505
+        }
+      },
+      "A5": {
+        "Col4a1": {
+          "frac_cells_pos": 0.5531389733500268,
+          "in_clock_coef_lists": true,
+          "n": 33,
+          "rho_day_raw": -0.47908651242220474,
+          "ci_day_raw": [
+            -0.7064307497753636,
+            -0.17400029190959312
+          ],
+          "rho_day_given_severity": -0.6208108832480322,
+          "ci_day_given_severity": [
+            -0.7815715350708086,
+            -0.3338465028888369
+          ],
+          "rho_severity_raw": 0.466740616602923,
+          "ci_severity_raw": [
+            0.08621589004590251,
+            0.7417073437484754
+          ],
+          "rho_severity_given_day": 0.6132630512660019,
+          "ci_severity_given_day": [
+            0.2952148758097825,
+            0.8072161809668688
+          ]
+        },
+        "Col4a2": {
+          "frac_cells_pos": 0.4662940439992846,
+          "in_clock_coef_lists": true,
+          "n": 33,
+          "rho_day_raw": -0.5147113249909552,
+          "ci_day_raw": [
+            -0.7371787952699591,
+            -0.21550101826606957
+          ],
+          "rho_day_given_severity": -0.6771046550565093,
+          "ci_day_given_severity": [
+            -0.825702229952645,
+            -0.41125799418866194
+          ],
+          "rho_severity_raw": 0.4937907387314581,
+          "ci_severity_raw": [
+            0.11937200797111322,
+            0.7496076366586396
+          ],
+          "rho_severity_given_day": 0.6655279391645004,
+          "ci_severity_given_day": [
+            0.3630243277069162,
+            0.8308024655645136
+          ]
+        },
+        "Lama4": {
+          "frac_cells_pos": 0.2265426578429619,
+          "in_clock_coef_lists": false,
+          "n": 33,
+          "rho_day_raw": -0.14770853890533778,
+          "ci_day_raw": [
+            -0.45427118173654435,
+            0.21156992333791802
+          ],
+          "rho_day_given_severity": -0.16240402708092927,
+          "ci_day_given_severity": [
+            -0.46264438498475474,
+            0.20663761914700904
+          ],
+          "rho_severity_raw": 0.09005506497450205,
+          "ci_severity_raw": [
+            -0.28606030205124455,
+            0.48984903554909104
+          ],
+          "rho_severity_given_day": 0.11283188394538275,
+          "ci_severity_given_day": [
+            -0.27047144835709186,
+            0.5115587365376979
+          ]
+        },
+        "Lamb1": {
+          "frac_cells_pos": 0.06804686102664997,
+          "in_clock_coef_lists": false,
+          "n": 33,
+          "rho_day_raw": -0.29138408016138306,
+          "ci_day_raw": [
+            -0.5484634152309666,
+            0.017965362235712004
+          ],
+          "rho_day_given_severity": -0.48708915554746546,
+          "ci_day_given_severity": [
+            -0.7015133540455794,
+            -0.172716900821603
+          ],
+          "rho_severity_raw": 0.6223208221372306,
+          "ci_severity_raw": [
+            0.29922219145347984,
+            0.8203917819860588
+          ],
+          "rho_severity_given_day": 0.6994943734130947,
+          "ci_severity_given_day": [
+            0.4396699281800297,
+            0.8601789954879108
+          ]
+        },
+        "Lamc1": {
+          "frac_cells_pos": 0.5023967089966017,
+          "in_clock_coef_lists": false,
+          "n": 33,
+          "rho_day_raw": -0.015795907459728954,
+          "ci_day_raw": [
+            -0.37340036932193066,
+            0.32400530507663244
+          ],
+          "rho_day_given_severity": -0.147810961189826,
+          "ci_day_given_severity": [
+            -0.4841304865776492,
+            0.22975610007995143
+          ],
+          "rho_severity_raw": 0.6702045787001656,
+          "ci_severity_raw": [
+            0.38409988639815745,
+            0.8490966965541047
+          ],
+          "rho_severity_given_day": 0.6790244445798038,
+          "ci_severity_given_day": [
+            0.39409702206784175,
+            0.8513538154563218
+          ]
+        },
+        "Nid1": {
+          "frac_cells_pos": 0.31776068681810055,
+          "in_clock_coef_lists": false,
+          "n": 33,
+          "rho_day_raw": -0.15157349498590977,
+          "ci_day_raw": [
+            -0.49584217007062403,
+            0.2157000142419808
+          ],
+          "rho_day_given_severity": -0.23599089677833876,
+          "ci_day_given_severity": [
+            -0.566745839354694,
+            0.17681215488227306
+          ],
+          "rho_severity_raw": 0.42944169043811053,
+          "ci_severity_raw": [
+            0.05586944990483146,
+            0.7147458871418829
+          ],
+          "rho_severity_given_day": 0.4601424697442261,
+          "ci_severity_given_day": [
+            0.11895430539261213,
+            0.7172169694767636
+          ]
+        },
+        "Nid2": {
+          "frac_cells_pos": 0.15044714720085853,
+          "in_clock_coef_lists": false,
+          "n": 33,
+          "rho_day_raw": 0.2112282518816946,
+          "ci_day_raw": [
+            -0.16601873926092542,
+            0.5470087083558954
+          ],
+          "rho_day_given_severity": 0.22666867783864447,
+          "ci_day_given_severity": [
+            -0.16015163379268282,
+            0.5956264033113023
+          ],
+          "rho_severity_raw": -0.08921499906988917,
+          "ci_severity_raw": [
+            -0.46961836988621747,
+            0.29516664110551916
+          ],
+          "rho_severity_given_day": -0.12239306774212393,
+          "ci_severity_given_day": [
+            -0.5429925418384243,
+            0.26902479917341
+          ]
+        },
+        "Hspg2": {
+          "frac_cells_pos": 0.5296011446968342,
+          "in_clock_coef_lists": false,
+          "n": 33,
+          "rho_day_raw": -0.13712192007594495,
+          "ci_day_raw": [
+            -0.43142008507840407,
+            0.17383215442926192
+          ],
+          "rho_day_given_severity": -0.2716258023578205,
+          "ci_day_given_severity": [
+            -0.5511504926426141,
+            0.041561104823719344
+          ],
+          "rho_severity_raw": 0.5850218959724183,
+          "ci_severity_raw": [
+            0.27047976415565267,
+            0.7935723839375772
+          ],
+          "rho_severity_given_day": 0.6157153775559738,
+          "ci_severity_given_day": [
+            0.3185897673886231,
+            0.8091319848936754
+          ]
+        },
+        "Col4a3": {
+          "frac_cells_pos": 0.011205508853514576,
+          "in_clock_coef_lists": false,
+          "n": 33,
+          "rho_day_raw": 0.12132601261621599,
+          "ci_day_raw": [
+            -0.24682274873735663,
+            0.4629015715301675
+          ],
+          "rho_day_given_severity": 0.2124419025428198,
+          "ci_day_given_severity": [
+            -0.19049800339052317,
+            0.5497173912054736
+          ],
+          "rho_severity_raw": -0.4670766429647682,
+          "ci_severity_raw": [
+            -0.7580624782651327,
+            -0.06695656719706043
+          ],
+          "rho_severity_given_day": -0.4922324377352593,
+          "ci_severity_given_day": [
+            -0.7727186483240701,
+            -0.1084447164914455
+          ]
+        },
+        "Col4a5": {
+          "frac_cells_pos": 0.05143981398676444,
+          "in_clock_coef_lists": false,
+          "n": 33,
+          "rho_day_raw": 0.375572906090364,
+          "ci_day_raw": [
+            -0.01771989943496274,
+            0.6502492932021805
+          ],
+          "rho_day_given_severity": 0.5215878384480673,
+          "ci_day_given_severity": [
+            0.15109359757933136,
+            0.7508805977745747
+          ],
+          "rho_severity_raw": -0.5057196745769612,
+          "ci_severity_raw": [
+            -0.7520790732920972,
+            -0.17858552215446208
+          ],
+          "rho_severity_given_day": -0.6076665216330545,
+          "ci_severity_given_day": [
+            -0.7890248825438747,
+            -0.32516662496062393
+          ]
+        }
+      },
+      "all": {
+        "n": 33,
+        "A2_A3": {
+          "Col4a1": {
+            "n": 33,
+            "rho_day_raw": -0.47908651242220474,
+            "ci_day_raw": [
+              -0.7064307497753636,
+              -0.17400029190959312
+            ],
+            "rho_day_given_severity": -0.6208108832480322,
+            "ci_day_given_severity": [
+              -0.7815715350708086,
+              -0.3338465028888369
+            ],
+            "rho_severity_raw": 0.466740616602923,
+            "ci_severity_raw": [
+              0.08621589004590251,
+              0.7417073437484754
+            ],
+            "rho_severity_given_day": 0.6132630512660019,
+            "ci_severity_given_day": [
+              0.2952148758097825,
+              0.8072161809668688
+            ]
+          },
+          "Col4a2": {
+            "n": 33,
+            "rho_day_raw": -0.5147113249909552,
+            "ci_day_raw": [
+              -0.7371787952699591,
+              -0.21550101826606957
+            ],
+            "rho_day_given_severity": -0.6771046550565093,
+            "ci_day_given_severity": [
+              -0.825702229952645,
+              -0.41125799418866194
+            ],
+            "rho_severity_raw": 0.4937907387314581,
+            "ci_severity_raw": [
+              0.11937200797111322,
+              0.7496076366586396
+            ],
+            "rho_severity_given_day": 0.6655279391645004,
+            "ci_severity_given_day": [
+              0.3630243277069162,
+              0.8308024655645136
+            ]
+          },
+          "Col4a1+Col4a2 mean": {
+            "n": 33,
+            "rho_day_raw": -0.4928659210572875,
+            "ci_day_raw": [
+              -0.719783871858011,
+              -0.18799547820706447
+            ],
+            "rho_day_given_severity": -0.6577486805241198,
+            "ci_day_given_severity": [
+              -0.8050116758714765,
+              -0.3846478805678038
+            ],
+            "rho_severity_raw": 0.5038715295868129,
+            "ci_severity_raw": [
+              0.14368584077188956,
+              0.7561090883042387
+            ],
+            "rho_severity_given_day": 0.6639684821003679,
+            "ci_severity_given_day": [
+              0.37476848587641504,
+              0.8339291058484867
+            ]
+          }
+        },
+        "A6": {
+          "n_cells": {
+            "rho_day": 0.31339752566377127,
+            "ci": [
+              -0.03520099782609914,
+              0.5885895272700389
+            ]
+          },
+          "median_total_counts": {
+            "rho_day": -0.017393755778559606,
+            "ci": [
+              -0.3516622163522251,
+              0.32705911608491645
+            ]
+          },
+          "median_genes": {
+            "rho_day": -0.001008670903672301,
+            "ci": [
+              -0.3371530914074322,
+              0.33612050510193203
+            ]
+          }
+        },
+        "A6_any_technical_trend": false
+      }
+    },
+    "RR/VSMC": {
+      "cells_per_animal": {
+        "median": 519.0,
+        "min": 338,
+        "max": 790
+      },
+      "animals_below_50": {},
+      "excl_lt50": {
+        "n": 33,
+        "A2_A3": {
+          "Col4a1": {
+            "n": 33,
+            "rho_day_raw": -0.37086774216618934,
+            "ci_day_raw": [
+              -0.6150577197877348,
+              -0.05186923868102663
+            ],
+            "rho_day_given_severity": -0.49611245949157784,
+            "ci_day_given_severity": [
+              -0.6852713964356686,
+              -0.1830428001171316
+            ],
+            "rho_severity_raw": 0.4642204188890843,
+            "ci_severity_raw": [
+              0.09191300913855123,
+              0.7255153066425737
+            ],
+            "rho_severity_given_day": 0.5605981539529256,
+            "ci_severity_given_day": [
+              0.20173110078618087,
+              0.7769315270280481
+            ],
+            "rho_day_given_severity_and_depth": -0.5611679975522441,
+            "ci_day_given_severity_and_depth": [
+              -0.7516336271494416,
+              -0.23609990432890604
+            ]
+          },
+          "Col4a2": {
+            "n": 33,
+            "rho_day_raw": -0.3542316268628578,
+            "ci_day_raw": [
+              -0.632299076356512,
+              -0.021873145471667937
+            ],
+            "rho_day_given_severity": -0.4923852910700456,
+            "ci_day_given_severity": [
+              -0.6974755767614825,
+              -0.1620166391006781
+            ],
+            "rho_severity_raw": 0.4971510023499097,
+            "ci_severity_raw": [
+              0.11835018684106807,
+              0.7549674974732282
+            ],
+            "rho_severity_given_day": 0.5897866590325291,
+            "ci_severity_given_day": [
+              0.2528383212787214,
+              0.7903929803769979
+            ],
+            "rho_day_given_severity_and_depth": -0.5428792604454149,
+            "ci_day_given_severity_and_depth": [
+              -0.7389505023323474,
+              -0.23824575610999002
+            ]
+          },
+          "Col4a1+Col4a2 mean": {
+            "n": 33,
+            "rho_day_raw": -0.3629697884363249,
+            "ci_day_raw": [
+              -0.6173964303797734,
+              -0.042335354553880114
+            ],
+            "rho_day_given_severity": -0.48770955116898335,
+            "ci_day_given_severity": [
+              -0.6854900692655523,
+              -0.1641010049338371
+            ],
+            "rho_severity_raw": 0.46556452433646495,
+            "ci_severity_raw": [
+              0.08887540940018712,
+              0.7276736590460916
+            ],
+            "rho_severity_given_day": 0.5589948043928501,
+            "ci_severity_given_day": [
+              0.21827515428416772,
+              0.7685938638833487
+            ],
+            "rho_day_given_severity_and_depth": -0.5455738894600854,
+            "ci_day_given_severity_and_depth": [
+              -0.7359293731577543,
+              -0.21951226534242796
+            ]
+          }
+        },
+        "A6": {
+          "n_cells": {
+            "rho_day": 0.4013167999922738,
+            "ci": [
+              0.034232501973687074,
+              0.6710057378944755
+            ]
+          },
+          "median_total_counts": {
+            "rho_day": -0.14417966596220685,
+            "ci": [
+              -0.48818315755829,
+              0.20880839594546494
+            ]
+          },
+          "median_genes": {
+            "rho_day": -0.15015768877432858,
+            "ci": [
+              -0.4805054886014197,
+              0.21653999963528744
+            ]
+          }
+        },
+        "A6_any_technical_trend": true
+      },
+      "A4": {
+        "n_genes_expressed_gt10pct": 1990,
+        "statistic": "|rho(gene, day | severity)| across all expressed genes; raw reported too",
+        "Col4a1": {
+          "rho_partial": -0.49611245949157784,
+          "percentile_abs_partial": 93.86934673366835,
+          "empirical_p_partial": 0.061306532663316586,
+          "rho_raw": -0.37086774216618934,
+          "percentile_abs_raw": 88.79396984924624,
+          "empirical_p_raw": 0.1120603015075377
+        },
+        "Col4a2": {
+          "rho_partial": -0.4923852910700456,
+          "percentile_abs_partial": 93.6180904522613,
+          "empirical_p_partial": 0.06381909547738693,
+          "rho_raw": -0.3542316268628578,
+          "percentile_abs_raw": 86.78391959798995,
+          "empirical_p_raw": 0.1321608040201005
+        }
+      },
+      "all": {
+        "n": 33,
+        "A2_A3": {
+          "Col4a1": {
+            "n": 33,
+            "rho_day_raw": -0.37086774216618934,
+            "ci_day_raw": [
+              -0.6150577197877348,
+              -0.05186923868102663
+            ],
+            "rho_day_given_severity": -0.49611245949157784,
+            "ci_day_given_severity": [
+              -0.6852713964356686,
+              -0.1830428001171316
+            ],
+            "rho_severity_raw": 0.4642204188890843,
+            "ci_severity_raw": [
+              0.09191300913855123,
+              0.7255153066425737
+            ],
+            "rho_severity_given_day": 0.5605981539529256,
+            "ci_severity_given_day": [
+              0.20173110078618087,
+              0.7769315270280481
+            ],
+            "rho_day_given_severity_and_depth": -0.5611679975522441,
+            "ci_day_given_severity_and_depth": [
+              -0.7516336271494416,
+              -0.23609990432890604
+            ]
+          },
+          "Col4a2": {
+            "n": 33,
+            "rho_day_raw": -0.3542316268628578,
+            "ci_day_raw": [
+              -0.632299076356512,
+              -0.021873145471667937
+            ],
+            "rho_day_given_severity": -0.4923852910700456,
+            "ci_day_given_severity": [
+              -0.6974755767614825,
+              -0.1620166391006781
+            ],
+            "rho_severity_raw": 0.4971510023499097,
+            "ci_severity_raw": [
+              0.11835018684106807,
+              0.7549674974732282
+            ],
+            "rho_severity_given_day": 0.5897866590325291,
+            "ci_severity_given_day": [
+              0.2528383212787214,
+              0.7903929803769979
+            ],
+            "rho_day_given_severity_and_depth": -0.5428792604454149,
+            "ci_day_given_severity_and_depth": [
+              -0.7389505023323474,
+              -0.23824575610999002
+            ]
+          },
+          "Col4a1+Col4a2 mean": {
+            "n": 33,
+            "rho_day_raw": -0.3629697884363249,
+            "ci_day_raw": [
+              -0.6173964303797734,
+              -0.042335354553880114
+            ],
+            "rho_day_given_severity": -0.48770955116898335,
+            "ci_day_given_severity": [
+              -0.6854900692655523,
+              -0.1641010049338371
+            ],
+            "rho_severity_raw": 0.46556452433646495,
+            "ci_severity_raw": [
+              0.08887540940018712,
+              0.7276736590460916
+            ],
+            "rho_severity_given_day": 0.5589948043928501,
+            "ci_severity_given_day": [
+              0.21827515428416772,
+              0.7685938638833487
+            ],
+            "rho_day_given_severity_and_depth": -0.5455738894600854,
+            "ci_day_given_severity_and_depth": [
+              -0.7359293731577543,
+              -0.21951226534242796
+            ]
+          }
+        },
+        "A6": {
+          "n_cells": {
+            "rho_day": 0.4013167999922738,
+            "ci": [
+              0.034232501973687074,
+              0.6710057378944755
+            ]
+          },
+          "median_total_counts": {
+            "rho_day": -0.14417966596220685,
+            "ci": [
+              -0.48818315755829,
+              0.20880839594546494
+            ]
+          },
+          "median_genes": {
+            "rho_day": -0.15015768877432858,
+            "ci": [
+              -0.4805054886014197,
+              0.21653999963528744
+            ]
+          }
+        },
+        "A6_any_technical_trend": true
+      }
+    },
+    "chronic/Endothelial": {
+      "cells_per_animal": {
+        "median": 1223.0,
+        "min": 537,
+        "max": 1849
+      },
+      "animals_below_50": {},
+      "excl_lt50": {
+        "n": 34,
+        "A2_A3": {
+          "Col4a1": {
+            "n": 34,
+            "rho_day_raw": -0.29339777572243697,
+            "ci_day_raw": [
+              -0.6037713808776413,
+              0.05228525716546389
+            ],
+            "rho_day_given_severity": -0.7479180870995537,
+            "ci_day_given_severity": [
+              -0.8564979825639225,
+              -0.5464533694847082
+            ],
+            "rho_severity_raw": 0.43492408978763125,
+            "ci_severity_raw": [
+              0.1051754283089887,
+              0.6822040438147846
+            ],
+            "rho_severity_given_day": 0.7804337676580927,
+            "ci_severity_given_day": [
+              0.5845183457597292,
+              0.8716515724746359
+            ]
+          },
+          "Col4a2": {
+            "n": 34,
+            "rho_day_raw": -0.27102906801722765,
+            "ci_day_raw": [
+              -0.5992736334372831,
+              0.09194580997381983
+            ],
+            "rho_day_given_severity": -0.7335495431915484,
+            "ci_day_given_severity": [
+              -0.8531604592868659,
+              -0.5226510271469773
+            ],
+            "rho_severity_raw": 0.4484522970852801,
+            "ci_severity_raw": [
+              0.12653815050782177,
+              0.685197599499722
+            ],
+            "rho_severity_given_day": 0.7757145167126559,
+            "ci_severity_given_day": [
+              0.5938047744927545,
+              0.8616775359742739
+            ]
+          },
+          "Col4a1+Col4a2 mean": {
+            "n": 34,
+            "rho_day_raw": -0.27562537781966795,
+            "ci_day_raw": [
+              -0.5968610156070555,
+              0.09188631366314876
+            ],
+            "rho_day_given_severity": -0.7412081841786705,
+            "ci_day_given_severity": [
+              -0.8508480414579839,
+              -0.5457055843980686
+            ],
+            "rho_severity_raw": 0.4495407735345162,
+            "ci_severity_raw": [
+              0.12804360894884792,
+              0.6878681994026946
+            ],
+            "rho_severity_given_day": 0.7815956362832402,
+            "ci_severity_given_day": [
+              0.599373625654176,
+              0.8651108972616977
+            ]
+          }
+        },
+        "A6": {
+          "n_cells": {
+            "rho_day": 0.23655674449892566,
+            "ci": [
+              -0.092679102030426,
+              0.5187378059221964
+            ]
+          },
+          "median_total_counts": {
+            "rho_day": 0.25611062727164985,
+            "ci": [
+              -0.09028868275011913,
+              0.5496401430002854
+            ]
+          },
+          "median_genes": {
+            "rho_day": 0.2113697937907514,
+            "ci": [
+              -0.1350088112634925,
+              0.5133226053301951
+            ]
+          }
+        },
+        "A6_any_technical_trend": false
+      },
+      "A4": {
+        "n_genes_expressed_gt10pct": 2020,
+        "statistic": "|rho(gene, day | severity)| across all expressed genes; raw reported too",
+        "Col4a1": {
+          "rho_partial": -0.7479180870995537,
+          "percentile_abs_partial": 99.00990099009901,
+          "empirical_p_partial": 0.009900990099009901,
+          "rho_raw": -0.29339777572243697,
+          "percentile_abs_raw": 55.4950495049505,
+          "empirical_p_raw": 0.44504950495049506
+        },
+        "Col4a2": {
+          "rho_partial": -0.7335495431915484,
+          "percentile_abs_partial": 98.8118811881188,
+          "empirical_p_partial": 0.011881188118811881,
+          "rho_raw": -0.27102906801722765,
+          "percentile_abs_raw": 52.07920792079208,
+          "empirical_p_raw": 0.4792079207920792
+        }
+      },
+      "A5": {
+        "Col4a1": {
+          "frac_cells_pos": 0.5531389733500268,
+          "in_clock_coef_lists": true,
+          "n": 34,
+          "rho_day_raw": -0.29339777572243697,
+          "ci_day_raw": [
+            -0.6037713808776413,
+            0.05228525716546389
+          ],
+          "rho_day_given_severity": -0.7479180870995537,
+          "ci_day_given_severity": [
+            -0.8564979825639225,
+            -0.5464533694847082
+          ],
+          "rho_severity_raw": 0.43492408978763125,
+          "ci_severity_raw": [
+            0.1051754283089887,
+            0.6822040438147846
+          ],
+          "rho_severity_given_day": 0.7804337676580927,
+          "ci_severity_given_day": [
+            0.5845183457597292,
+            0.8716515724746359
+          ]
+        },
+        "Col4a2": {
+          "frac_cells_pos": 0.4662940439992846,
+          "in_clock_coef_lists": true,
+          "n": 34,
+          "rho_day_raw": -0.27102906801722765,
+          "ci_day_raw": [
+            -0.5992736334372831,
+            0.09194580997381983
+          ],
+          "rho_day_given_severity": -0.7335495431915484,
+          "ci_day_given_severity": [
+            -0.8531604592868659,
+            -0.5226510271469773
+          ],
+          "rho_severity_raw": 0.4484522970852801,
+          "ci_severity_raw": [
+            0.12653815050782177,
+            0.685197599499722
+          ],
+          "rho_severity_given_day": 0.7757145167126559,
+          "ci_severity_given_day": [
+            0.5938047744927545,
+            0.8616775359742739
+          ]
+        },
+        "Lama4": {
+          "frac_cells_pos": 0.2265426578429619,
+          "in_clock_coef_lists": false,
+          "n": 34,
+          "rho_day_raw": -0.138042504399956,
+          "ci_day_raw": [
+            -0.4174168739746874,
+            0.16053957580751932
+          ],
+          "rho_day_given_severity": -0.1803427161685646,
+          "ci_day_given_severity": [
+            -0.45194186955207344,
+            0.16329878642377949
+          ],
+          "rho_severity_raw": 0.014461187111279838,
+          "ci_severity_raw": [
+            -0.36811122485266345,
+            0.37716800755469176
+          ],
+          "rho_severity_given_day": 0.11804931395719238,
+          "ci_severity_given_day": [
+            -0.30198901808304734,
+            0.46945732490069814
+          ]
+        },
+        "Lamb1": {
+          "frac_cells_pos": 0.06804686102664997,
+          "in_clock_coef_lists": false,
+          "n": 34,
+          "rho_day_raw": 0.23395216894420953,
+          "ci_day_raw": [
+            -0.15082680655434913,
+            0.5488946796904087
+          ],
+          "rho_day_given_severity": -0.4037342326172889,
+          "ci_day_given_severity": [
+            -0.6127930025944583,
+            -0.04706115656167898
+          ],
+          "rho_severity_raw": 0.7639549707281489,
+          "ci_severity_raw": [
+            0.5426882466633502,
+            0.8918221863854778
+          ],
+          "rho_severity_given_day": 0.7945547013295148,
+          "ci_severity_given_day": [
+            0.6324136864705656,
+            0.8887852728811362
+          ]
+        },
+        "Lamc1": {
+          "frac_cells_pos": 0.5023967089966017,
+          "in_clock_coef_lists": false,
+          "n": 34,
+          "rho_day_raw": -0.03232737894382987,
+          "ci_day_raw": [
+            -0.3680449862237875,
+            0.3209492062827305
+          ],
+          "rho_day_given_severity": -0.32278770734739415,
+          "ci_day_given_severity": [
+            -0.5778084480164891,
+            0.01009225828045978
+          ],
+          "rho_severity_raw": 0.3633956374092579,
+          "ci_severity_raw": [
+            -0.017932692019327404,
+            0.6641233562385114
+          ],
+          "rho_severity_given_day": 0.47082448057396853,
+          "ci_severity_given_day": [
+            0.13331028764112332,
+            0.7058287933401124
+          ]
+        },
+        "Nid1": {
+          "frac_cells_pos": 0.31776068681810055,
+          "in_clock_coef_lists": false,
+          "n": 34,
+          "rho_day_raw": 0.3235802100917947,
+          "ci_day_raw": [
+            -0.025784630797142244,
+            0.620713396242767
+          ],
+          "rho_day_given_severity": 0.09847912719222866,
+          "ci_day_given_severity": [
+            -0.22143469400193255,
+            0.4485224518165434
+          ],
+          "rho_severity_raw": 0.4310366738975023,
+          "ci_severity_raw": [
+            0.08405443083134992,
+            0.7069696103473545
+          ],
+          "rho_severity_given_day": 0.3152641051968413,
+          "ci_severity_given_day": [
+            -0.025441412553588658,
+            0.6274542088556047
+          ]
+        },
+        "Nid2": {
+          "frac_cells_pos": 0.15044714720085853,
+          "in_clock_coef_lists": false,
+          "n": 34,
+          "rho_day_raw": -0.0363108474392781,
+          "ci_day_raw": [
+            -0.3396487795230898,
+            0.2820521240250911
+          ],
+          "rho_day_given_severity": 0.008914881285090246,
+          "ci_day_given_severity": [
+            -0.3439126342976832,
+            0.3696460430856648
+          ],
+          "rho_severity_raw": -0.07463838509047659,
+          "ci_severity_raw": [
+            -0.4253500393402044,
+            0.27259913640195427
+          ],
+          "rho_severity_given_day": -0.06585713096729029,
+          "ci_severity_given_day": [
+            -0.458635094167598,
+            0.3377484104163289
+          ]
+        },
+        "Hspg2": {
+          "frac_cells_pos": 0.5296011446968342,
+          "in_clock_coef_lists": false,
+          "n": 34,
+          "rho_day_raw": -0.34885991400521615,
+          "ci_day_raw": [
+            -0.6559577900712041,
+            0.0371814114207357
+          ],
+          "rho_day_given_severity": -0.6531610857671439,
+          "ci_day_given_severity": [
+            -0.8556625665422337,
+            -0.3077097149572208
+          ],
+          "rho_severity_raw": 0.2761620248347634,
+          "ci_severity_raw": [
+            -0.07423632116891814,
+            0.5565511702578878
+          ],
+          "rho_severity_given_day": 0.6300445627996657,
+          "ci_severity_given_day": [
+            0.27367395053788923,
+            0.8267598418992494
+          ]
+        },
+        "Col4a3": {
+          "frac_cells_pos": 0.011205508853514576,
+          "in_clock_coef_lists": false,
+          "n": 34,
+          "rho_day_raw": -0.11046464558531438,
+          "ci_day_raw": [
+            -0.4544796246586613,
+            0.274152262148227
+          ],
+          "rho_day_given_severity": 0.34116910657963,
+          "ci_day_given_severity": [
+            -0.05526542436585867,
+            0.6731657425862315
+          ],
+          "rho_severity_raw": -0.5773590080019574,
+          "ci_severity_raw": [
+            -0.7827109763504433,
+            -0.3040788211385704
+          ],
+          "rho_severity_given_day": -0.6353448338726776,
+          "ci_severity_given_day": [
+            -0.8376672853324367,
+            -0.33880429492440295
+          ]
+        },
+        "Col4a5": {
+          "frac_cells_pos": 0.05143981398676444,
+          "in_clock_coef_lists": false,
+          "n": 34,
+          "rho_day_raw": 0.30151792304008146,
+          "ci_day_raw": [
+            -0.05454970614510926,
+            0.6264791519203452
+          ],
+          "rho_day_given_severity": 0.44795747772176503,
+          "ci_day_given_severity": [
+            0.11944188951579389,
+            0.7147390959789508
+          ],
+          "rho_severity_raw": -0.10356075931303627,
+          "ci_severity_raw": [
+            -0.4247405097233332,
+            0.26313369989690094
+          ],
+          "rho_severity_given_day": -0.36077512609925105,
+          "ci_severity_given_day": [
+            -0.6291994033127499,
+            0.01348999980878671
+          ]
+        }
+      },
+      "all": {
+        "n": 34,
+        "A2_A3": {
+          "Col4a1": {
+            "n": 34,
+            "rho_day_raw": -0.29339777572243697,
+            "ci_day_raw": [
+              -0.6037713808776413,
+              0.05228525716546389
+            ],
+            "rho_day_given_severity": -0.7479180870995537,
+            "ci_day_given_severity": [
+              -0.8564979825639225,
+              -0.5464533694847082
+            ],
+            "rho_severity_raw": 0.43492408978763125,
+            "ci_severity_raw": [
+              0.1051754283089887,
+              0.6822040438147846
+            ],
+            "rho_severity_given_day": 0.7804337676580927,
+            "ci_severity_given_day": [
+              0.5845183457597292,
+              0.8716515724746359
+            ]
+          },
+          "Col4a2": {
+            "n": 34,
+            "rho_day_raw": -0.27102906801722765,
+            "ci_day_raw": [
+              -0.5992736334372831,
+              0.09194580997381983
+            ],
+            "rho_day_given_severity": -0.7335495431915484,
+            "ci_day_given_severity": [
+              -0.8531604592868659,
+              -0.5226510271469773
+            ],
+            "rho_severity_raw": 0.4484522970852801,
+            "ci_severity_raw": [
+              0.12653815050782177,
+              0.685197599499722
+            ],
+            "rho_severity_given_day": 0.7757145167126559,
+            "ci_severity_given_day": [
+              0.5938047744927545,
+              0.8616775359742739
+            ]
+          },
+          "Col4a1+Col4a2 mean": {
+            "n": 34,
+            "rho_day_raw": -0.27562537781966795,
+            "ci_day_raw": [
+              -0.5968610156070555,
+              0.09188631366314876
+            ],
+            "rho_day_given_severity": -0.7412081841786705,
+            "ci_day_given_severity": [
+              -0.8508480414579839,
+              -0.5457055843980686
+            ],
+            "rho_severity_raw": 0.4495407735345162,
+            "ci_severity_raw": [
+              0.12804360894884792,
+              0.6878681994026946
+            ],
+            "rho_severity_given_day": 0.7815956362832402,
+            "ci_severity_given_day": [
+              0.599373625654176,
+              0.8651108972616977
+            ]
+          }
+        },
+        "A6": {
+          "n_cells": {
+            "rho_day": 0.23655674449892566,
+            "ci": [
+              -0.092679102030426,
+              0.5187378059221964
+            ]
+          },
+          "median_total_counts": {
+            "rho_day": 0.25611062727164985,
+            "ci": [
+              -0.09028868275011913,
+              0.5496401430002854
+            ]
+          },
+          "median_genes": {
+            "rho_day": 0.2113697937907514,
+            "ci": [
+              -0.1350088112634925,
+              0.5133226053301951
+            ]
+          }
+        },
+        "A6_any_technical_trend": false
+      }
+    },
+    "chronic/VSMC": {
+      "cells_per_animal": {
+        "median": 368.0,
+        "min": 144,
+        "max": 619
+      },
+      "animals_below_50": {},
+      "excl_lt50": {
+        "n": 34,
+        "A2_A3": {
+          "Col4a1": {
+            "n": 34,
+            "rho_day_raw": 0.07047675030408408,
+            "ci_day_raw": [
+              -0.34642906001733503,
+              0.45275510935578855
+            ],
+            "rho_day_given_severity": -0.46256046480189916,
+            "ci_day_given_severity": [
+              -0.7028528504278841,
+              -0.1168918415459081
+            ],
+            "rho_severity_raw": 0.6241634953191104,
+            "ci_severity_raw": [
+              0.34920582073950196,
+              0.7929473484898065
+            ],
+            "rho_severity_given_day": 0.7195774698742433,
+            "ci_severity_given_day": [
+              0.4792862285493274,
+              0.8450630274621652
+            ]
+          },
+          "Col4a2": {
+            "n": 34,
+            "rho_day_raw": -0.007354095683904425,
+            "ci_day_raw": [
+              -0.41416623247632506,
+              0.37991133691048456
+            ],
+            "rho_day_given_severity": -0.3887456914334422,
+            "ci_day_given_severity": [
+              -0.6413288394929579,
+              -0.058028745186866015
+            ],
+            "rho_severity_raw": 0.4663344101798734,
+            "ci_severity_raw": [
+              0.1290326266407154,
+              0.702832763624871
+            ],
+            "rho_severity_given_day": 0.5793881576232018,
+            "ci_severity_given_day": [
+              0.32283714311999473,
+              0.7530470708962976
+            ]
+          },
+          "Col4a1+Col4a2 mean": {
+            "n": 34,
+            "rho_day_raw": 0.04121357789521439,
+            "ci_day_raw": [
+              -0.3694369914936914,
+              0.406853809974811
+            ],
+            "rho_day_given_severity": -0.4274203701432581,
+            "ci_day_given_severity": [
+              -0.6651780032017933,
+              -0.10324245770211055
+            ],
+            "rho_severity_raw": 0.5627423242550724,
+            "ci_severity_raw": [
+              0.2470056857795666,
+              0.7568908549302695
+            ],
+            "rho_severity_given_day": 0.6637494755451406,
+            "ci_severity_given_day": [
+              0.4080328503750148,
+              0.8088305689211495
+            ]
+          }
+        },
+        "A6": {
+          "n_cells": {
+            "rho_day": 0.014710439123819195,
+            "ci": [
+              -0.36097039999406905,
+              0.36902722103201646
+            ]
+          },
+          "median_total_counts": {
+            "rho_day": 0.0041366788221962394,
+            "ci": [
+              -0.3364655914879377,
+              0.336158421699753
+            ]
+          },
+          "median_genes": {
+            "rho_day": 0.007355781694170871,
+            "ci": [
+              -0.3209602419608351,
+              0.3217440614169595
+            ]
+          }
+        },
+        "A6_any_technical_trend": false
+      },
+      "A4": {
+        "n_genes_expressed_gt10pct": 1990,
+        "statistic": "|rho(gene, day | severity)| across all expressed genes; raw reported too",
+        "Col4a1": {
+          "rho_partial": -0.46256046480189916,
+          "percentile_abs_partial": 91.356783919598,
+          "empirical_p_partial": 0.0864321608040201,
+          "rho_raw": 0.07047675030408408,
+          "percentile_abs_raw": 18.743718592964825,
+          "empirical_p_raw": 0.8125628140703518
+        },
+        "Col4a2": {
+          "rho_partial": -0.3887456914334422,
+          "percentile_abs_partial": 85.02512562814071,
+          "empirical_p_partial": 0.14974874371859295,
+          "rho_raw": -0.007354095683904425,
+          "percentile_abs_raw": 2.3618090452261304,
+          "empirical_p_raw": 0.9763819095477387
+        }
+      },
+      "all": {
+        "n": 34,
+        "A2_A3": {
+          "Col4a1": {
+            "n": 34,
+            "rho_day_raw": 0.07047675030408408,
+            "ci_day_raw": [
+              -0.34642906001733503,
+              0.45275510935578855
+            ],
+            "rho_day_given_severity": -0.46256046480189916,
+            "ci_day_given_severity": [
+              -0.7028528504278841,
+              -0.1168918415459081
+            ],
+            "rho_severity_raw": 0.6241634953191104,
+            "ci_severity_raw": [
+              0.34920582073950196,
+              0.7929473484898065
+            ],
+            "rho_severity_given_day": 0.7195774698742433,
+            "ci_severity_given_day": [
+              0.4792862285493274,
+              0.8450630274621652
+            ]
+          },
+          "Col4a2": {
+            "n": 34,
+            "rho_day_raw": -0.007354095683904425,
+            "ci_day_raw": [
+              -0.41416623247632506,
+              0.37991133691048456
+            ],
+            "rho_day_given_severity": -0.3887456914334422,
+            "ci_day_given_severity": [
+              -0.6413288394929579,
+              -0.058028745186866015
+            ],
+            "rho_severity_raw": 0.4663344101798734,
+            "ci_severity_raw": [
+              0.1290326266407154,
+              0.702832763624871
+            ],
+            "rho_severity_given_day": 0.5793881576232018,
+            "ci_severity_given_day": [
+              0.32283714311999473,
+              0.7530470708962976
+            ]
+          },
+          "Col4a1+Col4a2 mean": {
+            "n": 34,
+            "rho_day_raw": 0.04121357789521439,
+            "ci_day_raw": [
+              -0.3694369914936914,
+              0.406853809974811
+            ],
+            "rho_day_given_severity": -0.4274203701432581,
+            "ci_day_given_severity": [
+              -0.6651780032017933,
+              -0.10324245770211055
+            ],
+            "rho_severity_raw": 0.5627423242550724,
+            "ci_severity_raw": [
+              0.2470056857795666,
+              0.7568908549302695
+            ],
+            "rho_severity_given_day": 0.6637494755451406,
+            "ci_severity_given_day": [
+              0.4080328503750148,
+              0.8088305689211495
+            ]
+          }
+        },
+        "A6": {
+          "n_cells": {
+            "rho_day": 0.014710439123819195,
+            "ci": [
+              -0.36097039999406905,
+              0.36902722103201646
+            ]
+          },
+          "median_total_counts": {
+            "rho_day": 0.0041366788221962394,
+            "ci": [
+              -0.3364655914879377,
+              0.336158421699753
+            ]
+          },
+          "median_genes": {
+            "rho_day": 0.007355781694170871,
+            "ci": [
+              -0.3209602419608351,
+              0.3217440614169595
+            ]
+          }
+        },
+        "A6_any_technical_trend": false
+      }
+    }
+  },
+  "B": {
+    "RR": {
+      "cells_per_animal": {
+        "lesion": {
+          "median": 5845.0,
+          "min": 53
+        },
+        "nonlesion_m0": {
+          "median": 20965.0,
+          "min": 15198
+        },
+        "nonlesion_m50": {
+          "median": 18494.0,
+          "min": 12638
+        },
+        "nonlesion_m150": {
+          "median": 14275.0,
+          "min": 8296
+        }
+      },
+      "animals_usable": {
+        "lesion": 30,
+        "nonlesion_m0": 33,
+        "nonlesion_m50": 33,
+        "nonlesion_m150": 33
+      },
+      "lesion": {
+        "rho": 0.8322207593663621,
+        "ci": [
+          0.6434949547311314,
+          0.9175287014112294
+        ],
+        "n": 30,
+        "zero_feature_folds": "n/a (frozen fold clocks; see whole-tissue clock audit 0/n)"
+      },
+      "nonlesion_m0": {
+        "rho": 0.8312992184342184,
+        "ci": [
+          0.6417540140985444,
+          0.9235967877488407
+        ],
+        "n": 33,
+        "zero_feature_folds": "n/a (frozen fold clocks; see whole-tissue clock audit 0/n)"
+      },
+      "nonlesion_m50": {
+        "rho": 0.8197626846305256,
+        "ci": [
+          0.6109039625906403,
+          0.9167577002612387
+        ],
+        "n": 33,
+        "zero_feature_folds": "n/a (frozen fold clocks; see whole-tissue clock audit 0/n)"
+      },
+      "nonlesion_m150": {
+        "rho": 0.8299616492975584,
+        "ci": [
+          0.6168716495141986,
+          0.9319409036997743
+        ],
+        "n": 33,
+        "zero_feature_folds": "n/a (frozen fold clocks; see whole-tissue clock audit 0/n)"
+      },
+      "B3_nonlesion50_vs_lesion": {
+        "comparison": "non-lesion (50 um) vs lesion",
+        "A": "non-lesion m50",
+        "B": "lesion",
+        "n": 30,
+        "rho_A": 0.8520249432122462,
+        "rho_B": 0.8322207593663621,
+        "diff_mean": 0.02189896904457175,
+        "diff_ci": [
+          -0.10002690508838226,
+          0.14009054951250355
+        ],
+        "frac_diff_le_0": 0.3435,
+        "median_abs_err_A": 5.211167932208987,
+        "median_abs_err_B": 6.167031461580086,
+        "wilcoxon_p": 0.12413446232676506,
+        "ci_excludes_zero": false
+      },
+      "B5_nonlesion_m0_vs_m50": {
+        "comparison": "nonlesion_m0 vs nonlesion_m50",
+        "A": "nonlesion_m0",
+        "B": "nonlesion_m50",
+        "n": 33,
+        "rho_A": 0.8312992184342184,
+        "rho_B": 0.8197626846305256,
+        "diff_mean": 0.011307668670763995,
+        "diff_ci": [
+          -0.03989398105933019,
+          0.0808761389688807
+        ],
+        "frac_diff_le_0": 0.3645,
+        "median_abs_err_A": 4.896855811698979,
+        "median_abs_err_B": 4.83640529491738,
+        "wilcoxon_p": 0.5021234466694295,
+        "ci_excludes_zero": false
+      },
+      "B5_nonlesion_m150_vs_m50": {
+        "comparison": "nonlesion_m150 vs nonlesion_m50",
+        "A": "nonlesion_m150",
+        "B": "nonlesion_m50",
+        "n": 33,
+        "rho_A": 0.8299616492975584,
+        "rho_B": 0.8197626846305256,
+        "diff_mean": 0.012083650674218252,
+        "diff_ci": [
+          -0.03850295545462067,
+          0.06561963766004451
+        ],
+        "frac_diff_le_0": 0.284,
+        "median_abs_err_A": 4.627637079917321,
+        "median_abs_err_B": 4.83640529491738,
+        "wilcoxon_p": 0.7914111448917538,
+        "ci_excludes_zero": false
+      },
+      "B4_denovo_nonlesion": {
+        "rho": 0.8323023952867136,
+        "ci": [
+          0.6469917479951499,
+          0.9174189600775478
+        ],
+        "n": 33,
+        "zero_feature_folds": 0,
+        "n_nonzero": 111,
+        "overlap_with_published_135": 58,
+        "same_sign": 58,
+        "top10": [
+          {
+            "gene": "Thbs2",
+            "coef": 1.182
+          },
+          {
+            "gene": "Lpl",
+            "coef": 0.949
+          },
+          {
+            "gene": "Nr1d1",
+            "coef": 0.824
+          },
+          {
+            "gene": "Dbp",
+            "coef": 0.698
+          },
+          {
+            "gene": "Igfbp3",
+            "coef": -0.675
+          },
+          {
+            "gene": "H19",
+            "coef": -0.659
+          },
+          {
+            "gene": "Ccl8",
+            "coef": 0.646
+          },
+          {
+            "gene": "Srebf1",
+            "coef": 0.604
+          },
+          {
+            "gene": "Hmgcr",
+            "coef": -0.562
+          },
+          {
+            "gene": "Tmem173",
+            "coef": -0.523
+          }
+        ]
+      }
+    },
+    "chronic": {
+      "cells_per_animal": {
+        "lesion": {
+          "median": 2287.0,
+          "min": 10
+        },
+        "nonlesion_m0": {
+          "median": 11842.0,
+          "min": 4629
+        },
+        "nonlesion_m50": {
+          "median": 10823.5,
+          "min": 4608
+        },
+        "nonlesion_m150": {
+          "median": 9079.0,
+          "min": 3617
+        }
+      },
+      "animals_usable": {
+        "lesion": 24,
+        "nonlesion_m0": 34,
+        "nonlesion_m50": 34,
+        "nonlesion_m150": 34
+      },
+      "lesion": {
+        "rho": 0.9316507728238713,
+        "ci": [
+          0.829497467601878,
+          0.9668136016141802
+        ],
+        "n": 24,
+        "zero_feature_folds": "n/a (frozen fold clocks; see whole-tissue clock audit 0/n)"
+      },
+      "nonlesion_m0": {
+        "rho": 0.8186851614811638,
+        "ci": [
+          0.5773789756776803,
+          0.9315048919825715
+        ],
+        "n": 34,
+        "zero_feature_folds": "n/a (frozen fold clocks; see whole-tissue clock audit 0/n)"
+      },
+      "nonlesion_m50": {
+        "rho": 0.7577355366645714,
+        "ci": [
+          0.4664019721596446,
+          0.9064339479384809
+        ],
+        "n": 34,
+        "zero_feature_folds": "n/a (frozen fold clocks; see whole-tissue clock audit 0/n)"
+      },
+      "nonlesion_m150": {
+        "rho": 0.6240445254462669,
+        "ci": [
+          0.2741563921589583,
+          0.8403401500150401
+        ],
+        "n": 34,
+        "zero_feature_folds": "n/a (frozen fold clocks; see whole-tissue clock audit 0/n)"
+      },
+      "B3_nonlesion50_vs_lesion": {
+        "comparison": "non-lesion (50 um) vs lesion",
+        "A": "non-lesion m50",
+        "B": "lesion",
+        "n": 24,
+        "rho_A": 0.9316507728238713,
+        "rho_B": 0.9316507728238713,
+        "diff_mean": 0.004485300841296622,
+        "diff_ci": [
+          -0.13213849169114575,
+          0.11419260666771658
+        ],
+        "frac_diff_le_0": 0.438,
+        "median_abs_err_A": 9.926420303434519,
+        "median_abs_err_B": 14.23289583902978,
+        "wilcoxon_p": 0.26434290409088135,
+        "ci_excludes_zero": false
+      },
+      "B5_nonlesion_m0_vs_m50": {
+        "comparison": "nonlesion_m0 vs nonlesion_m50",
+        "A": "nonlesion_m0",
+        "B": "nonlesion_m50",
+        "n": 34,
+        "rho_A": 0.8186851614811638,
+        "rho_B": 0.7577355366645714,
+        "diff_mean": 0.061401200478263064,
+        "diff_ci": [
+          0.00337500361576564,
+          0.15170603877770816
+        ],
+        "frac_diff_le_0": 0.016,
+        "median_abs_err_A": 6.721568190560616,
+        "median_abs_err_B": 8.600414630832041,
+        "wilcoxon_p": 1.7101410776376724e-06,
+        "ci_excludes_zero": true
+      },
+      "B5_nonlesion_m150_vs_m50": {
+        "comparison": "nonlesion_m150 vs nonlesion_m50",
+        "A": "nonlesion_m150",
+        "B": "nonlesion_m50",
+        "n": 34,
+        "rho_A": 0.6240445254462669,
+        "rho_B": 0.7577355366645714,
+        "diff_mean": -0.13344759884556437,
+        "diff_ci": [
+          -0.2793748902160752,
+          -0.032489084313206545
+        ],
+        "frac_diff_le_0": 0.9995,
+        "median_abs_err_A": 10.129156823842877,
+        "median_abs_err_B": 8.600414630832041,
+        "wilcoxon_p": 3.4899450838565826e-05,
+        "ci_excludes_zero": true
+      },
+      "B4_denovo_nonlesion": {
+        "rho": 0.8779502489284534,
+        "ci": [
+          0.7182425701994472,
+          0.9464774525198255
+        ],
+        "n": 34,
+        "zero_feature_folds": 0,
+        "n_nonzero": 118,
+        "overlap_with_published_135": 18,
+        "same_sign": 14,
+        "top10": [
+          {
+            "gene": "Car4",
+            "coef": 1.299
+          },
+          {
+            "gene": "Ackr1",
+            "coef": -1.01
+          },
+          {
+            "gene": "Il33",
+            "coef": 0.942
+          },
+          {
+            "gene": "Hoxd9",
+            "coef": 0.901
+          },
+          {
+            "gene": "Podxl",
+            "coef": -0.847
+          },
+          {
+            "gene": "Sox9",
+            "coef": 0.737
+          },
+          {
+            "gene": "Ncan",
+            "coef": -0.728
+          },
+          {
+            "gene": "Hmgcr",
+            "coef": -0.686
+          },
+          {
+            "gene": "Gpnmb",
+            "coef": 0.668
+          },
+          {
+            "gene": "Gpr101",
+            "coef": 0.645
+          }
+        ]
+      }
+    }
+  },
+  "C": {
+    "RR": {
+      "expression_clock": {
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "n": 33,
+        "zero_feature_folds": 0
+      },
+      "C1_L1": {
+        "rho": 0.4703227476780886,
+        "ci": [
+          0.14164073342671651,
+          0.7164450624751938
+        ],
+        "n": 33,
+        "zero_feature_folds": 0,
+        "n_features": 17
+      },
+      "C2_L1_vs_expression": {
+        "comparison": "composition L1 vs expression",
+        "A": "composition L1",
+        "B": "expression",
+        "n": 33,
+        "rho_A": 0.4703227476780886,
+        "rho_B": 0.8284568840188158,
+        "diff_mean": -0.35915234401036106,
+        "diff_ci": [
+          -0.6430290812671587,
+          -0.12304054861518532
+        ],
+        "frac_diff_le_0": 0.9995,
+        "median_abs_err_A": 6.347268724498802,
+        "median_abs_err_B": 4.471987494364988,
+        "wilcoxon_p": 0.0027295206673443317,
+        "ci_excludes_zero": true
+      },
+      "C5_L1_nonzero": [
+        {
+          "gene": "Fibroblast",
+          "coef": 3.6664
+        },
+        {
+          "gene": "Astrocyte",
+          "coef": 2.6811
+        },
+        {
+          "gene": "T cell",
+          "coef": -1.6948
+        },
+        {
+          "gene": "Epithelial",
+          "coef": -1.6438
+        },
+        {
+          "gene": "Endothelial",
+          "coef": -1.4573
+        },
+        {
+          "gene": "Neutrophil",
+          "coef": -1.2157
+        },
+        {
+          "gene": "Schwann cell",
+          "coef": 1.0694
+        },
+        {
+          "gene": "Oligodendrocyte",
+          "coef": -0.7963
+        },
+        {
+          "gene": "Myeloid",
+          "coef": -0.7441
+        },
+        {
+          "gene": "DC",
+          "coef": -0.5153
+        },
+        {
+          "gene": "NK/DC",
+          "coef": -0.3469
+        },
+        {
+          "gene": "Neuron",
+          "coef": 0.1876
+        },
+        {
+          "gene": "B cell",
+          "coef": 0.1767
+        },
+        {
+          "gene": "Muscle cell",
+          "coef": 0.1296
+        }
+      ],
+      "C1_L2": {
+        "rho": 0.6995486584732039,
+        "ci": [
+          0.44050118858294113,
+          0.8442474164190464
+        ],
+        "n": 33,
+        "zero_feature_folds": 0,
+        "n_features": 36
+      },
+      "C2_L2_vs_expression": {
+        "comparison": "composition L2 vs expression",
+        "A": "composition L2",
+        "B": "expression",
+        "n": 33,
+        "rho_A": 0.6995486584732039,
+        "rho_B": 0.8284568840188158,
+        "diff_mean": -0.13157865824642823,
+        "diff_ci": [
+          -0.27319897438314455,
+          -0.03294250382709453
+        ],
+        "frac_diff_le_0": 0.9985,
+        "median_abs_err_A": 7.699937689902669,
+        "median_abs_err_B": 4.471987494364988,
+        "wilcoxon_p": 0.0002060714177787304,
+        "ci_excludes_zero": true
+      },
+      "C5_L2_nonzero": [
+        {
+          "gene": "Meningeal/Perivascular FBs",
+          "coef": 2.0643
+        },
+        {
+          "gene": "Meningeal FBs",
+          "coef": 1.6988
+        },
+        {
+          "gene": "Meningeal EAE FBs",
+          "coef": -1.6012
+        },
+        {
+          "gene": "CAM",
+          "coef": 1.5465
+        },
+        {
+          "gene": "T Cell",
+          "coef": 1.4531
+        },
+        {
+          "gene": "Perineural FBs",
+          "coef": 1.2603
+        },
+        {
+          "gene": "Fibroblast",
+          "coef": 1.2011
+        },
+        {
+          "gene": "Homo_AST",
+          "coef": 0.7849
+        },
+        {
+          "gene": "MDM",
+          "coef": -0.756
+        },
+        {
+          "gene": "CLP-DC",
+          "coef": -0.7049
+        },
+        {
+          "gene": "GMP-DC",
+          "coef": -0.6794
+        },
+        {
+          "gene": "DAO",
+          "coef": -0.6342
+        },
+        {
+          "gene": "CD8+ T Cell",
+          "coef": 0.5557
+        },
+        {
+          "gene": "Endothelial",
+          "coef": -0.5225
+        },
+        {
+          "gene": "Microglia",
+          "coef": 0.5077
+        },
+        {
+          "gene": "CD4+ T Cell",
+          "coef": -0.4345
+        },
+        {
+          "gene": "EAE - Associated FBs",
+          "coef": -0.4114
+        },
+        {
+          "gene": "NFOL",
+          "coef": 0.1489
+        },
+        {
+          "gene": "Epithelial",
+          "coef": -0.1358
+        },
+        {
+          "gene": "Neurovascular_AST",
+          "coef": 0.0969
+        },
+        {
+          "gene": "Myeloid",
+          "coef": 0.0515
+        },
+        {
+          "gene": "Neutrophil",
+          "coef": -0.0421
+        },
+        {
+          "gene": "Schwann cell",
+          "coef": 0.0338
+        },
+        {
+          "gene": "Muscle cell",
+          "coef": 0.0338
+        },
+        {
+          "gene": "MOL",
+          "coef": 0.0171
+        }
+      ],
+      "C3_expression_plus_L1": {
+        "rho": 0.8125732505209778,
+        "ci": [
+          0.5954311108862301,
+          0.9160245074573262
+        ],
+        "n": 33,
+        "zero_feature_folds": 0
+      },
+      "C3_vs_expression": {
+        "comparison": "expression + composition vs expression",
+        "A": "expr+comp",
+        "B": "expression",
+        "n": 33,
+        "rho_A": 0.8125732505209778,
+        "rho_B": 0.8284568840188158,
+        "diff_mean": -0.016535086279443088,
+        "diff_ci": [
+          -0.05243361962929938,
+          0.0
+        ],
+        "frac_diff_le_0": 1.0,
+        "median_abs_err_A": 4.471983659349686,
+        "median_abs_err_B": 4.471987494364988,
+        "wilcoxon_p": 0.089798514964059,
+        "ci_excludes_zero": false
+      },
+      "C4_expression_resid_on_composition": {
+        "rho": 0.5020900146737647,
+        "ci": [
+          0.16034782031768025,
+          0.7418811010065
+        ],
+        "n": 33,
+        "zero_feature_folds": 0,
+        "composition_pcs_per_fold": {
+          "min": 3,
+          "max": 3
+        }
+      },
+      "C4_vs_expression": {
+        "comparison": "expression | composition vs expression",
+        "A": "expr|comp",
+        "B": "expression",
+        "n": 33,
+        "rho_A": 0.5020900146737647,
+        "rho_B": 0.8284568840188158,
+        "diff_mean": -0.32741213125802754,
+        "diff_ci": [
+          -0.6348919764434136,
+          -0.08050098645851525
+        ],
+        "frac_diff_le_0": 0.996,
+        "median_abs_err_A": 5.658383798063046,
+        "median_abs_err_B": 4.471987494364988,
+        "wilcoxon_p": 0.008298447588458657,
+        "ci_excludes_zero": true
+      }
+    },
+    "chronic": {
+      "expression_clock": {
+        "rho": 0.8523759088672199,
+        "ci": [
+          0.6524555886143726,
+          0.9449382644276139
+        ],
+        "n": 34,
+        "zero_feature_folds": 0
+      },
+      "C1_L1": {
+        "rho": 0.6609512078100829,
+        "ci": [
+          0.40228425305504845,
+          0.8290293422363201
+        ],
+        "n": 34,
+        "zero_feature_folds": 0,
+        "n_features": 17
+      },
+      "C2_L1_vs_expression": {
+        "comparison": "composition L1 vs expression",
+        "A": "composition L1",
+        "B": "expression",
+        "n": 34,
+        "rho_A": 0.6609512078100829,
+        "rho_B": 0.8523759088672199,
+        "diff_mean": -0.19242247298156837,
+        "diff_ci": [
+          -0.48203416762310936,
+          0.08984207050705428
+        ],
+        "frac_diff_le_0": 0.919,
+        "median_abs_err_A": 6.66649953082641,
+        "median_abs_err_B": 3.1531147589625856,
+        "wilcoxon_p": 0.0002101260470226407,
+        "ci_excludes_zero": false
+      },
+      "C5_L1_nonzero": [
+        {
+          "gene": "Fibroblast",
+          "coef": 4.4059
+        },
+        {
+          "gene": "Astrocyte",
+          "coef": 3.5066
+        },
+        {
+          "gene": "Epithelial",
+          "coef": -2.985
+        },
+        {
+          "gene": "Endothelial",
+          "coef": -2.2861
+        },
+        {
+          "gene": "Neuron",
+          "coef": -1.8625
+        },
+        {
+          "gene": "Oligodendrocyte",
+          "coef": -1.8246
+        },
+        {
+          "gene": "T cell",
+          "coef": -1.5395
+        },
+        {
+          "gene": "VSMC",
+          "coef": -1.1475
+        },
+        {
+          "gene": "Neutrophil",
+          "coef": -1.0166
+        },
+        {
+          "gene": "Muscle cell",
+          "coef": -0.8443
+        },
+        {
+          "gene": "OPC",
+          "coef": 0.5713
+        },
+        {
+          "gene": "DC",
+          "coef": -0.5496
+        },
+        {
+          "gene": "Schwann cell",
+          "coef": 0.1794
+        },
+        {
+          "gene": "Myeloid",
+          "coef": -0.0576
+        },
+        {
+          "gene": "B cell",
+          "coef": -0.0075
+        }
+      ],
+      "C1_L2": {
+        "rho": 0.749006570296366,
+        "ci": [
+          0.5153168901932228,
+          0.8814810602316171
+        ],
+        "n": 34,
+        "zero_feature_folds": 0,
+        "n_features": 36
+      },
+      "C2_L2_vs_expression": {
+        "comparison": "composition L2 vs expression",
+        "A": "composition L2",
+        "B": "expression",
+        "n": 34,
+        "rho_A": 0.749006570296366,
+        "rho_B": 0.8523759088672199,
+        "diff_mean": -0.10519509519836649,
+        "diff_ci": [
+          -0.33197079452314265,
+          0.0817766484985401
+        ],
+        "frac_diff_le_0": 0.846,
+        "median_abs_err_A": 6.423287426888994,
+        "median_abs_err_B": 3.1531147589625856,
+        "wilcoxon_p": 0.00281744496896863,
+        "ci_excludes_zero": false
+      },
+      "C5_L2_nonzero": [
+        {
+          "gene": "Microglia",
+          "coef": 4.4028
+        },
+        {
+          "gene": "Inh",
+          "coef": -3.1443
+        },
+        {
+          "gene": "Fibroblast",
+          "coef": 2.6679
+        },
+        {
+          "gene": "Myeloid",
+          "coef": 2.5752
+        },
+        {
+          "gene": "Perineural FBs",
+          "coef": 2.1818
+        },
+        {
+          "gene": "NFOL",
+          "coef": -1.8819
+        },
+        {
+          "gene": "EAE - Associated FBs",
+          "coef": -1.4289
+        },
+        {
+          "gene": "MDM",
+          "coef": -1.354
+        },
+        {
+          "gene": "VSMC",
+          "coef": -1.2779
+        },
+        {
+          "gene": "Myelin_AST",
+          "coef": -1.2355
+        },
+        {
+          "gene": "Neurovascular_AST",
+          "coef": 1.2196
+        },
+        {
+          "gene": "CAM",
+          "coef": 1.194
+        },
+        {
+          "gene": "Reactive_AST",
+          "coef": 1.0422
+        },
+        {
+          "gene": "Epithelial",
+          "coef": -1.0243
+        },
+        {
+          "gene": "CLP-DC",
+          "coef": -0.9978
+        },
+        {
+          "gene": "MOL",
+          "coef": 0.9749
+        },
+        {
+          "gene": "Meningeal/Perivascular FBs",
+          "coef": 0.948
+        },
+        {
+          "gene": "Meningeal EAE FBs",
+          "coef": -0.8595
+        },
+        {
+          "gene": "Exc",
+          "coef": 0.6641
+        },
+        {
+          "gene": "CD4+ T Cell",
+          "coef": -0.523
+        },
+        {
+          "gene": "Schwann cell",
+          "coef": -0.504
+        },
+        {
+          "gene": "OPC/COP",
+          "coef": -0.4944
+        },
+        {
+          "gene": "Homo_AST",
+          "coef": 0.4653
+        },
+        {
+          "gene": "CD8+ T Cell",
+          "coef": 0.3884
+        },
+        {
+          "gene": "Muscle cell",
+          "coef": -0.3324
+        },
+        {
+          "gene": "NK/DC",
+          "coef": -0.2793
+        },
+        {
+          "gene": "T Cell",
+          "coef": 0.268
+        },
+        {
+          "gene": "Neutrophil",
+          "coef": 0.2586
+        },
+        {
+          "gene": "B Cell",
+          "coef": -0.1672
+        },
+        {
+          "gene": "Chol/Inh",
+          "coef": 0.1586
+        },
+        {
+          "gene": "Endothelial",
+          "coef": -0.1319
+        }
+      ],
+      "C3_expression_plus_L1": {
+        "rho": 0.8500788124545344,
+        "ci": [
+          0.6441270130861786,
+          0.9421206094964216
+        ],
+        "n": 34,
+        "zero_feature_folds": 0
+      },
+      "C3_vs_expression": {
+        "comparison": "expression + composition vs expression",
+        "A": "expr+comp",
+        "B": "expression",
+        "n": 34,
+        "rho_A": 0.8500788124545344,
+        "rho_B": 0.8523759088672199,
+        "diff_mean": -0.002039831840045907,
+        "diff_ci": [
+          -0.03209157098292677,
+          0.024589985454737975
+        ],
+        "frac_diff_le_0": 0.5875,
+        "median_abs_err_A": 3.238401309402873,
+        "median_abs_err_B": 3.1531147589625856,
+        "wilcoxon_p": 0.5542359455721453,
+        "ci_excludes_zero": false
+      },
+      "C4_expression_resid_on_composition": {
+        "rho": 0.5168466928542701,
+        "ci": [
+          0.179483900284496,
+          0.744739502191851
+        ],
+        "n": 34,
+        "zero_feature_folds": 0,
+        "composition_pcs_per_fold": {
+          "min": 3,
+          "max": 3
+        }
+      },
+      "C4_vs_expression": {
+        "comparison": "expression | composition vs expression",
+        "A": "expr|comp",
+        "B": "expression",
+        "n": 34,
+        "rho_A": 0.5168466928542701,
+        "rho_B": 0.8523759088672199,
+        "diff_mean": -0.3350979048408385,
+        "diff_ci": [
+          -0.6141510557121511,
+          -0.13372470388297758
+        ],
+        "frac_diff_le_0": 1.0,
+        "median_abs_err_A": 6.955330467553172,
+        "median_abs_err_B": 3.1531147589625856,
+        "wilcoxon_p": 0.0003686567069962621,
+        "ci_excludes_zero": true
+      }
+    }
+  }
+}
