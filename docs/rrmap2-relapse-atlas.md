@@ -70,6 +70,8 @@ disease is right now* and is fully reversible.
 
 ### Axis 2 — irreversible cumulative accrual (ratchet)
 
+> See the 2026-10-08 downgrade note under *Same clinical score, different molecular state*: the separate-program reading of this axis failed its pre-registered test.
+
 Remission floor **rises** cycle over cycle — expression that persists after the
 animal has clinically recovered. Lipid/foamy, ECM/scar, and homeostatic-microglia
 repopulation:
@@ -260,6 +262,8 @@ accrual at equal severity" question is not yet answerable — it needs matched-b
 sampling. Flagged as the key wet-lab follow-up.
 
 ## Same clinical score, different molecular state — the accrual axis
+
+> **Downgraded 2026-10-08 (WORKORDER Task 4).** The pre-registered dissociation test failed. Across all RR animals the ratchet program (Gpnmb, Igf2, Fmod, Fcrls, Plin4) does not track `days_since_last_peak` (ρ +0.22 [−0.15, +0.56]) and the acute program (Hal, Arg1, Chil3) does not track slope direction (ρ −0.02 [−0.37, +0.31]); the ratchet program does track `day_of_sacrifice` (ρ +0.68 [+0.41, +0.83]). The PEAK1 vs PEAK3 contrast (p = 0.016, n = 4 vs 5) must no longer be cited as two separable programs: PEAK3 animals are also sacrificed weeks later, and the simpler reading is a single dominant time axis. See `runs/baseline_ladder/report.txt`.
 
 The clinical score is a 1-D readout of *current* disease activity. It captures the
 acute, reversible program but is largely blind to *accumulated, irreversible* damage,

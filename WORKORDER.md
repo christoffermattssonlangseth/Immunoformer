@@ -88,14 +88,112 @@ Two specific consequences of this, both of which this task fixes:
    section (`C2_G3_Mid_1`, region T) whose score curve disagrees with the animal's
    other two sections on days 11–19. Scores are an animal-level property, so one curve
    is wrong. Report which sections disagree and by how much; do not silently average.
+   **Reassignment rule (added 2026-10-08).** Reassigning that section to a different
+   animal is a decision, not a cleanup step: the animal is the unit of analysis, so a
+   wrong reassignment contaminates an entire bag. If the section has been grouped under
+   `C_M16_1`, state in the report exactly where that assignment came from. If it was
+   inferred by matching the section's score curve to `C_M16_1`'s curve, say so
+   explicitly — curve-matching is circular when the analysis under construction is
+   about curves, and the assignment then carries no independent evidence. **Default:
+   exclude `C2_G3_Mid_1` from all trajectory analyses and report n accordingly.** Run
+   the reassigned version only as a labelled sensitivity check, and report whether any
+   conclusion changes between the two. The assignment is not settled until it is
+   confirmed against the raw scoring sheets by a human.
 5. Correlation matrix of all trajectory features against each other and against
    `score_sacrifice` and `day_of_sacrifice`, per cohort. The purpose is to show which
    features are genuinely new information rather than restatements of terminal severity.
 
+6. **Functional PCA over the curves (added 2026-10-08).** The hand-crafted features
+   above embed arbitrary choices (what counts as onset, what counts as a relapse). Run
+   a data-driven version alongside them and compare.
+   - **Estimator (clarified).** You do not need PACE. PACE is for sparsely and
+     irregularly observed curves; daily scoring is dense on a common integer grid and
+     the only problem is truncation. Implement the smaller correct thing: pairwise-
+     complete mean and covariance surface (each covariance cell uses animals observed
+     on both days), eigendecomposition, conditional-expectation scores. **Pairwise-
+     complete covariance is not guaranteed PSD** — clip negative eigenvalues, project
+     to the nearest PSD matrix, and report how much mass was clipped. If that mass is
+     large, the truncation pattern is dominating; fall back to plain PCA on a common
+     window and say so.
+   - **Timebox: one day.** If the numpy version is not working by then, run plain PCA
+     on the common post-onset window (onset to onset + 14 days, where support is near
+     complete) and move on. The correspondence table is the deliverable, not the
+     estimator.
+   - Align every curve at `onset_day`, not at induction. Fit RR and chronic
+     **separately** (no pooling across strains). Expect roughly 28 RR and 22 chronic
+     animals after dropping controls and never-symptomatic animals; report the exact
+     numbers and who was dropped.
+   - **Support profile, required.** Plot the number of animals contributing to each
+     post-onset day. Post-onset lengths run 0 to ~35 days and sacrifice timing depends
+     on stage, so late post-onset days are estimated only from long-course animals
+     (mostly PEAK3 / REMISSION2 in RR). **Do not interpret any component over a region
+     where support is below 15 animals.** Cap the analysis at three components
+     regardless of explained variance — beyond that you are fitting the sacrifice
+     design, not the disease.
+   - If a component's loading mass sits mainly in the low-support tail, label it as
+     confounded with stage and exclude it from Task 4 rather than carrying it forward.
+   - Write the component scores into `animal_trajectory.csv` as `fpc1..fpcK`.
+   - **The key output is the correspondence table**: correlate each component against
+     `score_sacrifice`, `day_of_sacrifice`, and each hand-crafted feature. The
+     expectation is that FPC1 ≈ overall severity and FPC2 ≈ direction of travel, i.e.
+     that the leading components recover variables already in hand. If so, say so
+     plainly — that result *demonstrates* the redundancy that Task 0's first pass had
+     to discover one failed target at a time.
+   - Any component that does **not** map onto an existing variable, and whose support
+     is adequate, is a candidate Task 4 target. Add it to the table there.
+
+7. **Memory timescale, with the lag profile as its descriptive companion
+   (added 2026-10-08, revised after review).** This is the one analysis that needs
+   every day rather than a summary, because the question is literally per-day: how far
+   back does the tissue remember?
+
+   **7a — the statistic. Memory timescale tau.** For each gene program, compute the
+   exponentially-weighted integral of the animal's past clinical score,
+   `sum_t score(t) * exp(-(T - t) / tau)` over all its observed days up to sacrifice
+   `T`. Scan `tau` from 1 to 30 days. Take the `tau` maximising Spearman correlation
+   with the animal-level program score. Bootstrap over **animals** for a CI.
+
+   This is preferred over a discrete lag profile because every animal contributes its
+   entire observed history at every `tau`, so there is no attrition — the question is
+   never about one specific day. Output is one interpretable number per program with a
+   CI. A `tau` running to the top of the scan range is the interpretable limit: the
+   program tracks unweighted cumulative burden.
+
+   **Stated prediction, to be written into the script before running it:** the acute
+   program (Hal, Arg1, Chil3) gives a short `tau`; the accrual program (Gpnmb, Igf2,
+   Fmod, Fcrls, Plin4, Pmp22, Ptgds) gives a long `tau`; the CIs do not overlap. If
+   the two taus are indistinguishable, the acute/accrual dissociation in
+   `runs/accrual_axis` is not supported and that must be reported as the result.
+
+   **7b — the figure. Lag profile.** For lags 0, 1, 2, 3, 5, 7, 10, 14, 21, 28 days
+   before sacrifice, correlate the score at that lag against each program score.
+   - **Report both raw and partialled-on-`score_sacrifice` profiles.** Partialling is
+     degenerate at lag 0 (the lag-0 score *is* `score_sacrifice`, partial = 0 by
+     construction) and nearly degenerate at lags 1–3 because daily scores are strongly
+     autocorrelated. That suppresses precisely the short-lag region where the acute
+     program is predicted to peak, so the partialled profile is biased *against* the
+     predicted result. Raw shows the shape; partialled shows what exceeds current state.
+   - **The test statistic is the difference in shape between the two programs**, not
+     the absolute level of either. Shared suppression affects both equally, so the
+     contrast survives it. State this before plotting.
+   - Truncate the plotted profile at the last lag with n >= 20; show anything beyond
+     dashed, with n annotated. Expect RR to fall from ~28 animals at short lags to ~10
+     by lag 21–28, and note that the animals surviving to long lags are a biased subset
+     with longer disease. Also flag the 9 chronic animals missing scores on the final
+     two days before sacrifice.
+   - List the contributing animals at every lag.
+
+   **7c — program definition.** Use the existing all-animal pseudobulk; nothing needs
+   reloading. Report how many of the seven ratchet genes are on the 5,101-gene panel.
+   **If fewer than five survive, do not use the hand-picked list** — rebuild the
+   program from the top coefficients in `runs/duration_clock/clock_genes.csv` instead,
+   and say which definition was used.
+
 **Acceptance.** `animal_trajectory.csv` exists for all joined animals;
 `report.txt` states the join rate, the two relapse counts and their disagreement,
-the `C_M16_2` status, and — in one sentence — how much of `cumulative_score` is
-*not* explained by `score_sacrifice`. If that last number is small, say so, because
+the `C_M16_2` status, how much of `cumulative_score` is *not* explained by
+`score_sacrifice`, the number of FPCA components and their correspondence table, and
+the two memory timescales with CIs, and the lag profiles (raw and partialled) with per-lag n. If that last number is small, say so, because
 then the trajectory reframing buys less than expected and tasks 4 and 6 should know.
 
 ---
@@ -129,6 +227,61 @@ single run, and how many animals per model survive in the May 2026 stratum.
 **Consequence to record in the report, not to act on yet.** If run is recoverable
 and model is not recoverable within a run, then `runs/rr_vs_chronic` (AUC 0.998) is
 partly a batch classifier and needs re-running on the clean stratum.
+
+---
+
+## Task 1a — Report the numbers, not the verdict (added 2026-10-08)
+
+Task 1 reported qualitatively ("the run is detectable"). That is not reportable.
+Add to `runs/batch_identifiability/report.txt`, for every target and stratum:
+balanced accuracy, chance level (1 / n_classes), the permutation null distribution
+and p, n per class, and the number of animals. A fingerprint that is detectable at
+0.95 balanced accuracy against 0.33 chance is a different finding from one at 0.42.
+
+**Also required: the confound has not necessarily been removed, only moved.** Within
+the May 2026 run, cross-tabulate `model` against `sample_id` (slide) and against
+capture region. If the two models sit on different slides inside that run, the clean
+stratum is not clean — it is the same confound one level down. Report the cross-tab
+before reporting the within-run AUC.
+
+With 16 chronic and 9 RR animals, report a bootstrap CI on the within-run AUC, not a
+point estimate. Nine animals will give a wide interval.
+
+**Permanent framing constraint.** Each disease model uses a different strain (SJL vs
+C57BL/6). No stratum, and no amount of additional data, separates disease-model
+biology from strain. The within-run result therefore supports "the RR/chronic
+difference is not purely a run artefact" and nothing stronger. Any text describing
+`rr_vs_chronic` as detecting disease-model biology is wrong and must be rewritten as
+strain-or-model. This is a design property, not a limitation to be fixed later.
+
+---
+
+## Task 1b — Run-robustness of the duration clock (added 2026-10-08, PRIORITY)
+
+This matters more than re-running `rr_vs_chronic`, because the duration clock is the
+finding every downstream claim rests on.
+
+The clock was fitted within cohort, which feels protective but is not: **RR animals
+span Jun 2025 and May 2026, chronic animals span Jan 2025 and May 2026.** Both cohorts
+cross a run boundary. The existing batch check (Kruskal `run_date` p = 0.1379 in RR)
+tests whether the *label* associates with run; task 1 has now established that run is
+*recoverable from the expression data*, which is the stronger condition and the one
+that matters. p = 0.1379 is not a clean bill of health.
+
+Do, for RR and chronic separately:
+1. Cross-tabulate `run_date` against `day_of_sacrifice` and against stage. State how
+   aliased they are.
+2. Refit the clock adding `run_date` as a categorical covariate to the residualisation
+   step, i.e. residualise X and y on severity **and** run, inside each fold as before.
+   Report the change in LOAO rho and R^2.
+3. Leave-one-run-out: fit on one run, predict the other. Report rho. This is the
+   honest generalisation test.
+
+**Interpretation set in advance.** If rho survives (2) with a modest drop, the clock is
+a biological result and is now defensible against the obvious reviewer objection. If
+rho collapses, the clock is substantially a run classifier and every downstream task
+including the task 4 ladder must be reconsidered before it is run. Report either
+outcome plainly.
 
 ---
 
@@ -325,8 +478,11 @@ question is the model × severity interaction.
 - Do not build the Stage 2 transformer before task 4 reports.
 - Do not treat `runs/monophasic_vs_relapsing` as anything but exploratory — n = 4
   versus 4. Keep it, caveat it, do not build on it.
-- Do not reinterpret `runs/rr_vs_chronic` (AUC 0.998) until task 1 reports. SJL and
-  C57BL/6 differ genetically and sit in different Xenium runs; 2,363 genes show a
-  model main effect that the existing report correctly declines to interpret.
+- `runs/rr_vs_chronic` (AUC 0.998) is **superseded**: task 1 established that run
+  date is recoverable from expression, and the two models sit in different runs across
+  most of the data, so that AUC is partly a batch classifier. Do not cite it. Cite the
+  within-run May 2026 result instead, with its CI, its slide cross-tab, and the
+  strain confound stated. The 2,363 genes showing a model main effect remain
+  uninterpretable and must stay that way.
 - Do not fill in `encoders.FrozenFMEncoder` yet. Foundation-model encoders belong on
   the ladder as a later arm, after the simple arms are on the board.
