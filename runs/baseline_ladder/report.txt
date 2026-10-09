@@ -1,0 +1,108 @@
+THE BASELINE LADDER — LOAO, same folds for every arm, per target
+========================================================================
+
+rho / R2 vs the full-data residual target (arm 1: vs the RAW target); fold-wise =
+rho vs the leak-free fold-wise residual. CI = 95% animal bootstrap. Fisher z vs arm 2
+treats rhos as independent (they share animals) -> conservative. Arm 2r adds run_date
+to the residualisation (Task 1b). Pre-registered: overlapping CIs = INCONCLUSIVE.
+null = folds where no feature survived (prediction = leave-one-out mean). Under LOAO
+an all-null arm gives rho = -1 BY CONSTRUCTION; strongly negative rho with negative R2
+means NO SIGNAL, not anti-signal. Arm 6 has no such fallback.
+Panel check, program genes missing: {'ratchet': [], 'acute': []}
+
+TARGET days_since_last_peak  (RR, n = 28, residualised on score + day; residual keeps 59% of target variance)
+  target by run: 20250605: n 19, median 1.0 (0-8); 20260506: n 9, median 7.0 (0-11)
+  corr(score, day) = +0.11, VIF = 1.01
+  arm                            rho            95% CI  width      R2 fold-wise Fz p vs 2  null
+  1 score only (raw target)   +0.526 [+0.20, +0.77]   0.58  +0.227    +0.526     0.312  0/28
+  2 pseudobulk                +0.701 [+0.40, +0.88]   0.47  +0.076    +0.702         -  0/28
+  2r pseudobulk + run         +0.454 [+0.11, +0.73]   0.62  -0.685    +0.456     0.179  0/28
+  3 niche comp.               +0.291 [-0.08, +0.58]   0.66  -0.904    +0.273     0.044  0/28
+  4 cell-type comp.           -0.022 [-0.42, +0.37]   0.79 -12.669    -0.025     0.002  5/28
+  5 pseudobulk + niche        +0.698 [+0.39, +0.87]   0.48  +0.051    +0.699     0.983  0/28
+  6 attention-MIL             +0.460 [+0.05, +0.76]   0.71  +0.185    +0.449     0.188  0/28
+  6r attention-MIL + run      +0.347 [+0.01, +0.62]   0.62  -0.005    +0.364     0.072  0/28
+  6b mean-pool MIL (control)  +0.553 [+0.18, +0.79]   0.61  +0.288    +0.531     0.382  0/28
+  programs vs residual target: ratchet rho +0.22 [-0.15, +0.56]; acute rho +0.12 [-0.32, +0.49]
+
+TARGET slope_sign  (RR, n = 30, residualised on score; residual keeps 88% of target variance)
+  target by run: 20250605: n 21, median 1.0 (0-1); 20260506: n 9, median 1.0 (0-1)
+  arm                            rho            95% CI  width      R2 fold-wise Fz p vs 2  null  AUC [95% CI]
+  1 score only (raw target)   +0.167 [-0.17, +0.51]   0.68  -0.000    +0.167     0.556  0/30  0.60 [0.40, 0.80]
+  2 pseudobulk                +0.318 [-0.02, +0.62]   0.64  +0.064    +0.323         -  0/30  0.69 [0.50, 0.87]
+  2r pseudobulk + run         +0.165 [-0.16, +0.47]   0.64  -0.424    +0.205     0.549  0/30  0.56 [0.36, 0.77]
+  3 niche comp.               -0.294 [-0.56, +0.03]   0.59  -0.152    -0.307     0.020  9/30  0.43 [0.23, 0.65]
+  4 cell-type comp.           -0.174 [-0.48, +0.16]   0.65  -0.273    -0.163     0.064  8/30  0.46 [0.27, 0.68]
+  5 pseudobulk + niche        +0.174 [-0.17, +0.51]   0.69  -0.240    +0.179     0.573  0/30  0.62 [0.42, 0.81]
+  6 attention-MIL             +0.161 [-0.23, +0.55]   0.78  -0.045    +0.161     0.540  0/30  0.63 [0.43, 0.83]
+  6b mean-pool MIL (control)  +0.177 [-0.19, +0.52]   0.71  -0.005    +0.172     0.581  0/30  0.60 [0.40, 0.79]
+  programs vs residual target: ratchet rho -0.23 [-0.59, +0.17]; acute rho -0.02 [-0.37, +0.31]
+
+TARGET onset_day_rr  (RR, n = 28, residualised on nothing; residual keeps 100% of target variance)
+  target by run: 20250605: n 19, median 13.0 (12-15); 20260506: n 9, median 12.0 (11-13)
+  arm                            rho            95% CI  width      R2 fold-wise Fz p vs 2  null
+  1 score only (raw target)   -0.841 [-0.95, -0.64]   0.30  -0.240    -0.841     0.000 18/28
+  2 pseudobulk                +0.616 [+0.33, +0.80]   0.47  +0.199    +0.616         -  0/28
+  2r pseudobulk + run         +0.138 [-0.25, +0.49]   0.73  -0.303    +0.138     0.040  0/28
+  3 niche comp.               +0.536 [+0.19, +0.77]   0.58  +0.366    +0.536     0.673  0/28
+  4 cell-type comp.           -0.432 [-0.62, -0.17]   0.45  -0.655    -0.432     0.000  8/28
+  5 pseudobulk + niche        +0.511 [+0.16, +0.77]   0.61  +0.188    +0.511     0.586  0/28
+  6 attention-MIL             +0.433 [+0.08, +0.70]   0.62  +0.117    +0.433     0.367  0/28
+  6r attention-MIL + run      +0.040 [-0.34, +0.40]   0.74  -0.156    +0.040     0.016  0/28
+  6b mean-pool MIL (control)  +0.469 [+0.12, +0.72]   0.60  +0.189    +0.469     0.460  0/28
+  programs vs residual target: ratchet rho -0.24 [-0.59, +0.16]; acute rho -0.13 [-0.51, +0.31]
+
+TARGET onset_day_chronic  (chronic, n = 23, residualised on nothing; residual keeps 100% of target variance)
+  target by run: 20250110: n 12, median 13.0 (6-20); 20260506: n 11, median 12.0 (11-13)
+  arm                            rho            95% CI  width      R2 fold-wise Fz p vs 2  null
+  1 score only (raw target)   +0.053 [-0.40, +0.46]   0.86  -0.222    +0.053     0.696  5/23
+  2 pseudobulk                -0.070 [-0.48, +0.32]   0.80  -0.330    -0.070         -  5/23
+  2r pseudobulk + run         +0.229 [-0.25, +0.60]   0.86  +0.009    +0.229     0.338  0/23
+  3 niche comp.               -0.987 [-1.00, -0.95]   0.05  -0.312    -0.987     0.000 19/23
+  4 cell-type comp.           -1.000 [-1.00, -1.00]   0.00  -0.280    -1.000     0.000 22/23
+  5 pseudobulk + niche        -0.056 [-0.45, +0.32]   0.77  -0.417    -0.056     0.963  5/23
+  6 attention-MIL             +0.230 [-0.21, +0.64]   0.86  +0.058    +0.230     0.336  0/23
+  6b mean-pool MIL (control)  +0.322 [-0.16, +0.66]   0.82  +0.046    +0.322     0.202  0/23
+  programs vs residual target: ratchet rho +0.18 [-0.26, +0.60]; acute rho -0.14 [-0.48, +0.30]
+
+TARGET cumulative_chronic  (chronic, n = 29, residualised on score + day; residual keeps 22% of target variance)
+  target by run: 20250110: n 15, median 6.0 (0-50); 20260506: n 14, median 22.4 (0-82)
+  corr(score, day) = +0.21, VIF = 1.05
+  arm                            rho            95% CI  width      R2 fold-wise Fz p vs 2  null
+  1 score only (raw target)   +0.531 [+0.09, +0.78]   0.69  -0.016    +0.531     0.225  0/29
+  2 pseudobulk                +0.730 [+0.51, +0.87]   0.36  +0.356    +0.732         -  0/29
+  2r pseudobulk + run         +0.753 [+0.48, +0.89]   0.42  +0.482    +0.764     0.851  0/29
+  3 niche comp.               +0.406 [+0.05, +0.66]   0.61  -0.312    +0.406     0.073  0/29
+  4 cell-type comp.           +0.450 [+0.07, +0.75]   0.68  -0.001    +0.451     0.110  0/29
+  5 pseudobulk + niche        +0.700 [+0.46, +0.84]   0.37  +0.314    +0.702     0.826  0/29
+  6 attention-MIL             +0.658 [+0.35, +0.86]   0.51  +0.255    +0.651     0.616  0/29
+  6b mean-pool MIL (control)  +0.714 [+0.47, +0.87]   0.40  +0.344    +0.713     0.910  0/29
+  programs vs residual target: ratchet rho +0.25 [-0.19, +0.61]; acute rho -0.40 [-0.74, -0.03]
+
+TARGET day_of_sacrifice  (RR, n = 33, residualised on score; residual keeps 97% of target variance)
+  target by run: 20250605: n 24, median 31.5 (11-48); 20260506: n 9, median 42.0 (14-49)
+  arm                            rho            95% CI  width      R2 fold-wise Fz p vs 2  null
+  1 score only (raw target)   -0.307 [-0.55, +0.01]   0.56  -0.138    -0.307     0.000  4/33
+  2 pseudobulk                +0.828 [+0.62, +0.93]   0.30  +0.738    +0.829         -  0/33
+  2r pseudobulk + run         +0.789 [+0.58, +0.89]   0.31  +0.682    +0.791     0.655  0/33
+  3 niche comp.               +0.693 [+0.47, +0.82]   0.35  +0.424    +0.690     0.202  0/33
+  4 cell-type comp.           +0.396 [+0.09, +0.63]   0.54  +0.001    +0.405     0.003  0/33
+  5 pseudobulk + niche        +0.825 [+0.61, +0.92]   0.31  +0.726    +0.826     0.969  0/33
+  6 attention-MIL             +0.885 [+0.75, +0.94]   0.20  +0.822    +0.887     0.400  0/33
+  6b mean-pool MIL (control)  +0.836 [+0.66, +0.92]   0.26  +0.744    +0.840     0.928  0/33
+  programs vs residual target: ratchet rho +0.68 [+0.41, +0.83]; acute rho -0.35 [-0.64, -0.02]
+
+CROSS-TARGET MATRIX — program score (mean z of genes) vs each residualised target
+  target                                  ratchet                    acute
+  days_since_last_peak        +0.22 [-0.15,+0.56]      +0.12 [-0.32,+0.49]
+  slope_sign                  -0.23 [-0.59,+0.17]      -0.02 [-0.37,+0.31]
+  onset_day_rr                -0.24 [-0.59,+0.16]      -0.13 [-0.51,+0.31]
+  onset_day_chronic           +0.18 [-0.26,+0.60]      -0.14 [-0.48,+0.30]
+  cumulative_chronic          +0.25 [-0.19,+0.61]      -0.40 [-0.74,-0.03]
+  day_of_sacrifice            +0.68 [+0.41,+0.83]      -0.35 [-0.64,-0.02]
+  Prediction (WORKORDER): ratchet tracks days_since_last_peak, acute tracks
+  slope_sign — not the reverse.
+
+PERMUTATION NULL, arm 2 on day_of_sacrifice: 1000 shuffles, null mean -0.056, q95 +0.358, max +0.701, p = 0.0010
+
+figures/: baseline_ladder.png

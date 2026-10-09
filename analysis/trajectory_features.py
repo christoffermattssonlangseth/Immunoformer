@@ -41,6 +41,7 @@ from __future__ import annotations
 import immunotransformer  # noqa: F401  (OpenMP guard — must precede numpy; see HANDOFF.md)
 
 import json
+import sys
 import os
 
 import h5py
@@ -48,6 +49,10 @@ import numpy as np
 import pandas as pd
 from scipy.signal import find_peaks
 from scipy.stats import spearmanr
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import trajectory_fpca  # noqa: E402
+import trajectory_memory  # noqa: E402
 
 ATLAS = os.environ.get(
     "RRMAP2_H5AD",
@@ -66,8 +71,10 @@ XIST_FEMALE_THR = 0.10  # fraction of Xist+ cells; F sections >= 0.14, M <= 0.01
 
 # expected relapse count implied by the stage label (number of attacks after the first)
 STAGE_RELAPSES = {
-    "ONSET1": 0, "PEAK1": 0, "REMISSION1": 0, "MONOPHASIC": 0,
-    "ONSET2": 1, "PEAK2": 1, "PEAK2_MILD": 1, "REMISSION2": 1, "REMISSION2_LONG": 1,
+    # ONSET1 and ONSET2 are both FIRST onsets (sacrificed at first sign; ONSET2 at a higher
+    # score) — confirmed by the user 2026-10-08. The stage labels are the relapse ground truth.
+    "ONSET1": 0, "ONSET2": 0, "PEAK1": 0, "REMISSION1": 0, "MONOPHASIC": 0,
+    "PEAK2": 1, "PEAK2_MILD": 1, "REMISSION2": 1, "REMISSION2_LONG": 1,
     "PEAK3": 2,
 }
 
@@ -333,7 +340,7 @@ def main():
     w_ok = w.loc[s_ok.index]
 
     # ---- 2. features
-    rows = []
+    rows, curves = [], {}
     for an in sorted(set(s_ok.atlas_name) & atlas_names):
         gs = s_ok[s_ok.atlas_name == an]
         gw = w_ok.loc[gs.index]
@@ -351,11 +358,18 @@ def main():
                                  int(dos), ssac))
         r["expected_relapses_stage"] = STAGE_RELAPSES.get(a.stage, 0 if a.model == "CHRONIC"
                                                           else np.nan)
+        r["n_relapses_stage"] = r["expected_relapses_stage"]   # ground truth (stage labels)
+        tt, yy, _ = build_curve(gs[days].to_numpy(float)[0], int(dos), ssac)
+        curves[an] = (tt, yy)
         rows.append(r)
     T = pd.DataFrame(rows)
     T["section_relabel_flag"] = T.sample_name.isin(dis.sample_name) | T.sheet_name.isin(
         [o[0] for v in owners.values() for o in v])
-    T.to_csv(os.path.join(OUT, "animal_trajectory.csv"), index=False)
+    fpc_df, fpca_res, fpca_lines = trajectory_fpca.run(curves, T, FEATURES, OUT)
+    T = T.merge(fpc_df, on="sample_name", how="left")
+    tmp = os.path.join(OUT, "animal_trajectory.csv.tmp")
+    T.to_csv(tmp, index=False)
+    os.replace(tmp, os.path.join(OUT, "animal_trajectory.csv"))   # atomic: readers never see half
 
     # ---- 3. relapse rules vs stage
     rr = T[T.model != "CHRONIC"].dropna(subset=["expected_relapses_stage"])
@@ -395,6 +409,7 @@ def main():
 
     _plot_curves(s_ok, days, T)
     _plot_corr(corr)
+    memory_res, memory_lines = trajectory_memory.run(curves, T, OUT)
 
     results = {
         "join": {"n_atlas": len(atlas_names), "n_sheet": len(sheet_names),
@@ -418,9 +433,8 @@ def main():
                                        ["sample_name", "stage"]].values.tolist(),
         "below_onset_threshold": T.loc[(T.peak_score > 0) & T.onset_day.isna(),
                                        ["sample_name", "stage", "peak_score"]].values.tolist(),
-        "stage_curve_contradiction": T.loc[
-            (T.expected_relapses_stage >= 1) & (T.first_symptom_day >= T.day_of_sacrifice - 2),
-            ["sample_name", "stage", "first_symptom_day", "day_of_sacrifice"]].values.tolist(),
+        "fpca": fpca_res,
+        "memory": memory_res,
         "onset_range": T[T.condition == "EAE"].groupby("model").onset_day.agg(
             ["min", "max", "std"]).to_dict(orient="index"),
         "slope_class_counts": T[T.condition == "EAE"].groupby(
@@ -432,7 +446,7 @@ def main():
     }
     with open(os.path.join(OUT, "results.json"), "w") as fh:
         json.dump(results, fh, indent=2, default=_json_default)
-    _report(results, T, corr)
+    _report(results, T, corr, fpca_lines + memory_lines)
 
 
 def _r2(y, X):
@@ -545,7 +559,7 @@ def _plot_corr(corr):
 
 # ---------------------------------------------------------------- report
 
-def _report(r, T, corr):
+def _report(r, T, corr, extra_lines=()):
     j = r["join"]
     L = ["TRAJECTORY FEATURES — per-animal course features from the daily score/weight sheets",
          "=" * 88, "",
@@ -580,13 +594,21 @@ def _report(r, T, corr):
         L.append(f"  SEX MISMATCH: section {m['meta_sample_id']} labelled {m['sample_name']} "
                  f"({m['sex_meta']}) has {m['frac_xist_pos']:.4f} Xist+ cells -> "
                  f"{m['sex_from_xist']}")
-    L += ["  STATUS: RESOLVED for the trajectory table. Section C2_G3_Mid_1 is tissue from a",
-          "  MALE animal carrying C_M16_1's Animal ID and C_M16_1's exact score curve; C_M16_2 is",
-          "  female. Its sheet curve is correct for the tissue; its sample_name label (C_M16_2) is",
-          "  wrong in BOTH the sheet and the atlas. C_M16_2's curve here uses its two",
-          "  agreeing sections (Animal ID 1058093); C_M16_1 is unchanged. NOT fixed in the atlas:",
-          "  any animal-level pseudobulk built so far pools one male C_M16_1 section into",
-          "  C_M16_2 (and C_M16_2 is the only animal with two sections from one region).", ""]
+    L += ["  STATUS: section C2_G3_Mid_1 is EXCLUDED (default, WORKORDER reassignment rule);",
+          "  its assignment to C_M16_1 is NOT settled until a human confirms it against the raw",
+          "  scoring sheets. Where the C_M16_1 assignment comes from:",
+          "    (1) the sheet row carries C_M16_1's Animal ID 1058085 (C_M16_2's two other sections",
+          "        carry 1058093) — independent of the curves;",
+          "    (2) Xist: the tissue is male (0.6% Xist+ cells; every female section >= 14%);",
+          "        C_M16_2 is female, C_M16_1 male — independent of the curves;",
+          "    (3) its score curve equals C_M16_1's on all co-recorded days — CIRCULAR for a",
+          "        curve-based analysis, so it carries no independent weight here.",
+          "  Effect on this table: none either way. C_M16_2's curve comes from its two agreeing",
+          "  sections whether C2_G3_Mid_1 is excluded or reassigned, and the reassigned curve is",
+          "  identical to the one C_M16_1 already has, so no feature and no conclusion changes.",
+          "  Atlas not modified: animal-level pseudobulk that includes this section pools a male",
+          "  C_M16_1 section into C_M16_2 (the only animal with two same-region sections);",
+          "  pseudobulk built for Tasks 1, 1b, 4 excludes it.", ""]
 
     L += ["2. FEATURES  ->  animal_trajectory.csv",
           f"  {len(T)} animals; onset = first >= {ONSET_THR} run lasting >= 2 days",
@@ -594,10 +616,10 @@ def _report(r, T, corr):
           f"    of which symptomatic but below the {ONSET_THR} threshold (sacrificed at first "
           f"sign, score 0.25 -> disease_duration NaN): {r['below_onset_threshold']}",
           f"  onset_day range per cohort: {r['onset_range']}",
-          "  STAGE vs CURVE CONTRADICTION (stage implies a prior attack, curve is 0 until the",
-          f"  last 3 days): {r['stage_curve_contradiction'] or 'none'}",
-          "    -> these 'second onset' animals show only a FIRST attack in the daily sheet;",
-          "       either the stage label or the curve is wrong. Unresolved.",
+          "  ONSET1 and ONSET2 animals are all FIRST onsets: sacrificed at first sign (ONSET2 at",
+          "  score 1.0 on day 13, ONSET1 at 0.25). An earlier version of this report read ONSET2",
+          "  as 'onset of the second attack' and flagged a contradiction; that was a misreading",
+          "  of the label, corrected with the user 2026-10-08.",
           f"  onset censored at sacrifice (single supra-threshold day = sacrifice day): "
           f"{r['onset_censored'] or 'none'}",
           f"  slope_at_sacrifice classes (EAE): {r['slope_class_counts']}", ""]
@@ -607,13 +629,16 @@ def _report(r, T, corr):
              .T.to_string().replace("\n", "\n  "))
     L.append("")
 
-    L += ["3. RELAPSE COUNT — TWO RULES, NO DEFINITION CHOSEN",
+    L += ["3. RELAPSE COUNT — stage labels are the ground truth (user, 2026-10-08):",
+          "  n_relapses_stage in animal_trajectory.csv. The two curve rules below are",
+          "  DESCRIPTIVE only; their disagreements with the stage label are curve-shape",
+          "  observations, not label errors.",
           "  The work order says the first-pass rule is 'already noted in docs/'; it is not —",
           "  no doc defines it. Both rules are implemented as specified in WORKORDER.md:",
           "    r1     : drop >= 1 from a peak, then rise >= 1 from the trough",
           "    strict : drop >= 0.5 then rise >= 0.5, each sustained >= 2 consecutive days",
-          "  Expected count from stage label (RR): ONSET1/PEAK1/REM1/MONO=0; ONSET2/PEAK2/"
-          "PEAK2_MILD/REM2/REM2_LONG=1; PEAK3=2. Chronic expected 0."]
+          "  Count from stage label (RR): ONSET1/ONSET2/PEAK1/REM1/MONO=0; PEAK2/"
+          "PEAK2_MILD/REM2/REM2_LONG=1; PEAK3=2. Chronic 0."]
     for col, v in r["relapse"].items():
         L.append(f"  {col}: agrees with stage label in {v['rr_agree_with_stage']}/{v['rr_n']} RR "
                  "animals")
@@ -626,8 +651,8 @@ def _report(r, T, corr):
           "  MONOPHASIC animals: strict counts a late low-grade rise (trough ~0.25 -> 0.75-1.0)",
           "  as a relapse in all 4; r1 does not. That is the main disagreement between rules."]
     L.append(f"  r1 vs strict agree on {a}/{n} animals; disagree on: {r['relapse_rule_disagree']}")
-    L += ["  -> A relapse definition must be agreed with the person who scored the animals",
-          "     before n_relapses is used as a target or covariate.", ""]
+    L += ["  -> Use n_relapses_stage (stage labels) as the relapse count; the curve rules above",
+          "     only describe where a curve's shape departs from its label.", ""]
 
     L += ["5. HOW MUCH IS NEW INFORMATION (EAE animals, per cohort)",
           "  R2 = variance explained by score_sacrifice alone (and + day_of_sacrifice);",
@@ -667,7 +692,9 @@ def _report(r, T, corr):
           "  onset_day, days_since_last_peak, slope_at_sacrifice, peak_day (RR) and",
           "  max_weight_loss (RR) — the shape-of-course features, not the accumulation ones.",
           ""]
-    L.append("figures/: score_curves_by_stage.png, feature_correlations.png")
+    L += list(extra_lines)
+    L.append("figures/: score_curves_by_stage.png, feature_correlations.png, "
+             "fpca_support_eigenfunctions.png, memory_lag_profile.png")
 
     report = "\n".join(L)
     print(report)

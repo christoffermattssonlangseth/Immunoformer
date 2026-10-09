@@ -204,6 +204,8 @@ signal to learn. The honest reduced finding: `Hal` is a clean molecular marker o
 acute disease activity (severity) that fully resets between attacks; the DAM/foamy
 ratchet program is the cumulative axis.
 
+> **Downgraded 2026-10-08 (WORKORDER Task 4).** The pre-registered dissociation test failed. Across all RR animals the ratchet program (Gpnmb, Igf2, Fmod, Fcrls, Plin4) does not track `days_since_last_peak` (ρ +0.22 [−0.15, +0.56]) and the acute program (Hal, Arg1, Chil3) does not track slope direction (ρ −0.02 [−0.37, +0.31]); the ratchet program does track `day_of_sacrifice` (ρ +0.68 [+0.41, +0.83]). The PEAK1 vs PEAK3 contrast (p = 0.016, n = 4 vs 5) must no longer be cited as two separable programs: PEAK3 animals are also sacrificed weeks later, and the simpler reading is a single dominant time axis. See `runs/baseline_ladder/report.txt`.
+
 **The one thing pseudobulk cannot rule out:** phase that lives in a *specific cell
 type or spatial niche* and is averaged away in bulk. That — a per-cell-type /
 per-niche repeat of TEST A — is the only remaining shot before abandoning the model

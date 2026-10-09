@@ -14,7 +14,7 @@ results. The strongest:
 | Duration clock (RR), severity-orthogonalised | ρ = 0.799, LOAO R² = 0.672 | per-fold residualisation + feature selection; perm null; batch checks |
 | Duration clock (chronic) | ρ = 0.856, R² = 0.862 | same |
 | Cross-model conservation of duration axis | ρ = 0.653, 72 % sign agreement | independent cohorts |
-| Accrual vs acute decomposition (within-RR, matched score) | cumulative p = 0.016, acute p = 0.19 | strain-clean, severity-matched |
+| Accrual vs acute decomposition (within-RR, matched score) | cumulative p = 0.016, acute p = 0.19 — **downgraded 2026-10-08: pre-registered dissociation failed in Task 4; read as one time axis, not two programs** | strain-clean, severity-matched |
 | Phase-beyond-severity | AUC 0.513, p = 0.32 → **stopped** | correctly called as a negative |
 
 **(B) The model — behind.** `immunotransformer` is a gated attention-MIL + CORAL

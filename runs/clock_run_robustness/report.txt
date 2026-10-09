@@ -1,0 +1,111 @@
+CLOCK RUN-ROBUSTNESS — does the duration clock survive the Xenium run?
+========================================================================
+
+Severity-orthogonalised clock B (scripts/duration_clock.py loao_clock, unchanged),
+refit on the current all-animal pseudobulk (section C2_G3_Mid_1 excluded). CIs:
+2000 animal bootstrap resamples of the LOAO predictions. Fisher z treats the two
+rhos as independent; they share animals, so that p is conservative.
+Interpretation fixed in advance: SURVIVES = run-adjusted rho CI excludes 0 and its
+point estimate lies inside the baseline CI; COLLAPSES = run-adjusted CI includes 0, or
+leave-one-run-out CI includes 0 in both directions; otherwise PARTIAL DROP.
+
+RELAPSE REMITTING  (n = 33 animals)
+------------------------------------------------------------
+1. ALIASING
+  animals per run: {'20250605': 24, '20260506': 9}
+  day by run: 20250605: 11-48 (median 32); 20260506: 14-49 (median 42)
+  eta^2 (share of day variance explained by run): 0.077; Kruskal day~run p = 0.138
+  median score by run: {'20250605': 0.75, '20260506': 1.25}
+  stages present in both runs: ['PEAK1', 'PEAK2', 'PEAK3', 'REMISSION1']
+  stages in one run only: {'20250605': ['MONOPHASIC', 'ONSET1', 'ONSET2', 'PEAK2_MILD', 'PLP CFA', 'REMISSION2_LONG'], '20260506': ['REMISSION2']} (17 of 33 animals)
+  run_date x day:
+  day       11  13  14  15  17  18  20  21  22  25  31  32  33  38  42  44  47  48  49
+  run_date                                                                            
+  20250605   1   2   0   1   1   2   1   1   0   1   2   1   7   1   0   0   0   3   0
+  20260506   0   0   1   0   0   0   0   0   2   0   0   1   0   0   1   1   1   0   2
+  run_date x stage:
+  run_date         20250605  20260506
+  stage                              
+  MONOPHASIC              4         0
+  ONSET1                  2         0
+  ONSET2                  2         0
+  PEAK1                   3         1
+  PEAK2                   1         1
+  PEAK2_MILD              2         0
+  PEAK3                   3         2
+  PLP CFA                 3         0
+  REMISSION1              3         2
+  REMISSION2              0         3
+  REMISSION2_LONG         1         0
+
+2. RUN AS A COVARIATE (residualise X and day on severity + run, per fold)
+  published clock B rho: +0.799 (older atlas pseudobulk)
+  baseline  B, full-data ref : rho +0.828 [95% CI +0.624, +0.926]  R2 +0.738  n=33
+  baseline  B, fold-wise ref : rho +0.829 [95% CI +0.625, +0.924]  R2 +0.739  n=33
+  run-adj.  B, full-data ref : rho +0.789 [95% CI +0.583, +0.892]  R2 +0.682  n=33
+  run-adj.  B, fold-wise ref : rho +0.791 [95% CI +0.585, +0.892]  R2 +0.691  n=33
+  change in rho: -0.040; change in R2: -0.056; Fisher z p = 0.655
+  within-run permutation null (200 shuffles of day inside each run): mean -0.016, q95 +0.448, p = 0.005
+
+3. LEAVE-ONE-RUN-OUT (fit on one run, predict the other)
+  train 20250605 (n=24, day 11-48)  ->  test 20260506 (n=9, day 14-49)
+    clock A raw     : rho +0.924 [95% CI +0.541, +1.000]  R2 +0.664  n=9  mean bias -3.3 d
+    clock B sev-orth: rho +0.767 [95% CI +0.179, +1.000]  R2 +0.829  n=9  mean bias -2.6 d
+  train 20260506 (n=9, day 14-49)  ->  test 20250605 (n=24, day 11-48)
+    clock A raw     : rho +0.600 [95% CI +0.226, +0.854]  R2 +0.351  n=24  mean bias -1.5 d
+    clock B sev-orth: rho +0.830 [95% CI +0.641, +0.915]  R2 +0.520  n=24  mean bias +0.4 d
+
+VERDICT (RELAPSE REMITTING): SURVIVES
+
+CHRONIC  (n = 34 animals)
+------------------------------------------------------------
+1. ALIASING
+  animals per run: {'20250110': 18, '20260506': 16}
+  day by run: 20250110: 8-50 (median 14); 20260506: 8-41 (median 22)
+  eta^2 (share of day variance explained by run): 0.000; Kruskal day~run p = 0.568
+  median score by run: {'20250110': 0.5, '20260506': 1.875}
+  stages present in both runs: ['NONSYMPTOM', 'OS1', 'PEAK1']
+  stages in one run only: {'20250110': ['MILD30', 'MOG CFA'], '20260506': ['CFA', 'MILD16', 'SEVERE16', 'SEVERE30']} (18 of 34 animals)
+  run_date x day:
+  day       8   9   10  12  13  14  15  16  17  18  27  28  29  41  43  45  46  50
+  run_date                                                                        
+  20250110   1   5   0   2   0   2   0   1   0   2   0   0   0   0   1   2   1   1
+  20260506   2   0   1   0   1   0   2   1   1   0   2   3   1   2   0   0   0   0
+  run_date x stage:
+  run_date    20250110  20260506
+  stage                         
+  CFA                0         2
+  MILD16             0         3
+  MILD30             5         0
+  MOG CFA            3         0
+  NONSYMPTOM         3         2
+  OS1                4         1
+  PEAK1              3         3
+  SEVERE16           0         3
+  SEVERE30           0         2
+
+2. RUN AS A COVARIATE (residualise X and day on severity + run, per fold)
+  published clock B rho: +0.856 (older atlas pseudobulk)
+  baseline  B, full-data ref : rho +0.852 [95% CI +0.652, +0.945]  R2 +0.864  n=34
+  baseline  B, fold-wise ref : rho +0.853 [95% CI +0.653, +0.944]  R2 +0.875  n=34
+  run-adj.  B, full-data ref : rho +0.907 [95% CI +0.771, +0.963]  R2 +0.850  n=34
+  run-adj.  B, fold-wise ref : rho +0.892 [95% CI +0.741, +0.957]  R2 +0.867  n=34
+  change in rho: +0.054; change in R2: -0.015; Fisher z p = 0.337
+  within-run permutation null (200 shuffles of day inside each run): mean +0.047, q95 +0.420, p = 0.005
+
+3. LEAVE-ONE-RUN-OUT (fit on one run, predict the other)
+  train 20250110 (n=18, day 8-50)  ->  test 20260506 (n=16, day 8-41)
+    clock A raw     : rho +0.894 [95% CI +0.693, +0.965]  R2 +0.616  n=16  mean bias +1.7 d
+    clock B sev-orth: rho +0.923 [95% CI +0.714, +0.991]  R2 +0.525  n=16  mean bias -1.0 d
+  train 20260506 (n=16, day 8-41)  ->  test 20250110 (n=18, day 8-50)
+    clock A raw     : rho +0.701 [95% CI +0.253, +0.896]  R2 +0.635  n=18  mean bias -5.2 d
+    clock B sev-orth: rho +0.497 [95% CI -0.122, +0.799]  R2 +0.534  n=18  mean bias -5.2 d
+
+VERDICT (CHRONIC): SURVIVES
+
+CONSEQUENCE FOR TASK 4
+  If either cohort COLLAPSES, the Task 4 ladder must be reconsidered before running.
+  Otherwise Task 4 proceeds; arm 2 should still be reported with and without the run
+  covariate so the run share of every target stays visible.
+
+figures/: clock_run_robustness.png

@@ -1,0 +1,25 @@
+LEARNING CURVE ON ANIMALS (exploratory) — data-scale or architecture limit?
+========================================================================
+Same LOAO folds; each fold's training animals subsampled to the fraction shown;
+3 random subsamples per fraction (rho per draw, then mean and range).
+Fraction 1.0 = the main ladder (arm 6 = 3-seed ensemble). rho vs the full-data
+residual target, as in the ladder.
+
+TARGET day_of_sacrifice (n = 33)
+  fraction ~n train      arm 2 rho (range)      arm 6 rho (range)
+      0.50       16   +0.711 (+0.68, +0.74)   +0.758 (+0.72, +0.80)
+      0.75       24   +0.803 (+0.76, +0.83)   +0.857 (+0.79, +0.91)
+      1.00       32   +0.828                  +0.885
+
+TARGET days_since_last_peak (n = 28)
+  fraction ~n train      arm 2 rho (range)      arm 6 rho (range)
+      0.50       13   +0.482 (+0.28, +0.64)   +0.048 (-0.29, +0.32)
+      0.75       20   +0.592 (+0.49, +0.67)   +0.320 (+0.10, +0.47)
+      1.00       27   +0.701                  +0.460
+
+COMPARABILITY: subsampled points use ONE arm 6 seed per draw; the 1.0 point above is
+the 3-seed ensemble. Single-seed mean at 1.0 (arm6_seed_spread.csv): day_of_sacrifice +0.888, days_since_last_peak +0.420.
+
+READING: compare slopes. Arm 6 rising faster than arm 2 from 0.5 -> 1.0 suggests a
+data-scale limit; parallel or flatter curves suggest the architecture (as
+configured) adds little at this scale. 3 draws per point; treat as indicative.

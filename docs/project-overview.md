@@ -50,6 +50,8 @@ resets in remission) and a **ratchet / cumulative** program (remission floor ris
 cycle). Severity is the backbone; duration is the part that survives clinical recovery.
 (`scripts/rr_cycle_oscillation.py`, `rrmap2-relapse-atlas.md`.)
 
+> **Downgraded 2026-10-08 (WORKORDER Task 4).** The pre-registered dissociation test failed. Across all RR animals the ratchet program (Gpnmb, Igf2, Fmod, Fcrls, Plin4) does not track `days_since_last_peak` (ρ +0.22 [−0.15, +0.56]) and the acute program (Hal, Arg1, Chil3) does not track slope direction (ρ −0.02 [−0.37, +0.31]); the ratchet program does track `day_of_sacrifice` (ρ +0.68 [+0.41, +0.83]). The PEAK1 vs PEAK3 contrast (p = 0.016, n = 4 vs 5) must no longer be cited as two separable programs: PEAK3 animals are also sacrificed weeks later, and the simpler reading is a single dominant time axis. See `runs/baseline_ladder/report.txt`.
+
 **2. The duration clock.** A supervised elastic-net clock reads time-since-induction *after
 severity is removed* — **RR Spearman +0.80** (leave-one-animal-out, permutation p = 0.02),
 and it is not a sex / region / batch artifact (it strengthens to +0.86 when those are

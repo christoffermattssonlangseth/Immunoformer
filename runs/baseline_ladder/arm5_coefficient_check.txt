@@ -1,0 +1,16 @@
+ARM 5 COEFFICIENT CHECK — do niche fractions enter and receive weight?
+==================================================================
+Prefilter: top-1000-variance on genes only; all 27 Global_niche fractions are passed
+to the scaler and elastic net in every fold (n_features_fit = 1000 + 27).
+
+  target                 folds  folds w/ niche coef!=0 median #niche!=0 median #genes!=0  max|arm5-arm2| pred
+  days_since_last_peak      28                      28                5               48               0.8121
+  slope_sign                30                       5                0               13               0.7093
+  onset_day_rr              28                      28                4               28               1.6949
+  onset_day_chronic         23                      16                2               53               1.8639
+  cumulative_chronic        29                      29                6               98               6.7135
+  day_of_sacrifice          33                      33                4               98               1.8905
+
+Niche fractions most often selected (fold count): Lesion_Lipid 98, Vasculature 63, Lesion_myeloid III 54, DRG_reactive 51, DRG 50, Dorsal_Rim_OL 48, Lesion_DAA 41, WM_OPC 38
+
+Per-fold detail: arm5_coefficient_check.csv
