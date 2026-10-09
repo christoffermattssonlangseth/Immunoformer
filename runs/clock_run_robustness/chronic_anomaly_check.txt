@@ -1,0 +1,25 @@
+CHRONIC CLOCK ANOMALY CHECK (Task 1b): baseline rho 0.85 -> 0.91 with run covariate
+
+(a) Residualisation: loao_clock fits LinearRegression(covar[train], X[train]) and
+    LinearRegression(covar[train], y[train]) on the TRAINING animals of each fold only;
+    the held-out animal is transformed with the training fit. The headline rho uses the
+    full-data residual as evaluation reference; the fold-wise (leak-free) reference is
+    reported alongside (0.853 baseline, 0.892 run-adjusted) and moves the same way.
+(b) R2 of day_of_sacrifice on run: 0.0003;  on score: 0.0993;  on score + run: 0.1057  (n = 34)
+    R2 of gene expression on run (5101 genes): median 0.066, 90th pct 0.434, genes with R2>0.5: 386
+(c) The two rhos are computed against DIFFERENT targets: baseline vs day|score,
+    run-adjusted vs day|score+run. How different are they?
+    Spearman(day|score, day|score+run) = +0.9743
+    baseline preds   vs day|score      : +0.852
+    run-adj. preds   vs day|score      : +0.880   <- same target as baseline
+    run-adj. preds   vs day|score+run  : +0.907
+    baseline preds   vs day|score+run  : +0.867
+
+Reading: run explains ~none of day in chronic but a large share of gene expression.
+Residualising X on run removes run-driven variance from the predictors that is noise
+with respect to day, so the clock sees a cleaner signal. A covariate unrelated to the
+outcome but related to the predictors can improve prediction this way; it is the batch-
+correction effect, not leakage. About half of the reported gain is the target change:
+on the SAME target (day|score) run adjustment moves rho 0.852 -> 0.880 (+0.03); the
+remaining +0.03 to 0.907 comes from evaluating against day|score+run (target corr 0.974).
+Neither step is outside the bootstrap CI of the baseline [0.65, 0.95].

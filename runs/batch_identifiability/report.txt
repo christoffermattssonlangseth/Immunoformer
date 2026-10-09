@@ -1,0 +1,302 @@
+BATCH IDENTIFIABILITY — is batch recoverable from the transcriptome?
+========================================================================
+
+157 sections / 67 animals; log-CP10k pseudobulk; top 50 PCs fit inside each fold; GroupKFold(5) on animal.
+Null = 200 animal-level label permutations (smallest attainable p = 0.005). Balanced accuracy, chance = 1/k. HGB primary, L2
+logreg = linear comparator. AUC (binary targets) with a 95% CI from 2000 animal-level bootstrap
+resamples of the out-of-fold predictions (conditional on the folds; excludes refit variance).
+
+SECTION C2_G3_Mid_1 — provenance and handling
+  Atlas and sheet label it C_M16_2. Evidence it belongs to C_M16_1: (1) its sheet row
+  carries C_M16_1's Animal ID (1058085) — independent of curves; (2) its tissue is
+  male by Xist (0.6% Xist+ cells vs >= 14% in every female section), C_M16_2 is female
+  and C_M16_1 male — independent of curves; (3) its score curve equals C_M16_1's —
+  CIRCULAR for curve-based analyses, carries no independent weight. Not yet confirmed
+  against the raw scoring sheets by a human.
+  This report: section mode = 'exclude' (default exclude). Sensitivity (reassigned to C_M16_1) at the end.
+
+ALL RUNS
+  run_date  [animal-level, 67 units from 67 animals, k = 3, chance = 0.333]
+    animals per class: 20250110 18, 20250605 24, 20260506 25
+    HGB    balanced acc 0.968  null 0.311 ± 0.061 [q05 0.205, q95 0.414, max 0.516]  p = 0.005
+    logreg balanced acc 1.000  null 0.306 ± 0.062 [q05 0.204, q95 0.425, max 0.525]  p = 0.005
+  run_id  [animal-level, 67 units from 67 animals, k = 5, chance = 0.200]
+    animals per class: run1 18, run2 12, run3 12, run5 19, run6 6
+    HGB    balanced acc 0.608  null 0.182 ± 0.050 [q05 0.108, q95 0.274, max 0.330]  p = 0.005
+    logreg balanced acc 0.733  null 0.172 ± 0.046 [q05 0.107, q95 0.255, max 0.310]  p = 0.005
+  model  [animal-level, 67 units from 67 animals, k = 2, chance = 0.500]
+    animals per class: CHRONIC 34, RELAPSE REMITTING 33
+    HGB    balanced acc 0.939  null 0.480 ± 0.064 [q05 0.385, q95 0.581, max 0.641]  p = 0.005
+           AUC 0.980  null 0.474 ± 0.078 [q05 0.357, q95 0.604, max 0.655]  p = 0.005  95% CI (animal bootstrap) [0.949, 1.000], width 0.051
+    logreg balanced acc 1.000  null 0.478 ± 0.082 [q05 0.344, q95 0.611, max 0.701]  p = 0.005
+           AUC 1.000  null 0.471 ± 0.095 [q05 0.343, q95 0.633, max 0.724]  p = 0.005  95% CI (animal bootstrap) [1.000, 1.000], width 0.000
+  sample_id  [section-level, 157 units from 67 animals, k = 54, chance = 0.019]
+    units per class: min 2, median 3, max 3
+    HGB    balanced acc 0.056  null 0.014 ± 0.011 [q05 0.000, q95 0.037, max 0.062]  p = 0.010
+    logreg balanced acc 0.049  null 0.011 ± 0.010 [q05 0.000, q95 0.031, max 0.049]  p = 0.010
+  region  [section-level, 157 units from 67 animals, k = 3, chance = 0.333]
+    animals per class: C 35, L 67, T 55
+    sections per class: C 35, L 67, T 55
+    HGB    balanced acc 0.773  null 0.381 ± 0.038 [q05 0.319, q95 0.443, max 0.489]  p = 0.005
+    logreg balanced acc 0.874  null 0.393 ± 0.041 [q05 0.322, q95 0.462, max 0.512]  p = 0.005
+
+RUN WITHIN ONE MODEL — CHRONIC only (stage mix differs by run; see run_date x stage)
+  run_date  [animal-level, 34 units from 34 animals, k = 2, chance = 0.500]
+    animals per class: 20250110 18, 20260506 16
+    HGB    balanced acc 0.938  null 0.481 ± 0.091 [q05 0.347, q95 0.636, max 0.757]  p = 0.005
+           AUC 0.950  null 0.470 ± 0.112 [q05 0.291, q95 0.646, max 0.753]  p = 0.005  95% CI (animal bootstrap) [0.833, 1.000], width 0.167
+    logreg balanced acc 1.000  null 0.450 ± 0.101 [q05 0.291, q95 0.619, max 0.729]  p = 0.005
+           AUC 1.000  null 0.433 ± 0.128 [q05 0.239, q95 0.650, max 0.774]  p = 0.005  95% CI (animal bootstrap) [1.000, 1.000], width 0.000
+  run_id  [animal-level, 34 units from 34 animals, k = 2, chance = 0.500]
+    animals per class: run1 18, run5 16
+    HGB    balanced acc 0.938  null 0.481 ± 0.091 [q05 0.347, q95 0.636, max 0.757]  p = 0.005
+           AUC 0.950  null 0.470 ± 0.112 [q05 0.291, q95 0.646, max 0.753]  p = 0.005  95% CI (animal bootstrap) [0.833, 1.000], width 0.167
+    logreg balanced acc 1.000  null 0.450 ± 0.101 [q05 0.291, q95 0.619, max 0.729]  p = 0.005
+           AUC 1.000  null 0.433 ± 0.128 [q05 0.239, q95 0.650, max 0.774]  p = 0.005  95% CI (animal bootstrap) [1.000, 1.000], width 0.000
+  stage-matched (only stages present in every run: ['NONSYMPTOM', 'OS1', 'PEAK1']):
+  run_date  [animal-level, 16 units from 16 animals, k = 2, chance = 0.500]
+    animals per class: 20250110 10, 20260506 6
+    HGB    balanced acc 1.000  null 0.459 ± 0.133 [q05 0.250, q95 0.700, max 0.783]  p = 0.005
+           AUC 1.000  null 0.410 ± 0.168 [q05 0.149, q95 0.700, max 0.833]  p = 0.005  95% CI (animal bootstrap) [1.000, 1.000], width 0.000
+    logreg balanced acc 0.583  null 0.441 ± 0.072 [q05 0.350, q95 0.583, max 0.667]  p = 0.070
+           AUC 0.633  null 0.297 ± 0.176 [q05 0.050, q95 0.617, max 0.817]  p = 0.055  95% CI (animal bootstrap) [0.309, 0.909], width 0.600
+
+RUN WITHIN ONE MODEL — RELAPSE REMITTING only (stage mix differs by run; see run_date x stage)
+  run_date  [animal-level, 33 units from 33 animals, k = 2, chance = 0.500]
+    animals per class: 20250605 24, 20260506 9
+    HGB    balanced acc 0.924  null 0.494 ± 0.086 [q05 0.354, q95 0.660, max 0.771]  p = 0.005
+           AUC 0.910  null 0.468 ± 0.131 [q05 0.245, q95 0.685, max 0.806]  p = 0.005  95% CI (animal bootstrap) [0.720, 1.000], width 0.280
+    logreg balanced acc 0.611  null 0.490 ± 0.038 [q05 0.438, q95 0.556, max 0.611]  p = 0.015
+           AUC 1.000  null 0.429 ± 0.157 [q05 0.176, q95 0.696, max 0.875]  p = 0.005  95% CI (animal bootstrap) [1.000, 1.000], width 0.000
+  run_id  [animal-level, 33 units from 33 animals, k = 4, chance = 0.250]
+    animals per class: run2 12, run3 12, run5 3, run6 6
+    HGB    balanced acc 0.625  null 0.219 ± 0.067 [q05 0.125, q95 0.333, max 0.458]  p = 0.005
+    logreg balanced acc 0.521  null 0.209 ± 0.069 [q05 0.104, q95 0.333, max 0.417]  p = 0.005
+  stage-matched (only stages present in every run: ['PEAK1', 'PEAK2', 'PEAK3', 'REMISSION1']):
+  run_date  [animal-level, 16 units from 16 animals, k = 2, chance = 0.500]
+    animals per class: 20250605 10, 20260506 6
+    HGB    balanced acc 0.867  null 0.472 ± 0.127 [q05 0.283, q95 0.700, max 0.817]  p = 0.005
+           AUC 0.950  null 0.434 ± 0.180 [q05 0.149, q95 0.743, max 0.883]  p = 0.005  95% CI (animal bootstrap) [0.810, 1.000], width 0.190
+    logreg balanced acc 0.583  null 0.443 ± 0.089 [q05 0.300, q95 0.583, max 0.700]  p = 0.090
+           AUC 0.683  null 0.350 ± 0.175 [q05 0.099, q95 0.667, max 0.850]  p = 0.050  95% CI (animal bootstrap) [0.333, 0.952], width 0.619
+
+MAY 2026 RUN ONLY (20260506) — the only run containing both EAE models
+  animals per model: {'CHRONIC': 16, 'RELAPSE REMITTING': 9}
+  stages:
+    CHRONIC: CFA 2, MILD16 3, NONSYMPTOM 2, OS1 1, PEAK1 3, SEVERE16 3, SEVERE30 2
+    RELAPSE REMITTING: PEAK1 1, PEAK2 1, PEAK3 2, REMISSION1 2, REMISSION2 3
+
+  CONFOUND CHECK FIRST — has the confound been removed, or moved one level down?
+  18 slides in this run; 0 hold both models (slides per model: {'CHRONIC': 9, 'RELAPSE REMITTING': 9}).
+  -> Within May 2026, model is FULLY ALIASED WITH SLIDE: every slide carries one
+     model only. The within-run model contrast is therefore also a between-slide
+     contrast.
+     Slide identity within this run: HGB 0.02 / logreg 0.09 vs chance 0.06 (p = 0.055).
+     A per-slide fingerprint near chance argues against a slide-specific artefact,
+     but cannot exclude a preparation batch shared by all slides of one model.
+  May 2026: slide (sample_id) x model, sections:
+  model                   CHRONIC  RELAPSE REMITTING
+  sample_id                                         
+  run5_C2_G1_Bot_0088858        3                  0
+  run5_C2_G1_Mid_0088858        3                  0
+  run5_C2_G1_Top_0088858        3                  0
+  run5_C2_G2_Bot_0088858        2                  0
+  run5_C2_G2_Mid_0088858        3                  0
+  run5_C2_G2_Top_0088858        2                  0
+  run5_C2_G3_Bot_0088870        2                  0
+  run5_C2_G3_Mid_0088870        2                  0
+  run5_C2_G3_Top_0088870        3                  0
+  run5_S6-T1_0088870            0                  3
+  run5_S6-T2_0088870            0                  3
+  run5_S6-T3_0088870            0                  3
+  run6_S5-B1_0085405            0                  3
+  run6_S5-B2_0085405            0                  3
+  run6_S5-B3_0085405            0                  3
+  run6_S5-T1_0085405            0                  3
+  run6_S5-T2_0085405            0                  3
+  run6_S5-T3_0085405            0                  3
+
+  May 2026: region x model, sections:
+  model   CHRONIC  RELAPSE REMITTING
+  region                            
+  C             0                  9
+  L            16                  9
+  T             7                  9
+
+  May 2026: sub-run x model, animals:
+  model   CHRONIC  RELAPSE REMITTING
+  run_id                            
+  run5         16                  3
+  run6          0                  6
+
+  run_date: skipped (single class ['20260506'])
+  run_id  [animal-level, 25 units from 25 animals, k = 2, chance = 0.500]
+    animals per class: run5 19, run6 6
+    HGB    balanced acc 0.447  null 0.473 ± 0.092 [q05 0.342, q95 0.667, max 0.781]  p = 0.652
+           AUC 0.693  null 0.438 ± 0.140 [q05 0.219, q95 0.676, max 0.851]  p = 0.050  95% CI (animal bootstrap) [0.470, 0.909], width 0.439
+    logreg balanced acc 0.500  null 0.495 ± 0.018 [q05 0.474, q95 0.500, max 0.583]  p = 0.771
+           AUC 0.781  null 0.364 ± 0.158 [q05 0.131, q95 0.658, max 0.816]  p = 0.015  95% CI (animal bootstrap) [0.491, 1.000], width 0.509
+  model  [animal-level, 25 units from 25 animals, k = 2, chance = 0.500]
+    animals per class: CHRONIC 16, RELAPSE REMITTING 9
+    HGB    balanced acc 1.000  null 0.474 ± 0.104 [q05 0.322, q95 0.646, max 0.795]  p = 0.005
+           AUC 1.000  null 0.458 ± 0.132 [q05 0.229, q95 0.660, max 0.812]  p = 0.005  95% CI (animal bootstrap) [1.000, 1.000], width 0.000
+    logreg balanced acc 0.778  null 0.463 ± 0.067 [q05 0.375, q95 0.580, max 0.667]  p = 0.005
+           AUC 1.000  null 0.389 ± 0.139 [q05 0.159, q95 0.632, max 0.750]  p = 0.005  95% CI (animal bootstrap) [1.000, 1.000], width 0.000
+  sample_id  [section-level, 50 units from 25 animals, k = 18, chance = 0.056]
+    units per class: min 2, median 3, max 3
+    HGB    balanced acc 0.019  null 0.038 ± 0.028 [q05 0.000, q95 0.093, max 0.139]  p = 0.856
+    logreg balanced acc 0.093  null 0.028 ± 0.028 [q05 0.000, q95 0.075, max 0.111]  p = 0.055
+  region  [section-level, 50 units from 25 animals, k = 3, chance = 0.333]
+    animals per class: C 9, L 25, T 16
+    sections per class: C 9, L 25, T 16
+    HGB    balanced acc 0.598  null 0.361 ± 0.066 [q05 0.251, q95 0.468, max 0.534]  p = 0.005
+    logreg balanced acc 0.703  null 0.361 ± 0.055 [q05 0.276, q95 0.455, max 0.526]  p = 0.005
+
+MAY 2026, LUMBAR (L) SECTIONS ONLY — region-matched: cervical sections exist only for RR in this run
+  model  [animal-level, 25 units from 25 animals, k = 2, chance = 0.500]
+    animals per class: CHRONIC 16, RELAPSE REMITTING 9
+    HGB    balanced acc 0.889  null 0.470 ± 0.111 [q05 0.305, q95 0.653, max 0.833]  p = 0.005
+           AUC 0.819  null 0.453 ± 0.144 [q05 0.222, q95 0.674, max 0.868]  p = 0.010  95% CI (animal bootstrap) [0.558, 1.000], width 0.442
+    logreg balanced acc 0.611  null 0.460 ± 0.070 [q05 0.344, q95 0.581, max 0.635]  p = 0.050
+           AUC 1.000  null 0.377 ± 0.151 [q05 0.139, q95 0.633, max 0.972]  p = 0.005  95% CI (animal bootstrap) [1.000, 1.000], width 0.000
+
+MAY 2026, SUB-RUN run5 ONLY — the only physical sub-run holding both models
+  model  [animal-level, 19 units from 19 animals, k = 2, chance = 0.500]
+    animals per class: CHRONIC 16, RELAPSE REMITTING 3
+    HGB    balanced acc 0.667  null 0.473 ± 0.080 [q05 0.375, q95 0.635, max 0.802]  p = 0.040
+           AUC 0.854  null 0.421 ± 0.199 [q05 0.125, q95 0.792, max 0.958]  p = 0.025  95% CI (animal bootstrap) [0.500, 1.000], width 0.500
+    logreg balanced acc 0.500  null 0.499 ± 0.005 [q05 0.500, q95 0.500, max 0.500]  p = 0.970
+           AUC 0.542  null 0.260 ± 0.198 [q05 0.042, q95 0.689, max 0.833]  p = 0.119  95% CI (animal bootstrap) [0.167, 1.000], width 0.833
+
+SUMMARY (numbers; no verdict without them)
+  run_date, all runs: HGB 0.97 / logreg 1.00 vs chance 0.33, p = 0.005, 67 animals (inflated: run is aliased with model).
+  run_date within chronic, stage-matched: HGB 1.00 / logreg 0.58 vs chance 0.50, HGB p = 0.005, logreg p = 0.070, 16 animals ({'20250110': 10, '20260506': 6}).
+  run_date within RR, stage-matched: HGB 0.87 / logreg 0.58 vs chance 0.50, HGB p = 0.005, logreg p = 0.090, 16 animals ({'20250605': 10, '20260506': 6}).
+  model within May 2026: HGB balanced acc 1.00 vs chance 0.50 (p = 0.005); HGB AUC 1.00, 95% CI [1.00, 1.00]; {'CHRONIC': 16, 'RELAPSE REMITTING': 9}; model fully aliased with slide; cervical sections only in RR (AUC 1.00 is perfect separation, so the bootstrap CI is degenerate — the permutation null q95 is 0.66).
+  model within May 2026, lumbar sections only (region-matched): HGB 0.89 / logreg 0.61, p = 0.005, HGB AUC 0.82, {'CHRONIC': 16, 'RELAPSE REMITTING': 9}.
+  model within run5 only: HGB 0.67 / logreg 0.50, p = 0.040, {'CHRONIC': 16, 'RELAPSE REMITTING': 3} — 3 RR animals, underpowered.
+  run5 vs run6 within May 2026: HGB 0.45 / logreg 0.50, p = 0.652.
+
+FRAMING (permanent, design property)
+  Each disease model uses a different mouse strain (RR = SJL/PLP, chronic = C57BL/6/MOG).
+  No stratum separates disease-model biology from strain. The within-run result
+  supports only: 'the RR/chronic difference is not purely a run artefact'. Any
+  description of runs/rr_vs_chronic as detecting disease-model biology is wrong and
+  must read 'strain-or-model'. The cross-run rr_vs_chronic AUC 0.998 is superseded;
+  cite the within-run May 2026 AUC above, with its CI and the slide aliasing.
+
+SENSITIVITY — C2_G3_Mid_1 excluded (default) vs reassigned to C_M16_1 (balanced accuracy)
+  stratum                      target      HGB excl  HGB reas  logreg excl  logreg reas
+  all                          run_date       0.968     0.972        1.000        1.000
+  all                          run_id         0.608     0.608        0.733        0.750
+  all                          model          0.939     0.939        1.000        1.000
+  all                          sample_id      0.056     0.031        0.049        0.049
+  all                          region         0.773     0.726        0.874        0.884
+  chronic_only_stage_matched   run_date       1.000     1.000        0.583        0.583
+  rr_only_stage_matched        run_date       0.867     0.867        0.583        0.583
+  may2026                      run_id         0.447     0.614        0.500        0.500
+  may2026                      model          1.000     0.944        0.778        0.833
+  may2026                      sample_id      0.019     0.056        0.093        0.074
+  may2026                      region         0.598     0.694        0.703        0.688
+  may2026_run5                 model          0.667     0.667        0.500        0.500
+
+CROSS-TABULATIONS (animals unless noted)
+  run_date x model:
+  model     CHRONIC  RELAPSE REMITTING
+  run_date                            
+  20250110       18                  0
+  20250605        0                 24
+  20260506       16                  9
+
+  run_id x model:
+  model   CHRONIC  RELAPSE REMITTING
+  run_id                            
+  run1         18                  0
+  run2          0                 12
+  run3          0                 12
+  run5         16                  3
+  run6          0                  6
+
+  run_date x stage:
+  model            CHRONIC          RELAPSE REMITTING         
+  run_date        20250110 20260506          20250605 20260506
+  stage                                                       
+  CFA                    0        2                 0        0
+  MILD16                 0        3                 0        0
+  MILD30                 5        0                 0        0
+  MOG CFA                3        0                 0        0
+  MONOPHASIC             0        0                 4        0
+  NONSYMPTOM             3        2                 0        0
+  ONSET1                 0        0                 2        0
+  ONSET2                 0        0                 2        0
+  OS1                    4        1                 0        0
+  PEAK1                  3        3                 3        1
+  PEAK2                  0        0                 1        1
+  PEAK2_MILD             0        0                 2        0
+  PEAK3                  0        0                 3        2
+  PLP CFA                0        0                 3        0
+  REMISSION1             0        0                 3        2
+  REMISSION2             0        0                 0        3
+  REMISSION2_LONG        0        0                 1        0
+  SEVERE16               0        3                 0        0
+  SEVERE30               0        2                 0        0
+
+  sample_id x model (sections):
+  model                   CHRONIC  RELAPSE REMITTING
+  sample_id                                         
+  run1_G3_L1_0020770            3                  0
+  run1_G3_L2_0020770            3                  0
+  run1_G3_L3_0020770            3                  0
+  run1_G4_L1_0020770            3                  0
+  run1_G4_L2_0020770            3                  0
+  run1_G4_L3_0020770            3                  0
+  run1_G5_L1_0020782            3                  0
+  run1_G5_L2_0020782            3                  0
+  run1_G5_L3_0020782            3                  0
+  run1_G6_L1_0020782            3                  0
+  run1_G6_L2_0020782            3                  0
+  run1_G6_L3_0020782            3                  0
+  run2_S1-B1_0054415            0                  3
+  run2_S1-B2_0054415            0                  3
+  run2_S1-B3_0054415            0                  3
+  run2_S1-T1_0054415            0                  3
+  run2_S1-T2_0054415            0                  3
+  run2_S1-T3_0054415            0                  3
+  run2_S2-B1_0054856            0                  3
+  run2_S2-B2_0054856            0                  3
+  run2_S2-B3_0054856            0                  3
+  run2_S2-T1_0054856            0                  3
+  run2_S2-T2_0054856            0                  3
+  run2_S2-T3_0054856            0                  2
+  run3_S3-B1_0054727            0                  3
+  run3_S3-B2_0054727            0                  3
+  run3_S3-B3_0054727            0                  3
+  run3_S3-T1_0054727            0                  3
+  run3_S3-T2_0054727            0                  3
+  run3_S3-T3_0054727            0                  3
+  run3_S4-B1_0054723            0                  3
+  run3_S4-B2_0054723            0                  3
+  run3_S4-B3_0054723            0                  3
+  run3_S4-T1_0054723            0                  3
+  run3_S4-T2_0054723            0                  3
+  run3_S4-T3_0054723            0                  3
+  run5_C2_G1_Bot_0088858        3                  0
+  run5_C2_G1_Mid_0088858        3                  0
+  run5_C2_G1_Top_0088858        3                  0
+  run5_C2_G2_Bot_0088858        2                  0
+  run5_C2_G2_Mid_0088858        3                  0
+  run5_C2_G2_Top_0088858        2                  0
+  run5_C2_G3_Bot_0088870        2                  0
+  run5_C2_G3_Mid_0088870        2                  0
+  run5_C2_G3_Top_0088870        3                  0
+  run5_S6-T1_0088870            0                  3
+  run5_S6-T2_0088870            0                  3
+  run5_S6-T3_0088870            0                  3
+  run6_S5-B1_0085405            0                  3
+  run6_S5-B2_0085405            0                  3
+  run6_S5-B3_0085405            0                  3
+  run6_S5-T1_0085405            0                  3
+  run6_S5-T2_0085405            0                  3
+  run6_S5-T3_0085405            0                  3
+
+figures/: batch_identifiability.png
