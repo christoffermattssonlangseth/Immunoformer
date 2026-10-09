@@ -16,23 +16,31 @@ TRAJECTORY FEATURES — per-animal course features from the daily score/weight s
     its curve is IDENTICAL to C_M16_1 (Animal ID 1058085) on all 27 co-recorded days
   Xist sex check, all sections: F sections [0.1433733535377083, 0.5246431254695717] frac Xist+, M sections [0.0, 0.0186008896077638]
   SEX MISMATCH: section C2_G3_Mid_1 labelled C_M16_2 (F) has 0.0060 Xist+ cells -> M
-  STATUS: RESOLVED for the trajectory table. Section C2_G3_Mid_1 is tissue from a
-  MALE animal carrying C_M16_1's Animal ID and C_M16_1's exact score curve; C_M16_2 is
-  female. Its sheet curve is correct for the tissue; its sample_name label (C_M16_2) is
-  wrong in BOTH the sheet and the atlas. C_M16_2's curve here uses its two
-  agreeing sections (Animal ID 1058093); C_M16_1 is unchanged. NOT fixed in the atlas:
-  any animal-level pseudobulk built so far pools one male C_M16_1 section into
-  C_M16_2 (and C_M16_2 is the only animal with two sections from one region).
+  STATUS: section C2_G3_Mid_1 is EXCLUDED (default, WORKORDER reassignment rule);
+  its assignment to C_M16_1 is NOT settled until a human confirms it against the raw
+  scoring sheets. Where the C_M16_1 assignment comes from:
+    (1) the sheet row carries C_M16_1's Animal ID 1058085 (C_M16_2's two other sections
+        carry 1058093) — independent of the curves;
+    (2) Xist: the tissue is male (0.6% Xist+ cells; every female section >= 14%);
+        C_M16_2 is female, C_M16_1 male — independent of the curves;
+    (3) its score curve equals C_M16_1's on all co-recorded days — CIRCULAR for a
+        curve-based analysis, so it carries no independent weight here.
+  Effect on this table: none either way. C_M16_2's curve comes from its two agreeing
+  sections whether C2_G3_Mid_1 is excluded or reassigned, and the reassigned curve is
+  identical to the one C_M16_1 already has, so no feature and no conclusion changes.
+  Atlas not modified: animal-level pseudobulk that includes this section pools a male
+  C_M16_1 section into C_M16_2 (the only animal with two same-region sections);
+  pseudobulk built for Tasks 1, 1b, 4 excludes it.
 
 2. FEATURES  ->  animal_trajectory.csv
   67 animals; onset = first >= 0.5 run lasting >= 2 days
   EAE animals never reaching onset: [['C_NS_1', 'NONSYMPTOM'], ['C_NS_2', 'NONSYMPTOM'], ['C_NS_3', 'NONSYMPTOM'], ['C_NS_4', 'NONSYMPTOM'], ['C_NS_5', 'NONSYMPTOM'], ['C_OS1_5', 'OS1'], ['RR_OS1_1', 'ONSET1'], ['RR_OS1_2', 'ONSET1']]
     of which symptomatic but below the 0.5 threshold (sacrificed at first sign, score 0.25 -> disease_duration NaN): [['C_OS1_5', 'OS1', 0.25], ['RR_OS1_1', 'ONSET1', 0.25], ['RR_OS1_2', 'ONSET1', 0.25]]
   onset_day range per cohort: {'CHRONIC': {'min': 6.0, 'max': 20.0, 'std': 2.535908129157224}, 'RELAPSE REMITTING': {'min': 11.0, 'max': 15.0, 'std': 1.0357370915204898}}
-  STAGE vs CURVE CONTRADICTION (stage implies a prior attack, curve is 0 until the
-  last 3 days): [['RR_OS2_1', 'ONSET2', 13.0, 13.0], ['RR_OS2_2', 'ONSET2', 13.0, 13.0]]
-    -> these 'second onset' animals show only a FIRST attack in the daily sheet;
-       either the stage label or the curve is wrong. Unresolved.
+  ONSET1 and ONSET2 animals are all FIRST onsets: sacrificed at first sign (ONSET2 at
+  score 1.0 on day 13, ONSET1 at 0.25). An earlier version of this report read ONSET2
+  as 'onset of the second attack' and flagged a contradiction; that was a misreading
+  of the label, corrected with the user 2026-10-08.
   onset censored at sacrifice (single supra-threshold day = sacrifice day): [['C_OS1_1', 'OS1'], ['C_OS1_3', 'OS1'], ['RR_OS2_1', 'ONSET2'], ['RR_OS2_2', 'ONSET2']]
   slope_at_sacrifice classes (EAE): {'CHRONIC': {'': 1, 'ascending': 13, 'descending': 10, 'plateau': 5}, 'RELAPSE REMITTING': {'': 0, 'ascending': 17, 'descending': 13, 'plateau': 0}}
 
@@ -53,27 +61,30 @@ TRAJECTORY FEATURES — per-animal course features from the daily score/weight s
   score_sacrifice            1.00               1.12
   day_of_sacrifice          18.00              31.50
 
-3. RELAPSE COUNT — TWO RULES, NO DEFINITION CHOSEN
+3. RELAPSE COUNT — stage labels are the ground truth (user, 2026-10-08):
+  n_relapses_stage in animal_trajectory.csv. The two curve rules below are
+  DESCRIPTIVE only; their disagreements with the stage label are curve-shape
+  observations, not label errors.
   The work order says the first-pass rule is 'already noted in docs/'; it is not —
   no doc defines it. Both rules are implemented as specified in WORKORDER.md:
     r1     : drop >= 1 from a peak, then rise >= 1 from the trough
     strict : drop >= 0.5 then rise >= 0.5, each sustained >= 2 consecutive days
-  Expected count from stage label (RR): ONSET1/PEAK1/REM1/MONO=0; ONSET2/PEAK2/PEAK2_MILD/REM2/REM2_LONG=1; PEAK3=2. Chronic expected 0.
-  n_relapses_r1: agrees with stage label in 27/30 RR animals
+  Count from stage label (RR): ONSET1/ONSET2/PEAK1/REM1/MONO=0; PEAK2/PEAK2_MILD/REM2/REM2_LONG=1; PEAK3=2. Chronic 0.
+  n_relapses_r1: agrees with stage label in 29/30 RR animals
     PEAK3 animals: [['RR_P3_1', 2], ['RR_P3_2', 2], ['RR_P3_3', 1], ['RR_P3_4', 2], ['RR_P3_5', 2]]
-    RR disagreements: [['RR_OS2_1', 'ONSET2', 0], ['RR_OS2_2', 'ONSET2', 0], ['RR_P3_3', 'PEAK3', 1]]
+    RR disagreements: [['RR_P3_3', 'PEAK3', 1]]
     chronic animals with >= 1 relapse: [['C_L_1', 'MILD30', 1], ['C_L_3', 'MILD30', 2], ['C_L_4', 'MILD30', 1]]
-  n_relapses_strict: agrees with stage label in 22/30 RR animals
+  n_relapses_strict: agrees with stage label in 24/30 RR animals
     PEAK3 animals: [['RR_P3_1', 2], ['RR_P3_2', 2], ['RR_P3_3', 1], ['RR_P3_4', 2], ['RR_P3_5', 2]]
-    RR disagreements: [['RR_MP_1', 'MONOPHASIC', 1], ['RR_MP_2', 'MONOPHASIC', 1], ['RR_MP_3', 'MONOPHASIC', 1], ['RR_MP_4', 'MONOPHASIC', 1], ['RR_OS2_1', 'ONSET2', 0], ['RR_OS2_2', 'ONSET2', 0], ['RR_P3_3', 'PEAK3', 1], ['RR_R2LONG_1', 'REMISSION2_LONG', 2]]
+    RR disagreements: [['RR_MP_1', 'MONOPHASIC', 1], ['RR_MP_2', 'MONOPHASIC', 1], ['RR_MP_3', 'MONOPHASIC', 1], ['RR_MP_4', 'MONOPHASIC', 1], ['RR_P3_3', 'PEAK3', 1], ['RR_R2LONG_1', 'REMISSION2_LONG', 2]]
     chronic animals with >= 1 relapse: [['C_L_1', 'MILD30', 1], ['C_L_2', 'MILD30', 2], ['C_L_3', 'MILD30', 2], ['C_L_4', 'MILD30', 1]]
   r1 misses RR_P3_3's third attack: it rises 1.5 -> 2.75 at d37 straight off a
   plateau with no remission before it, so no drop is seen under either rule.
   MONOPHASIC animals: strict counts a late low-grade rise (trough ~0.25 -> 0.75-1.0)
   as a relapse in all 4; r1 does not. That is the main disagreement between rules.
   r1 vs strict agree on 61/67 animals; disagree on: [['C_L_2', 'MILD30', 0, 2], ['RR_MP_1', 'MONOPHASIC', 0, 1], ['RR_MP_2', 'MONOPHASIC', 0, 1], ['RR_MP_3', 'MONOPHASIC', 0, 1], ['RR_MP_4', 'MONOPHASIC', 0, 1], ['RR_R2LONG_1', 'REMISSION2_LONG', 1, 2]]
-  -> A relapse definition must be agreed with the person who scored the animals
-     before n_relapses is used as a target or covariate.
+  -> Use n_relapses_stage (stage labels) as the relapse count; the curve rules above
+     only describe where a curve's shape departs from its label.
 
 5. HOW MUCH IS NEW INFORMATION (EAE animals, per cohort)
   R2 = variance explained by score_sacrifice alone (and + day_of_sacrifice);
@@ -146,4 +157,82 @@ HEADLINE — cumulative_score beyond score_sacrifice:
   onset_day, days_since_last_peak, slope_at_sacrifice, peak_day (RR) and
   max_weight_loss (RR) — the shape-of-course features, not the accumulation ones.
 
-figures/: score_curves_by_stage.png, feature_correlations.png
+6. FUNCTIONAL PCA (onset-aligned, per cohort)
+  CHRONIC: n = 23 animals (dropped 11: controls and never-symptomatic)
+    post-onset grid days 0-30 (support >= 5); support falls below 15 from day 7
+    variance explained: 76%, 9%, 5%, 3%, 2%; components to 90%: 3 -> using 3 (cap 3)
+    PSD clipping: 6.0% of eigenvalue mass (small)
+    correspondence (top 4 |Spearman rho| per component):
+      fpc1: peak_score +0.77, max_weight_loss -0.73, score_sacrifice +0.65, n_relapses_strict -0.33 | tail loading 79% | STAGE-CONFOUNDED | maps onto existing
+      fpc2: score_sacrifice +0.59, max_weight_loss -0.48, peak_score +0.43, peak_day +0.29 | tail loading 92% | STAGE-CONFOUNDED | partial match (score_sacrifice)
+      fpc3: days_since_last_peak -0.53, disease_duration -0.44, score_sacrifice +0.41, slope_at_sacrifice +0.40 | tail loading 56% | STAGE-CONFOUNDED | partial match (days_since_last_peak)
+
+  RELAPSE REMITTING: n = 28 animals (dropped 5: controls and never-symptomatic)
+    post-onset grid days 0-34 (support >= 5); support falls below 15 from day 20
+    variance explained: 29%, 28%, 16%, 10%, 5%; components to 90%: 6 -> using 3 (cap 3)
+    PSD clipping: 6.9% of eigenvalue mass (small)
+    correspondence (top 4 |Spearman rho| per component):
+      fpc1: score_sacrifice +0.69, peak_score +0.60, n_relapses_r1 +0.54, cumulative_score +0.43 | tail loading 26% | partial match (score_sacrifice)
+      fpc2: onset_day -0.50, score_sacrifice +0.38, peak_score +0.38, slope_at_sacrifice +0.24 | tail loading 68% | STAGE-CONFOUNDED
+      fpc3: peak_score -0.63, peak_day +0.34, score_sacrifice -0.33, onset_day +0.32 | tail loading 72% | STAGE-CONFOUNDED | partial match (peak_score)
+
+  full correspondence table (all features): results.json -> fpca.<cohort>.correspondence
+  Reading: 'maps onto existing' if |rho| >= 0.7 with score_sacrifice, day_of_sacrifice
+  or a hand-crafted feature; 'partial match' 0.5-0.7; a candidate Task 4 target needs
+  |rho| < 0.5 with all of them AND tail loading <= 50%. FPCA recovering variables in
+  hand demonstrates the redundancy Task 0's first pass found one target at a time.
+
+7. MEMORY TIMESCALE AND LAG PROFILE
+  Prediction (stated before running): acute tau SHORT, accrual tau LONG, CIs not
+  overlapping; acute lag profile decays with lag, accrual flat or rising. Test
+  statistic for 7b = shape contrast (mean rho lags>=7 minus lags<=3, accrual minus
+  acute), not either level.
+  Programs (hand-picked list; ratchet genes on panel 7/7): accrual ['Gpnmb', 'Igf2', 'Fmod', 'Fcrls', 'Plin4', 'Pmp22', 'Ptgds']; acute ['Hal', 'Arg1', 'Chil3']
+  CHRONIC (n = 29 EAE animals)
+    7a tau*: accrual 23 d [95% CI 10-23], rho +0.68
+           acute   1 d [95% CI 1-2], rho +0.27
+       CIs do not overlap
+       is it just time / current severity? EWI(tau*) vs day rho: accrual +0.92, acute +0.51; rho with program partial on day: accrual +0.34, acute +0.50; partial on score_sacrifice: accrual +0.88, acute +0.32
+       reading: accrual long-memory survives partialling on day (memory beyond elapsed time); acute short-memory survives partialling on score_sacrifice.
+    7b lag profile (rho with program; raw | partial on score_sacrifice):
+       lag   n  accrual raw  acute raw  accrual part  acute part
+         0  23        -0.14      +0.21         +0.09       -0.11
+         1  12        -0.60      +0.68         -0.26       +0.06   (n < 20: biased long-disease subset)
+         2  19        +0.35      -0.17         +0.71       -0.47   (n < 20: biased long-disease subset)
+         3  18        +0.40      -0.39         +0.58       -0.54   (n < 20: biased long-disease subset)
+         5  16        +0.64      -0.42         +0.66       -0.42   (n < 20: biased long-disease subset)
+         7  14        +0.49      -0.34         +0.51       -0.28   (n < 20: biased long-disease subset)
+        10  13        +0.37      -0.34         -0.02       +0.18   (n < 20: biased long-disease subset)
+        14  13        +0.22      +0.20         +0.07       +0.43   (n < 20: biased long-disease subset)
+        21   7        +0.64      -0.02         +0.33       +0.63   (n < 20: biased long-disease subset)
+        28   7        +0.64      -0.02         +0.33       +0.63   (n < 20: biased long-disease subset)
+      shape contrast (accrual minus acute, long minus short lags; lags with n >= 20 only): raw not computable (no lag >= 7 with n >= 20), partial not computable (no lag >= 7 with n >= 20) (positive = predicted)
+      animals scored with the atlas sacrifice score because the sheet lacks the final days: ['C_M16_1', 'C_M16_2', 'C_M16_3', 'C_OS1_2', 'C_S16_1', 'C_S16_2', 'C_S16_3', 'C_S30_1', 'C_S30_2']
+      contributing animals per lag: results.json -> memory.<cohort>.lag_profile
+
+  RELAPSE REMITTING (n = 30 EAE animals)
+    7a tau*: accrual 28 d [95% CI 17-28], rho +0.68
+           acute   1 d [95% CI 1-3], rho +0.67
+       CIs do not overlap
+       is it just time / current severity? EWI(tau*) vs day rho: accrual +0.89, acute +0.30; rho with program partial on day: accrual +0.12, acute +0.76; partial on score_sacrifice: accrual +0.81, acute -0.10
+       reading: accrual long-memory is LARGELY ELAPSED TIME (collapses on day); acute short-memory is CURRENT SEVERITY (collapses on score_sacrifice).
+    7b lag profile (rho with program; raw | partial on score_sacrifice):
+       lag   n  accrual raw  acute raw  accrual part  acute part
+         0  28        -0.23      +0.77         +0.11       -0.07
+         1  26        -0.31      +0.66         -0.14       -0.15
+         2  26        -0.19      +0.56         +0.00       +0.04
+         3  26        +0.06      +0.19         +0.13       +0.05
+         5  23        +0.15      +0.11         +0.15       +0.12
+         7  22        +0.12      +0.20         +0.12       +0.11
+        10  19        +0.32      +0.22         +0.45       +0.01   (n < 20: biased long-disease subset)
+        14  17        -0.19      +0.26         -0.10       +0.14   (n < 20: biased long-disease subset)
+        21  10        +0.16      -0.06         +0.32       -0.64   (n < 20: biased long-disease subset)
+        28   8        +0.10      +0.27         +0.27       +0.03   (n < 20: biased long-disease subset)
+      shape contrast (accrual minus acute, long minus short lags; lags with n >= 20 only): raw +0.63, partial -0.04 (positive = predicted)
+      animals scored with the atlas sacrifice score because the sheet lacks the final days: none
+      contributing animals per lag: results.json -> memory.<cohort>.lag_profile
+
+  Caveat: n shrinks with lag because short-course animals drop out; the animals left
+  at long lags have longer disease and are not a random subset.
+
+figures/: score_curves_by_stage.png, feature_correlations.png, fpca_support_eigenfunctions.png, memory_lag_profile.png
