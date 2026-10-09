@@ -1,0 +1,1335 @@
+{
+  "cohort": "RR",
+  "n": 33,
+  "audit_matches_loao_clock": true,
+  "time_of_day": {
+    "recorded": false,
+    "searched": [
+      "spreadsheets/*AllScore*.xlsx, *AllWeight*.xlsx (all columns, 1 sheet each)",
+      "data/rrmap2_animal_meta.csv",
+      "atlas obs + uns (RRMAP2 h5ad)",
+      "RRMAP2/README.md, RRMap/README.md, RRMap/misc/LOG/logbook.md",
+      "docs/"
+    ],
+    "note": "docs/rrmap2-duration-clock.md states 'sacrifice time-of-day is constant across animals' (added in commit fba9936, 2026-06-18) without a source; no file in the repo or sibling repos records it."
+  },
+  "circadian_score_vs_day": 0.49051333909520023,
+  "circadian_score_vs_score": -0.5203368213172256,
+  "sex": {
+    "source": "metadata field `sex` (sheet + atlas); cross-checked against Xist pseudobulk",
+    "sex_genes_on_panel": [
+      "Xist"
+    ],
+    "xist_agrees_with_metadata": true,
+    "sex_x_day_bin": {
+      "F": {
+        "<=20": 3,
+        "21-35": 4,
+        ">35": 0
+      },
+      "M": {
+        "<=20": 6,
+        "21-35": 11,
+        ">35": 9
+      }
+    },
+    "sex_x_stage": {
+      "MONOPHASIC": {
+        "F": 1,
+        "M": 3
+      },
+      "ONSET1": {
+        "F": 1,
+        "M": 1
+      },
+      "ONSET2": {
+        "F": 1,
+        "M": 1
+      },
+      "PEAK1": {
+        "F": 1,
+        "M": 3
+      },
+      "PEAK2": {
+        "F": 1,
+        "M": 1
+      },
+      "PEAK2_MILD": {
+        "F": 0,
+        "M": 2
+      },
+      "PEAK3": {
+        "F": 0,
+        "M": 5
+      },
+      "PLP CFA": {
+        "F": 1,
+        "M": 2
+      },
+      "REMISSION1": {
+        "F": 1,
+        "M": 4
+      },
+      "REMISSION2": {
+        "F": 0,
+        "M": 3
+      },
+      "REMISSION2_LONG": {
+        "F": 0,
+        "M": 1
+      }
+    },
+    "rho_sex_day": 0.2426668692772672,
+    "xist_range_F": [
+      1.72,
+      2.239
+    ],
+    "xist_range_M": [
+      0.004,
+      0.121
+    ]
+  },
+  "1e": {
+    "top30": [
+      {
+        "gene": "Col4a2",
+        "coef": -1.3817
+      },
+      {
+        "gene": "Thbs2",
+        "coef": 1.1921
+      },
+      {
+        "gene": "Igfbp2",
+        "coef": 0.7932
+      },
+      {
+        "gene": "H19",
+        "coef": -0.621
+      },
+      {
+        "gene": "Eln",
+        "coef": -0.5325
+      },
+      {
+        "gene": "Srebf1",
+        "coef": 0.4824
+      },
+      {
+        "gene": "Tmem173",
+        "coef": -0.4754
+      },
+      {
+        "gene": "Cxcl13",
+        "coef": 0.4648
+      },
+      {
+        "gene": "Hsd17b7",
+        "coef": -0.4636
+      },
+      {
+        "gene": "Col4a1",
+        "coef": -0.4265
+      },
+      {
+        "gene": "Cxcl12",
+        "coef": 0.4071
+      },
+      {
+        "gene": "Lpl",
+        "coef": 0.3827
+      },
+      {
+        "gene": "Serpine2",
+        "coef": 0.3778
+      },
+      {
+        "gene": "Fmod",
+        "coef": 0.3748
+      },
+      {
+        "gene": "Ifit1",
+        "coef": -0.3667
+      },
+      {
+        "gene": "S1pr3",
+        "coef": 0.3665
+      },
+      {
+        "gene": "Wnt6",
+        "coef": 0.3617
+      },
+      {
+        "gene": "9630013A20Rik",
+        "coef": -0.351
+      },
+      {
+        "gene": "Fcgrt",
+        "coef": 0.3484
+      },
+      {
+        "gene": "Ccr2",
+        "coef": -0.3471
+      },
+      {
+        "gene": "Ifit3",
+        "coef": -0.3412
+      },
+      {
+        "gene": "Usp18",
+        "coef": -0.317
+      },
+      {
+        "gene": "Hmgcr",
+        "coef": -0.3016
+      },
+      {
+        "gene": "Crym",
+        "coef": 0.3005
+      },
+      {
+        "gene": "Cavin1",
+        "coef": 0.3003
+      },
+      {
+        "gene": "Fcrls",
+        "coef": 0.2937
+      },
+      {
+        "gene": "Cyb5r3",
+        "coef": 0.2921
+      },
+      {
+        "gene": "Col6a1",
+        "coef": 0.2728
+      },
+      {
+        "gene": "Atf5",
+        "coef": 0.268
+      },
+      {
+        "gene": "Klf5",
+        "coef": 0.2358
+      }
+    ],
+    "n_nonzero": 104,
+    "block_mass_clean": {
+      "matrix/scar": 0.23425602873431045,
+      "lipid": 0.08085744038947804,
+      "microglial identity": 0.04275539916214731,
+      "lymphoid": 0.023053955090804653,
+      "tissue loss": 0.005432045931885363,
+      "circadian": 0.0,
+      "sex": 0.0
+    },
+    "block_mass_baseline_refit": {
+      "matrix/scar": 0.22126106687839964,
+      "circadian": 0.11262508984913702,
+      "lipid": 0.07948194424441304,
+      "microglial identity": 0.0380035257385751,
+      "lymphoid": 0.0373510677816648,
+      "tissue loss": 0.01028722481020811,
+      "sex": 0.0
+    },
+    "block_mass_published_135": {
+      "matrix/scar": 0.17228912181496686,
+      "circadian": 0.10840402854226196,
+      "lymphoid": 0.06617870041174892,
+      "lipid": 0.06133799231509967,
+      "microglial identity": 0.03656506506316598,
+      "tissue loss": 0.025639095432942308,
+      "sex": 0.014578900374305984
+    },
+    "first_matrix_gene_rank": 1,
+    "overlap_with_published_135": 80,
+    "same_sign": 80,
+    "baseline_refit_n_nonzero": 99,
+    "overlap_baseline_refit_with_published": 85
+  },
+  "per_cell_type": [
+    {
+      "cell_type": "Astrocyte",
+      "animals_passing": 33,
+      "median_cells_per_animal": 2614.0,
+      "condition": "1f Astrocyte",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.8953353408518182,
+      "ci": [
+        0.7618452383926564,
+        0.9527189485746091
+      ],
+      "r2": 0.7831084917296072,
+      "zero_feature_folds": 0,
+      "median_nonzero": 93.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.3047342400962695,
+      "top10": [
+        {
+          "gene": "Hoxa10",
+          "coef": 1.0507
+        },
+        {
+          "gene": "Nr1d1",
+          "coef": 0.9214
+        },
+        {
+          "gene": "Hr",
+          "coef": -0.7343
+        },
+        {
+          "gene": "Daam2",
+          "coef": -0.7213
+        },
+        {
+          "gene": "Bhlhe40",
+          "coef": 0.7141
+        },
+        {
+          "gene": "Myo7a",
+          "coef": 0.6498
+        },
+        {
+          "gene": "Amy1",
+          "coef": 0.635
+        },
+        {
+          "gene": "Ciart",
+          "coef": 0.5079
+        },
+        {
+          "gene": "Ifit1",
+          "coef": -0.4841
+        },
+        {
+          "gene": "Pink1",
+          "coef": 0.4764
+        }
+      ]
+    },
+    {
+      "cell_type": "Fibroblast",
+      "animals_passing": 33,
+      "median_cells_per_animal": 2924.0,
+      "condition": "1f Fibroblast",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.891657025726003,
+      "ci": [
+        0.7612893674363383,
+        0.9428840910047853
+      ],
+      "r2": 0.7791646409928101,
+      "zero_feature_folds": 0,
+      "median_nonzero": 118.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.33923145683845135,
+      "top10": [
+        {
+          "gene": "Dbp",
+          "coef": 1.2758
+        },
+        {
+          "gene": "Eln",
+          "coef": -0.968
+        },
+        {
+          "gene": "Msln",
+          "coef": -0.8786
+        },
+        {
+          "gene": "Bhlhe40",
+          "coef": 0.8764
+        },
+        {
+          "gene": "Per1",
+          "coef": 0.8734
+        },
+        {
+          "gene": "Aspa",
+          "coef": 0.8672
+        },
+        {
+          "gene": "Pink1",
+          "coef": 0.7739
+        },
+        {
+          "gene": "Ccl8",
+          "coef": 0.7636
+        },
+        {
+          "gene": "Grem1",
+          "coef": 0.7555
+        },
+        {
+          "gene": "Stat2",
+          "coef": -0.7161
+        }
+      ]
+    },
+    {
+      "cell_type": "B cell",
+      "animals_passing": 26,
+      "median_cells_per_animal": 236.0,
+      "condition": "1f B cell",
+      "n": 26,
+      "n_features_in": 5101,
+      "rho": 0.8551889336819231,
+      "ci": [
+        0.6626361314578041,
+        0.941286134601111
+      ],
+      "r2": 0.6614205888649285,
+      "zero_feature_folds": 0,
+      "median_nonzero": 90.5,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 26 animals",
+        "n": 26,
+        "n_features_in": 5101,
+        "rho": 0.7584202538610577,
+        "ci": [
+          0.4904744514206316,
+          0.8763436396303755
+        ],
+        "r2": 0.5959875122087986,
+        "zero_feature_folds": 0,
+        "median_nonzero": 88.5
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.33776968312305433,
+      "top10": [
+        {
+          "gene": "Tagln",
+          "coef": -1.2035
+        },
+        {
+          "gene": "Atp6v0d2",
+          "coef": 0.7198
+        },
+        {
+          "gene": "Txnip",
+          "coef": 0.6255
+        },
+        {
+          "gene": "Fbxo2",
+          "coef": 0.5966
+        },
+        {
+          "gene": "A2m",
+          "coef": 0.586
+        },
+        {
+          "gene": "Col4a2",
+          "coef": -0.537
+        },
+        {
+          "gene": "Gja1",
+          "coef": 0.5044
+        },
+        {
+          "gene": "Efemp1",
+          "coef": 0.5036
+        },
+        {
+          "gene": "Cd163",
+          "coef": -0.4903
+        },
+        {
+          "gene": "Appl2",
+          "coef": 0.4782
+        }
+      ]
+    },
+    {
+      "cell_type": "Myeloid",
+      "animals_passing": 33,
+      "median_cells_per_animal": 3342.0,
+      "condition": "1f Myeloid",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.8495235979212116,
+      "ci": [
+        0.6848689217436791,
+        0.9230921106391702
+      ],
+      "r2": 0.7566681661773669,
+      "zero_feature_folds": 0,
+      "median_nonzero": 104.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.7826101031652096,
+      "top10": [
+        {
+          "gene": "Itga4",
+          "coef": -0.9121
+        },
+        {
+          "gene": "Pink1",
+          "coef": 0.763
+        },
+        {
+          "gene": "Jchain",
+          "coef": -0.7352
+        },
+        {
+          "gene": "Nr1d1",
+          "coef": 0.7011
+        },
+        {
+          "gene": "Svil",
+          "coef": -0.6765
+        },
+        {
+          "gene": "Ccl5",
+          "coef": -0.666
+        },
+        {
+          "gene": "Plau",
+          "coef": 0.6323
+        },
+        {
+          "gene": "Nefh",
+          "coef": -0.6163
+        },
+        {
+          "gene": "Fcrls",
+          "coef": 0.6108
+        },
+        {
+          "gene": "Icosl",
+          "coef": -0.5932
+        }
+      ]
+    },
+    {
+      "cell_type": "VSMC",
+      "animals_passing": 33,
+      "median_cells_per_animal": 519.0,
+      "condition": "1f VSMC",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.8445077136587364,
+      "ci": [
+        0.6567653475052,
+        0.9336324744420954
+      ],
+      "r2": 0.7254598672570888,
+      "zero_feature_folds": 0,
+      "median_nonzero": 103.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.8358824960236038,
+      "top10": [
+        {
+          "gene": "Rgcc",
+          "coef": 1.0221
+        },
+        {
+          "gene": "Pdgfra",
+          "coef": -0.8939
+        },
+        {
+          "gene": "Hoxa9",
+          "coef": 0.8172
+        },
+        {
+          "gene": "F13a1",
+          "coef": -0.8042
+        },
+        {
+          "gene": "Wnt7a",
+          "coef": 0.7894
+        },
+        {
+          "gene": "Jag2",
+          "coef": 0.6123
+        },
+        {
+          "gene": "Adgre1",
+          "coef": -0.5646
+        },
+        {
+          "gene": "Ciart",
+          "coef": 0.5494
+        },
+        {
+          "gene": "Ifih1",
+          "coef": -0.5321
+        },
+        {
+          "gene": "Myd88",
+          "coef": -0.5201
+        }
+      ]
+    },
+    {
+      "cell_type": "T cell",
+      "animals_passing": 30,
+      "median_cells_per_animal": 849.0,
+      "condition": "1f T cell",
+      "n": 30,
+      "n_features_in": 5101,
+      "rho": 0.8431241864275792,
+      "ci": [
+        0.6431805068152368,
+        0.9319617786312528
+      ],
+      "r2": 0.7186270325373909,
+      "zero_feature_folds": 0,
+      "median_nonzero": 104.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 30 animals",
+        "n": 30,
+        "n_features_in": 5101,
+        "rho": 0.8709390513796634,
+        "ci": [
+          0.6915716007909676,
+          0.9360671155568122
+        ],
+        "r2": 0.7755440825996842,
+        "zero_feature_folds": 0,
+        "median_nonzero": 81.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.6994472007735149,
+      "top10": [
+        {
+          "gene": "Cd4",
+          "coef": -0.9901
+        },
+        {
+          "gene": "Thbs2",
+          "coef": 0.9633
+        },
+        {
+          "gene": "F13a1",
+          "coef": -0.8279
+        },
+        {
+          "gene": "Fcrls",
+          "coef": 0.8061
+        },
+        {
+          "gene": "Col4a2",
+          "coef": -0.7881
+        },
+        {
+          "gene": "Crabp2",
+          "coef": 0.7062
+        },
+        {
+          "gene": "Cd79a",
+          "coef": -0.6335
+        },
+        {
+          "gene": "Slc6a11",
+          "coef": -0.6257
+        },
+        {
+          "gene": "Gap43",
+          "coef": 0.5739
+        },
+        {
+          "gene": "Cd9",
+          "coef": 0.5626
+        }
+      ]
+    },
+    {
+      "cell_type": "Oligodendrocyte",
+      "animals_passing": 33,
+      "median_cells_per_animal": 5345.0,
+      "condition": "1f Oligodendrocyte",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.8272865110242383,
+      "ci": [
+        0.6541603469971773,
+        0.909814731951108
+      ],
+      "r2": 0.702094761164413,
+      "zero_feature_folds": 0,
+      "median_nonzero": 101.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.988505277373156,
+      "top10": [
+        {
+          "gene": "Nr1d1",
+          "coef": 1.4509
+        },
+        {
+          "gene": "Thbs2",
+          "coef": 1.3741
+        },
+        {
+          "gene": "Tmem173",
+          "coef": -0.8072
+        },
+        {
+          "gene": "Fam83d",
+          "coef": -0.7215
+        },
+        {
+          "gene": "Pkd2l1",
+          "coef": 0.716
+        },
+        {
+          "gene": "Kndc1",
+          "coef": -0.6831
+        },
+        {
+          "gene": "Lamb2",
+          "coef": 0.6101
+        },
+        {
+          "gene": "Trp53",
+          "coef": 0.5521
+        },
+        {
+          "gene": "Nod1",
+          "coef": -0.5104
+        },
+        {
+          "gene": "Gap43",
+          "coef": 0.5019
+        }
+      ]
+    },
+    {
+      "cell_type": "OPC",
+      "animals_passing": 33,
+      "median_cells_per_animal": 944.0,
+      "condition": "1f OPC",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.8165859579309579,
+      "ci": [
+        0.6478558689784799,
+        0.9010491962339715
+      ],
+      "r2": 0.6923818103693102,
+      "zero_feature_folds": 0,
+      "median_nonzero": 152.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.8869324267629682,
+      "top10": [
+        {
+          "gene": "Fcrls",
+          "coef": 0.7968
+        },
+        {
+          "gene": "Hsd17b7",
+          "coef": -0.7769
+        },
+        {
+          "gene": "Thbs2",
+          "coef": 0.7519
+        },
+        {
+          "gene": "Ndst1",
+          "coef": 0.7492
+        },
+        {
+          "gene": "Dbp",
+          "coef": 0.6683
+        },
+        {
+          "gene": "Lpl",
+          "coef": 0.5984
+        },
+        {
+          "gene": "Shmt1",
+          "coef": 0.5862
+        },
+        {
+          "gene": "Wnt7b",
+          "coef": 0.5376
+        },
+        {
+          "gene": "S1pr3",
+          "coef": 0.5326
+        },
+        {
+          "gene": "Fam20c",
+          "coef": 0.5298
+        }
+      ]
+    },
+    {
+      "cell_type": "DC",
+      "animals_passing": 32,
+      "median_cells_per_animal": 977.0,
+      "condition": "1f DC",
+      "n": 32,
+      "n_features_in": 5101,
+      "rho": 0.8163901674547399,
+      "ci": [
+        0.635566804667964,
+        0.9106698215094614
+      ],
+      "r2": 0.6887907215061317,
+      "zero_feature_folds": 0,
+      "median_nonzero": 90.5,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 32 animals",
+        "n": 32,
+        "n_features_in": 5101,
+        "rho": 0.822990222704767,
+        "ci": [
+          0.6367327974386224,
+          0.9125288774564663
+        ],
+        "r2": 0.7394798682298767,
+        "zero_feature_folds": 0,
+        "median_nonzero": 94.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.9389375250583526,
+      "top10": [
+        {
+          "gene": "Fcrls",
+          "coef": 0.9562
+        },
+        {
+          "gene": "Cxcl13",
+          "coef": 0.899
+        },
+        {
+          "gene": "Chil3",
+          "coef": -0.8425
+        },
+        {
+          "gene": "Cd209d",
+          "coef": -0.8283
+        },
+        {
+          "gene": "Cd79a",
+          "coef": -0.7581
+        },
+        {
+          "gene": "Pink1",
+          "coef": 0.7469
+        },
+        {
+          "gene": "Nr2f1",
+          "coef": 0.6451
+        },
+        {
+          "gene": "Pltp",
+          "coef": 0.5886
+        },
+        {
+          "gene": "Igf1",
+          "coef": 0.5784
+        },
+        {
+          "gene": "Osmr",
+          "coef": 0.497
+        }
+      ]
+    },
+    {
+      "cell_type": "Schwann cell",
+      "animals_passing": 33,
+      "median_cells_per_animal": 889.0,
+      "condition": "1f Schwann cell",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.7784652375361467,
+      "ci": [
+        0.5881755339900524,
+        0.8860582428457843
+      ],
+      "r2": 0.571882897930637,
+      "zero_feature_folds": 0,
+      "median_nonzero": 120.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.5830531475161023,
+      "top10": [
+        {
+          "gene": "Apc",
+          "coef": -1.0764
+        },
+        {
+          "gene": "Nr1d1",
+          "coef": 0.9602
+        },
+        {
+          "gene": "Mki67",
+          "coef": -0.7383
+        },
+        {
+          "gene": "Dock2",
+          "coef": -0.7229
+        },
+        {
+          "gene": "Cd24a",
+          "coef": -0.7158
+        },
+        {
+          "gene": "Pde8a",
+          "coef": 0.7108
+        },
+        {
+          "gene": "Pkp4",
+          "coef": -0.6991
+        },
+        {
+          "gene": "Nrcam",
+          "coef": -0.6697
+        },
+        {
+          "gene": "Efemp1",
+          "coef": 0.6409
+        },
+        {
+          "gene": "Ptpru",
+          "coef": 0.6404
+        }
+      ]
+    },
+    {
+      "cell_type": "Endothelial",
+      "animals_passing": 33,
+      "median_cells_per_animal": 2028.0,
+      "condition": "1f Endothelial",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.7657583307378762,
+      "ci": [
+        0.5666360090445736,
+        0.8759049410242702
+      ],
+      "r2": 0.5375591131200224,
+      "zero_feature_folds": 0,
+      "median_nonzero": 112.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.5023341073963442,
+      "top10": [
+        {
+          "gene": "Gfra1",
+          "coef": 1.3369
+        },
+        {
+          "gene": "Itgb4",
+          "coef": 1.2572
+        },
+        {
+          "gene": "Tie1",
+          "coef": 0.8852
+        },
+        {
+          "gene": "Lfng",
+          "coef": 0.7527
+        },
+        {
+          "gene": "Pink1",
+          "coef": 0.5913
+        },
+        {
+          "gene": "Dixdc1",
+          "coef": 0.5558
+        },
+        {
+          "gene": "A2m",
+          "coef": 0.5245
+        },
+        {
+          "gene": "Cd79a",
+          "coef": -0.4641
+        },
+        {
+          "gene": "Cxcl13",
+          "coef": 0.4589
+        },
+        {
+          "gene": "Igfbp2",
+          "coef": 0.4149
+        }
+      ]
+    },
+    {
+      "cell_type": "Neuron",
+      "animals_passing": 33,
+      "median_cells_per_animal": 4140.0,
+      "condition": "1f Neuron",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.7132587421239694,
+      "ci": [
+        0.458569851102199,
+        0.8593567723698919
+      ],
+      "r2": 0.5212612094978153,
+      "zero_feature_folds": 0,
+      "median_nonzero": 67.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.26233827771786167,
+      "top10": [
+        {
+          "gene": "Msmo1",
+          "coef": -0.6955
+        },
+        {
+          "gene": "Ccl5",
+          "coef": -0.644
+        },
+        {
+          "gene": "Hsd17b7",
+          "coef": -0.4557
+        },
+        {
+          "gene": "Irgm2",
+          "coef": -0.4537
+        },
+        {
+          "gene": "Vat1",
+          "coef": 0.4452
+        },
+        {
+          "gene": "Irgm1",
+          "coef": -0.433
+        },
+        {
+          "gene": "Idi1",
+          "coef": -0.4301
+        },
+        {
+          "gene": "Stat1",
+          "coef": -0.3621
+        },
+        {
+          "gene": "Sst",
+          "coef": 0.3534
+        },
+        {
+          "gene": "Cldn11",
+          "coef": -0.3429
+        }
+      ]
+    },
+    {
+      "cell_type": "Ependymal cell",
+      "animals_passing": 33,
+      "median_cells_per_animal": 173.0,
+      "condition": "1f Ependymal cell",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.6428691663072345,
+      "ci": [
+        0.3703023259677671,
+        0.8118159690586927
+      ],
+      "r2": 0.40822396932297145,
+      "zero_feature_folds": 0,
+      "median_nonzero": 123.0,
+      "all_cells_same_animals": {
+        "condition": "     all cells, same 33 animals",
+        "n": 33,
+        "n_features_in": 5101,
+        "rho": 0.8284568840188158,
+        "ci": [
+          0.6235948295111766,
+          0.925997559434865
+        ],
+        "r2": 0.7384321357020237,
+        "zero_feature_folds": 0,
+        "median_nonzero": 101.0
+      },
+      "fisher_p_vs_all_cells_same_animals": 0.1036891751967642,
+      "top10": [
+        {
+          "gene": "Nkx6-2",
+          "coef": 0.808
+        },
+        {
+          "gene": "Pnpla2",
+          "coef": -0.7395
+        },
+        {
+          "gene": "Ptprn2",
+          "coef": 0.7213
+        },
+        {
+          "gene": "Hoxa10",
+          "coef": 0.7176
+        },
+        {
+          "gene": "Slc6a5",
+          "coef": -0.6125
+        },
+        {
+          "gene": "Tssc4",
+          "coef": 0.5886
+        },
+        {
+          "gene": "Ldlr",
+          "coef": -0.5763
+        },
+        {
+          "gene": "Nr1d1",
+          "coef": 0.5376
+        },
+        {
+          "gene": "Got2",
+          "coef": 0.5354
+        },
+        {
+          "gene": "Fbxl13",
+          "coef": 0.5213
+        }
+      ]
+    },
+    {
+      "cell_type": "Doublet",
+      "animals_passing": 17,
+      "median_cells_per_animal": 54.0,
+      "skipped": "only 17 animals with >= 50 cells"
+    },
+    {
+      "cell_type": "Epithelial",
+      "animals_passing": 0,
+      "median_cells_per_animal": 2.0,
+      "skipped": "only 0 animals with >= 50 cells"
+    },
+    {
+      "cell_type": "Muscle cell",
+      "animals_passing": 1,
+      "median_cells_per_animal": 0.0,
+      "skipped": "only 1 animals with >= 50 cells"
+    },
+    {
+      "cell_type": "NK/DC",
+      "animals_passing": 20,
+      "median_cells_per_animal": 80.0,
+      "skipped": "only 20 animals with >= 50 cells"
+    },
+    {
+      "cell_type": "Neutrophil",
+      "animals_passing": 0,
+      "median_cells_per_animal": 4.0,
+      "skipped": "only 0 animals with >= 50 cells"
+    },
+    {
+      "cell_type": "T_B_doublet",
+      "animals_passing": 9,
+      "median_cells_per_animal": 18.0,
+      "skipped": "only 9 animals with >= 50 cells"
+    }
+  ],
+  "conditions": [
+    {
+      "condition": "baseline (all genes)",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.8284568840188158,
+      "ci": [
+        0.6235948295111766,
+        0.925997559434865
+      ],
+      "r2": 0.7384321357020237,
+      "zero_feature_folds": 0,
+      "median_nonzero": 101.0
+    },
+    {
+      "condition": "1b without circadian genes",
+      "n": 33,
+      "n_features_in": 5084,
+      "rho": 0.7991975591543774,
+      "ci": [
+        0.5743647221637452,
+        0.9044161690550936
+      ],
+      "r2": 0.6887779590064238,
+      "zero_feature_folds": 0,
+      "median_nonzero": 104.0,
+      "fisher_p_vs_baseline": 0.7367119005569838
+    },
+    {
+      "condition": "1c circadian genes only",
+      "n": 33,
+      "n_features_in": 17,
+      "rho": 0.8552082667520168,
+      "ci": [
+        0.7227158568829467,
+        0.9247251151176592
+      ],
+      "r2": 0.6899708177138226,
+      "zero_feature_folds": 0,
+      "median_nonzero": 16.0,
+      "fisher_p_vs_baseline": 0.7215139597017768
+    },
+    {
+      "condition": "chronic cumulative_score, all genes (= ladder arm 2)",
+      "n": 29,
+      "n_features_in": 5101,
+      "rho": 0.7295133855466939,
+      "ci": [
+        0.5059376357550912,
+        0.8669009056276059
+      ],
+      "r2": 0.3555801817781682,
+      "zero_feature_folds": 0,
+      "median_nonzero": 109.0
+    },
+    {
+      "condition": "1c chronic cumulative_score, circadian only",
+      "n": 29,
+      "n_features_in": 17,
+      "rho": 0.47985221677682877,
+      "ci": [
+        0.16241086811501781,
+        0.7247523899254634
+      ],
+      "r2": -0.004764867613259893,
+      "zero_feature_folds": 0,
+      "median_nonzero": 13.0,
+      "fisher_p_vs_baseline": 0.14432677627585536
+    },
+    {
+      "condition": "1d(i) sex genes dropped",
+      "n": 33,
+      "n_features_in": 5100,
+      "rho": 0.8251129611771657,
+      "ci": [
+        0.6177849574409764,
+        0.9229004412595634
+      ],
+      "r2": 0.7435569972044183,
+      "zero_feature_folds": 0,
+      "median_nonzero": 101.0,
+      "fisher_p_vs_baseline": 0.9673517495650645
+    },
+    {
+      "condition": "1d(ii) sex residualised (covariate)",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.8438205093386933,
+      "ci": [
+        0.643741567983131,
+        0.9322377882888796
+      ],
+      "r2": 0.7417961794846055,
+      "zero_feature_folds": 0,
+      "median_nonzero": 120.0,
+      "fisher_p_vs_baseline": 0.8431217936535929
+    },
+    {
+      "condition": "1e circadian AND sex genes excluded",
+      "n": 33,
+      "n_features_in": 5083,
+      "rho": 0.8015383051435324,
+      "ci": [
+        0.5851447866918136,
+        0.9020286629417283
+      ],
+      "r2": 0.6990736031054972,
+      "zero_feature_folds": 0,
+      "median_nonzero": 104.0,
+      "fisher_p_vs_baseline": 0.7558105978737277
+    }
+  ]
+}

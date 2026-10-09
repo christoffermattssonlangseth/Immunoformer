@@ -1,0 +1,603 @@
+{
+  "1a": {
+    "matrix_total": 58,
+    "matrix_named_in_prompt_from_clock_coefficients": [
+      "Col4a1",
+      "Col4a2",
+      "Thbs2",
+      "Serpine2",
+      "Eln",
+      "Fbln2",
+      "Ptx3",
+      "Fmod"
+    ],
+    "matrix_by_family_annotation": [
+      "Acan",
+      "Agrn",
+      "Col10a1",
+      "Col12a1",
+      "Col13a1",
+      "Col14a1",
+      "Col15a1",
+      "Col18a1",
+      "Col1a1",
+      "Col1a2",
+      "Col20a1",
+      "Col23a1",
+      "Col24a1",
+      "Col26a1",
+      "Col4a1",
+      "Col4a2",
+      "Col4a3",
+      "Col4a5",
+      "Col5a1",
+      "Col6a1",
+      "Col6a2",
+      "Col6a3",
+      "Col7a1",
+      "Col9a2",
+      "Col9a3",
+      "Cspg4",
+      "Cspg5",
+      "Fmod",
+      "Fn1",
+      "Gpc3",
+      "Gpc4",
+      "Gpc6",
+      "Hspg2",
+      "Lama1",
+      "Lama2",
+      "Lama3",
+      "Lama4",
+      "Lama5",
+      "Lamb1",
+      "Lamb2",
+      "Lamb3",
+      "Lamc1",
+      "Lum",
+      "Ncan",
+      "Ogn",
+      "Prelp",
+      "Sdc1",
+      "Sdc2",
+      "Spock3",
+      "Thbs1",
+      "Thbs2",
+      "Thbs3",
+      "Thbs4",
+      "Vcan"
+    ],
+    "matrix_only_via_named_list_not_annotation": [
+      "Eln",
+      "Fbln2",
+      "Ptx3",
+      "Serpine2"
+    ],
+    "matrix_annotation_genes_with_nonzero_clock_coef": [
+      "Col4a1",
+      "Col4a2",
+      "Col6a1",
+      "Fmod",
+      "Lamb2",
+      "Prelp",
+      "Thbs2"
+    ],
+    "circadian_total": [
+      "Nr1d1",
+      "Dbp",
+      "Bhlhe40",
+      "Per1",
+      "Per2",
+      "Per3",
+      "Cry1",
+      "Cry2",
+      "Arntl",
+      "Clock",
+      "Npas2",
+      "Nfil3",
+      "Hlf",
+      "Ciart",
+      "Rora",
+      "Rorb",
+      "Rorc"
+    ],
+    "circadian_with_nonzero_clock_coef": [
+      "Bhlhe40",
+      "Dbp",
+      "Hlf",
+      "Nr1d1",
+      "Per1"
+    ],
+    "coef_lists": {
+      "published_135": 135,
+      "baseline_refit": 99,
+      "union": 149
+    }
+  },
+  "1b": {
+    "clean_matrix": [
+      "Acan",
+      "Agrn",
+      "Col10a1",
+      "Col12a1",
+      "Col13a1",
+      "Col14a1",
+      "Col15a1",
+      "Col18a1",
+      "Col1a1",
+      "Col1a2",
+      "Col20a1",
+      "Col23a1",
+      "Col24a1",
+      "Col26a1",
+      "Col4a3",
+      "Col4a5",
+      "Col5a1",
+      "Col6a2",
+      "Col6a3",
+      "Col7a1",
+      "Col9a2",
+      "Col9a3",
+      "Cspg4",
+      "Cspg5",
+      "Fn1",
+      "Gpc3",
+      "Gpc4",
+      "Gpc6",
+      "Hspg2",
+      "Lama1",
+      "Lama2",
+      "Lama3",
+      "Lama4",
+      "Lama5",
+      "Lamb1",
+      "Lamb3",
+      "Lamc1",
+      "Lum",
+      "Ncan",
+      "Ogn",
+      "Sdc1",
+      "Sdc2",
+      "Spock3",
+      "Thbs1",
+      "Thbs3",
+      "Thbs4",
+      "Vcan"
+    ],
+    "clean_matrix_size": 47,
+    "clean_circadian": [
+      "Per2",
+      "Per3",
+      "Cry1",
+      "Cry2",
+      "Arntl",
+      "Clock",
+      "Npas2",
+      "Nfil3",
+      "Ciart",
+      "Rora",
+      "Rorb",
+      "Rorc"
+    ],
+    "clean_circadian_size": 12
+  },
+  "1c_matrix_clean": {
+    "n_genes": 47,
+    "rho": 0.7219529415122597,
+    "ci": [
+      0.4559543097343282,
+      0.8547333359451507
+    ],
+    "zero_feature_folds": 0,
+    "random": {
+      "mean": 0.6991420374556593,
+      "q95": 0.8391908763405128,
+      "percentile": 58.8,
+      "p": 0.41317365269461076
+    },
+    "expression_matched": {
+      "mean": 0.7296479767554649,
+      "q95": 0.846422109485581,
+      "percentile": 40.2,
+      "p": 0.5988023952095808
+    }
+  },
+  "1c_circadian_clean": {
+    "n_genes": 12,
+    "rho": 0.6686173721879404,
+    "ci": [
+      0.4157152169304294,
+      0.8342654698023309
+    ],
+    "zero_feature_folds": 0,
+    "random": {
+      "mean": 0.5755003434363952,
+      "q95": 0.7977345929111554,
+      "percentile": 62.6,
+      "p": 0.37524950099800397
+    },
+    "expression_matched": {
+      "mean": 0.6274998343656973,
+      "q95": 0.8210166556961443,
+      "percentile": 48.4,
+      "p": 0.5169660678642715
+    }
+  },
+  "1d_top_coef_ceiling": {
+    "n_genes": 58,
+    "rho": 0.9510116561652926,
+    "ci": [
+      0.8744797364106613,
+      0.9765391104255071
+    ],
+    "zero_feature_folds": 0,
+    "note": "selection used all animals: in-sample ceiling by design"
+  },
+  "1d_top_coef_ceiling_clean_size": {
+    "n_genes": 47,
+    "rho": 0.9588698748431703,
+    "ci": [
+      0.8940469373115602,
+      0.9801098791834996
+    ],
+    "zero_feature_folds": 0
+  },
+  "2a": {
+    "genes": [
+      {
+        "gene": "Acan",
+        "rho_day": -0.19375192873476046,
+        "rho_day_partial_score": -0.1423797973193835
+      },
+      {
+        "gene": "Agrn",
+        "rho_day": 0.14938895459254298,
+        "rho_day_partial_score": 0.14900432862932544
+      },
+      {
+        "gene": "Col10a1",
+        "rho_day": -0.05041247061615624,
+        "rho_day_partial_score": -0.024791937924732388
+      },
+      {
+        "gene": "Col12a1",
+        "rho_day": 0.06738466905692884,
+        "rho_day_partial_score": 0.0654398829006268
+      },
+      {
+        "gene": "Col13a1",
+        "rho_day": 0.7548427266925795,
+        "rho_day_partial_score": 0.7499082194418204
+      },
+      {
+        "gene": "Col14a1",
+        "rho_day": 0.35103883705716793,
+        "rho_day_partial_score": 0.3770870166915851
+      },
+      {
+        "gene": "Col15a1",
+        "rho_day": 0.614359975242224,
+        "rho_day_partial_score": 0.6072559402858093
+      },
+      {
+        "gene": "Col18a1",
+        "rho_day": 0.17392302362573903,
+        "rho_day_partial_score": 0.12075679357749147
+      },
+      {
+        "gene": "Col1a1",
+        "rho_day": 0.33994809352161354,
+        "rho_day_partial_score": 0.344890387389521
+      },
+      {
+        "gene": "Col1a2",
+        "rho_day": 0.37809352962117176,
+        "rho_day_partial_score": 0.3571265082462785
+      },
+      {
+        "gene": "Col20a1",
+        "rho_day": -0.07141766670622134,
+        "rho_day_partial_score": -0.17988707894022973
+      },
+      {
+        "gene": "Col23a1",
+        "rho_day": 0.5567217171710854,
+        "rho_day_partial_score": 0.7034176227316783
+      },
+      {
+        "gene": "Col24a1",
+        "rho_day": 0.218117956199236,
+        "rho_day_partial_score": 0.2956381034888364
+      },
+      {
+        "gene": "Col26a1",
+        "rho_day": 0.34767800568275753,
+        "rho_day_partial_score": 0.44019111586655124
+      },
+      {
+        "gene": "Col4a3",
+        "rho_day": 0.46177823084399106,
+        "rho_day_partial_score": 0.6382090735830431
+      },
+      {
+        "gene": "Col4a5",
+        "rho_day": 0.5271464010762738,
+        "rho_day_partial_score": 0.541236992887036
+      },
+      {
+        "gene": "Col5a1",
+        "rho_day": 0.505300997142606,
+        "rho_day_partial_score": 0.49178703042799593
+      },
+      {
+        "gene": "Col6a2",
+        "rho_day": 0.4508555288771573,
+        "rho_day_partial_score": 0.44028976348035387
+      },
+      {
+        "gene": "Col6a3",
+        "rho_day": 0.20937979462576892,
+        "rho_day_partial_score": 0.19047467617970848
+      },
+      {
+        "gene": "Col7a1",
+        "rho_day": 0.24130769268266786,
+        "rho_day_partial_score": 0.2029283597402725
+      },
+      {
+        "gene": "Col9a2",
+        "rho_day": 0.30919648644575826,
+        "rho_day_partial_score": 0.5166020202913614
+      },
+      {
+        "gene": "Col9a3",
+        "rho_day": 0.23660252875849327,
+        "rho_day_partial_score": 0.28196097790114166
+      },
+      {
+        "gene": "Cspg4",
+        "rho_day": 0.18871068167314486,
+        "rho_day_partial_score": 0.1996608752021646
+      },
+      {
+        "gene": "Cspg5",
+        "rho_day": -0.07629087219911644,
+        "rho_day_partial_score": 0.025567843068397787
+      },
+      {
+        "gene": "Fn1",
+        "rho_day": -0.17005806754516706,
+        "rho_day_partial_score": -0.3974350268350129
+      },
+      {
+        "gene": "Gpc3",
+        "rho_day": 0.36481824569225063,
+        "rho_day_partial_score": 0.5557285493563485
+      },
+      {
+        "gene": "Gpc4",
+        "rho_day": 0.3273449758675745,
+        "rho_day_partial_score": 0.3577748567643594
+      },
+      {
+        "gene": "Gpc6",
+        "rho_day": 0.6168805987730318,
+        "rho_day_partial_score": 0.727994620890031
+      },
+      {
+        "gene": "Hspg2",
+        "rho_day": 0.520760821464894,
+        "rho_day_partial_score": 0.5079872145808939
+      },
+      {
+        "gene": "Lama1",
+        "rho_day": 0.5683165854128014,
+        "rho_day_partial_score": 0.6186927754244338
+      },
+      {
+        "gene": "Lama2",
+        "rho_day": 0.5841124928725303,
+        "rho_day_partial_score": 0.6681616755304619
+      },
+      {
+        "gene": "Lama3",
+        "rho_day": 0.7119921266688466,
+        "rho_day_partial_score": 0.7155192512942845
+      },
+      {
+        "gene": "Lama4",
+        "rho_day": 0.23340973895280334,
+        "rho_day_partial_score": 0.24790483248213613
+      },
+      {
+        "gene": "Lama5",
+        "rho_day": 0.49185767164496436,
+        "rho_day_partial_score": 0.4873043796255203
+      },
+      {
+        "gene": "Lamb1",
+        "rho_day": 0.36347391314248645,
+        "rho_day_partial_score": 0.3469653948162863
+      },
+      {
+        "gene": "Lamb3",
+        "rho_day": -0.068729001606693,
+        "rho_day_partial_score": -0.12050821207009237
+      },
+      {
+        "gene": "Lamc1",
+        "rho_day": 0.4286740418060485,
+        "rho_day_partial_score": 0.41141874160799846
+      },
+      {
+        "gene": "Lum",
+        "rho_day": 0.5641155461947883,
+        "rho_day_partial_score": 0.5556943639585733
+      },
+      {
+        "gene": "Ncan",
+        "rho_day": -0.43489157984870774,
+        "rho_day_partial_score": -0.42240394331257186
+      },
+      {
+        "gene": "Ogn",
+        "rho_day": 0.3757409476590845,
+        "rho_day_partial_score": 0.5898594024641923
+      },
+      {
+        "gene": "Sdc1",
+        "rho_day": 0.013443325497641663,
+        "rho_day_partial_score": -0.12821997221747827
+      },
+      {
+        "gene": "Sdc2",
+        "rho_day": 0.4789184708534842,
+        "rho_day_partial_score": 0.6732839820737808
+      },
+      {
+        "gene": "Spock3",
+        "rho_day": -0.07494653964935227,
+        "rho_day_partial_score": 0.06466226929136619
+      },
+      {
+        "gene": "Thbs1",
+        "rho_day": -0.06671250278204675,
+        "rho_day_partial_score": -0.15443056063264027
+      },
+      {
+        "gene": "Thbs3",
+        "rho_day": 0.28987170604289836,
+        "rho_day_partial_score": 0.3192801485421759
+      },
+      {
+        "gene": "Thbs4",
+        "rho_day": 0.30012224173485014,
+        "rho_day_partial_score": 0.36123896523689253
+      },
+      {
+        "gene": "Vcan",
+        "rho_day": -0.3710357837349099,
+        "rho_day_partial_score": -0.5666556888370962
+      }
+    ],
+    "n_up": 37,
+    "n_down": 10,
+    "n_up_partial": 38,
+    "n_down_partial": 9
+  },
+  "2b": {
+    "Astrocyte": {
+      "n_genes": 47,
+      "rho": 0.7838155140827869,
+      "ci": [
+        0.5965479297317696,
+        0.8704037134645217
+      ],
+      "zero_feature_folds": 0,
+      "random": {
+        "mean": 0.6707192692979708,
+        "q95": 0.8422589255477264,
+        "percentile": 82.5,
+        "p": 0.1791044776119403
+      },
+      "expression_matched": {
+        "mean": 0.6987202015891851,
+        "q95": 0.8311236624850317,
+        "percentile": 82.0,
+        "p": 0.18407960199004975
+      },
+      "n_animals": 33
+    },
+    "Fibroblast": {
+      "n_genes": 47,
+      "rho": 0.6273199250935615,
+      "ci": [
+        0.33810570410041374,
+        0.8401255349513982
+      ],
+      "zero_feature_folds": 0,
+      "random": {
+        "mean": 0.7248914137093598,
+        "q95": 0.8387060075284734,
+        "percentile": 11.0,
+        "p": 0.8905472636815921
+      },
+      "expression_matched": {
+        "mean": 0.754851290409124,
+        "q95": 0.8608594963544055,
+        "percentile": 5.5,
+        "p": 0.945273631840796
+      },
+      "n_animals": 33
+    },
+    "Endothelial": {
+      "n_genes": 47,
+      "rho": 0.6798195137074683,
+      "ci": [
+        0.40891142652271634,
+        0.8494356356313211
+      ],
+      "zero_feature_folds": 0,
+      "random": {
+        "mean": 0.6949022776847312,
+        "q95": 0.8094216032427226,
+        "percentile": 35.0,
+        "p": 0.6517412935323383
+      },
+      "expression_matched": {
+        "mean": 0.7184560342006041,
+        "q95": 0.8370173264934401,
+        "percentile": 28.499999999999996,
+        "p": 0.7164179104477612
+      },
+      "n_animals": 33
+    },
+    "Oligodendrocyte": {
+      "n_genes": 47,
+      "rho": 0.7048989350198441,
+      "ci": [
+        0.4661970184438081,
+        0.8334083989153068
+      ],
+      "zero_feature_folds": 0,
+      "random": {
+        "mean": 0.6537335716197558,
+        "q95": 0.8301790042822654,
+        "percentile": 62.0,
+        "p": 0.38308457711442784
+      },
+      "expression_matched": {
+        "mean": 0.6798479370516223,
+        "q95": 0.8334894878954993,
+        "percentile": 52.0,
+        "p": 0.48258706467661694
+      },
+      "n_animals": 33
+    }
+  },
+  "2c": {
+    "composition_pca_80pct": {
+      "rho": 0.45778303702190065,
+      "ci": [
+        0.12690745766162084,
+        0.7204108509976479
+      ],
+      "zero_feature_folds": 0
+    },
+    "immune_fraction_only": {
+      "rho": 0.5918743429720703,
+      "ci": [
+        0.28600141798635786,
+        0.7990977111822852
+      ],
+      "zero_feature_folds": 0
+    },
+    "unadjusted": {
+      "rho": 0.7219529415122597,
+      "ci": [
+        0.4559543097343282,
+        0.8547333359451507
+      ]
+    }
+  }
+}

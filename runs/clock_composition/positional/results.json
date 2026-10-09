@@ -1,0 +1,226 @@
+{
+  "positional_genes_on_panel": [
+    "Cdx1",
+    "Cdx2",
+    "Hoxa1",
+    "Hoxa10",
+    "Hoxa11",
+    "Hoxa13",
+    "Hoxa2",
+    "Hoxa3",
+    "Hoxa4",
+    "Hoxa5",
+    "Hoxa7",
+    "Hoxa9",
+    "Hoxb1",
+    "Hoxb13",
+    "Hoxb2",
+    "Hoxb3",
+    "Hoxb4",
+    "Hoxb5",
+    "Hoxb6",
+    "Hoxb7",
+    "Hoxb8",
+    "Hoxb9",
+    "Hoxc10",
+    "Hoxc11",
+    "Hoxc12",
+    "Hoxc5",
+    "Hoxc6",
+    "Hoxc8",
+    "Hoxd1",
+    "Hoxd10",
+    "Hoxd11",
+    "Hoxd12",
+    "Hoxd13",
+    "Hoxd3",
+    "Hoxd4",
+    "Hoxd9",
+    "Meis1",
+    "Meis2"
+  ],
+  "n_hox": 34,
+  "2a_all_cells": {
+    "positional_nonzero": [],
+    "positional_coef_share": 0.0,
+    "n_nonzero_total": 99
+  },
+  "2a_astrocyte": {
+    "positional_nonzero": [
+      {
+        "gene": "Hoxa10",
+        "coef": 1.051
+      },
+      {
+        "gene": "Hoxa9",
+        "coef": 0.134
+      }
+    ],
+    "positional_coef_share": 0.05604092595198901,
+    "n_nonzero_total": 90
+  },
+  "2b": {
+    "pc1_variance_explained": 0.26406791625980824,
+    "median_by_region": {
+      "C": -3.554,
+      "L": 2.653,
+      "T": -0.037
+    },
+    "spearman_with_region_order": 0.7900901138065063,
+    "fraction_correctly_ordered_pairs": {
+      "C<T": 0.8702651515151515,
+      "T<L": 0.8953168044077136,
+      "C<L": 0.9554924242424242
+    }
+  },
+  "comparisons": [
+    {
+      "comparison": "2c all cells: + position covariate vs baseline",
+      "A": "all cells + position",
+      "B": "all cells baseline",
+      "n": 33,
+      "rho_A": 0.743186851556738,
+      "rho_B": 0.8284568840188158,
+      "diff_mean": -0.08380172759051283,
+      "diff_ci": [
+        -0.2340099899318305,
+        0.07561741026078542
+      ],
+      "frac_diff_le_0": 0.8525,
+      "median_abs_err_A": 3.702787777621298,
+      "median_abs_err_B": 4.471987494364988,
+      "wilcoxon_p": 0.17108511831611395,
+      "ci_excludes_zero": false,
+      "zero_feature_folds": 0
+    },
+    {
+      "comparison": "2d all cells: positional genes excluded vs baseline",
+      "A": "all cells no positional genes",
+      "B": "all cells baseline",
+      "n": 33,
+      "rho_A": 0.8287912763029809,
+      "rho_B": 0.8284568840188158,
+      "diff_mean": -4.228964780673483e-05,
+      "diff_ci": [
+        -0.02718915223432938,
+        0.029267954469230712
+      ],
+      "frac_diff_le_0": 0.558,
+      "median_abs_err_A": 4.471909413695023,
+      "median_abs_err_B": 4.471987494364988,
+      "wilcoxon_p": 0.45800650864839554,
+      "ci_excludes_zero": false,
+      "zero_feature_folds": 0
+    },
+    {
+      "comparison": "2c astrocyte: + position covariate vs baseline",
+      "A": "astrocyte + position",
+      "B": "astrocyte baseline",
+      "n": 33,
+      "rho_A": 0.7925097134710771,
+      "rho_B": 0.8953353408518182,
+      "diff_mean": -0.10303366757334795,
+      "diff_ci": [
+        -0.26584681746161704,
+        0.041918868927321454
+      ],
+      "frac_diff_le_0": 0.925,
+      "median_abs_err_A": 4.754103702662911,
+      "median_abs_err_B": 3.408136409499189,
+      "wilcoxon_p": 0.13475013920105994,
+      "ci_excludes_zero": false,
+      "zero_feature_folds": 0
+    },
+    {
+      "comparison": "2d astrocyte: positional genes excluded vs baseline",
+      "A": "astrocyte no positional genes",
+      "B": "astrocyte baseline",
+      "n": 33,
+      "rho_A": 0.8655744275611321,
+      "rho_B": 0.8953353408518182,
+      "diff_mean": -0.030147802843285262,
+      "diff_ci": [
+        -0.090069496736906,
+        0.0025216646301102004
+      ],
+      "frac_diff_le_0": 0.962,
+      "median_abs_err_A": 3.9252636205809583,
+      "median_abs_err_B": 3.408136409499189,
+      "wilcoxon_p": 0.13007322256453335,
+      "ci_excludes_zero": false,
+      "zero_feature_folds": 0
+    }
+  ],
+  "2e": {
+    "animal_position_vs_day": -0.21307670913762036,
+    "animal_position_vs_score": 0.5880461332290247,
+    "animal_position_kruskal_stage_p": 0.10090684444649355,
+    "within_C_position_vs_day": -0.3330321664448699,
+    "within_C_n": 32,
+    "within_T_position_vs_day": -0.14350749968732476,
+    "within_T_n": 33,
+    "within_L_position_vs_day": -0.17677973029398789,
+    "within_L_n": 33,
+    "animal_position_vs_day_ci": [
+      -0.5562183716263358,
+      0.15848534603909836
+    ],
+    "by_stage": {
+      "ONSET1": {
+        "n": 2,
+        "position_median": -1.165,
+        "day": 13.0
+      },
+      "ONSET2": {
+        "n": 2,
+        "position_median": -0.932,
+        "day": 13.0
+      },
+      "PEAK1": {
+        "n": 4,
+        "position_median": 1.899,
+        "day": 17.5
+      },
+      "REMISSION1": {
+        "n": 5,
+        "position_median": 0.394,
+        "day": 22.0
+      },
+      "PEAK2_MILD": {
+        "n": 2,
+        "position_median": -0.459,
+        "day": 31.0
+      },
+      "PEAK2": {
+        "n": 2,
+        "position_median": 1.157,
+        "day": 32.5
+      },
+      "MONOPHASIC": {
+        "n": 4,
+        "position_median": -1.058,
+        "day": 33.0
+      },
+      "PLP CFA": {
+        "n": 3,
+        "position_median": -2.085,
+        "day": 33.0
+      },
+      "REMISSION2": {
+        "n": 3,
+        "position_median": -0.627,
+        "day": 44.0
+      },
+      "PEAK3": {
+        "n": 5,
+        "position_median": 0.347,
+        "day": 48.0
+      },
+      "REMISSION2_LONG": {
+        "n": 1,
+        "position_median": -1.668,
+        "day": 48.0
+      }
+    }
+  }
+}

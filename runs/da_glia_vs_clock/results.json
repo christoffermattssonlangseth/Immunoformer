@@ -1,0 +1,423 @@
+{
+  "markers_source": "Kukanja et al. 2024 Cell, Figure 4B",
+  "states": {
+    "DA-MOL2": {
+      "markers_on_panel": [
+        "Apod",
+        "Klk6",
+        "Serpina3n",
+        "C4b"
+      ],
+      "missing": [
+        "Serpina3h"
+      ],
+      "cell_type": "Oligodendrocyte",
+      "n_control_genes": 165
+    },
+    "DA-MOL5/6": {
+      "markers_on_panel": [
+        "Il12rb1",
+        "Irgm1",
+        "Igtp",
+        "C4b"
+      ],
+      "missing": [],
+      "cell_type": "Oligodendrocyte",
+      "n_control_genes": 200
+    },
+    "DA-OPC/COP": {
+      "markers_on_panel": [
+        "Col20a1",
+        "Serpina3n",
+        "Irgm1",
+        "Igtp",
+        "C4b",
+        "B2m",
+        "H2-D1"
+      ],
+      "missing": [],
+      "cell_type": "OPC",
+      "n_control_genes": 280
+    },
+    "DA-Astro": {
+      "markers_on_panel": [
+        "Mt1",
+        "Serping1",
+        "Serpina3n",
+        "Irgm1",
+        "Igtp",
+        "C4b"
+      ],
+      "missing": [
+        "Serpina3h"
+      ],
+      "cell_type": "Astrocyte",
+      "n_control_genes": 265
+    },
+    "DA-MiGL": {
+      "markers_on_panel": [
+        "B2m",
+        "H2-D1",
+        "Cd74",
+        "H2-Aa",
+        "Fcgr2b"
+      ],
+      "missing": [],
+      "cell_type": "Myeloid",
+      "n_control_genes": 187
+    }
+  },
+  "step2": {
+    "RR": {
+      "DA-MOL2": {
+        "n": 33,
+        "a_rho_score": 0.8360335882707505,
+        "a_ci": [
+          0.6511315247524637,
+          0.9426635453986807
+        ],
+        "b_rho_day_raw": 0.017308281578213642,
+        "b_ci": [
+          -0.3270421605861664,
+          0.35052236920399665
+        ],
+        "c_rho_day_partial_score": -0.18129462405899102,
+        "c_ci": [
+          -0.5033071436296432,
+          0.18482568216209497
+        ]
+      },
+      "DA-MOL5/6": {
+        "n": 33,
+        "a_rho_score": 0.8096555188659057,
+        "a_ci": [
+          0.6052930966210408,
+          0.9330472659119707
+        ],
+        "b_rho_day_raw": -0.11628476555460038,
+        "b_ci": [
+          -0.43791501826257795,
+          0.21780588347465424
+        ],
+        "c_rho_day_partial_score": -0.393038293307676,
+        "c_ci": [
+          -0.6298643580054998,
+          -0.08066083635670089
+        ]
+      },
+      "DA-OPC/COP": {
+        "n": 33,
+        "a_rho_score": 0.7051513203320618,
+        "a_ci": [
+          0.4356027314187797,
+          0.8817318718746878
+        ],
+        "b_rho_day_raw": -0.25256647778694274,
+        "b_ci": [
+          -0.5520886496987693,
+          0.07467316024655886
+        ],
+        "c_rho_day_partial_score": -0.4987840910768037,
+        "c_ci": [
+          -0.7297262383754041,
+          -0.1706002227452993
+        ]
+      },
+      "DA-Astro": {
+        "n": 33,
+        "a_rho_score": 0.844602260497802,
+        "a_ci": [
+          0.660679398036925,
+          0.9456924863474665
+        ],
+        "b_rho_day_raw": -0.10536206358776652,
+        "b_ci": [
+          -0.43435835485434743,
+          0.23098215426110824
+        ],
+        "c_rho_day_partial_score": -0.41938401010175536,
+        "c_ci": [
+          -0.6449705790392839,
+          -0.10377188887836857
+        ]
+      },
+      "DA-MiGL": {
+        "n": 33,
+        "a_rho_score": 0.5725889205841475,
+        "a_ci": [
+          0.25112869583951547,
+          0.8104490259748264
+        ],
+        "b_rho_day_raw": -0.09443936162093268,
+        "b_ci": [
+          -0.45423761644781974,
+          0.25106270126727265
+        ],
+        "c_rho_day_partial_score": -0.21401173161823783,
+        "c_ci": [
+          -0.5944836281885777,
+          0.16740398774464627
+        ]
+      }
+    },
+    "chronic": {
+      "DA-MOL2": {
+        "n": 34,
+        "a_rho_score": 0.9427761016740822,
+        "a_ci": [
+          0.8784566167532024,
+          0.9675711076666416
+        ],
+        "b_rho_day_raw": 0.5406792430937233,
+        "b_ci": [
+          0.20901475901275804,
+          0.7596218270164422
+        ],
+        "c_rho_day_partial_score": -0.03391945864068494,
+        "c_ci": [
+          -0.3538933760668673,
+          0.2511264846948836
+        ]
+      },
+      "DA-MOL5/6": {
+        "n": 34,
+        "a_rho_score": 0.9362452429786656,
+        "a_ci": [
+          0.8566413900035798,
+          0.9666568815292023
+        ],
+        "b_rho_day_raw": 0.5380746675390071,
+        "b_ci": [
+          0.17777626098728408,
+          0.7662629165846611
+        ],
+        "c_rho_day_partial_score": -0.02796899488022103,
+        "c_ci": [
+          -0.3719041324872387,
+          0.3111387088611818
+        ]
+      },
+      "DA-OPC/COP": {
+        "n": 34,
+        "a_rho_score": 0.8997035336114532,
+        "a_ci": [
+          0.7732774968455793,
+          0.9504066020020074
+        ],
+        "b_rho_day_raw": 0.48582994611793606,
+        "b_ci": [
+          0.13164268781899213,
+          0.7245880473584063
+        ],
+        "c_rho_day_partial_score": -0.10975108090415191,
+        "c_ci": [
+          -0.40930232498001085,
+          0.24432458175857455
+        ]
+      },
+      "DA-Astro": {
+        "n": 34,
+        "a_rho_score": 0.9351567665294296,
+        "a_ci": [
+          0.8565517407862796,
+          0.9650602111618873
+        ],
+        "b_rho_day_raw": 0.5052876576149332,
+        "b_ci": [
+          0.15460468100565386,
+          0.7427732071179314
+        ],
+        "c_rho_day_partial_score": -0.139479842775881,
+        "c_ci": [
+          -0.46011749633125826,
+          0.237844396027172
+        ]
+      },
+      "DA-MiGL": {
+        "n": 34,
+        "a_rho_score": 0.9196071029689136,
+        "a_ci": [
+          0.8202134173147132,
+          0.9570541624373059
+        ],
+        "b_rho_day_raw": 0.49946566519850893,
+        "b_ci": [
+          0.15057150748430911,
+          0.7233661267900688
+        ],
+        "c_rho_day_partial_score": -0.11559676035624852,
+        "c_ci": [
+          -0.3904956792630113,
+          0.21190904989665904
+        ]
+      }
+    }
+  },
+  "step3": {
+    "comparison": "clock + DA-glia scores residualised vs baseline",
+    "A": "clock | severity + 5 DA scores",
+    "B": "clock | severity",
+    "n": 33,
+    "rho_A": 0.3711754354231627,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": -0.45062259618964706,
+    "diff_ci": [
+      -0.803837263748888,
+      -0.14022256603121633
+    ],
+    "frac_diff_le_0": 0.998,
+    "median_abs_err_A": 7.043625394085005,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.004852146143093705,
+    "ci_excludes_zero": true,
+    "zero_feature_folds": 0,
+    "rho_vs_own_target": 0.6724598930481284,
+    "note": "covariates residualised from X and day inside each LOAO training fold (loao_audit == loao_clock mechanics); paired comparison on the baseline target day|severity, same 33 animals"
+  },
+  "step4": {
+    "da_genes": [
+      "Apod",
+      "B2m",
+      "C4b",
+      "Cd74",
+      "Col20a1",
+      "Fcgr2b",
+      "H2-Aa",
+      "H2-D1",
+      "Igtp",
+      "Il12rb1",
+      "Irgm1",
+      "Klk6",
+      "Mt1",
+      "Serpina3n",
+      "Serping1"
+    ],
+    "matrix_n": 58,
+    "overlap": [
+      "Col20a1"
+    ],
+    "matrix without DA genes": {
+      "n_genes": 57,
+      "rho": 0.9209163505904416,
+      "ci": [
+        0.8007916290213952,
+        0.9658610276905267
+      ],
+      "zero_feature_folds": 0
+    },
+    "DA genes without matrix genes": {
+      "n_genes": 14,
+      "rho": 0.7038957581673492,
+      "ci": [
+        0.45073401064180846,
+        0.8467112008128475
+      ],
+      "zero_feature_folds": 0
+    },
+    "DA genes (all)": {
+      "n_genes": 15,
+      "rho": 0.7174386456760321,
+      "ci": [
+        0.4774783183596431,
+        0.8448916651442941
+      ],
+      "zero_feature_folds": 0
+    }
+  },
+  "step5": {
+    "RR": {
+      "DA-MOL2": {
+        "n": 30,
+        "rho_day": 0.10925333734391023,
+        "quadratic_a": -0.0007501995840810447,
+        "vertex_day": 33.66545094393508,
+        "rise_and_fall": true,
+        "late_quartile_median": 1.6703130802804518,
+        "mid_max": 3.0647507773797114
+      },
+      "DA-MOL5/6": {
+        "n": 30,
+        "rho_day": -0.05395777068821688,
+        "quadratic_a": -6.998452137372265e-05,
+        "vertex_day": -14.405281740031796,
+        "rise_and_fall": false,
+        "late_quartile_median": 0.38517626253527804,
+        "mid_max": 1.3317999047970128
+      },
+      "DA-OPC/COP": {
+        "n": 30,
+        "rho_day": -0.20802727294258821,
+        "quadratic_a": -0.000604448336439125,
+        "vertex_day": 19.690691355363967,
+        "rise_and_fall": true,
+        "late_quartile_median": 0.31542674634976875,
+        "mid_max": 1.8007448464780778
+      },
+      "DA-Astro": {
+        "n": 30,
+        "rho_day": -0.04147167499177,
+        "quadratic_a": 3.0944468915364776e-05,
+        "vertex_day": 117.78263706175717,
+        "rise_and_fall": false,
+        "late_quartile_median": 0.7745214078514409,
+        "mid_max": 1.9294664094604652
+      },
+      "DA-MiGL": {
+        "n": 30,
+        "rho_day": -0.010925333734391023,
+        "quadratic_a": -0.001729211770900161,
+        "vertex_day": 31.328202997408294,
+        "rise_and_fall": true,
+        "late_quartile_median": 2.2154423257342097,
+        "mid_max": 3.018573185668973
+      }
+    },
+    "chronic": {
+      "DA-MOL2": {
+        "n": 29,
+        "rho_day": 0.4684115743352815,
+        "quadratic_a": -0.002909493101375845,
+        "vertex_day": 29.91989031413561,
+        "rise_and_fall": true,
+        "late_quartile_median": 1.4753002838714884,
+        "mid_max": 2.7926682602840405
+      },
+      "DA-MOL5/6": {
+        "n": 29,
+        "rho_day": 0.4042456052482567,
+        "quadratic_a": -0.00161993129141938,
+        "vertex_day": 28.47395992614574,
+        "rise_and_fall": true,
+        "late_quartile_median": 0.14019683695206356,
+        "mid_max": 1.0205892673985137
+      },
+      "DA-OPC/COP": {
+        "n": 29,
+        "rho_day": 0.3538999987338218,
+        "quadratic_a": -0.002449286285789904,
+        "vertex_day": 28.36589350997191,
+        "rise_and_fall": true,
+        "late_quartile_median": 0.3792447974494241,
+        "mid_max": 1.8192140975661344
+      },
+      "DA-Astro": {
+        "n": 29,
+        "rho_day": 0.3805535551238168,
+        "quadratic_a": -0.0022839452304278408,
+        "vertex_day": 28.655773708247327,
+        "rise_and_fall": true,
+        "late_quartile_median": 0.6069789406496112,
+        "mid_max": 1.6959598231573867
+      },
+      "DA-MiGL": {
+        "n": 29,
+        "rho_day": 0.35093849246826675,
+        "quadratic_a": -0.003816375655751916,
+        "vertex_day": 29.459523171353357,
+        "rise_and_fall": true,
+        "late_quartile_median": 2.0176680051157496,
+        "mid_max": 3.223786764463273
+      }
+    }
+  }
+}

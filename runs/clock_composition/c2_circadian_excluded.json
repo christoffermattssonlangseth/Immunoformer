@@ -1,0 +1,1599 @@
+[
+  {
+    "cell_type": "Astrocyte",
+    "n": 33,
+    "rho_all": 0.8953353408518182,
+    "ci_all": [
+      0.7618452383926564,
+      0.9527189485746091
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.8777797459331551,
+    "ci_clean": [
+      0.7388951931254485,
+      0.945506406102632
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.11046086203201023,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Hoxa10",
+        "coef": 1.051,
+        "circadian": false
+      },
+      {
+        "gene": "Nr1d1",
+        "coef": 0.921,
+        "circadian": true
+      },
+      {
+        "gene": "Hr",
+        "coef": -0.734,
+        "circadian": false
+      },
+      {
+        "gene": "Daam2",
+        "coef": -0.721,
+        "circadian": false
+      },
+      {
+        "gene": "Bhlhe40",
+        "coef": 0.714,
+        "circadian": true
+      },
+      {
+        "gene": "Myo7a",
+        "coef": 0.65,
+        "circadian": false
+      },
+      {
+        "gene": "Amy1",
+        "coef": 0.635,
+        "circadian": false
+      },
+      {
+        "gene": "Ciart",
+        "coef": 0.508,
+        "circadian": true
+      },
+      {
+        "gene": "Ifit1",
+        "coef": -0.484,
+        "circadian": false
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.476,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Hoxa10",
+        "coef": 1.03
+      },
+      {
+        "gene": "Hes1",
+        "coef": 0.784
+      },
+      {
+        "gene": "Myo7a",
+        "coef": 0.746
+      },
+      {
+        "gene": "Hr",
+        "coef": -0.698
+      },
+      {
+        "gene": "Daam2",
+        "coef": -0.635
+      },
+      {
+        "gene": "Amy1",
+        "coef": 0.608
+      },
+      {
+        "gene": "Cxcr4",
+        "coef": 0.531
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.529
+      },
+      {
+        "gene": "Galnt18",
+        "coef": -0.497
+      },
+      {
+        "gene": "Mfsd2a",
+        "coef": -0.47
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Col4a1",
+        "coef": -0.026
+      }
+    ],
+    "matrix_share_clean": 0.001239243522322186,
+    "n_nonzero_clean": 93
+  },
+  {
+    "cell_type": "B cell",
+    "n": 26,
+    "rho_all": 0.8551889336819231,
+    "ci_all": [
+      0.6626361314578041,
+      0.941286134601111
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.8538211784901086,
+    "ci_clean": [
+      0.6617285128635579,
+      0.9355681230956728
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.03551939360854664,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Tagln",
+        "coef": -1.203,
+        "circadian": false
+      },
+      {
+        "gene": "Atp6v0d2",
+        "coef": 0.72,
+        "circadian": false
+      },
+      {
+        "gene": "Txnip",
+        "coef": 0.625,
+        "circadian": false
+      },
+      {
+        "gene": "Fbxo2",
+        "coef": 0.597,
+        "circadian": false
+      },
+      {
+        "gene": "A2m",
+        "coef": 0.586,
+        "circadian": false
+      },
+      {
+        "gene": "Col4a2",
+        "coef": -0.537,
+        "circadian": false
+      },
+      {
+        "gene": "Gja1",
+        "coef": 0.504,
+        "circadian": false
+      },
+      {
+        "gene": "Efemp1",
+        "coef": 0.504,
+        "circadian": false
+      },
+      {
+        "gene": "Cd163",
+        "coef": -0.49,
+        "circadian": false
+      },
+      {
+        "gene": "Appl2",
+        "coef": 0.478,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Tagln",
+        "coef": -1.209
+      },
+      {
+        "gene": "Atp6v0d2",
+        "coef": 0.707
+      },
+      {
+        "gene": "Txnip",
+        "coef": 0.627
+      },
+      {
+        "gene": "Fbxo2",
+        "coef": 0.618
+      },
+      {
+        "gene": "A2m",
+        "coef": 0.553
+      },
+      {
+        "gene": "Col4a2",
+        "coef": -0.533
+      },
+      {
+        "gene": "Gja1",
+        "coef": 0.532
+      },
+      {
+        "gene": "Itgb4",
+        "coef": 0.487
+      },
+      {
+        "gene": "Efemp1",
+        "coef": 0.485
+      },
+      {
+        "gene": "Klf5",
+        "coef": 0.46
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Col4a2",
+        "coef": -0.533
+      },
+      {
+        "gene": "Eln",
+        "coef": -0.07
+      }
+    ],
+    "matrix_share_clean": 0.03125014923574063,
+    "n_nonzero_clean": 93
+  },
+  {
+    "cell_type": "DC",
+    "n": 32,
+    "rho_all": 0.8163901674547399,
+    "ci_all": [
+      0.635566804667964,
+      0.9106698215094614
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.7881565977740684,
+    "ci_clean": [
+      0.5874551735331219,
+      0.8930847988018508
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.032041088595287225,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Fcrls",
+        "coef": 0.956,
+        "circadian": false
+      },
+      {
+        "gene": "Cxcl13",
+        "coef": 0.899,
+        "circadian": false
+      },
+      {
+        "gene": "Chil3",
+        "coef": -0.842,
+        "circadian": false
+      },
+      {
+        "gene": "Cd209d",
+        "coef": -0.828,
+        "circadian": false
+      },
+      {
+        "gene": "Cd79a",
+        "coef": -0.758,
+        "circadian": false
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.747,
+        "circadian": false
+      },
+      {
+        "gene": "Nr2f1",
+        "coef": 0.645,
+        "circadian": false
+      },
+      {
+        "gene": "Pltp",
+        "coef": 0.589,
+        "circadian": false
+      },
+      {
+        "gene": "Igf1",
+        "coef": 0.578,
+        "circadian": false
+      },
+      {
+        "gene": "Osmr",
+        "coef": 0.497,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Fcrls",
+        "coef": 0.966
+      },
+      {
+        "gene": "Cxcl13",
+        "coef": 0.902
+      },
+      {
+        "gene": "Chil3",
+        "coef": -0.89
+      },
+      {
+        "gene": "Cd209d",
+        "coef": -0.823
+      },
+      {
+        "gene": "Cd79a",
+        "coef": -0.778
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.758
+      },
+      {
+        "gene": "Nr2f1",
+        "coef": 0.72
+      },
+      {
+        "gene": "Pltp",
+        "coef": 0.603
+      },
+      {
+        "gene": "Igf1",
+        "coef": 0.572
+      },
+      {
+        "gene": "Lima1",
+        "coef": 0.503
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Col4a1",
+        "coef": -0.18
+      },
+      {
+        "gene": "Fmod",
+        "coef": 0.114
+      },
+      {
+        "gene": "Serpine2",
+        "coef": 0.098
+      }
+    ],
+    "matrix_share_clean": 0.017237124650371704,
+    "n_nonzero_clean": 89
+  },
+  {
+    "cell_type": "Endothelial",
+    "n": 33,
+    "rho_all": 0.7657583307378762,
+    "ci_all": [
+      0.5666360090445736,
+      0.8759049410242702
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.7660927230220412,
+    "ci_clean": [
+      0.5690561406192864,
+      0.8791208986312834
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.031793823553738804,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Gfra1",
+        "coef": 1.337,
+        "circadian": false
+      },
+      {
+        "gene": "Itgb4",
+        "coef": 1.257,
+        "circadian": false
+      },
+      {
+        "gene": "Tie1",
+        "coef": 0.885,
+        "circadian": false
+      },
+      {
+        "gene": "Lfng",
+        "coef": 0.753,
+        "circadian": false
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.591,
+        "circadian": false
+      },
+      {
+        "gene": "Dixdc1",
+        "coef": 0.556,
+        "circadian": false
+      },
+      {
+        "gene": "A2m",
+        "coef": 0.524,
+        "circadian": false
+      },
+      {
+        "gene": "Cd79a",
+        "coef": -0.464,
+        "circadian": false
+      },
+      {
+        "gene": "Cxcl13",
+        "coef": 0.459,
+        "circadian": false
+      },
+      {
+        "gene": "Igfbp2",
+        "coef": 0.415,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Gfra1",
+        "coef": 1.281
+      },
+      {
+        "gene": "Itgb4",
+        "coef": 1.222
+      },
+      {
+        "gene": "Tie1",
+        "coef": 0.877
+      },
+      {
+        "gene": "Lfng",
+        "coef": 0.725
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.597
+      },
+      {
+        "gene": "Dixdc1",
+        "coef": 0.596
+      },
+      {
+        "gene": "A2m",
+        "coef": 0.503
+      },
+      {
+        "gene": "Cxcl13",
+        "coef": 0.433
+      },
+      {
+        "gene": "Cd79a",
+        "coef": -0.426
+      },
+      {
+        "gene": "Cd163",
+        "coef": -0.423
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Col4a2",
+        "coef": -0.298
+      },
+      {
+        "gene": "Col4a1",
+        "coef": -0.099
+      },
+      {
+        "gene": "Serpine2",
+        "coef": 0.098
+      }
+    ],
+    "matrix_share_clean": 0.023062069813435847,
+    "n_nonzero_clean": 103
+  },
+  {
+    "cell_type": "Ependymal cell",
+    "n": 33,
+    "rho_all": 0.6428691663072345,
+    "ci_all": [
+      0.3703023259677671,
+      0.8118159690586927
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.6687845683300229,
+    "ci_clean": [
+      0.4215673093049577,
+      0.8297016298981543
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.05609246620460987,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Nkx6-2",
+        "coef": 0.808,
+        "circadian": false
+      },
+      {
+        "gene": "Pnpla2",
+        "coef": -0.74,
+        "circadian": false
+      },
+      {
+        "gene": "Ptprn2",
+        "coef": 0.721,
+        "circadian": false
+      },
+      {
+        "gene": "Hoxa10",
+        "coef": 0.718,
+        "circadian": false
+      },
+      {
+        "gene": "Slc6a5",
+        "coef": -0.612,
+        "circadian": false
+      },
+      {
+        "gene": "Tssc4",
+        "coef": 0.589,
+        "circadian": false
+      },
+      {
+        "gene": "Ldlr",
+        "coef": -0.576,
+        "circadian": false
+      },
+      {
+        "gene": "Nr1d1",
+        "coef": 0.538,
+        "circadian": true
+      },
+      {
+        "gene": "Got2",
+        "coef": 0.535,
+        "circadian": false
+      },
+      {
+        "gene": "Fbxl13",
+        "coef": 0.521,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Nkx6-2",
+        "coef": 0.874
+      },
+      {
+        "gene": "Hoxa10",
+        "coef": 0.724
+      },
+      {
+        "gene": "Pnpla2",
+        "coef": -0.68
+      },
+      {
+        "gene": "Ptprn2",
+        "coef": 0.677
+      },
+      {
+        "gene": "Slc6a5",
+        "coef": -0.63
+      },
+      {
+        "gene": "Tssc4",
+        "coef": 0.597
+      },
+      {
+        "gene": "Ggnbp1",
+        "coef": 0.593
+      },
+      {
+        "gene": "Fbxl13",
+        "coef": 0.588
+      },
+      {
+        "gene": "Arhgap17",
+        "coef": 0.571
+      },
+      {
+        "gene": "Hey1",
+        "coef": 0.564
+      }
+    ],
+    "matrix_in_clean_nonzero": [],
+    "matrix_share_clean": 0.0,
+    "n_nonzero_clean": 131
+  },
+  {
+    "cell_type": "Fibroblast",
+    "n": 33,
+    "rho_all": 0.891657025726003,
+    "ci_all": [
+      0.7612893674363383,
+      0.9428840910047853
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.8511955593420366,
+    "ci_clean": [
+      0.6912519359464518,
+      0.9197600822137223
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.12145001168978838,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Dbp",
+        "coef": 1.276,
+        "circadian": true
+      },
+      {
+        "gene": "Eln",
+        "coef": -0.968,
+        "circadian": false
+      },
+      {
+        "gene": "Msln",
+        "coef": -0.879,
+        "circadian": false
+      },
+      {
+        "gene": "Bhlhe40",
+        "coef": 0.876,
+        "circadian": true
+      },
+      {
+        "gene": "Per1",
+        "coef": 0.873,
+        "circadian": true
+      },
+      {
+        "gene": "Aspa",
+        "coef": 0.867,
+        "circadian": false
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.774,
+        "circadian": false
+      },
+      {
+        "gene": "Ccl8",
+        "coef": 0.764,
+        "circadian": false
+      },
+      {
+        "gene": "Grem1",
+        "coef": 0.755,
+        "circadian": false
+      },
+      {
+        "gene": "Stat2",
+        "coef": -0.716,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Eln",
+        "coef": -0.954
+      },
+      {
+        "gene": "Grem1",
+        "coef": 0.937
+      },
+      {
+        "gene": "Ccl8",
+        "coef": 0.886
+      },
+      {
+        "gene": "Fgfr2",
+        "coef": 0.884
+      },
+      {
+        "gene": "Aspa",
+        "coef": 0.872
+      },
+      {
+        "gene": "F13a1",
+        "coef": -0.84
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.831
+      },
+      {
+        "gene": "Msln",
+        "coef": -0.822
+      },
+      {
+        "gene": "H19",
+        "coef": -0.817
+      },
+      {
+        "gene": "Lgals1",
+        "coef": 0.776
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Eln",
+        "coef": -0.954
+      },
+      {
+        "gene": "Col4a2",
+        "coef": -0.318
+      }
+    ],
+    "matrix_share_clean": 0.03722551437986187,
+    "n_nonzero_clean": 126
+  },
+  {
+    "cell_type": "Myeloid",
+    "n": 33,
+    "rho_all": 0.8495235979212116,
+    "ci_all": [
+      0.6848689217436791,
+      0.9230921106391702
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.8323023952867136,
+    "ci_clean": [
+      0.6528819708500058,
+      0.91817254205259
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.04468473976993374,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Itga4",
+        "coef": -0.912,
+        "circadian": false
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.763,
+        "circadian": false
+      },
+      {
+        "gene": "Jchain",
+        "coef": -0.735,
+        "circadian": false
+      },
+      {
+        "gene": "Nr1d1",
+        "coef": 0.701,
+        "circadian": true
+      },
+      {
+        "gene": "Svil",
+        "coef": -0.676,
+        "circadian": false
+      },
+      {
+        "gene": "Ccl5",
+        "coef": -0.666,
+        "circadian": false
+      },
+      {
+        "gene": "Plau",
+        "coef": 0.632,
+        "circadian": false
+      },
+      {
+        "gene": "Nefh",
+        "coef": -0.616,
+        "circadian": false
+      },
+      {
+        "gene": "Fcrls",
+        "coef": 0.611,
+        "circadian": false
+      },
+      {
+        "gene": "Icosl",
+        "coef": -0.593,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Itga4",
+        "coef": -0.953
+      },
+      {
+        "gene": "Pink1",
+        "coef": 0.771
+      },
+      {
+        "gene": "Ccl5",
+        "coef": -0.675
+      },
+      {
+        "gene": "Svil",
+        "coef": -0.637
+      },
+      {
+        "gene": "Jchain",
+        "coef": -0.632
+      },
+      {
+        "gene": "Plau",
+        "coef": 0.625
+      },
+      {
+        "gene": "Nefh",
+        "coef": -0.615
+      },
+      {
+        "gene": "Fcrls",
+        "coef": 0.6
+      },
+      {
+        "gene": "Trpm2",
+        "coef": -0.544
+      },
+      {
+        "gene": "Icosl",
+        "coef": -0.521
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Col4a2",
+        "coef": -0.45
+      },
+      {
+        "gene": "Fbln2",
+        "coef": 0.253
+      }
+    ],
+    "matrix_share_clean": 0.03346892572046893,
+    "n_nonzero_clean": 91
+  },
+  {
+    "cell_type": "Neuron",
+    "n": 33,
+    "rho_all": 0.7132587421239694,
+    "ci_all": [
+      0.458569851102199,
+      0.8593567723698919
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.7107507999927318,
+    "ci_clean": [
+      0.45470672986794586,
+      0.857124923359191
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.0046231154866564796,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Msmo1",
+        "coef": -0.696,
+        "circadian": false
+      },
+      {
+        "gene": "Ccl5",
+        "coef": -0.644,
+        "circadian": false
+      },
+      {
+        "gene": "Hsd17b7",
+        "coef": -0.456,
+        "circadian": false
+      },
+      {
+        "gene": "Irgm2",
+        "coef": -0.454,
+        "circadian": false
+      },
+      {
+        "gene": "Vat1",
+        "coef": 0.445,
+        "circadian": false
+      },
+      {
+        "gene": "Irgm1",
+        "coef": -0.433,
+        "circadian": false
+      },
+      {
+        "gene": "Idi1",
+        "coef": -0.43,
+        "circadian": false
+      },
+      {
+        "gene": "Stat1",
+        "coef": -0.362,
+        "circadian": false
+      },
+      {
+        "gene": "Sst",
+        "coef": 0.353,
+        "circadian": false
+      },
+      {
+        "gene": "Cldn11",
+        "coef": -0.343,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Msmo1",
+        "coef": -0.697
+      },
+      {
+        "gene": "Ccl5",
+        "coef": -0.644
+      },
+      {
+        "gene": "Hsd17b7",
+        "coef": -0.457
+      },
+      {
+        "gene": "Irgm2",
+        "coef": -0.455
+      },
+      {
+        "gene": "Vat1",
+        "coef": 0.445
+      },
+      {
+        "gene": "Irgm1",
+        "coef": -0.435
+      },
+      {
+        "gene": "Idi1",
+        "coef": -0.431
+      },
+      {
+        "gene": "Stat1",
+        "coef": -0.363
+      },
+      {
+        "gene": "Sst",
+        "coef": 0.356
+      },
+      {
+        "gene": "Cldn11",
+        "coef": -0.343
+      }
+    ],
+    "matrix_in_clean_nonzero": [],
+    "matrix_share_clean": 0.0,
+    "n_nonzero_clean": 64
+  },
+  {
+    "cell_type": "OPC",
+    "n": 33,
+    "rho_all": 0.8165859579309579,
+    "ci_all": [
+      0.6478558689784799,
+      0.9010491962339715
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.8246113727509182,
+    "ci_clean": [
+      0.6433880729511081,
+      0.9113373620308087
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.029555930578470384,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Fcrls",
+        "coef": 0.797,
+        "circadian": false
+      },
+      {
+        "gene": "Hsd17b7",
+        "coef": -0.777,
+        "circadian": false
+      },
+      {
+        "gene": "Thbs2",
+        "coef": 0.752,
+        "circadian": false
+      },
+      {
+        "gene": "Ndst1",
+        "coef": 0.749,
+        "circadian": false
+      },
+      {
+        "gene": "Dbp",
+        "coef": 0.668,
+        "circadian": true
+      },
+      {
+        "gene": "Lpl",
+        "coef": 0.598,
+        "circadian": false
+      },
+      {
+        "gene": "Shmt1",
+        "coef": 0.586,
+        "circadian": false
+      },
+      {
+        "gene": "Wnt7b",
+        "coef": 0.538,
+        "circadian": false
+      },
+      {
+        "gene": "S1pr3",
+        "coef": 0.533,
+        "circadian": false
+      },
+      {
+        "gene": "Fam20c",
+        "coef": 0.53,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Fcrls",
+        "coef": 0.797
+      },
+      {
+        "gene": "Hsd17b7",
+        "coef": -0.787
+      },
+      {
+        "gene": "Ndst1",
+        "coef": 0.729
+      },
+      {
+        "gene": "Thbs2",
+        "coef": 0.695
+      },
+      {
+        "gene": "Lpl",
+        "coef": 0.64
+      },
+      {
+        "gene": "Shmt1",
+        "coef": 0.571
+      },
+      {
+        "gene": "S1pr3",
+        "coef": 0.568
+      },
+      {
+        "gene": "Ccl3",
+        "coef": 0.567
+      },
+      {
+        "gene": "Slc6a11",
+        "coef": 0.56
+      },
+      {
+        "gene": "Tpcn1",
+        "coef": 0.56
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Thbs2",
+        "coef": 0.695
+      }
+    ],
+    "matrix_share_clean": 0.02053601982928049,
+    "n_nonzero_clean": 165
+  },
+  {
+    "cell_type": "Oligodendrocyte",
+    "n": 33,
+    "rho_all": 0.8272865110242383,
+    "ci_all": [
+      0.6541603469971773,
+      0.909814731951108
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.8247785688930008,
+    "ci_clean": [
+      0.6354325327030933,
+      0.9142292087712938
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.07757380046238152,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Nr1d1",
+        "coef": 1.451,
+        "circadian": true
+      },
+      {
+        "gene": "Thbs2",
+        "coef": 1.374,
+        "circadian": false
+      },
+      {
+        "gene": "Tmem173",
+        "coef": -0.807,
+        "circadian": false
+      },
+      {
+        "gene": "Fam83d",
+        "coef": -0.721,
+        "circadian": false
+      },
+      {
+        "gene": "Pkd2l1",
+        "coef": 0.716,
+        "circadian": false
+      },
+      {
+        "gene": "Kndc1",
+        "coef": -0.683,
+        "circadian": false
+      },
+      {
+        "gene": "Lamb2",
+        "coef": 0.61,
+        "circadian": false
+      },
+      {
+        "gene": "Trp53",
+        "coef": 0.552,
+        "circadian": false
+      },
+      {
+        "gene": "Nod1",
+        "coef": -0.51,
+        "circadian": false
+      },
+      {
+        "gene": "Gap43",
+        "coef": 0.502,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Thbs2",
+        "coef": 1.54
+      },
+      {
+        "gene": "Fam83d",
+        "coef": -0.828
+      },
+      {
+        "gene": "Lamb2",
+        "coef": 0.797
+      },
+      {
+        "gene": "Tmem173",
+        "coef": -0.75
+      },
+      {
+        "gene": "Kndc1",
+        "coef": -0.697
+      },
+      {
+        "gene": "Pkd2l1",
+        "coef": 0.633
+      },
+      {
+        "gene": "Gap43",
+        "coef": 0.569
+      },
+      {
+        "gene": "Elovl1",
+        "coef": -0.563
+      },
+      {
+        "gene": "Nod1",
+        "coef": -0.563
+      },
+      {
+        "gene": "Mcam",
+        "coef": 0.474
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Thbs2",
+        "coef": 1.54
+      },
+      {
+        "gene": "Fmod",
+        "coef": 0.179
+      }
+    ],
+    "matrix_share_clean": 0.07319157527827959,
+    "n_nonzero_clean": 107
+  },
+  {
+    "cell_type": "Schwann cell",
+    "n": 33,
+    "rho_all": 0.7784652375361467,
+    "ci_all": [
+      0.5881755339900524,
+      0.8860582428457843
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.773282157131589,
+    "ci_clean": [
+      0.5766677763116156,
+      0.87590996909904
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.0539232700996239,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Apc",
+        "coef": -1.076,
+        "circadian": false
+      },
+      {
+        "gene": "Nr1d1",
+        "coef": 0.96,
+        "circadian": true
+      },
+      {
+        "gene": "Mki67",
+        "coef": -0.738,
+        "circadian": false
+      },
+      {
+        "gene": "Dock2",
+        "coef": -0.723,
+        "circadian": false
+      },
+      {
+        "gene": "Cd24a",
+        "coef": -0.716,
+        "circadian": false
+      },
+      {
+        "gene": "Pde8a",
+        "coef": 0.711,
+        "circadian": false
+      },
+      {
+        "gene": "Pkp4",
+        "coef": -0.699,
+        "circadian": false
+      },
+      {
+        "gene": "Nrcam",
+        "coef": -0.67,
+        "circadian": false
+      },
+      {
+        "gene": "Efemp1",
+        "coef": 0.641,
+        "circadian": false
+      },
+      {
+        "gene": "Ptpru",
+        "coef": 0.64,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Apc",
+        "coef": -1.198
+      },
+      {
+        "gene": "Dock2",
+        "coef": -0.869
+      },
+      {
+        "gene": "Efemp1",
+        "coef": 0.803
+      },
+      {
+        "gene": "Pkp4",
+        "coef": -0.786
+      },
+      {
+        "gene": "Ighm",
+        "coef": 0.774
+      },
+      {
+        "gene": "Cd24a",
+        "coef": -0.739
+      },
+      {
+        "gene": "Nrcam",
+        "coef": -0.725
+      },
+      {
+        "gene": "Mki67",
+        "coef": -0.712
+      },
+      {
+        "gene": "Pde8a",
+        "coef": 0.7
+      },
+      {
+        "gene": "Il10ra",
+        "coef": -0.67
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Serpine2",
+        "coef": 0.085
+      },
+      {
+        "gene": "Eln",
+        "coef": -0.021
+      }
+    ],
+    "matrix_share_clean": 0.0032336438277168205,
+    "n_nonzero_clean": 136
+  },
+  {
+    "cell_type": "T cell",
+    "n": 30,
+    "rho_all": 0.8431241864275792,
+    "ci_all": [
+      0.6431805068152368,
+      0.9319617786312528
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.841121516151029,
+    "ci_clean": [
+      0.6333855860582884,
+      0.9320985234053417
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.013222490267727397,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Cd4",
+        "coef": -0.99,
+        "circadian": false
+      },
+      {
+        "gene": "Thbs2",
+        "coef": 0.963,
+        "circadian": false
+      },
+      {
+        "gene": "F13a1",
+        "coef": -0.828,
+        "circadian": false
+      },
+      {
+        "gene": "Fcrls",
+        "coef": 0.806,
+        "circadian": false
+      },
+      {
+        "gene": "Col4a2",
+        "coef": -0.788,
+        "circadian": false
+      },
+      {
+        "gene": "Crabp2",
+        "coef": 0.706,
+        "circadian": false
+      },
+      {
+        "gene": "Cd79a",
+        "coef": -0.633,
+        "circadian": false
+      },
+      {
+        "gene": "Slc6a11",
+        "coef": -0.626,
+        "circadian": false
+      },
+      {
+        "gene": "Gap43",
+        "coef": 0.574,
+        "circadian": false
+      },
+      {
+        "gene": "Cd9",
+        "coef": 0.563,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Thbs2",
+        "coef": 0.984
+      },
+      {
+        "gene": "Cd4",
+        "coef": -0.983
+      },
+      {
+        "gene": "Fcrls",
+        "coef": 0.825
+      },
+      {
+        "gene": "F13a1",
+        "coef": -0.797
+      },
+      {
+        "gene": "Col4a2",
+        "coef": -0.779
+      },
+      {
+        "gene": "Crabp2",
+        "coef": 0.708
+      },
+      {
+        "gene": "Slc6a11",
+        "coef": -0.625
+      },
+      {
+        "gene": "Cd79a",
+        "coef": -0.61
+      },
+      {
+        "gene": "Gap43",
+        "coef": 0.552
+      },
+      {
+        "gene": "Cd9",
+        "coef": 0.547
+      }
+    ],
+    "matrix_in_clean_nonzero": [
+      {
+        "gene": "Thbs2",
+        "coef": 0.984
+      },
+      {
+        "gene": "Col4a2",
+        "coef": -0.779
+      },
+      {
+        "gene": "Serpine2",
+        "coef": 0.477
+      },
+      {
+        "gene": "Col4a1",
+        "coef": -0.278
+      },
+      {
+        "gene": "Eln",
+        "coef": -0.175
+      }
+    ],
+    "matrix_share_clean": 0.1101160568689012,
+    "n_nonzero_clean": 101
+  },
+  {
+    "cell_type": "VSMC",
+    "n": 33,
+    "rho_all": 0.8445077136587364,
+    "ci_all": [
+      0.6567653475052,
+      0.9336324744420954
+    ],
+    "zero_all": 0,
+    "rho_clean": 0.8399934178225088,
+    "ci_clean": [
+      0.6461739181172638,
+      0.9306712791613321
+    ],
+    "zero_clean": 0,
+    "circadian_coef_share": 0.0467424962239107,
+    "sex_coef_share": 0.0,
+    "top10_all": [
+      {
+        "gene": "Rgcc",
+        "coef": 1.022,
+        "circadian": false
+      },
+      {
+        "gene": "Pdgfra",
+        "coef": -0.894,
+        "circadian": false
+      },
+      {
+        "gene": "Hoxa9",
+        "coef": 0.817,
+        "circadian": false
+      },
+      {
+        "gene": "F13a1",
+        "coef": -0.804,
+        "circadian": false
+      },
+      {
+        "gene": "Wnt7a",
+        "coef": 0.789,
+        "circadian": false
+      },
+      {
+        "gene": "Jag2",
+        "coef": 0.612,
+        "circadian": false
+      },
+      {
+        "gene": "Adgre1",
+        "coef": -0.565,
+        "circadian": false
+      },
+      {
+        "gene": "Ciart",
+        "coef": 0.549,
+        "circadian": true
+      },
+      {
+        "gene": "Ifih1",
+        "coef": -0.532,
+        "circadian": false
+      },
+      {
+        "gene": "Myd88",
+        "coef": -0.52,
+        "circadian": false
+      }
+    ],
+    "top10_clean": [
+      {
+        "gene": "Rgcc",
+        "coef": 1.087
+      },
+      {
+        "gene": "Pdgfra",
+        "coef": -0.866
+      },
+      {
+        "gene": "Hoxa9",
+        "coef": 0.831
+      },
+      {
+        "gene": "Wnt7a",
+        "coef": 0.797
+      },
+      {
+        "gene": "F13a1",
+        "coef": -0.785
+      },
+      {
+        "gene": "Jag2",
+        "coef": 0.639
+      },
+      {
+        "gene": "Ifih1",
+        "coef": -0.588
+      },
+      {
+        "gene": "Adgre1",
+        "coef": -0.557
+      },
+      {
+        "gene": "Dixdc1",
+        "coef": 0.536
+      },
+      {
+        "gene": "Myd88",
+        "coef": -0.533
+      }
+    ],
+    "matrix_in_clean_nonzero": [],
+    "matrix_share_clean": 0.0,
+    "n_nonzero_clean": 98
+  }
+]

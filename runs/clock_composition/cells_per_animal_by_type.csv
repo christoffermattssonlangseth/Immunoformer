@@ -1,0 +1,20 @@
+cell_type,median,min,max,animals_ge_50,in_sweep
+Oligodendrocyte,5345.0,4241,6839,33,True
+Neuron,4140.0,2479,5948,33,True
+Myeloid,3342.0,552,14440,33,True
+Fibroblast,2924.0,1200,5615,33,True
+Astrocyte,2614.0,1986,3380,33,True
+Endothelial,2028.0,1522,3181,33,True
+DC,977.0,40,4553,32,True
+OPC,944.0,533,1640,33,True
+Schwann cell,889.0,472,2252,33,True
+T cell,849.0,9,3537,30,True
+VSMC,519.0,338,790,33,True
+B cell,236.0,2,1127,26,True
+Ependymal cell,173.0,114,226,33,True
+NK/DC,80.0,0,621,20,False
+Doublet,54.0,26,308,17,False
+T_B_doublet,18.0,0,145,9,False
+Neutrophil,4.0,0,18,0,False
+Epithelial,2.0,0,11,0,False
+Muscle cell,0.0,0,81,1,False

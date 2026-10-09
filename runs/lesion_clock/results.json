@@ -1,0 +1,195 @@
+{
+  "1a": {
+    "n_lesions": 989,
+    "n_sections": 157,
+    "lesions_per_section": {
+      "count": 157.0,
+      "mean": 6.3,
+      "std": 2.9,
+      "min": 1.0,
+      "25%": 4.0,
+      "50%": 6.0,
+      "75%": 8.0,
+      "max": 16.0
+    },
+    "area_um2_quantiles": {
+      "0.1": 6600.0,
+      "0.25": 9800.0,
+      "0.5": 20300.0,
+      "0.75": 56700.0,
+      "0.9": 141780.0
+    },
+    "lesions_in_control_animals": 40,
+    "control_lesions_per_section": 2.3529411764705883
+  },
+  "1b": {
+    "rr": {
+      "n_animals": 30,
+      "median_lesions": 21.0,
+      "rho_count_day": -0.10266478527057021,
+      "ci": [
+        -0.5908741708944432,
+        0.334351830658873
+      ],
+      "rho_areafrac_day": 0.357414489310792,
+      "ci_areafrac": [
+        -0.05447391044055756,
+        0.6610785317743304
+      ]
+    },
+    "chronic": {
+      "n_animals": 29,
+      "median_lesions": 10.0,
+      "rho_count_day": 0.18296826592121443,
+      "ci": [
+        -0.2192437398634281,
+        0.5297762122236687
+      ],
+      "rho_areafrac_day": 0.5923012531109988,
+      "ci_areafrac": [
+        0.22298572084315404,
+        0.8305687412413629
+      ]
+    },
+    "rr_vs_chronic_count_mannwhitney_p": 6.047124539679822e-09
+  },
+  "2c": {
+    "rr": {
+      "n_animals_with_lesions": 33,
+      "rho_lesion_mean": 0.8052166202693476,
+      "ci": [
+        0.5846576164786593,
+        0.9121193430149527
+      ],
+      "rho_section_clock_same_animals": 0.8284568840188158,
+      "ci_section": [
+        0.6259045823890131,
+        0.9231452194426235
+      ],
+      "rho_lesion_mean_size_residualised": 0.8062197971218427,
+      "ci_size_resid": [
+        0.5846647771133358,
+        0.9138899580431972
+      ],
+      "valid": true
+    },
+    "chronic": {
+      "n_animals_with_lesions": 34,
+      "rho_lesion_mean": 0.8399715882387175,
+      "ci": [
+        0.6564875380481625,
+        0.9291913778003043
+      ],
+      "rho_section_clock_same_animals": 0.8523759088672199,
+      "ci_section": [
+        0.6586333955557722,
+        0.9463247883818481
+      ],
+      "rho_lesion_mean_size_residualised": 0.8552855643232884,
+      "ci_size_resid": [
+        0.6717366153654175,
+        0.9364523217597024
+      ],
+      "valid": true
+    }
+  },
+  "2d": {
+    "rr": {
+      "n_animals_ge4": 33,
+      "median_within_animal_rho": -0.010526315789473682,
+      "frac_positive": 0.48484848484848486,
+      "pooled_animal_centred_rho": -0.06203948905266883
+    },
+    "chronic": {
+      "n_animals_ge4": 31,
+      "median_within_animal_rho": 0.26593406593406593,
+      "frac_positive": 0.6774193548387096,
+      "pooled_animal_centred_rho": 0.2663711934031886
+    }
+  },
+  "3b": {
+    "rr": {
+      "n_animals": 30,
+      "rho_sd_day": -0.010925333734391023,
+      "ci": [
+        -0.3969412179667602,
+        0.3659126985842464
+      ],
+      "rho_mean_day": 0.8073598663720386,
+      "ci_mean": [
+        0.5739345657904894,
+        0.9248041843445016
+      ],
+      "rho_sd_nlesions": -0.4892805475662013,
+      "median_sd": 9.602696331125813,
+      "median_noise_sd": 1.094425378933305
+    },
+    "chronic": {
+      "n_animals": 27,
+      "rho_sd_day": -0.17775784903908184,
+      "ci": [
+        -0.5161084892351682,
+        0.2143590288652858
+      ],
+      "rho_mean_day": 0.8707381038988415,
+      "ci_mean": [
+        0.7388586897157009,
+        0.9243682797562816
+      ],
+      "rho_sd_nlesions": -0.031001087017273787,
+      "median_sd": 7.8780813287792535,
+      "median_noise_sd": 0.99571685905592
+    }
+  },
+  "3c": {
+    "n_animals": {
+      "rr": 30,
+      "chronic": 27
+    },
+    "rr_minus_chronic_sd_adj_for_day": 0.8758512650428549,
+    "ci": [
+      -0.8441124118072354,
+      2.5417704119827538
+    ],
+    "overlap_day_range": [
+      11.0,
+      49.0
+    ],
+    "overlap_n_animals": {
+      "rr": 30,
+      "chronic": 22
+    },
+    "overlap_mannwhitney_p": 0.04447313122528875
+  },
+  "4b": {
+    "rr_immune_fraction_within_animal_rho": -0.317257357707904,
+    "rr_cells_per_mm2_within_animal_rho": 0.10374195525999504,
+    "chronic_immune_fraction_within_animal_rho": 0.01594683600040105,
+    "chronic_cells_per_mm2_within_animal_rho": 0.1751667813618377
+  },
+  "4a": {
+    "gene_set_size": 99,
+    "n_sets": 100,
+    "rr": {
+      "observed": -0.010925333734391023,
+      "null_mean": -0.10877841977545609,
+      "null_q05": -0.40400323387815945,
+      "null_q95": 0.200914657715505,
+      "percentile": 70.0
+    },
+    "chronic": {
+      "observed": -0.17775784903908184,
+      "null_mean": -0.322405621618595,
+      "null_q05": -0.5530074219245102,
+      "null_q95": -0.0647699425844641,
+      "percentile": 84.0
+    },
+    "cohort_diff": {
+      "observed": 0.8758512650428549,
+      "null_mean": 2.24398843956911,
+      "null_q05": -9.854263784911161,
+      "null_q95": 17.75678765149599,
+      "percentile": 44.0
+    }
+  }
+}

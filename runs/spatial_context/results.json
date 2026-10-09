@@ -1,0 +1,172 @@
+{
+  "n": 33,
+  "k": [
+    10,
+    30
+  ],
+  "cell_types_kept": [
+    "Astrocyte",
+    "DC",
+    "Doublet",
+    "Endothelial",
+    "Ependymal cell",
+    "Fibroblast",
+    "Myeloid",
+    "Neuron",
+    "OPC",
+    "Oligodendrocyte",
+    "Schwann cell",
+    "VSMC"
+  ],
+  "cell_types_dropped": [
+    "B cell",
+    "Epithelial",
+    "Muscle cell",
+    "NK/DC",
+    "Neutrophil",
+    "T cell",
+    "T_B_doublet"
+  ],
+  "min_cells_per_animal": 20,
+  "conditions": [
+    {
+      "condition": "baseline pseudobulk (all genes)",
+      "n": 33,
+      "n_features_in": 5101,
+      "rho": 0.8284568840188158,
+      "ci": [
+        0.6235948295111766,
+        0.925997559434865
+      ],
+      "r2": 0.7384321357020237,
+      "zero_feature_folds": 0,
+      "median_nonzero": 101.0
+    },
+    {
+      "condition": "own expression per cell type (reference)",
+      "n": 33,
+      "n_features_in": 61212,
+      "rho": 0.8722622732444323,
+      "ci": [
+        0.7256574936661294,
+        0.9299295134982886
+      ],
+      "r2": 0.7534213871778198,
+      "zero_feature_folds": 0,
+      "median_nonzero": 123.0,
+      "fisher_p_vs_baseline": 0.5373456627271661
+    },
+    {
+      "condition": "k=10 neighbourhood mean per cell type",
+      "n": 33,
+      "n_features_in": 61212,
+      "rho": 0.8282896878767334,
+      "ci": [
+        0.6793959501016236,
+        0.9068081095166368
+      ],
+      "r2": 0.6542301951056405,
+      "zero_feature_folds": 0,
+      "median_nonzero": 132.0,
+      "fisher_p_vs_baseline": 0.9983534993308096
+    },
+    {
+      "condition": "k=10 pseudobulk + neighbourhood mean",
+      "n": 33,
+      "n_features_in": 66313,
+      "rho": 0.8481860287845516,
+      "ci": [
+        0.6854525278057417,
+        0.9240836442262674
+      ],
+      "r2": 0.7045912757972324,
+      "zero_feature_folds": 0,
+      "median_nonzero": 124.0,
+      "fisher_p_vs_baseline": 0.7968846384545659
+    },
+    {
+      "condition": "k=10 |own - neighbourhood| per cell type",
+      "n": 33,
+      "n_features_in": 61212,
+      "rho": 0.876442176796495,
+      "ci": [
+        0.7365311563591773,
+        0.93739146961382
+      ],
+      "r2": 0.7607202912324225,
+      "zero_feature_folds": 0,
+      "median_nonzero": 90.0,
+      "fisher_p_vs_baseline": 0.49297977272643145
+    },
+    {
+      "condition": "k=10 pseudobulk + |own - neighbourhood|",
+      "n": 33,
+      "n_features_in": 66313,
+      "rho": 0.8903194565893431,
+      "ci": [
+        0.7439343294492128,
+        0.9543595728094778
+      ],
+      "r2": 0.7929981968693421,
+      "zero_feature_folds": 0,
+      "median_nonzero": 125.0,
+      "fisher_p_vs_baseline": 0.35208422636501957
+    },
+    {
+      "condition": "k=30 neighbourhood mean per cell type",
+      "n": 33,
+      "n_features_in": 61212,
+      "rho": 0.8361479065546111,
+      "ci": [
+        0.6827923386645656,
+        0.9092683578095356
+      ],
+      "r2": 0.6954534283853074,
+      "zero_feature_folds": 0,
+      "median_nonzero": 134.0,
+      "fisher_p_vs_baseline": 0.9227611904208459
+    },
+    {
+      "condition": "k=30 pseudobulk + neighbourhood mean",
+      "n": 33,
+      "n_features_in": 66313,
+      "rho": 0.8217690383355156,
+      "ci": [
+        0.6206302221019232,
+        0.9143473725007816
+      ],
+      "r2": 0.7018468555836048,
+      "zero_feature_folds": 0,
+      "median_nonzero": 132.0,
+      "fisher_p_vs_baseline": 0.9353160759113912
+    },
+    {
+      "condition": "k=30 |own - neighbourhood| per cell type",
+      "n": 33,
+      "n_features_in": 61212,
+      "rho": 0.8772781575069076,
+      "ci": [
+        0.7356324323180362,
+        0.9422339370076571
+      ],
+      "r2": 0.7763651988012855,
+      "zero_feature_folds": 0,
+      "median_nonzero": 90.0,
+      "fisher_p_vs_baseline": 0.484185654996394
+    },
+    {
+      "condition": "k=30 pseudobulk + |own - neighbourhood|",
+      "n": 33,
+      "n_features_in": 66313,
+      "rho": 0.87744535364899,
+      "ci": [
+        0.7416501991186761,
+        0.9358358171752036
+      ],
+      "r2": 0.7744303463522897,
+      "zero_feature_folds": 0,
+      "median_nonzero": 118.0,
+      "fisher_p_vs_baseline": 0.4824304254893391
+    }
+  ]
+}

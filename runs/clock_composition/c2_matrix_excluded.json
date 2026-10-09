@@ -1,0 +1,316 @@
+{
+  "excluded_matrix_genes": [
+    "Acan",
+    "Agrn",
+    "Col10a1",
+    "Col12a1",
+    "Col13a1",
+    "Col14a1",
+    "Col15a1",
+    "Col18a1",
+    "Col1a1",
+    "Col1a2",
+    "Col20a1",
+    "Col23a1",
+    "Col24a1",
+    "Col26a1",
+    "Col4a1",
+    "Col4a2",
+    "Col4a3",
+    "Col4a5",
+    "Col5a1",
+    "Col6a1",
+    "Col6a2",
+    "Col6a3",
+    "Col7a1",
+    "Col9a2",
+    "Col9a3",
+    "Cspg4",
+    "Cspg5",
+    "Eln",
+    "Fbln2",
+    "Fmod",
+    "Fn1",
+    "Gpc3",
+    "Gpc4",
+    "Gpc6",
+    "Hspg2",
+    "Lama1",
+    "Lama2",
+    "Lama3",
+    "Lama4",
+    "Lama5",
+    "Lamb1",
+    "Lamb2",
+    "Lamb3",
+    "Lamc1",
+    "Lum",
+    "Ncan",
+    "Ogn",
+    "Prelp",
+    "Ptx3",
+    "Sdc1",
+    "Sdc2",
+    "Serpine2",
+    "Spock3",
+    "Thbs1",
+    "Thbs2",
+    "Thbs3",
+    "Thbs4",
+    "Vcan"
+  ],
+  "n_excluded": 58,
+  "rows": [
+    {
+      "cell_type": "ALL CELLS",
+      "n": 33,
+      "rho_all": 0.8284568840188158,
+      "ci_all": [
+        0.6235948295111766,
+        0.925997559434865
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.804380639558935,
+      "ci_nomatrix": [
+        0.5945208705415405,
+        0.904172331273154
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.7794779572973298
+    },
+    {
+      "cell_type": "Astrocyte",
+      "n": 33,
+      "rho_all": 0.8953353408518182,
+      "ci_all": [
+        0.7618452383926564,
+        0.9527189485746091
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.891657025726003,
+      "ci_nomatrix": [
+        0.7670554823845008,
+        0.9471464505583421
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.9436771346786716,
+      "matrix_coef_share_all_genes": 0.03535806433409186
+    },
+    {
+      "cell_type": "B cell",
+      "n": 26,
+      "rho_all": 0.8551889336819231,
+      "ci_all": [
+        0.6626361314578041,
+        0.941286134601111
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.8462985249351297,
+      "ci_nomatrix": [
+        0.6444233990689042,
+        0.9327899794097457
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.9130661797478984,
+      "matrix_coef_share_all_genes": 0.03337008432727297
+    },
+    {
+      "cell_type": "DC",
+      "n": 32,
+      "rho_all": 0.8163901674547399,
+      "ci_all": [
+        0.635566804667964,
+        0.9106698215094614
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.8151068233783456,
+      "ci_nomatrix": [
+        0.6297958683410839,
+        0.9128088349703437
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.9883456893810121,
+      "matrix_coef_share_all_genes": 0.07753064969942214
+    },
+    {
+      "cell_type": "Endothelial",
+      "n": 33,
+      "rho_all": 0.7657583307378762,
+      "ci_all": [
+        0.5666360090445736,
+        0.8759049410242702
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.7706070188582689,
+      "ci_nomatrix": [
+        0.5752479175472222,
+        0.8762933133095365
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.9634574342528651,
+      "matrix_coef_share_all_genes": 0.05101612627756789
+    },
+    {
+      "cell_type": "Ependymal cell",
+      "n": 33,
+      "rho_all": 0.6428691663072345,
+      "ci_all": [
+        0.3703023259677671,
+        0.8118159690586927
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.6482194428538748,
+      "ci_nomatrix": [
+        0.3960969613120587,
+        0.8072281976043281
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.9716596059339286,
+      "matrix_coef_share_all_genes": 0.01184805725972093
+    },
+    {
+      "cell_type": "Fibroblast",
+      "n": 33,
+      "rho_all": 0.891657025726003,
+      "ci_all": [
+        0.7612893674363383,
+        0.9428840910047853
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.8956697331359832,
+      "ci_nomatrix": [
+        0.7796229432981714,
+        0.9444384228493921
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.9384744808029066,
+      "matrix_coef_share_all_genes": 0.04789176234516506
+    },
+    {
+      "cell_type": "Myeloid",
+      "n": 33,
+      "rho_all": 0.8495235979212116,
+      "ci_all": [
+        0.6848689217436791,
+        0.9230921106391702
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.8670791928398747,
+      "ci_nomatrix": [
+        0.7100805873059788,
+        0.9345127277520336
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.7960044281561995,
+      "matrix_coef_share_all_genes": 0.05429779939152823
+    },
+    {
+      "cell_type": "Neuron",
+      "n": 33,
+      "rho_all": 0.7132587421239694,
+      "ci_all": [
+        0.458569851102199,
+        0.8593567723698919
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.7119211729873094,
+      "ci_nomatrix": [
+        0.4559836131264972,
+        0.85781677614064
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.9916027080014267,
+      "matrix_coef_share_all_genes": 0.0
+    },
+    {
+      "cell_type": "OPC",
+      "n": 33,
+      "rho_all": 0.8165859579309579,
+      "ci_all": [
+        0.6478558689784799,
+        0.9010491962339715
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.8132420350893078,
+      "ci_nomatrix": [
+        0.6371868491575234,
+        0.8980211514591078
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.969245019446051,
+      "matrix_coef_share_all_genes": 0.03100263159288295
+    },
+    {
+      "cell_type": "Oligodendrocyte",
+      "n": 33,
+      "rho_all": 0.8272865110242383,
+      "ci_all": [
+        0.6541603469971773,
+        0.909814731951108
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.8083933469689152,
+      "ci_nomatrix": [
+        0.6129327364252813,
+        0.9004630368085259
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.8249719920175533,
+      "matrix_coef_share_all_genes": 0.14013052362318246
+    },
+    {
+      "cell_type": "Schwann cell",
+      "n": 33,
+      "rho_all": 0.7784652375361467,
+      "ci_all": [
+        0.5881755339900524,
+        0.8860582428457843
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.7821435526619618,
+      "ci_nomatrix": [
+        0.5895436034098934,
+        0.8865997489059072
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.9709442548724955,
+      "matrix_coef_share_all_genes": 0.019428001284584547
+    },
+    {
+      "cell_type": "T cell",
+      "n": 30,
+      "rho_all": 0.8431241864275792,
+      "ci_all": [
+        0.6431805068152368,
+        0.9319617786312528
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.8197596998678284,
+      "ci_nomatrix": [
+        0.612293434569004,
+        0.9177471482844961
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.7806315731958653,
+      "matrix_coef_share_all_genes": 0.12990396899301493
+    },
+    {
+      "cell_type": "VSMC",
+      "n": 33,
+      "rho_all": 0.8445077136587364,
+      "ci_all": [
+        0.6567653475052,
+        0.9336324744420954
+      ],
+      "zero_all": 0,
+      "rho_nomatrix": 0.8383214564016838,
+      "ci_nomatrix": [
+        0.648838191477321,
+        0.9291310706343939
+      ],
+      "zero_nomatrix": 0,
+      "fisher_p": 0.9346023039813423,
+      "matrix_coef_share_all_genes": 0.004401776659267131
+    }
+  ]
+}
