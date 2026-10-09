@@ -1,0 +1,40 @@
+{
+  "pu1_source": "label",
+  "pu1_labels": [
+    "Myeloid",
+    "DC"
+  ],
+  "pu1_markers": [
+    "Spi1",
+    "Csf1r",
+    "Aif1",
+    "Cd68",
+    "Itgam"
+  ],
+  "pu1_min_markers": 3,
+  "margin_um": 50.0,
+  "bin_um": 10.0,
+  "sigma_um": 40.0,
+  "tissue": {
+    "sigma_um": 30.0,
+    "min_cells_per_mm2": 100.0,
+    "min_area_um2": 50000.0,
+    "hole_area_um2": 200000.0
+  },
+  "lesion": {
+    "score": "pu1_density",
+    "threshold": {
+      "type": "zscore",
+      "value": 2.5
+    },
+    "min_area_um2": 5000.0,
+    "fill_holes": true,
+    "smooth_um": 20.0,
+    "rim_width_um": 50.0,
+    "peri_width_um": 150.0,
+    "core_method": "distance",
+    "min_pu1_fraction": 0.15,
+    "min_lesion_pu1_fraction": 0.2,
+    "dense_nonmyeloid_z": 2.0
+  }
+}

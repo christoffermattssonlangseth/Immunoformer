@@ -1,0 +1,19 @@
+MEAN-POOL BYPASS CHECK (Task 3c)
+========================================
+
+Code path (immunotransformer/model.py, GatedAttentionMIL.forward):
+  h = self.proj(cells)
+  if self.pooling == 'mean':
+      a = torch.full((N, 1), 1/N)          # attn_V / attn_U / attn_w never called
+  else:
+      a = softmax(attn_w(tanh(attn_V(h)) * sigmoid(attn_U(h))))
+  z = (a * h).sum(0)  ->  self.head(z)
+
+1. output vs head(mean(proj(cells))): max |diff| = 0.00e+00
+2. after randomising all attention weights x10: max |diff| = 0.00e+00
+3. attention parameters with no/zero gradient: 6/6 (attn_V.weight, attn_V.bias, attn_U.weight, attn_U.bias, attn_w.weight, attn_w.bias)
+4. current code vs pre-fix code (what arm 6b ran): max |diff| = 0.00e+00
+
+Conclusion: arm 6b output depends only on the mean of the projected cells; the
+attention module contributes nothing to the output or the gradient, before and
+after the refactor. The arm 6b results are attention-free as reported.

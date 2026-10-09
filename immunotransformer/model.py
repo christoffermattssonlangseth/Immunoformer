@@ -46,10 +46,12 @@ class GatedAttentionMIL(nn.Module):
         """cells: [N, in_dim] for ONE section. Returns (out, attn[N]) where out is
         logits[1, K-1] (coral) or a prediction [1, 1] (regression)."""
         h = self.proj(cells)                              # [N, P]
-        a = self.attn_w(torch.tanh(self.attn_V(h)) * torch.sigmoid(self.attn_U(h)))
-        a = torch.softmax(a, dim=0)                       # [N, 1]
         if self.pooling == "mean":
-            a = torch.full_like(a, 1.0 / a.shape[0])
+            # attention module is never called: plain mean over cells (arm 6b control)
+            a = torch.full((h.shape[0], 1), 1.0 / h.shape[0], device=h.device)
+        else:
+            a = self.attn_w(torch.tanh(self.attn_V(h)) * torch.sigmoid(self.attn_U(h)))
+            a = torch.softmax(a, dim=0)                   # [N, 1]
         z = (a * h).sum(dim=0, keepdim=True)              # [1, P]
         logits = self.head(z)                             # [1, K-1]
         return logits, a.squeeze(1)

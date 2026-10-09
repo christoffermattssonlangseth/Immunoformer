@@ -1,0 +1,272 @@
+[
+  {
+    "comparison": "B3 nested spatial vs pseudobulk",
+    "A": "nested-selection spatial (Task 2)",
+    "B": "pseudobulk (arm 2)",
+    "n": 33,
+    "rho_A": 0.857883405025337,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": 0.02929105631088801,
+    "diff_ci": [
+      -0.07280767098813193,
+      0.16181366271558742
+    ],
+    "frac_diff_le_0": 0.324,
+    "median_abs_err_A": 5.116257128123346,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.33921037591062486,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "A2 nested cell type vs pseudobulk",
+    "A": "nested-selection cell type (Task 1f)",
+    "B": "pseudobulk (arm 2)",
+    "n": 33,
+    "rho_A": 0.7814747680936318,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": -0.04851012458911999,
+    "diff_ci": [
+      -0.13972927230422363,
+      0.022210112535311584
+    ],
+    "frac_diff_le_0": 0.892,
+    "median_abs_err_A": 4.021628306388123,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.5021234466694295,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f Astrocyte vs all cells (same 33 animals)",
+    "A": "Astrocyte pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.8953353408518182,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": 0.06826074319801581,
+    "diff_ci": [
+      -0.017812172833776497,
+      0.2017262218378525
+    ],
+    "frac_diff_le_0": 0.078,
+    "median_abs_err_A": 3.408136409499189,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.4059716397896409,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f B cell vs all cells (same 26 animals)",
+    "A": "B cell pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 26,
+    "rho_A": 0.8551889336819231,
+    "rho_B": 0.7584202538610577,
+    "diff_mean": 0.10085427928276541,
+    "diff_ci": [
+      -0.004139859446863622,
+      0.2506470092611838
+    ],
+    "frac_diff_le_0": 0.033,
+    "median_abs_err_A": 5.7342075130134695,
+    "median_abs_err_B": 4.953711941621524,
+    "wilcoxon_p": 0.8028007447719574,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f DC vs all cells (same 32 animals)",
+    "A": "DC pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 32,
+    "rho_A": 0.8163901674547399,
+    "rho_B": 0.822990222704767,
+    "diff_mean": -0.0053499433442631495,
+    "diff_ci": [
+      -0.10175670456011197,
+      0.0876068505906641
+    ],
+    "frac_diff_le_0": 0.554,
+    "median_abs_err_A": 4.678551123861954,
+    "median_abs_err_B": 4.270149346977647,
+    "wilcoxon_p": 0.8900027303025126,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f Endothelial vs all cells (same 33 animals)",
+    "A": "Endothelial pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.7657583307378762,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": -0.06448542170248425,
+    "diff_ci": [
+      -0.21420177461294942,
+      0.08203106963748442
+    ],
+    "frac_diff_le_0": 0.821,
+    "median_abs_err_A": 6.296378219879578,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.0737137661781162,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f Ependymal cell vs all cells (same 33 animals)",
+    "A": "Ependymal cell pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.6428691663072345,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": -0.1850157965006221,
+    "diff_ci": [
+      -0.4365987620654168,
+      0.0127899523852309
+    ],
+    "frac_diff_le_0": 0.9685,
+    "median_abs_err_A": 7.985131655754746,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.006567624397575855,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f Fibroblast vs all cells (same 33 animals)",
+    "A": "Fibroblast pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.891657025726003,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": 0.06457303577830789,
+    "diff_ci": [
+      -0.02871035550121108,
+      0.20393983023444734
+    ],
+    "frac_diff_le_0": 0.11,
+    "median_abs_err_A": 3.416502030151552,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.12551978579722345,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f Myeloid vs all cells (same 33 animals)",
+    "A": "Myeloid pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.8495235979212116,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": 0.020955289736527133,
+    "diff_ci": [
+      -0.04400665516929907,
+      0.10865652316494356
+    ],
+    "frac_diff_le_0": 0.2955,
+    "median_abs_err_A": 4.7070808315152135,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.7778494691010565,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f Neuron vs all cells (same 33 animals)",
+    "A": "Neuron pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.7132587421239694,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": -0.11633382118708692,
+    "diff_ci": [
+      -0.2817210754377507,
+      0.035254000814582
+    ],
+    "frac_diff_le_0": 0.9355,
+    "median_abs_err_A": 5.151953815773387,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.009843661217018962,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f OPC vs all cells (same 33 animals)",
+    "A": "OPC pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.8165859579309579,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": -0.010220141528612123,
+    "diff_ci": [
+      -0.12250400348901334,
+      0.11200240160092904
+    ],
+    "frac_diff_le_0": 0.595,
+    "median_abs_err_A": 4.318840219409482,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.6591820653993636,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f Oligodendrocyte vs all cells (same 33 animals)",
+    "A": "Oligodendrocyte pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.8272865110242383,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": -0.0008735465875385599,
+    "diff_ci": [
+      -0.09239504473264042,
+      0.10254323421433945
+    ],
+    "frac_diff_le_0": 0.532,
+    "median_abs_err_A": 4.390687861287752,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.887851148378104,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f Schwann cell vs all cells (same 33 animals)",
+    "A": "Schwann cell pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.7784652375361467,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": -0.051244756457813984,
+    "diff_ci": [
+      -0.19210620114643798,
+      0.10117917501307838
+    ],
+    "frac_diff_le_0": 0.7835,
+    "median_abs_err_A": 4.737705272526127,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.27976055652834475,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f T cell vs all cells (same 30 animals)",
+    "A": "T cell pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 30,
+    "rho_A": 0.8431241864275792,
+    "rho_B": 0.8709390513796634,
+    "diff_mean": -0.026763084240145146,
+    "diff_ci": [
+      -0.10648327400541503,
+      0.04425611118256348
+    ],
+    "frac_diff_le_0": 0.7795,
+    "median_abs_err_A": 4.328747780563422,
+    "median_abs_err_B": 3.5756406478742244,
+    "wilcoxon_p": 0.2988441474735737,
+    "ci_excludes_zero": false
+  },
+  {
+    "comparison": "1f VSMC vs all cells (same 33 animals)",
+    "A": "VSMC pseudobulk",
+    "B": "all-cells pseudobulk",
+    "n": 33,
+    "rho_A": 0.8445077136587364,
+    "rho_B": 0.8284568840188158,
+    "diff_mean": 0.016065287975799255,
+    "diff_ci": [
+      -0.0987617967275639,
+      0.14953044328677426
+    ],
+    "frac_diff_le_0": 0.4115,
+    "median_abs_err_A": 4.091783833139742,
+    "median_abs_err_B": 4.471987494364988,
+    "wilcoxon_p": 0.8324509984813631,
+    "ci_excludes_zero": false
+  }
+]
