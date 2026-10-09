@@ -48,6 +48,9 @@ class ModelConfig:
     proj_dim: int = 128                # per-cell projection before attention
     attn_dim: int = 64                 # gated-attention hidden dim
     dropout: float = 0.1
+    head: str = "coral"                # "coral" (ordinal) | "regression" (continuous target);
+                                       # train.py drives coral only; analysis/mil_loao.py
+                                       # drives regression under LOAO folds
 
 
 @dataclass

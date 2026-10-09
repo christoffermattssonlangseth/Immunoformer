@@ -1,0 +1,32 @@
+ARM 6 TRAINING DIAGNOSTIC — undertrained, or fit-but-no-transfer?
+==================================================================
+One seed, same LOAO folds/encoder as arm 6; checkpoints [10, 20, 30, 60, 90, 120]. Reported
+arm 6 uses 30 epochs (fixed in advance). train_* columns are leak-free;
+held-out rho is test-informed and is NOT used to pick the epoch count.
+
+TARGET days_since_last_peak (n = 28); losses are MSE in z-units of the residual target
+  epoch train loss train MSE (eval)    train rho (median, IQR) held-out MSE held-out rho
+     10      0.221            0.573       +0.760 [+0.74, +0.77]        1.223       +0.311
+     20      0.141            0.350       +0.839 [+0.82, +0.86]        1.113       +0.421
+     30      0.092            0.207       +0.925 [+0.91, +0.94]        1.237       +0.371
+     60      0.026            0.063       +0.975 [+0.97, +0.98]        1.071       +0.453
+     90      0.017            0.037       +0.981 [+0.98, +0.99]        1.104       +0.445
+    120      0.018            0.043       +0.981 [+0.98, +0.99]        1.046       +0.448
+
+TARGET day_of_sacrifice (n = 33); losses are MSE in z-units of the residual target
+  epoch train loss train MSE (eval)    train rho (median, IQR) held-out MSE held-out rho
+     10      0.061            0.130       +0.927 [+0.92, +0.94]        0.294       +0.849
+     20      0.035            0.068       +0.967 [+0.96, +0.97]        0.230       +0.889
+     30      0.021            0.034       +0.977 [+0.97, +0.98]        0.216       +0.889
+     60      0.011            0.018       +0.985 [+0.98, +0.99]        0.251       +0.865
+     90      0.007            0.013       +0.986 [+0.98, +0.99]        0.250       +0.874
+    120      0.008            0.016       +0.989 [+0.99, +0.99]        0.236       +0.888
+
+Held-out MSE of a constant predictor (training mean) is ~1 in these units; below
+1 means the model beats predicting the mean.
+
+READING
+  train rho low and loss still falling at 30 -> undertrained: rerun arm 6 longer
+  (epoch count fixed in advance from the TRAIN curve, not the held-out one).
+  train rho high by 30 while held-out rho stays flat -> not undertraining; the gap
+  is generalisation from ~27 training animals.

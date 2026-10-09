@@ -14,8 +14,12 @@ from .losses import CoralHead
 
 
 class GatedAttentionMIL(nn.Module):
+    """head="coral": ordinal logits [1, K-1] (K=2 is a logistic head).
+    head="regression": a single continuous output [1, 1]; num_classes is ignored."""
+
     def __init__(self, in_dim: int, num_classes: int, proj_dim: int = 128,
-                 attn_dim: int = 64, dropout: float = 0.1):
+                 attn_dim: int = 64, dropout: float = 0.1, head: str = "coral",
+                 pooling: str = "attention"):
         super().__init__()
         self.proj = nn.Sequential(
             nn.Linear(in_dim, proj_dim),
@@ -27,13 +31,25 @@ class GatedAttentionMIL(nn.Module):
         self.attn_V = nn.Linear(proj_dim, attn_dim)
         self.attn_U = nn.Linear(proj_dim, attn_dim)
         self.attn_w = nn.Linear(attn_dim, 1)
-        self.head = CoralHead(proj_dim, num_classes)
+        if head == "coral":
+            self.head = CoralHead(proj_dim, num_classes)
+        elif head == "regression":
+            self.head = nn.Linear(proj_dim, 1)
+        else:
+            raise ValueError(f"Unknown head '{head}' (coral|regression)")
+        self.head_type = head
+        if pooling not in ("attention", "mean"):
+            raise ValueError(f"Unknown pooling '{pooling}' (attention|mean)")
+        self.pooling = pooling   # "mean" = equal cell weights: the no-attention control
 
     def forward(self, cells: torch.Tensor):
-        """cells: [N, in_dim] for ONE section. Returns (logits[1,K-1], attn[N])."""
+        """cells: [N, in_dim] for ONE section. Returns (out, attn[N]) where out is
+        logits[1, K-1] (coral) or a prediction [1, 1] (regression)."""
         h = self.proj(cells)                              # [N, P]
         a = self.attn_w(torch.tanh(self.attn_V(h)) * torch.sigmoid(self.attn_U(h)))
         a = torch.softmax(a, dim=0)                       # [N, 1]
+        if self.pooling == "mean":
+            a = torch.full_like(a, 1.0 / a.shape[0])
         z = (a * h).sum(dim=0, keepdim=True)              # [1, P]
         logits = self.head(z)                             # [1, K-1]
         return logits, a.squeeze(1)

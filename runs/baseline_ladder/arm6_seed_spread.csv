@@ -1,0 +1,7 @@
+target,seed0,seed1,seed2,range,ensemble
+days_since_last_peak,0.367,0.446,0.446,0.079,0.46
+slope_sign,0.173,0.221,0.15,0.071,0.161
+onset_day_rr,0.417,0.448,0.383,0.065,0.433
+onset_day_chronic,0.113,0.282,0.284,0.171,0.23
+cumulative_chronic,0.659,0.678,0.583,0.095,0.658
+day_of_sacrifice,0.887,0.902,0.875,0.027,0.885
