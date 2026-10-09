@@ -1,0 +1,73 @@
+compartment,program,sample_id,score,n_cells,condition,age,slide
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4282,0.0763973134252273,16243,control,60,0060539
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4350,0.07965167834820659,14536,control,60,0060539
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4401,0.12312320485339744,14426,mtDSB,60,0060539
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4403,0.07560912429048056,26847,mtDSB,60,0060539
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4405,0.10751616600295621,12702,mtDSB,60,0060539
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4498,0.08762765873324763,15396,control,60,0060539
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4620,0.08631450010323702,16353,control,21,0060541
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4627,0.10244270667398422,12868,mtDSB,21,0060541
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4630,0.09635252950077518,13368,mtDSB,21,0060541
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4653,0.12387704453958173,14304,mtDSB,21,0060541
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4658,0.12368848315086545,14278,control,21,0060541
+oligodendrocyte_lineage,accrual (clock top-20 + ratchet),RB4676,0.06325456714411352,16670,control,21,0060541
+oligodendrocyte_lineage,ratchet only,RB4282,0.292236867256338,16243,control,60,0060539
+oligodendrocyte_lineage,ratchet only,RB4350,0.29232953244639376,14536,control,60,0060539
+oligodendrocyte_lineage,ratchet only,RB4401,0.37815384273650315,14426,mtDSB,60,0060539
+oligodendrocyte_lineage,ratchet only,RB4403,0.26332815164117307,26847,mtDSB,60,0060539
+oligodendrocyte_lineage,ratchet only,RB4405,0.3086745900784083,12702,mtDSB,60,0060539
+oligodendrocyte_lineage,ratchet only,RB4498,0.28724059592702805,15396,control,60,0060539
+oligodendrocyte_lineage,ratchet only,RB4620,0.3193056949678678,16353,control,21,0060541
+oligodendrocyte_lineage,ratchet only,RB4627,0.2953707009259314,12868,mtDSB,21,0060541
+oligodendrocyte_lineage,ratchet only,RB4630,0.35468910778879437,13368,mtDSB,21,0060541
+oligodendrocyte_lineage,ratchet only,RB4653,0.4372711380210861,14304,mtDSB,21,0060541
+oligodendrocyte_lineage,ratchet only,RB4658,0.41627994464066986,14278,control,21,0060541
+oligodendrocyte_lineage,ratchet only,RB4676,0.2489435203550448,16670,control,21,0060541
+oligodendrocyte_lineage,acute,RB4282,-0.0006406538178824897,16243,control,60,0060539
+oligodendrocyte_lineage,acute,RB4350,-0.0005819243281789929,14536,control,60,0060539
+oligodendrocyte_lineage,acute,RB4401,-0.0005657087554221641,14426,mtDSB,60,0060539
+oligodendrocyte_lineage,acute,RB4403,-4.613877665989001e-05,26847,mtDSB,60,0060539
+oligodendrocyte_lineage,acute,RB4405,-0.00040786770405822157,12702,mtDSB,60,0060539
+oligodendrocyte_lineage,acute,RB4498,0.0006088797472055376,15396,control,60,0060539
+oligodendrocyte_lineage,acute,RB4620,-0.00011185190610528519,16353,control,21,0060541
+oligodendrocyte_lineage,acute,RB4627,-0.0003195867858307558,12868,mtDSB,21,0060541
+oligodendrocyte_lineage,acute,RB4630,-0.00017268752287229855,13368,mtDSB,21,0060541
+oligodendrocyte_lineage,acute,RB4653,0.00014671555823749964,14304,mtDSB,21,0060541
+oligodendrocyte_lineage,acute,RB4658,-0.0002144982864661127,14278,control,21,0060541
+oligodendrocyte_lineage,acute,RB4676,-0.0007778034556081261,16670,control,21,0060541
+microglia,accrual (clock top-20 + ratchet),RB4282,0.058827578561685516,2188,control,60,0060539
+microglia,accrual (clock top-20 + ratchet),RB4350,0.05578621276904536,2190,control,60,0060539
+microglia,accrual (clock top-20 + ratchet),RB4401,0.09988382827977918,2483,mtDSB,60,0060539
+microglia,accrual (clock top-20 + ratchet),RB4403,0.07022741114660568,3783,mtDSB,60,0060539
+microglia,accrual (clock top-20 + ratchet),RB4405,0.11319561440838283,3018,mtDSB,60,0060539
+microglia,accrual (clock top-20 + ratchet),RB4498,0.08038465550277198,2225,control,60,0060539
+microglia,accrual (clock top-20 + ratchet),RB4620,0.05759056641730006,2316,control,21,0060541
+microglia,accrual (clock top-20 + ratchet),RB4627,0.10589058537235169,2333,mtDSB,21,0060541
+microglia,accrual (clock top-20 + ratchet),RB4630,0.05209167285305184,1988,mtDSB,21,0060541
+microglia,accrual (clock top-20 + ratchet),RB4653,0.09734243192377413,2048,mtDSB,21,0060541
+microglia,accrual (clock top-20 + ratchet),RB4658,0.08562289033917289,1920,control,21,0060541
+microglia,accrual (clock top-20 + ratchet),RB4676,0.0846694900755795,2424,control,21,0060541
+microglia,ratchet only,RB4282,-0.011528437133945918,2188,control,60,0060539
+microglia,ratchet only,RB4350,0.020863934346627273,2190,control,60,0060539
+microglia,ratchet only,RB4401,0.039394400323227496,2483,mtDSB,60,0060539
+microglia,ratchet only,RB4403,-0.0027362529754573943,3783,mtDSB,60,0060539
+microglia,ratchet only,RB4405,0.09599100931925485,3018,mtDSB,60,0060539
+microglia,ratchet only,RB4498,0.06505087240294118,2225,control,60,0060539
+microglia,ratchet only,RB4620,0.02801930400923812,2316,control,21,0060541
+microglia,ratchet only,RB4627,0.10761402366051206,2333,mtDSB,21,0060541
+microglia,ratchet only,RB4630,0.017979821254929963,1988,mtDSB,21,0060541
+microglia,ratchet only,RB4653,0.15139610300726242,2048,mtDSB,21,0060541
+microglia,ratchet only,RB4658,0.09662439380636852,1920,control,21,0060541
+microglia,ratchet only,RB4676,0.09374519348510656,2424,control,21,0060541
+microglia,acute,RB4282,-0.00039818486740209947,2188,control,60,0060539
+microglia,acute,RB4350,-0.0006722478670616672,2190,control,60,0060539
+microglia,acute,RB4401,-0.000362780533279888,2483,mtDSB,60,0060539
+microglia,acute,RB4403,-3.953330243082337e-06,3783,mtDSB,60,0060539
+microglia,acute,RB4405,-0.0001189920384546292,3018,mtDSB,60,0060539
+microglia,acute,RB4498,0.0014816258701938814,2225,control,60,0060539
+microglia,acute,RB4620,0.0007925375896277067,2316,control,21,0060541
+microglia,acute,RB4627,0.0006519423561243351,2333,mtDSB,21,0060541
+microglia,acute,RB4630,0.00033443486626559186,1988,mtDSB,21,0060541
+microglia,acute,RB4653,0.0003541858040262014,2048,mtDSB,21,0060541
+microglia,acute,RB4658,0.0005274284266763264,1920,control,21,0060541
+microglia,acute,RB4676,-0.0012260154689630396,2424,control,21,0060541

@@ -1,0 +1,502 @@
+{
+  "h5ad": "/Volumes/moldiassd/oligo-mtDSB/data/mtDNA_DSB_5k_clustered_annotation_with_rbd_2_cytetype_brain_novae4.companion.ready.h5ad",
+  "program_survival": {
+    "accrual (clock top-20 + ratchet)": {
+      "defined": 27,
+      "on_panel": [
+        "Nr1d1",
+        "Thbs2",
+        "Dbp",
+        "Serpine2",
+        "Bhlhe40",
+        "Cxcl13",
+        "Srebf1",
+        "Slc47a1",
+        "Xist",
+        "Lpl",
+        "Tcf7",
+        "Igfbp2",
+        "Atf5",
+        "Ptx3",
+        "Fbln2",
+        "Cxcl12",
+        "Cyb5r3",
+        "Klf5",
+        "Hpse",
+        "Abca8a",
+        "Gpnmb",
+        "Plin4",
+        "Fcrls",
+        "Igf2",
+        "Fmod",
+        "Pmp22",
+        "Ptgds"
+      ],
+      "missing": []
+    },
+    "ratchet only": {
+      "defined": 7,
+      "on_panel": [
+        "Gpnmb",
+        "Plin4",
+        "Fcrls",
+        "Igf2",
+        "Fmod",
+        "Pmp22",
+        "Ptgds"
+      ],
+      "missing": []
+    },
+    "acute": {
+      "defined": 3,
+      "on_panel": [
+        "Hal",
+        "Arg1",
+        "Chil3"
+      ],
+      "missing": []
+    }
+  },
+  "tests": {
+    "microglia | accrual (clock top-20 + ratchet)": {
+      "21": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 0.07596098227735082,
+        "mean_mtdsb": 0.08510823004972588,
+        "diff": 0.009147247772375064,
+        "U": 6.0,
+        "p_exact": 0.7,
+        "rank_biserial": 0.33333333333333326,
+        "hedges_g": 0.3135796078346955
+      },
+      "60": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 0.0649994822778343,
+        "mean_mtdsb": 0.09443561794492256,
+        "diff": 0.029436135667088262,
+        "U": 8.0,
+        "p_exact": 0.2,
+        "rank_biserial": 0.7777777777777777,
+        "hedges_g": 1.2927364979388427
+      },
+      "pooled": {
+        "n_control": 6,
+        "n_mtdsb": 6,
+        "mean_control": 0.07048023227759255,
+        "mean_mtdsb": 0.08977192399732421,
+        "diff": 0.019291691719731663,
+        "U": 27.0,
+        "p_exact": 0.17965367965367965,
+        "rank_biserial": 0.5,
+        "hedges_g": 0.9115506820267825
+      }
+    },
+    "microglia | acute": {
+      "21": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 3.131684911366449e-05,
+        "mean_mtdsb": 0.00044685434213870945,
+        "diff": 0.00041553749302504495,
+        "U": 4.0,
+        "p_exact": 1.0,
+        "rank_biserial": -0.11111111111111116,
+        "hedges_g": 0.42306126603342736
+      },
+      "60": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 0.0001370643785767049,
+        "mean_mtdsb": -0.0001619086339925332,
+        "diff": -0.0002989730125692381,
+        "U": 6.0,
+        "p_exact": 0.7,
+        "rank_biserial": 0.33333333333333326,
+        "hedges_g": -0.285036054860855
+      },
+      "pooled": {
+        "n_control": 6,
+        "n_mtdsb": 6,
+        "mean_control": 8.419061384518469e-05,
+        "mean_mtdsb": 0.00014247285407308812,
+        "diff": 5.828224022790343e-05,
+        "U": 19.0,
+        "p_exact": 0.9372294372294373,
+        "rank_biserial": 0.05555555555555558,
+        "hedges_g": 0.07028566314530954
+      }
+    },
+    "microglia | ratchet only": {
+      "21": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 0.07279629710023773,
+        "mean_mtdsb": 0.09232998264090149,
+        "diff": 0.01953368554066376,
+        "U": 6.0,
+        "p_exact": 0.7,
+        "rank_biserial": 0.33333333333333326,
+        "hedges_g": 0.2822435824055217
+      },
+      "60": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 0.024795456538540844,
+        "mean_mtdsb": 0.04421638555567498,
+        "diff": 0.019420929017134138,
+        "U": 6.0,
+        "p_exact": 0.7,
+        "rank_biserial": 0.33333333333333326,
+        "hedges_g": 0.3504079225593093
+      },
+      "pooled": {
+        "n_control": 6,
+        "n_mtdsb": 6,
+        "mean_control": 0.04879587681938929,
+        "mean_mtdsb": 0.06827318409828824,
+        "diff": 0.019477307278898952,
+        "U": 22.0,
+        "p_exact": 0.5887445887445888,
+        "rank_biserial": 0.22222222222222232,
+        "hedges_g": 0.3456598774877709
+      }
+    },
+    "oligodendrocyte_lineage | accrual (clock top-20 + ratchet)": {
+      "21": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 0.09108585013273866,
+        "mean_mtdsb": 0.10755742690478039,
+        "diff": 0.016471576772041724,
+        "U": 7.0,
+        "p_exact": 0.4,
+        "rank_biserial": 0.5555555555555556,
+        "hedges_g": 0.5521384700910065
+      },
+      "60": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 0.08122555016889384,
+        "mean_mtdsb": 0.1020828317156114,
+        "diff": 0.020857281546717565,
+        "U": 6.0,
+        "p_exact": 0.7,
+        "rank_biserial": 0.33333333333333326,
+        "hedges_g": 0.9477479256122339
+      },
+      "pooled": {
+        "n_control": 6,
+        "n_mtdsb": 6,
+        "mean_control": 0.08615570015081625,
+        "mean_mtdsb": 0.1048201293101959,
+        "diff": 0.018664429159379645,
+        "U": 27.0,
+        "p_exact": 0.17965367965367965,
+        "rank_biserial": 0.5,
+        "hedges_g": 0.8945946030382286
+      }
+    },
+    "oligodendrocyte_lineage | acute": {
+      "21": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": -0.00036805121605984134,
+        "mean_mtdsb": -0.0001151862501551849,
+        "diff": 0.00025286496590465644,
+        "U": 6.0,
+        "p_exact": 0.7,
+        "rank_biserial": 0.33333333333333326,
+        "hedges_g": 0.6644211619815117
+      },
+      "60": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": -0.00020456613295198166,
+        "mean_mtdsb": -0.00033990507871342526,
+        "diff": -0.0001353389457614436,
+        "U": 6.0,
+        "p_exact": 0.7,
+        "rank_biserial": 0.33333333333333326,
+        "hedges_g": -0.20315193925240435
+      },
+      "pooled": {
+        "n_control": 6,
+        "n_mtdsb": 6,
+        "mean_control": -0.0002863086745059115,
+        "mean_mtdsb": -0.00022754566443430508,
+        "diff": 5.8763010071606424e-05,
+        "U": 23.0,
+        "p_exact": 0.48484848484848486,
+        "rank_biserial": 0.2777777777777777,
+        "hedges_g": 0.1346508838904885
+      }
+    },
+    "oligodendrocyte_lineage | ratchet only": {
+      "21": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 0.3281763866545275,
+        "mean_mtdsb": 0.3624436489119373,
+        "diff": 0.034267262257409836,
+        "U": 6.0,
+        "p_exact": 0.7,
+        "rank_biserial": 0.33333333333333326,
+        "hedges_g": 0.3518870761494482
+      },
+      "60": {
+        "n_control": 3,
+        "n_mtdsb": 3,
+        "mean_control": 0.29060233187658663,
+        "mean_mtdsb": 0.3167188614853615,
+        "diff": 0.026116529608774863,
+        "U": 6.0,
+        "p_exact": 0.7,
+        "rank_biserial": 0.33333333333333326,
+        "hedges_g": 0.5102555841441547
+      },
+      "pooled": {
+        "n_control": 6,
+        "n_mtdsb": 6,
+        "mean_control": 0.30938935926555705,
+        "mean_mtdsb": 0.3395812551986494,
+        "diff": 0.03019189593309235,
+        "U": 25.0,
+        "p_exact": 0.30952380952380953,
+        "rank_biserial": 0.38888888888888884,
+        "hedges_g": 0.46296811897026163
+      }
+    }
+  },
+  "detection_fraction": {
+    "oligodendrocyte_lineage": {
+      "control": {
+        "Abca8a": 0.0399,
+        "Arg1": 0.0007,
+        "Atf5": 0.089,
+        "Bhlhe40": 0.0558,
+        "Chil3": 0.0003,
+        "Cxcl12": 0.0277,
+        "Cxcl13": 0.0003,
+        "Cyb5r3": 0.0876,
+        "Dbp": 0.2607,
+        "Fbln2": 0.0056,
+        "Fcrls": 0.0112,
+        "Fmod": 0.0036,
+        "Gpnmb": 0.0054,
+        "Hal": 0.0002,
+        "Hpse": 0.0005,
+        "Igf2": 0.0202,
+        "Igfbp2": 0.0074,
+        "Klf5": 0.0187,
+        "Lpl": 0.0198,
+        "Nr1d1": 0.1864,
+        "Plin4": 0.1884,
+        "Pmp22": 0.1598,
+        "Ptgds": 0.8029,
+        "Ptx3": 0.0003,
+        "Serpine2": 0.3516,
+        "Slc47a1": 0.0015,
+        "Srebf1": 0.1126,
+        "Tcf7": 0.0069,
+        "Thbs2": 0.0113,
+        "Xist": 0.102
+      },
+      "mtDSB": {
+        "Abca8a": 0.0213,
+        "Arg1": 0.001,
+        "Atf5": 0.1696,
+        "Bhlhe40": 0.0624,
+        "Chil3": 0.0002,
+        "Cxcl12": 0.0267,
+        "Cxcl13": 0.0003,
+        "Cyb5r3": 0.1117,
+        "Dbp": 0.2959,
+        "Fbln2": 0.0062,
+        "Fcrls": 0.015,
+        "Fmod": 0.0033,
+        "Gpnmb": 0.011,
+        "Hal": 0.0003,
+        "Hpse": 0.0005,
+        "Igf2": 0.0193,
+        "Igfbp2": 0.0074,
+        "Klf5": 0.0217,
+        "Lpl": 0.0219,
+        "Nr1d1": 0.2252,
+        "Plin4": 0.2409,
+        "Pmp22": 0.1301,
+        "Ptgds": 0.829,
+        "Ptx3": 0.0002,
+        "Serpine2": 0.3728,
+        "Slc47a1": 0.001,
+        "Srebf1": 0.1232,
+        "Tcf7": 0.0089,
+        "Thbs2": 0.0103,
+        "Xist": 0.0659
+      }
+    },
+    "microglia": {
+      "control": {
+        "Abca8a": 0.0049,
+        "Arg1": 0.001,
+        "Atf5": 0.078,
+        "Bhlhe40": 0.0508,
+        "Chil3": 0.0002,
+        "Cxcl12": 0.0404,
+        "Cxcl13": 0.0002,
+        "Cyb5r3": 0.0894,
+        "Dbp": 0.2608,
+        "Fbln2": 0.0018,
+        "Fcrls": 0.5822,
+        "Fmod": 0.0048,
+        "Gpnmb": 0.0027,
+        "Hal": 0.0,
+        "Hpse": 0.0005,
+        "Igf2": 0.0296,
+        "Igfbp2": 0.0115,
+        "Klf5": 0.0222,
+        "Lpl": 0.0321,
+        "Nr1d1": 0.1761,
+        "Plin4": 0.0102,
+        "Pmp22": 0.3655,
+        "Ptgds": 0.2408,
+        "Ptx3": 0.0001,
+        "Serpine2": 0.5417,
+        "Slc47a1": 0.0004,
+        "Srebf1": 0.0375,
+        "Tcf7": 0.0066,
+        "Thbs2": 0.0089,
+        "Xist": 0.1127
+      },
+      "mtDSB": {
+        "Abca8a": 0.0038,
+        "Arg1": 0.001,
+        "Atf5": 0.1078,
+        "Bhlhe40": 0.0697,
+        "Chil3": 0.0002,
+        "Cxcl12": 0.0411,
+        "Cxcl13": 0.0001,
+        "Cyb5r3": 0.1071,
+        "Dbp": 0.2883,
+        "Fbln2": 0.0018,
+        "Fcrls": 0.604,
+        "Fmod": 0.0035,
+        "Gpnmb": 0.0146,
+        "Hal": 0.0002,
+        "Hpse": 0.0018,
+        "Igf2": 0.0275,
+        "Igfbp2": 0.0123,
+        "Klf5": 0.0217,
+        "Lpl": 0.1138,
+        "Nr1d1": 0.1999,
+        "Plin4": 0.0141,
+        "Pmp22": 0.3609,
+        "Ptgds": 0.3013,
+        "Ptx3": 0.0004,
+        "Serpine2": 0.5776,
+        "Slc47a1": 0.0009,
+        "Srebf1": 0.0402,
+        "Tcf7": 0.0077,
+        "Thbs2": 0.0106,
+        "Xist": 0.0779
+      }
+    }
+  },
+  "age_x_run": {
+    "0060539": {
+      "21": 0,
+      "60": 6
+    },
+    "0060541": {
+      "21": 6,
+      "60": 0
+    }
+  },
+  "animals": [
+    {
+      "sample_id": "RB4282",
+      "condition": "control",
+      "age": "60",
+      "run": "output-XETG00045__0060539__RB4282__20250917__105852",
+      "slide": "0060539"
+    },
+    {
+      "sample_id": "RB4350",
+      "condition": "control",
+      "age": "60",
+      "run": "output-XETG00045__0060539__RB4350__20250917__105852",
+      "slide": "0060539"
+    },
+    {
+      "sample_id": "RB4401",
+      "condition": "mtDSB",
+      "age": "60",
+      "run": "output-XETG00045__0060539__RB4401__20250917__105852",
+      "slide": "0060539"
+    },
+    {
+      "sample_id": "RB4403",
+      "condition": "mtDSB",
+      "age": "60",
+      "run": "output-XETG00045__0060539__RB4403__20250917__105852",
+      "slide": "0060539"
+    },
+    {
+      "sample_id": "RB4405",
+      "condition": "mtDSB",
+      "age": "60",
+      "run": "output-XETG00045__0060539__RB4405__20250917__105852",
+      "slide": "0060539"
+    },
+    {
+      "sample_id": "RB4498",
+      "condition": "control",
+      "age": "60",
+      "run": "output-XETG00045__0060539__RB4498__20250917__105852",
+      "slide": "0060539"
+    },
+    {
+      "sample_id": "RB4620",
+      "condition": "control",
+      "age": "21",
+      "run": "output-XETG00045__0060541__RB4620__20250917__105852",
+      "slide": "0060541"
+    },
+    {
+      "sample_id": "RB4627",
+      "condition": "mtDSB",
+      "age": "21",
+      "run": "output-XETG00045__0060541__RB4627__20250917__105852",
+      "slide": "0060541"
+    },
+    {
+      "sample_id": "RB4630",
+      "condition": "mtDSB",
+      "age": "21",
+      "run": "output-XETG00045__0060541__RB4630__20250917__105852",
+      "slide": "0060541"
+    },
+    {
+      "sample_id": "RB4653",
+      "condition": "mtDSB",
+      "age": "21",
+      "run": "output-XETG00045__0060541__RB4653__20250917__105852",
+      "slide": "0060541"
+    },
+    {
+      "sample_id": "RB4658",
+      "condition": "control",
+      "age": "21",
+      "run": "output-XETG00045__0060541__RB4658__20250917__105852",
+      "slide": "0060541"
+    },
+    {
+      "sample_id": "RB4676",
+      "condition": "control",
+      "age": "21",
+      "run": "output-XETG00045__0060541__RB4676__20250917__105852",
+      "slide": "0060541"
+    }
+  ]
+}

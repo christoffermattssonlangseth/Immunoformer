@@ -1,0 +1,54 @@
+ACCRUAL (TIME/RATCHET) PROGRAM IN THE mtDNA-DSB MODEL
+============================================================
+
+THIS IS A 12-ANIMAL DESIGN: 3 control vs 3 mtDSB per age group. With 3 vs 3 the
+smallest attainable exact two-sided Mann-Whitney p is 0.10 — no within-age test can
+reach 0.05. Effect sizes (rank-biserial r, Hedges g) are the result.
+Framing (Task 4): the ratchet program tracks RRMAP2 day_of_sacrifice and failed its
+dissociation test; it is read here as the RRMAP2 time axis, not a proven separate
+accrual program.
+
+CONFOUND: age is aliased with slide/run in this dataset —
+  slide  0060539  0060541
+  age                    
+  21           0        6
+  60           6        0
+  The condition contrast is within-slide and clean; any age contrast is not.
+
+PROGRAM GENES ON THE PANEL
+  accrual (clock top-20 + ratchet): 27/27 on panel
+  ratchet only: 7/7 on panel
+  acute: 3/3 on panel
+
+DETECTION — fraction of cells with >= 1 count (control / mtDSB)
+  oligodendrocyte_lineage: acute genes Hal 0.000/0.000, Arg1 0.001/0.001, Chil3 0.000/0.000
+  microglia: acute genes Hal 0.000/0.000, Arg1 0.001/0.001, Chil3 0.000/0.000
+  Acute genes are near-undetected in these cell types, so acute program scores are
+  ~0 and the acute 'contrast' is uninformative here rather than a negative.
+
+  compartment | program                                stratum    ctrl   mtDSB    diff   r_rb      g  p_exact
+  microglia | accrual (clock top-20 + ratchet)              21  +0.076  +0.085  +0.009  +0.33  +0.31    0.700
+  microglia | accrual (clock top-20 + ratchet)              60  +0.065  +0.094  +0.029  +0.78  +1.29    0.200
+  microglia | accrual (clock top-20 + ratchet)          pooled  +0.070  +0.090  +0.019  +0.50  +0.91    0.180
+  microglia | acute                                         21  +0.000  +0.000  +0.000  -0.11  +0.42    1.000
+  microglia | acute                                         60  +0.000  -0.000  -0.000  +0.33  -0.29    0.700
+  microglia | acute                                     pooled  +0.000  +0.000  +0.000  +0.06  +0.07    0.937
+  microglia | ratchet only                                  21  +0.073  +0.092  +0.020  +0.33  +0.28    0.700
+  microglia | ratchet only                                  60  +0.025  +0.044  +0.019  +0.33  +0.35    0.700
+  microglia | ratchet only                              pooled  +0.049  +0.068  +0.019  +0.22  +0.35    0.589
+  oligodendrocyte_lineage | accrual (clock top-20 + ratchet)      21  +0.091  +0.108  +0.016  +0.56  +0.55    0.400
+  oligodendrocyte_lineage | accrual (clock top-20 + ratchet)      60  +0.081  +0.102  +0.021  +0.33  +0.95    0.700
+  oligodendrocyte_lineage | accrual (clock top-20 + ratchet)  pooled  +0.086  +0.105  +0.019  +0.50  +0.89    0.180
+  oligodendrocyte_lineage | acute                           21  -0.000  -0.000  +0.000  +0.33  +0.66    0.700
+  oligodendrocyte_lineage | acute                           60  -0.000  -0.000  -0.000  +0.33  -0.20    0.700
+  oligodendrocyte_lineage | acute                       pooled  -0.000  -0.000  +0.000  +0.28  +0.13    0.485
+  oligodendrocyte_lineage | ratchet only                    21  +0.328  +0.362  +0.034  +0.33  +0.35    0.700
+  oligodendrocyte_lineage | ratchet only                    60  +0.291  +0.317  +0.026  +0.33  +0.51    0.700
+  oligodendrocyte_lineage | ratchet only                pooled  +0.309  +0.340  +0.030  +0.39  +0.46    0.310
+
+ANSWER
+  Accrual program in mtDSB oligodendrocyte lineage: does NOT consistently rise (rank-biserial 21d +0.56, 60d +0.33; pooled 6 vs 6 p = 0.180).
+  Acute program: does NOT consistently rise (rank-biserial 21d +0.33, 60d +0.33; pooled p = 0.485).
+  Pooled tests mix the age/slide strata; read them as a summary, not a clean test.
+
+figures/: program_scores_by_animal.png; per-animal table: per_animal_scores.csv
