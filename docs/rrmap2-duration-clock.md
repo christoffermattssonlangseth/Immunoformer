@@ -187,6 +187,15 @@ niches from CellCharter.
 **Duration is a tissue-wide chronic program that peaks in glia, and is driven by cell-state
 change rather than composition:**
 
+> **Update 2026-10-09 (closing block, Task C).** "Driven by cell-state change rather than
+> composition" overstates the data. The signal is **mainly but not purely cell-intrinsic;
+> composition carries a substantial minority.** When cell-type composition is residualised out
+> of the expression clock inside each fold, the clock drops from **0.83 to 0.50 (RR)** and **0.85
+> to 0.52 (chronic)**, about a third of the signal (paired differences −0.33 [−0.64, −0.08] and
+> −0.34 [−0.61, −0.13]). A composition-only clock on `Anno_L1_curated` proportions reaches 0.47
+> (RR) / 0.66 (chronic); on the finer `Anno_L2` it reaches 0.70 / 0.75. The original numbers
+> below are kept as they were. See `runs/closing_block/WRITEUP.md`, Task C.
+
 | Compartment | LOAO ρ (duration \| severity) | R² | median cells |
 |---|---|---|---|
 | **astrocyte** | **+0.89** (perm p=0.020) | 0.81 | 2637 |
@@ -219,6 +228,21 @@ neuronal (`Uchl1`, `Gad1`, `Slc17a6`) in **neurons**. (Figures:
 `runs/duration_clock_spatial/figures/`.)
 
 ## Cross-model replication — the chronic arm (B6/MOG)
+
+> **Update 2026-10-09 — read the chronic results below as a parallel analysis, not an
+> independent replication of the RR duration findings.**
+> - **Run identity is recoverable within chronic.** Task 1 recovered it at matched stages
+>   (balanced accuracy 1.00), so "clean of `run_date`" below holds for the label but not the
+>   expression data.
+> - **Severity and duration are coupled in chronic.** Day correlates with terminal severity at
+>   +0.58 and with cumulative severity at +0.90.
+> - **So the chronic clock depends on which severity is adjusted for:** 0.85 with terminal
+>   score, but **0.64** with cumulative score (paired −0.21 [−0.41, −0.03]).
+> - **Gene-level duration findings do not hold in chronic without adjustment.** Endothelial
+>   collagen IV falls with day only after severity adjustment (unadjusted ρ −0.28 [−0.60,
+>   +0.09]).
+>
+> See `runs/batch_identifiability/`, `runs/closing_block/WRITEUP.md` (Task A follow-up and §4).
 
 The chronic arm was originally set aside because its day axis looked batch-confounded. With
 the corrected metadata (`FINAL_…_META_RRMap2.Main.filled.stage_fixed.csv`) that is no longer
@@ -377,5 +401,10 @@ Tier 2 (localization) is done — see above. The remaining follow-ups:
 2. ~~**Chronic-arm validation.**~~ **Done** — the clock replicates in the chronic arm
    (+0.856) and the duration axis is conserved RR↔chronic at ρ +0.65 (*Cross-model
    replication* above).
+   *Update 2026-10-09: "replicates" is too strong. The chronic clock depends on the
+   severity-adjustment choice, and gene-level duration findings do not hold in chronic without
+   adjustment. See the note under* Cross-model replication.
 3. **Publication-grade null.** Re-run the headline clock with N_PERM ≈ 1000 (overnight) for a
    tighter permutation p than the current floor of 0.0196.
+   *Update 2026-10-09: done. 1000 permutations on the current pseudobulk: observed ρ 0.83,
+   null max 0.70, p = 0.001 (`runs/baseline_ladder/perm_arm2_day_of_sacrifice.json`).*

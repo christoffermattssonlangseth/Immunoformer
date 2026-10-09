@@ -67,6 +67,12 @@ of the duration trend is per-cell upregulation**; only ~2 of 825 strongly-accrui
 composition-driven. The foamy-macrophage program intensifies *per cell* even as the myeloid
 fraction falls. (`scripts/duration_composition_intrinsic.py`.)
 
+> **Update 2026-10-09.** This overstates it. At the clock level, residualising cell-type
+> composition out inside each fold lowers the duration clock from 0.83 to 0.50 (RR) and 0.85 to
+> 0.52 (chronic). The signal is mainly but not purely cell-intrinsic; composition carries a
+> substantial minority. The per-gene shift-share result above is kept as originally reported.
+> See `runs/closing_block/WRITEUP.md`, Task C.
+
 **4. The duration program is conserved across model and strain.** Rebuilt identically on the
 chronic arm (B6/MOG) the clock reaches **+0.856**, and the RR↔chronic duration axes agree at
 **Spearman +0.65** — while the relapse *oscillation* axis specifically does **not** transfer
@@ -110,6 +116,16 @@ The repo's real contribution is not a single model but a **rigorously de-confoun
 what spinal-cord tissue remembers about disease history**: severity is acute and resets,
 duration accumulates irreversibly as a glia-led, cell-intrinsic program conserved across two
 EAE models, and the analyses are unusually careful to report what *isn't* identifiable.
+
+> **Update 2026-10-09.** Three parts of this sentence are superseded:
+> - **"Glia-led":** no single cell type's clock beats the all-cells clock in paired tests
+>   (astrocytes +0.07 [−0.02, +0.20]); the signal is tissue-wide.
+> - **"Cell-intrinsic":** mainly, not purely; composition carries about a third (see above).
+> - **"Conserved across two EAE models":** the chronic clock and chronic gene-level findings
+>   depend on the severity-adjustment choice, because severity and duration are coupled in
+>   chronic. It is a parallel analysis, not an independent replication.
+>
+> Sources: `runs/clock_composition/`, `runs/closing_block/WRITEUP.md`.
 
 ## Where things live
 
