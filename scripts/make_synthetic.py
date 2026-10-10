@@ -30,10 +30,12 @@ def main():
     args = ap.parse_args()
 
     rng = np.random.default_rng(args.seed)
+    # separate stream for coordinates, so X is unchanged from earlier versions
+    rng_xy = np.random.default_rng(args.seed + 1000)
     n_sig = max(5, args.genes // 20)          # signal genes
     sig = np.arange(n_sig)
 
-    rows_X, animal_col, section_col, stage_col, region_col = [], [], [], [], []
+    rows_X, xy_rows, animal_col, section_col, stage_col, region_col = [], [], [], [], [], []
     regions = ["lumbar", "thoracic", "cervical"]
 
     for s_idx, stage in enumerate(STAGES):
@@ -46,11 +48,18 @@ def main():
                 base = rng.poisson(1.0, size=(n, args.genes)).astype(np.float32)
                 # a stage-dependent fraction of cells upregulate signal genes
                 n_aff = int(frac * n * 0.5)
+                # coordinates (um): background cells uniform over the section; affected
+                # cells cluster around two lesion centres, so neighbourhoods carry signal
+                xy = rng_xy.uniform(0, 1000, size=(n, 2))
                 if n_aff:
                     aff = rng.choice(n, n_aff, replace=False)
                     base[np.ix_(aff, sig)] += rng.poisson(
                         3.0 + 5.0 * frac, size=(n_aff, n_sig))
+                    centres = rng_xy.uniform(200, 800, size=(2, 2))
+                    xy[aff] = (centres[rng_xy.integers(0, 2, n_aff)]
+                               + rng_xy.normal(0, 60, size=(n_aff, 2)))
                 rows_X.append(base)
+                xy_rows.append(xy.astype(np.float32))
                 animal_col += [animal] * n
                 section_col += [section] * n
                 stage_col += [stage] * n
@@ -66,6 +75,7 @@ def main():
     })
     var = pd.DataFrame(index=[f"gene_{i}" for i in range(args.genes)])
     adata = ad.AnnData(X=X, obs=obs, var=var)
+    adata.obsm["spatial"] = np.vstack(xy_rows)
 
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     adata.write_h5ad(args.out)

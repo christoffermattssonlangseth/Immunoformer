@@ -206,6 +206,44 @@ def compare_rhos(
     }
 
 
+def paired_bootstrap_delta(
+    pred_a: np.ndarray,
+    pred_b: np.ndarray,
+    ref: np.ndarray,
+    n_boot: int = 2000,
+    ci: float = 0.95,
+    seed: int = 0,
+) -> dict:
+    """Paired bootstrap of rho(pred_a, ref) - rho(pred_b, ref) over the SAME units.
+
+    Use this instead of `compare_rhos` when both predictions are scored on the same
+    animals: resampling units jointly keeps the correlation between the two rhos, which
+    the independent-samples Fisher test ignores. Returns the observed difference, its
+    percentile CI and the fraction of resamples with difference <= 0.
+    """
+    a, b, r = (np.asarray(v, dtype=float) for v in (pred_a, pred_b, ref))
+    if not (len(a) == len(b) == len(r)):
+        raise ValueError("pred_a, pred_b and ref must have the same length")
+    rng = np.random.default_rng(seed)
+    n = len(r)
+    diffs = []
+    for _ in range(n_boot):
+        i = rng.integers(0, n, n)
+        da, db = spearmanr(a[i], r[i]).statistic, spearmanr(b[i], r[i]).statistic
+        if np.isfinite(da) and np.isfinite(db):
+            diffs.append(da - db)
+    diffs = np.asarray(diffs)
+    alpha = (1 - ci) / 2
+    return {
+        "diff": float(spearmanr(a, r).statistic - spearmanr(b, r).statistic),
+        "ci_lo": float(np.quantile(diffs, alpha)),
+        "ci_hi": float(np.quantile(diffs, 1 - alpha)),
+        "frac_le_0": float((diffs <= 0).mean()),
+        "n": n,
+        "n_boot_valid": int(len(diffs)),
+    }
+
+
 # ---------------------------------------------------------------------------
 # Full report
 # ---------------------------------------------------------------------------

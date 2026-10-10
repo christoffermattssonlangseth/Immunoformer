@@ -15,7 +15,7 @@ Cohorts: EAE animals with a defined target; day_of_sacrifice keeps the incumbent
 animals (incl. 3 PLP CFA controls) for continuity. Section C2_G3_Mid_1 is excluded
 (Task 0 reassignment rule).
 
-Arms (arms 1-5 here; arm 6 is analysis/mil_loao.py, read back from its predictions file):
+Arms (arms 1-5 and 7 here; arm 6 is analysis/mil_loao.py, read back from its predictions file):
   1  score_sacrifice alone — predicts the RAW target (the residualised target is ~0 by
      construction); evaluated against the raw target.
   2  animal pseudobulk, 5101 genes (loao_clock, unchanged)        2r: + run_date covariate
@@ -23,9 +23,14 @@ Arms (arms 1-5 here; arm 6 is analysis/mil_loao.py, read back from its predictio
   4  Anno_L1_curated composition (19 fractions)
   5  arm 2 + arm 3 — top-variance prefilter on genes only; niche fractions always kept
      (the variance filter would otherwise drop them: fractions have tiny variance).
+  7  EXPLORATORY. Self-supervised cell embedding (z_cell), animal mean, from
+     analysis/ssl_pretrain.py; 7n the niche embedding (z_niche); 7p arm 2 + z_niche (genes
+     prefiltered, embedding always kept). Run only if runs/ssl_pretrain/ exists. Read with
+     the paired bootstrap below; decision rule in analysis/ssl_pretrain.py.
 Metrics: Spearman rho and LOAO R2 vs the full-data residual target, plus the fold-wise
 (leak-free) residual reference; 95% CI from 2000 animal bootstrap resamples; Fisher z vs
-arm 2 (treats rhos as independent; they share animals, so p is conservative). slope_sign
+arm 2 (treats rhos as independent; they share animals, so p is conservative) and the paired
+animal bootstrap of rho(arm) - rho(arm 2), the valid same-animal comparison. slope_sign
 also reports AUC. Permutation null (1000 shuffles) for arm 2 on day_of_sacrifice: run with
 PERM_ONLY=1 (heavy; meant for the remote machine).
 
@@ -56,7 +61,8 @@ from sklearn.preprocessing import StandardScaler
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "scripts"))
 from duration_clock import ENET_KW, _topvar, loao_clock, loao_target  # noqa: E402
-from immunotransformer.stats import bootstrap_spearman, compare_rhos  # noqa: E402
+from immunotransformer.stats import (  # noqa: E402
+    bootstrap_spearman, compare_rhos, paired_bootstrap_delta)
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
@@ -73,6 +79,7 @@ COMP_CACHE = os.path.join(OUT, "composition_sections.csv")
 ARM6 = os.path.join(OUT, "arm6_predictions.csv")
 ARM6R = os.path.join(OUT, "arm6_runadj_predictions.csv")
 ARM6B = os.path.join(OUT, "arm6b_meanpool_predictions.csv")
+SSL_EMB = os.environ.get("SSL_EMB", "runs/ssl_pretrain/section_embeddings.csv")
 EXCLUDE_SECTIONS = {"C2_G3_Mid_1"}
 COMP_KEYS = {"arm3": "Global_niche", "arm4": "Anno_L1_curated"}
 N_BOOT = 2000
@@ -89,12 +96,14 @@ TARGETS = [
     ("cumulative_chronic",   "cumulative_score",     CHR, ["score", "day"], "continuous"),
     ("day_of_sacrifice",     "day_of_sacrifice",     RR,  ["score"],        "continuous"),
 ]
-ARMS = ["arm1", "arm2", "arm2r", "arm3", "arm4", "arm5", "arm6", "arm6r", "arm6b"]
+ARMS = ["arm1", "arm2", "arm2r", "arm3", "arm4", "arm5", "arm6", "arm6r", "arm6b",
+        "arm7", "arm7n", "arm7p"]
 ARM_LABEL = {"arm1": "1 score only (raw target)", "arm2": "2 pseudobulk",
              "arm2r": "2r pseudobulk + run", "arm3": "3 niche comp.",
              "arm4": "4 cell-type comp.", "arm5": "5 pseudobulk + niche",
              "arm6": "6 attention-MIL", "arm6r": "6r attention-MIL + run",
-             "arm6b": "6b mean-pool MIL (control)"}
+             "arm6b": "6b mean-pool MIL (control)", "arm7": "7 SSL cell emb. (expl.)",
+             "arm7n": "7n SSL niche emb. (expl.)", "arm7p": "7p pseudobulk + niche emb."}
 PROGRAMS = {"ratchet": ["Gpnmb", "Igf2", "Fmod", "Fcrls", "Plin4"],
             "acute": ["Hal", "Arg1", "Chil3"]}
 
@@ -143,6 +152,8 @@ def load_all():
              .unstack(fill_value=0).loc[animals])
         fracs[arm] = (t.div(t.sum(1), axis=0)).to_numpy(float), t.columns.to_numpy()
 
+    fracs.update(ssl_embeddings(meta, animals))
+
     traj = pd.read_csv(TRAJ).set_index("sample_name").loc[animals]
     am = meta.drop_duplicates("sample_name").set_index("sample_name").loc[animals]
     info = pd.DataFrame({
@@ -157,6 +168,30 @@ def load_all():
         "slope_sign": traj.slope_class.map({"ascending": 1.0, "descending": 0.0}).to_numpy(float),
     })
     return pb, genes, fracs, info
+
+
+def ssl_embeddings(meta, animals):
+    """Arm 7 features: cell-weighted animal means of the per-section SSL embeddings."""
+    if not os.path.exists(SSL_EMB):
+        return {}
+    e = pd.read_csv(SSL_EMB)
+    e = e[e.section.isin(meta.meta_sample_id)]
+    missing = sorted(set(animals) - set(e.animal))
+    if missing:
+        print(f"[arm 7] skipped: no SSL embedding for {len(missing)} animals "
+              f"(e.g. {missing[:3]}); rerun analysis/ssl_pretrain.py", flush=True)
+        return {}
+    w = e.n_cells.to_numpy(float)[:, None]
+    out = {}
+    for arm, pre in (("arm7", "zc"), ("arm7n", "zn")):
+        cols = [c for c in e.columns if c.startswith(pre)]
+        s = pd.DataFrame(e[cols].to_numpy(float) * w, index=e.animal).groupby(level=0).sum()
+        n = e.groupby("animal").n_cells.sum()
+        out[arm] = (s.div(n, axis=0).loc[animals].to_numpy(float), np.array(cols))
+    if e.excluded_from_training.any():
+        print(f"[arm 7] {e[e.excluded_from_training].animal.nunique()} animals were held out "
+              "of SSL pretraining", flush=True)
+    return out
 
 
 def cohort(info, col, model, key):
@@ -241,6 +276,10 @@ def run_target(spec, pb, fracs, info, arm6):
     preds["arm3"] = loao_clock(fracs["arm3"][0][idx], y, covar=covar)
     preds["arm4"] = loao_clock(fracs["arm4"][0][idx], y, covar=covar)
     preds["arm5"] = loao_keep(X, fracs["arm3"][0][idx], y, covar=covar)
+    if "arm7" in fracs:
+        preds["arm7"] = loao_clock(fracs["arm7"][0][idx], y, covar=covar)
+        preds["arm7n"] = loao_clock(fracs["arm7n"][0][idx], y, covar=covar)
+        preds["arm7p"] = loao_keep(X, fracs["arm7n"][0][idx], y, covar=covar)
     if arm6 is not None:
         a6 = arm6[arm6.target == key].set_index("sample_name")
         if set(sub.sample_name) <= set(a6.index):
@@ -280,6 +319,9 @@ def run_target(spec, pb, fracs, info, arm6):
     for arm, m in res["arms"].items():
         if arm != "arm2":
             m["fisher_z_vs_arm2_p"] = compare_rhos(m["rho"], m["n"], a2["rho"], a2["n"])["p_value"]
+        if arm not in ("arm1", "arm2", "arm2r", "arm6r"):   # same reference as arm 2
+            m["paired_vs_arm2"] = paired_bootstrap_delta(preds[arm], preds["arm2"], ref,
+                                                         n_boot=N_BOOT, seed=2)
     if covs == ["score", "day"]:
         r = np.corrcoef(sub.score, sub.day)[0, 1]
         res["vif_score_day"] = float(1 / (1 - r ** 2))
@@ -371,7 +413,7 @@ def main():
 INK, MUTED, SURFACE = "#0b0b0b", "#52514e", "#fcfcfb"
 ARM_COLOR = {"arm1": "#b7b6b0", "arm2": "#2a78d6", "arm2r": "#86b6ef", "arm3": "#1baf7a",
              "arm4": "#eda100", "arm5": "#4a3aa7", "arm6": "#eb6834", "arm6r": "#f4a582",
-             "arm6b": "#e87ba4"}
+             "arm6b": "#e87ba4", "arm7": "#0f8a8a", "arm7n": "#36b3b3", "arm7p": "#7a5195"}
 
 
 def _plot(results):
@@ -425,6 +467,8 @@ def _report(results):
          "null = folds where no feature survived (prediction = leave-one-out mean). Under LOAO",
          "an all-null arm gives rho = -1 BY CONSTRUCTION; strongly negative rho with negative R2",
          "means NO SIGNAL, not anti-signal. Arm 6 has no such fallback.",
+         "d rho vs 2 = paired animal bootstrap of rho(arm) - rho(arm 2) on the same animals",
+         "(95% CI); this, not Fisher z, is the comparison to read. Arm 7 is exploratory.",
          f"Panel check, program genes missing: {results['settings']['panel_check']}", ""]
     for key, r in results["targets"].items():
         cov = " + ".join(r["covariates"]) or "nothing"
@@ -438,8 +482,8 @@ def _report(results):
             L.append(f"  corr(score, day) = {r['corr_score_day']:+.2f}, VIF = "
                      f"{r['vif_score_day']:.2f}")
         L.append(f"  {'arm':26s} {'rho':>7s} {'95% CI':>17s} {'width':>6s} {'R2':>7s} "
-                 f"{'fold-wise':>9s} {'Fz p vs 2':>9s} {'null':>5s}" + ("  AUC [95% CI]" if r["kind"] ==
-                                                         "binary" else ""))
+                 f"{'fold-wise':>9s} {'Fz p vs 2':>9s} {'null':>5s} {'d rho vs 2 [95% CI]':>22s}"
+                 + ("  AUC [95% CI]" if r["kind"] == "binary" else ""))
         for a in ARMS:
             if a not in r["arms"]:
                 if a == "arm6":
@@ -452,6 +496,9 @@ def _report(results):
             line = (f"  {ARM_LABEL[a]:26s} {m['rho']:+7.3f} [{m['ci'][0]:+.2f}, {m['ci'][1]:+.2f}]"
                     f" {m['ci_width']:6.2f} {m['r2']:+7.3f} {m['rho_foldwise_ref']:+9.3f} {fz:>9s}"
                     f" {m.get('n_null_folds', 0):>2d}/{m['n']:<2d}")
+            pv = m.get("paired_vs_arm2")
+            line += (f" {pv['diff']:+.3f} [{pv['ci_lo']:+.2f}, {pv['ci_hi']:+.2f}]" if pv
+                     else " " * 23)
             if "auc" in m:
                 line += f"  {m['auc']:.2f} [{m['auc_ci'][0]:.2f}, {m['auc_ci'][1]:.2f}]"
             L.append(line)

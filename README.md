@@ -83,10 +83,45 @@ Edit `configs/baseline.yaml`:
 
 For the full 5101-gene panel use `data.n_hvg: 2000` and `encoder: pca`.
 
+### Self-supervised cell + niche pretraining (exploratory, ladder arm 7)
+
+Supervised models here are capped by the number of animals, not cells. `analysis/ssl_pretrain.py`
+pretrains on every cell with no disease label (`immunotransformer/ssl.py`):
+- **Model.** An MLP cell encoder produces `z_cell`. A small transformer over each cell plus its
+  16 spatial neighbours, with relative-position encoding, produces `z_niche`.
+- **Objectives.** Masked-expression reconstruction from the niche, and prediction of the
+  neighbourhood from the cell alone.
+
+Per-section mean embeddings land in `runs/ssl_pretrain/section_embeddings.csv`.
+`analysis/baseline_ladder.py` then adds arms 7 (`z_cell`), 7n (`z_niche`) and 7p
+(pseudobulk + `z_niche`) on the same LOAO folds. Every arm now also reports a paired animal
+bootstrap of ρ(arm) − ρ(arm 2).
+
+This re-opens the direction the pre-registered B3 test shelved. Read it as exploratory; the
+decision rule is in the script's docstring.
+
+```bash
+PYTHONPATH="$PWD:$PWD/scripts" python analysis/ssl_pretrain.py          # GPU/MPS; ~20 GB RAM peak
+PYTHONPATH="$PWD:$PWD/scripts" python analysis/baseline_ladder.py       # picks up arm 7
+# leakage check: never train on some animals, then compare how well they are predicted
+PYTHONPATH="$PWD:$PWD/scripts" python analysis/ssl_pretrain.py --exclude-animals held_out.txt \
+    --out runs/ssl_pretrain_holdout
+```
+
+CPU smoke run on synthetic data with coordinates (~3 min), and unit tests:
+```bash
+python scripts/make_synthetic.py --out data/synthetic_spatial.h5ad
+PYTHONPATH="$PWD:$PWD/scripts" python analysis/ssl_pretrain.py --h5ad data/synthetic_spatial.h5ad \
+    --layer none --animal-key animal_id --section-key section_id --steps 300 --out runs/ssl_smoke
+python -m pytest -q tests/
+```
+
 ### Not built
 
 - **Stage 2 transformer:** not built, by the pre-registered rule in Task 5; see the negative-result doc.
-- **Foundation-model encoder:** `encoders.FrozenFMEncoder` is still a stub.
+- **Foundation-model encoder:** `encoders.FrozenFMEncoder` is still a stub. Off-the-shelf
+  spatial models (Novae, Nicheformer) can feed arm 7 instead: write their per-section mean
+  embeddings in the same `section_embeddings.csv` layout and point `SSL_EMB` at it.
 
 ## Layout
 
@@ -100,5 +135,6 @@ scripts/             earlier analyses (duration clock, batch identifiability, ru
 runs/<task>/         outputs per analysis (WRITEUP.md / report.txt, results.json, figures/)
 docs/                write-ups and data documentation
 configs/             training configs
+tests/               fast unit tests (pytest)
 spreadsheets/        daily clinical score and weight sheets
 ```
